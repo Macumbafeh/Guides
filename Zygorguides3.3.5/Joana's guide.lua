@@ -540,7 +540,7 @@ step //7
 step //8
     'Run north to Razor Hill, grinding mobs along the way, and make sure you reach the desired amount of XP before you get there for new spells/abilities. Avoid the boars they are much tougher. As you are grinding north to Razor Hill.|goto Durotar,52.3,43.2|only !Mage
 	info|only !Mage
-	'Reach level 5 and 2.690 XP before continuing.|only !Mage
+	'Reach level 5 and 2 690 XP before continuing.|only !Mage
     ding 5|only !Mage
 	info 
     'North at Razor Hill:|goto Durotar,52.3,43.2
@@ -2349,7 +2349,8 @@ step //19
     'Go in the small cave and loot the Dirt-stained Map. Then use the item to start:|goto Mulgore,63.24,82.72
     .use Dirt-stained Map##4851|q 781/1|icon Interface\\icons\\inv_misc_map_01
     ..accept Attack on Camp Narache##781
-    ..accept Attack on Camp Narache##24857|only WOTLK
+    ..accept Attack on Camp Narache##24857
+	info        only for WOTLK
 
 step //20
     'Hearth to Bloodhoof Village.|goto Mulgore,44.88,77.09
@@ -2365,7 +2366,8 @@ step //20
     'In the big hut:|goto Mulgore,44.18,76.06|title Chief Hawkwind
     .talk Chief Hawkwind##2981
     ..turnin Attack on Camp Narache##781
-	..turnin Attack on Camp Narache##24857|only WOTLK
+	..turnin Attack on Camp Narache##24857
+	info        only for WOTLK
     ..turnin Rite of Strength##757
     ..accept Rites of the Earthmother##763
 
@@ -3126,7 +3128,7 @@ step //74
 	only Druid
 
 step //75
-	'At Camp Taurajo: from the Wind Rider Master, take a flight to Thunder Bluff.|goto The Barrens,44.45,59.15|icon Interface\\minimap\\Tracking\\FlightMaster
+	'At Camp Taurajo: from the Wind Rider Master, take a flight to Thunder Bluff.|goto The Barrens,44.45,59.15|c|icon Interface\\minimap\\Tracking\\FlightMaster
     .talk Omusa Thunderhorn##10378
 	only Druid
 
@@ -5540,7 +5542,7 @@ step //12
 step //13
     'Go down in the Inn and from the Innkeeper:|goto Eversong Woods,43.67,71.31
     .talk Marniel Amberlight##15397
-    .home Fairbreeze Village
+    .home Fairbreeze Village|icon Interface\\minimap\\Tracking\\Innkeeper
 
 step //14
     'Follow the path north and just across the bridge:|goto Eversong Woods,44.88,61.02
@@ -5880,7 +5882,7 @@ step //58
 step //59
     'Next to you from the Innkeeper Velandra:|goto Silvermoon City,79.48,58.21|only Rogue, Warlock
     .talk Innkeeper Velandra##16618
-    .home Silvermoon City
+    .home Silvermoon City|icon Interface\\minimap\\Tracking\\Innkeeper
 	only Rogue, Warlock
 	
 step //60
@@ -5950,8 +5952,7 @@ step //66
 step //67
     'Use the Taming Rod quest item to tame a Crazed Dragonhawk around Farstrider Retreat.|goto Eversong Woods,62.26,65.14|icon Interface\\icons\\ability_hunter_beasttaming
     .use Taming Rod##23697|q 9484/1|icon Interface\\icons\\ability_hunter_beasttaming
-	.kill Crazed Dragonhawk##15650|n
-	info (For targeting, DON'T KILL IT !)
+	.talk Crazed Dragonhawk##15650|n
 	only Hunter
 	
 step //68
@@ -5964,8 +5965,7 @@ step //68
 step //69
     'Use the Taming Rod quest item to tame a Elder Springpaw##15652 around Farstrider Retreat.|goto Eversong Woods,63.36,63.85|icon Interface\\icons\\ability_hunter_beasttaming
     .use Taming Rod##23702|q 9486/1|icon Interface\\icons\\ability_hunter_beasttaming
-	.kill Elder Springpaw##15652|n
-	info (For targeting, DON'T KILL IT !)
+	.talk Elder Springpaw##15652|n
 	only Hunter
 	
 step //70
@@ -5991,8 +5991,7 @@ step //72
     'Use the quest item to tame a Mistbat around northern Ghostlands.|icon Interface\\icons\\ability_hunter_beasttaming|only Hunter
 	'NOTE: You are going to need to use this pet for the following 2 quests, so move quickly because your pet only lasts 15 minutes. You should dismiss the pet and tame another one before you leave the area so the timer resets on it.|icon Interface\\cursor\\Directions|only Hunter
 	.use Taming Rod##23703|q 9486/1|icon Interface\\icons\\ability_hunter_beasttaming|only Hunter
-	.kill Elder Springpaw##16353|n|only Hunter
-	info (For targeting, DON'T KILL IT !)|only Hunter
+	.talk Elder Springpaw##16353|n|only Hunter
 
 step //73
     'Go west (it's safer to follow the edge of the river):|goto Ghostlands,33.06,11.21|only Rogue
@@ -6137,8 +6136,7 @@ step //89
 step //90
     'Head east and I recommend taming an Elder Springpaw (cat) around the area for your first real pet. You will get|icon Interface\\icons\\ability_hunter_beasttaming
 	'Claw with it.|goto Eversong Woods,67.69,58.73|icon Interface\\icons\\ability_druid_rake|only Hunter
-	.kill Elder Springpaw##15652|n
-	info (For targeting, DON'T KILL IT !)
+	.talk Elder Springpaw##15652|n
 	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Hunter
 	
@@ -8578,9 +8576,9 @@ step //50
     only Scourge
 
 step //51
-	'We are done for Silverpine Forest. From the Bat Handler, take a flight to go back to Undercity.|icon Interface\\cursor\\Directions
+	'We are done for Silverpine Forest. From the Bat Handler, take a flight to go back to Undercity.|icon Interface\\cursor\\Directions|goto Silverpine Forest,45.62,42.61
 	.talk Karos Razok##2226
-	'Take a flight to Undercity|goto Silverpine Forest,45.62,42.61|icon Interface\\minimap\\Tracking\\FlightMaster
+	'Take a flight to Undercity|goto Undercity,63.25,48.59|title Go to Undercity|c|icon Interface\\minimap\\Tracking\\FlightMaster
 
 // The Barrens part /!\
 step //52
@@ -8889,6 +8887,7 @@ step //17
 	.cast Teleport: Moonglade##19027
     .talk Loganaar##12042
     'Get new Spells/Abilities|icon Interface\\MINIMAP\\TRACKING\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Druid
 
 step //18
@@ -9235,7 +9234,7 @@ step //11
 	only !Tauren
 
 step //12
-	'Next to you, from the Wind Rider Master, take a flight to Thunder Bluff|goto The Barrens,44.45,59.15|icon Interface\\minimap\\Tracking\\FlightMaster
+	'Next to you, from the Wind Rider Master, take a flight to Thunder Bluff|goto The Barrens,44.45,59.15|c|icon Interface\\minimap\\Tracking\\FlightMaster
 	.talk Omusa Thunderhorn##10378
 	only Tauren
 
@@ -9707,7 +9706,7 @@ step //70
     .'TIP: The Two-Handed Sword reward is very useful for warriors.|icon Interface\\cursor\\Directions|only Warrior
 
 step //71
-    .'Next to you, 'from Wind Rider Master,|goto The Barrens,51.50,30.33|icon Interface\\minimap\\Tracking\\FlightMaster
+    .'Next to you, from Wind Rider Master,|goto The Barrens,51.50,30.33|icon Interface\\minimap\\Tracking\\FlightMaster
 	'take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet
     .talk Devrak##3615
 //    only Druid
@@ -10226,7 +10225,7 @@ step //131
     only Rogue
 
 step //132
-    .'At to Valley of Spirits and upgrade First Aid from the First Aid Trainer.|goto Orgrimmar,34.18,84.57
+    .'At Valley of Spirits you can upgrade First Aid from the First Aid Trainer.|goto Orgrimmar,34.18,84.57
     .talk Arnok##3373
 	info 
 	NOTE: You would need skill 80 for |icon Interface\\cursor\\Directions
@@ -10470,7 +10469,7 @@ step //160
 
 step //161
     .'From the Bat Handler, take a flight to Undercity|goto Hillsbrad Foothills,60.15,18.63|icon Interface\\minimap\\Tracking\\FlightMaster
-	.talk Zarise##2389
+	.talk Zarise##2389|goto Undercity,63.25,48.59|title Go to Undercity|c
     only Shaman
 
 step //162
@@ -10622,7 +10621,7 @@ step //9
     ..turnin Arachnophobia##6284
 
 step //10
-    'Hunters, make sure you have a stack of meat in your bags to feed a wolf you will tame in a bit. You can get this in the inn from the Innkeeper:|goto Stonetalon Mountains,47.5,62.1|icon Interface\\icons\\|icon Interface\\icons\\inv_weapon_bow_07
+    'Hunters, make sure you have a stack of meat in your bags to feed a wolf you will tame in a bit. You can get this in the inn from the Innkeeper:|goto Stonetalon Mountains,47.5,62.1|icon Interface\\icons\\inv_weapon_bow_07
     .talk Innkeeper Jayka##7731
 	info 
 	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
@@ -10737,7 +10736,7 @@ step //1
 step //2
     'At the Stable Master, put your pet in the Stables:|goto Ashenvale,73.38,61.03
     .talk Qeeju##15131
-	'Stable your main pet|icon Interface\\icons\\ability_hunter_mendpet
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
 	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 
@@ -10764,7 +10763,7 @@ step //6
 	info |goto Silithus,0,400
     'The goal now is to go all the way to the other side of Ashenvale, to Zoram Strand.  Once you get to Astranaar (alliance town), go south of it to get around it.|icon Interface\\cursor\\Directions
 	info 
-    'Once you get to south of Astranaar, tame a |goto Ashenvale,35.39,57.26
+    'Once you get to south of Astranaar, tame a |goto Ashenvale,35.39,57.26|icon Interface\\icons\\ability_hunter_beasttaming
 	'Ghostpaw Runner around the area |icon Interface\\icons\\ability_hunter_pet_wolf
 	'for Bite R3.|icon Interface\\icons\\ability_racial_cannibalize
 	info 
@@ -11277,7 +11276,7 @@ step //38
 
 step //39
     'Leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).
-    'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the STV zeppelin (north landing)!|goto Durotar,50.84,13.08|title Enter Zeppelin Tower|icon Interface\\cursor\\Directions
+    'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Stranglethorn Vale zeppelin (north landing)!|goto Durotar,50.84,13.08|title Enter Zeppelin Tower|icon Interface\\cursor\\Directions
 	info 
     'Enter Undercity...|goto Undercity,66.27,10.13|c|title Enter Undercity
     only Shaman
@@ -11452,8 +11451,7 @@ step //10
 	'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
 	info 
     'WARNING: A lvl 24 Rare Elite patrols here!|goto Stonetalon Mountains,66.18,50.89|title Foreman Rigger Rare Elite lvl 24
-	.kill Foreman Rigger##5931|n
-	info      Just for targeting
+	.talk Foreman Rigger##5931|n
 
 step //11
 	info |goto Silithus,0,400
@@ -11465,8 +11463,7 @@ step //11
 	.collect Gerenzo's Mechanical Arm##5736|q 1096/1|icon Interface\\icons\\ability_golemthunderclap
     info 
     'WARNING: A lvl 24 Rare Elite patrols here!|goto Stonetalon Mountains,66.18,50.89|title Foreman Rigger Rare Elite lvl 24
-	.kill Foreman Rigger##5931|n
-	info      Just for targeting
+	.talk Foreman Rigger##5931|n
 	
 step //12
     'Go back to the goblin in the hut (you can first try to die on purpose by jumping off the platform to land on the ground below, then res at spirit):|goto Stonetalon Mountains,58.99,62.60
@@ -11958,7 +11955,7 @@ step //5
 	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
 	info 
     'NOTE: Each time you visit Freewind Post, check the Lorekeeper vendor for Liferoot. You will eventually need to collect 8 of them for the Whirlwind Axe questline in the early 30s. You can also check the AH for this item too.|icon Interface\\cursor\\Directions|only Warrior
-    .collect 8 Liferoot##3357|n|icon Interface\\icons\\inv_misc_root_02|only Warrior
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02|only Warrior
 
 step //6
     'Hunters, make sure you upgrade to|icon Interface\\icons\\inv_weapon_bow_07
@@ -12054,7 +12051,7 @@ step //17
     'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
 	info |only Warrior
 	'REMINDER: Each time you visit Freewind Post, check the Lorekeeper vendor for Liferoot. You will eventually need to collect 8 of them for the Whirlwind Axe questline in the early 30s. You can also check the AH for this item too.|icon Interface\\cursor\\Directions|only Warrior
-    .collect 8 Liferoot##3357|n|icon Interface\\icons\\inv_misc_root_02|only Warrior
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02|only Warrior
 
 step //18
     'In Freewind Post:|goto Thousand Needles,44.64,50.29
@@ -12079,6 +12076,7 @@ step //21
     'At Camp Taurajo by the Forge:|goto The Barrens,45.10,57.68
     .talk Tatternack Steelforge##3433
     ..turnin A New Ore Sample##1153
+	info     Only if you get the item (we will get it later otherwise)
 
 step //22
     'At Camp Taurajo:|goto The Barrens,44.86,59.13
@@ -12647,7 +12645,7 @@ step //43
 step //44
     'From the Stable Master, stable your pet.|goto Ashenvale,73.38,61.03
     .talk Qeeju##15131
-	'Stable your main pet|icon Interface\\icons\\ability_hunter_mendpet
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
 	info 
 	'NOTE: That's a TBC/Vanilla part, if you play WOTLK you don't need to do this. Just keep your Cat.|icon Interface\\cursor\\Directions
 	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
@@ -12720,7 +12718,7 @@ step //52
 
 step //53
     'Before leaving Satyrnaar make sure you are at least 1 bar away from level 28 (level 27 + 15600 XP).
-    'Reach level 27 and 15600 XP.|icon Interface\\icons\\XP_ICON
+    'Reach level 27 and 15 600 XP.|icon Interface\\icons\\XP_ICON
 	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock,Rogue
 
@@ -12774,7 +12772,7 @@ step //59
 
 step //60
     'From the Wind Rider Master,|goto Ashenvale,73.18,61.59|icon Interface\\minimap\\Tracking\\Flightmaster
-	'Take a flight to Sun Rock Retreat, Stonetalon|goto Stonetalon Mountains,45.1,59.8|title Go to Stonetalon|c
+	'Take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|title Go to Stonetalon|c
     .talk Vhulgra##12616
 //    ..fly Orgrimmar|icon Interface\\minimap\\Tracking\\Flightmaster
 	only Warrior,Paladin,Hunter,Shaman,Druid,Priest
@@ -12796,7 +12794,7 @@ step //62
 step //63
     'Up on the platform:|goto Orgrimmar,45.13,63.89
 	.talk Doras##3310
-	'From the Wind Rider Master, take a flight to Sun Rock Retreat, Stonetalon|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon|icon Interface\\minimap\\Tracking\\Flightmaster
+	'From the Wind Rider Master, take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon|icon Interface\\minimap\\Tracking\\Flightmaster
     only Warlock,Rogue
 
 step //64
@@ -12806,7 +12804,7 @@ step //64
     .talk Vhulgra##12616
 	info 
 	'If you didn't do the Nether-lace Garment Questline, just skip this part to go Stonetalon|icon Interface\\cursor\\Directions
-	'Take a flight to Sun Rock Retreat, Stonetalon|goto Stonetalon Mountains,45.1,59.8|title Go to Stonetalon if skipped Nether-lace Garment Questline
+	'Take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|title Go to Stonetalon if skipped Nether-lace Garment Questline
 	......'Click to Skip to Stonetalon|confirm|n|next +3|n|icon Interface\\cursor\\Point
     only Mage
 
@@ -12820,7 +12818,7 @@ step //65
 
 step //66
 	'From the Wind Rider Master,|goto The Barrens,51.50,30.34|icon Interface\\minimap\\Tracking\\Flightmaster
-	'Take a flight to Sun Rock Retreat, Stonetalon|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon
+	'Take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon
     .talk Devrak##3615
     only Mage
 	
@@ -12870,7 +12868,7 @@ step //4
 	'Hardcore players should most likely skip this one!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
 
 step //5
-    'Grind on any mobs in The Charred Vale until you reach level 27 and 36350 XP before continuing for lvl 28 spells/abilities.|goto Stonetalon Mountains,32.67,65.77|title Around the area
+    'Grind on any mobs in The Charred Vale until you reach level 27 and 36 350 XP before continuing for lvl 28 spells/abilities.|goto Stonetalon Mountains,32.67,65.77|title Around the area
     ding 27
     only !Warlock
 
@@ -12976,14 +12974,13 @@ step //19
 step //20
     'At the top of the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.02,49.84
 	'From the Wind Rider Master,|icon Interface\\minimap\\Tracking\\Flightmaster
-	'Take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Thunder Bluff|c
+	'Take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c
 	.talk Tal##2995
 
 step //21
 	'27-28 Stonetalon Mountains is complete!|icon Interface\\cursor\\Directions
 	....'Go to 28-29 Thousand Needles|confirm|next "Joana's Guide\\Horde\\28-29 Thousand Needles"|icon Interface\\icons\\achievement_zone_thousandneedles_01
 ]])
-
 ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\28-29 Thousand Needles",[[
 author Joana/Macumba
 type leveling
@@ -12996,639 +12993,13622 @@ step //1
     .talk Rau Cliffrunner##4722
     ..turnin The Sacred Flame##1196
     ..accept The Sacred Flame##1197
-    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
-    only !Warrior
+	info |only !Warrior
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|only !Warrior
 
 step //2
-    'Check the Lorekeeper vendor for Healing Potions.|goto Thousand Needles,45.15,50.78
+    'Check the Lorekeeper vendor for|goto Thousand Needles,45.15,50.78
+	'Healing Potions.|icon Interface\\icons\\inv_potion_51
     .talk Montarr##4878
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
     only !Warrior
 
 step //3
-    'REMINDER: Check the Lorekeeper vendor for Liferoot##3357. You will eventually need 8 for the Whirlwind Axe 
-
-questline in the early 30s. You can also check the AH. Also get Healing Potions and resupplied.|goto Thousand Needles,45.15,50.78
+    'REMINDER: Check the Lorekeeper vendor for Liferoot. You will eventually need 8 for the Whirlwind Axe questline in the early 30s. You can also check the AH.|goto Thousand Needles,45.15,50.78|icon Interface\\cursor\\Directions
+	info 
+	'NOTE: You can also check to see if you can buy Healing Potions and get resupplied.|icon Interface\\cursor\\Directions
     .talk Montarr##4878
-    .get Liferoot##3357|q 1718/1|n|optional
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+	info 
     'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 
 step //4
-    'Take the Lift down from Freewind Post...|goto Thousand Needles,46.97,48.79
-    'Enter the cave north...|goto Thousand Needles,44.12,37.15
-    'In the cave, keep hugging the left side until you get to the Sparklematic 5200, then loot it.|goto Thousand Needles,42.02,31.46
-    info NOTE: Save Retaliation##20230 for the two Flame Guards if you have to. Ranged reset one while you kill the other if possible. Grouping is encouraged.
-    only Warrior
+	info |goto Silithus,0,400
+    'Take the Lift down from Freewind Post...|goto Thousand Needles,46.97,48.79|title Go down the Lift
+    'Enter Splithoof Hold cave north...|goto Thousand Needles,44.12,37.15|title Enter Cave and Hug left side of cave
+	info 
+    'In the cave, keep hugging the left side until you get to the Ancient Brazier, kill two Flame Guards and then loot it.|goto Thousand Needles,42.02,31.46|title Click on: Ancient Brazier|icon Interface\\cursor\\Attack
+	.collect Cloven Hoof##5869|q 1197/1|icon Interface\\icons\\ability_warstomp
+    info 
+	'NOTE: Save Retaliation for the two Flame Guards if you have to. Ranged reset one while you kill the other if possible. Grouping is encouraged.|icon Interface\\cursor\\Directions|only Warrior
 
 step //5
-    'Take the Lift down from Freewind Post...|goto Thousand Needles,46.97,48.79
-    'Enter the cave north...|goto Thousand Needles,44.12,37.15
-    'In the cave, keep hugging the left side until you get to the Sparklematic 5200, then loot it.|goto Thousand Needles,42.02,31.46
-    only !Warrior
-
-step //6
     'Grind west to Whitereach Post:|goto Thousand Needles,21.50,32.42
     .talk Motega Firemane##10428
     ..turnin Serpent Wild##4865
     ..accept Sacred Fire##5062
-
-step //7
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info 
+    'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions
+	.kill Galak Messenger##10617|n
+    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	
+step //6
     'Next to you:|goto Thousand Needles,21.43,32.55
     .talk Wizlo Bearingshiner##10941
     ..accept Hypercapacitor Gizmo##5151
-    ..turnin A Different Approach##9431|only TBC or WOTLK
-    ..accept A Dip in the Moonwell##9433|only TBC or WOTLK
+    ..turnin A Different Approach##9431
+    ..accept A Dip in the Moonwell##9433
+
+step //7
+    .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
+    ..turnin Assassination Plot##4881
+	info     Only if you get Assassination Note item from the Galak Messenger
+    ..accept Protect Kanati Greycloud##4966
+	info 
+    'Do the quick escort quest. Make sure you are prepared, three centaurs will just come charging in from the northeast!
+    .goal Protect Kanati Greycloud|q 4966/1
+    ..turnin Protect Kanati Greycloud##4966
+	info 
+	'If you didn't get the Assassination Note item yet just skip this part, we will do it later.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
 
 step //8
-    'NOTE: Keep an eye out for the Galak Messenger##10617 and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item which starts a quest. Accept it if you can.
-    .accept Assassination Plot##4881|optional
+    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
+	.collect 10 Incendia Agave##12732|q 5062/1|icon Interface\\icons\\inv_misc_herb_15
+    info 
+	'TIP: Use Find Herbs to help locate these easier.|icon Interface\\cursor\\Directions
+	.cast Find Herbs##2383|n
+    info 
+	'TIP: Try to only fight Scalding Elementals, as they don't reduce your hit chance like the Boilings do.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'TIPS: Boiling Elementals are immune to Immolate and Fear. They hit hard. Don't forget Banish if you get overwhelmed. Might want to use Consume Shadows to keep Voidwalker topped off between fights.|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	'TIPS: Boiling Elementals are immune to frost and have good fire resist. They hit hard. Use arcane damage on them if you can.|icon Interface\\icons\\inv_staff_13|only Mage
+    info |only Mage,Warrior,Warlock
+	'Skip this if it becomes too difficult.|icon Interface\\cursor\\Directions|only Mage,Warrior
+	info |only Mage,Warrior
+	info 
+    'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
+	.kill Galak Messenger##10617|n
+    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 step //9
-    .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
-    ..turnin Assassination Plot##4881|only QUEST[4881]<=COMPLETED or QUEST[4966]>=TURNEDIN
-    ..accept Protect Kanati Greycloud##4966
+	info |goto Silithus,0,400
+    'Kill/loot Steelsnap. This hyena patrols counter-clockwise around a somewhat large circle and has two bodyguards. |goto Thousand Needles,17.21,18.94|title Kill/loot: Steelsnap (spawns here)|icon Interface\\cursor\\Attack
+	'Original spawn is in Camp E'thok.|goto Thousand Needles,18.46,26.53|title Kill/loot: Steelsnap (starting here)
+	.kill Steelsnap##4548|n
+	.collect Steelsnap's Rib##5837|q 1131/1|icon Interface\\icons\\inv_misc_bone_02
+    info |only Druid
+	'TIPS: Hibernate Steelsnap, Root one add, kill the third. Run away and heal. Return. Hibernate Steelsnap and kill second add.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info 
+    'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
+	.kill Galak Messenger##10617|n
+    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
-    'Do the quick escort quest. Make sure you are prepared!
-    .complete Protect Kanati Greycloud##4966
-    ..turnin Protect Kanati Greycloud##4966|only QUEST[4966]>=COMPLETED
+// step //20
+//    'Kill/loot Gravelsnout Surveyors or Gravelsnout Diggers until|goto Thousand Needles,12.8,16.8|icon Interface\\cursor\\Attack
+//	'Unrefined Ore Sample drops.|icon Interface\\icons\\inv_stone_16
+//    .collect Unrefined Ore Sample##5842|q 1153/1|icon Interface\\icons\\inv_stone_16
+//	.kill Gravelsnout Surveyors##4116|n
+//	.kill Gravelsnout Diggers4113|n
+//	info      Skip this if you already did it.
+//	info 
+//	'NOTE: Drop rate is about 20%, but there are only a few mob spawns at the bottom of the pinnacles. If you run out of mobs, skip for now and check later.|icon Interface\\cursor\\Directions
 
 step //10
-    'Get resupplied at Brave Moonhorn.|goto Thousand Needles,21.06,31.87
-    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info |goto Silithus,0,400
+    'Go west and enter the bottom mountain ramp, then use your quest item|goto Thousand Needles,11.97,18.79|title Enter Mountain ramp
+	'Robotron Control Unit at the Concealed Control Panel at the bottom of the mesa. Then Control your robot to the Alliance moonwell close by and use its collect water ability in it.|goto Thousand Needles,9.45,18.69|title Concealed Control Panel|icon Interface\\icons\\inv_gizmo_01
+    info |goto Feralas,89.55,46.31|title Moonwell
+	'NOTE: You must dismiss your pet first in order for this to work right.|icon Interface\\cursor\\Directions|only Warlock,Hunter
+    .collect Thalanaar Moonwell Water##23670|q 9433/1|icon Interface\\icons\\inv_potion_13
 
 step //11
-    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
-    info TIP: Use Find Herbs##2383 to help locate these easier.
-    info TIP: Try to only fight Scalding Elemental##10756, as they don't reduce your hit chance like Boiling Elemental##10757 do.
-    only Warrior
-
-step //12
-    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
-    info TIPS: Boiling Elemental##10757 are immune to Immolate and Fear. They hit hard. Don't forget Banish##710 if overwhelmed. Might want to use Consume Shadows##16358 to keep Voidwalker topped off.
-    only Warlock
-
-step //13
-    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
-    info TIPS: Boiling Elemental##10757 are immune to frost and have good fire resist. They hit hard. Use arcane damage on them.
-    only Mage
-
-step //14
-    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
-    info Skip this if it becomes too difficult.
-    only Mage or Warrior
-
-step //15
-    'Around the Boiling Pool, loot Incendia Agave from the ground and under the water.|goto Thousand Needles,35.49,35.08
-    only !Mage and !Warrior and !Warlock
-
-step //16
-    'NOTE: Kill/loot Galak Messenger##10617 if you see this centaur. He drops an item which starts a quest.
-    .accept Assassination Plot##4881|optional
-
-step //17
-    'Kill/loot Steelsnap##4548. This hyena patrols counter-clockwise around a somewhat large circle and has two bodyguards. Original spawn is in Camp E'thok.|goto Thousand Needles,18.46,26.53
-    info TIPS: Hibernate Steelsnap, Root one add, kill the third. Run away and heal. Return. Hibernate Steelsnap and kill second add.
-
-    only Druid
-
-step //18
-    'Kill/loot Steelsnap##4548. This hyena patrols counter-clockwise around a somewhat large circle and has two bodyguards. Original spawn is in Camp E'thok.|goto Thousand Needles,18.46,26.53
-    only !Druid
-
-step //19
-    'NOTE: Kill/loot Galak Messenger##10617 if you see this centaur. He drops an item which starts a quest.
-    .accept Assassination Plot##4881|optional
-
-step //20
-    'Kill/loot Gravelsnout Surveyors##4116 or Gravelsnout Diggers##4113 until an Unrefined Ore Sample##5842 drops.|goto Thousand Needles,12.8,16.8
-    info NOTE: Drop rate is about 20%, but there are only a few mob spawns at the bottom of the pinnacles.
-
-step //21
-    'Kill/loot Gravelsnout Surveyors##4116 or Gravelsnout Diggers##4113 until an Unrefined Ore Sample##5842 drops.|goto Thousand Needles,12.8,16.8
-    info NOTE: Drop rate is about 20%, but there are only a few mob spawns at the bottom of the pinnacles. If you run out of mobs, skip for now and check later.
-
-step //22
-    'Go west and enter the bottom mountain ramp, then use your quest item at the Concealed Control Panel at the bottom of the mesa. Control your robot to the Alliance moonwell and use its collect water ability.|goto Thousand Needles,11.97,18.79
-    info NOTE: You must dismiss your pet first for this to work.
-    .use Admin Key##23675
-    only Warlock or Hunter
-    only TBC or WOTLK
-
-step //23
-    'Go up mountain ramp to enter Darkcloud Pinnacle...|goto Thousand Needles,14.04,32.55
-    info WARNING: Watch out for Heartrazor##5934 (a patrolling rare elite with 12 hour respawn).
-
-step //24
-    'In Darkcloud Pinnacle, watch out for Heartrazor##5934. You can have the escort help kill the rare. It's possible to time it so the rare is out of the way.|goto Thousand Needles,17.89,40.57
+	info |goto Silithus,0,400
+    'Go up mountain ramp to enter Highperch...|goto Thousand Needles,14.04,32.55|title Enter Mountain Ramp
+    info |goto Thousand Needles,15.05,32.07|title Escort Ends Down Here
+    'In Highperch, go up the mountain ramp.  Once up there watch out for Heartrazor (a patrolling rare elite with a 12 hours respawn). You can have the escort try to help you kill the rare elite.  It's also possible to time it so you can start and complete the escort so the rare is out of the way (just as he passes from the escortee).|goto Thousand Needles,17.89,40.57|title Pao'ka Swiftmountain
+	.talk Heartrazor##5934|n
+	info 
+	'Accept and do the escort quest there:
     .talk Pao'ka Swiftmountain##10427
     ..accept Homeward Bound##4770
-    'Follow Pao'ka Swiftmountain out of Darkcloud Pinnacle.
-    .complete Homeward Bound##4770
-    info NOTE: If you fail, this escort can be skipped/abandoned.
+    .goal Escort Pao'ka from Highperch|q 4770/1
+    info 
+	'NOTE: If you fail, this escort can be skipped/abandoned.|icon Interface\\cursor\\Directions
+	info 
+    'Around Highperch, loot eggs on ground.|goto Thousand Needles,12.04,35.12|title Eggs around the area
+    .collect 10 Highperch Wyvern Egg##12356|q 4767/1|n|icon Interface\\icons\\inv_egg_02
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
 
-step //25
+step //12
+    'Around Highperch, loot eggs on ground.|goto Thousand Needles,12.04,35.12|title Around the area
+    .collect 10 Highperch Wyvern Egg##12356|q 4767/1|icon Interface\\icons\\inv_egg_02
 
-    'Around Darkcloud Pinnacle, loot Broodling Essence eggs on ground.|goto Thousand Needles,12.04,35.12
-    .collect 8 Broodling Essence##12283|q 4767/1
-
-step //26
-    'Kill/loot Gravelsnout Surveyors##4116 or Gravelsnout Diggers##4113 until an Unrefined Ore Sample##5842 drops.|goto Thousand Needles,12.8,16.8
-
-step //27
-    'Hearth to Thunder Bluff.|goto Thousand Needles,46.14,51.71
+step //13
+    'Hearth to Thunder Bluff.
     .use Hearthstone##6948
-    only ZONE~=Thunder Bluff
-
-step //28
+	info 
     'At Thunder Bluff, go to The Hunter Rise:|goto Thunder Bluff,61.54,80.91
     .talk Melor Stonehoof##3441
     ..turnin Steelsnap##1131
     ..accept Frostmaw##1136
 
-step //29
-    'If you haven't got all your level 28 spells/abilities yet, do so now. Hunters go next to you on The Hunter Rise.|goto Thunder Bluff,59.15,86.91
-    only Hunter
+step //14
+    'If you haven't got all your level 28 spells/abilities you need yet, do so now. Hunters go next to you on The Hunter Rise.|goto Thunder Bluff,59.15,86.91|title Hunter Trainer|only Hunter
+    'If you haven't got all your level 28 spells/abilities you need yet, do so now. Warriors go to The Hunter Rise.|goto Thunder Bluff,57.59,85.51|title Warrior Trainer|only Warrior
+	'If you haven't got all your level 28 spells/abilities you need yet, do so now. You can find the Druid Trainers at Elder Rise.|goto Thunder Bluff,76.77,27.17|title Druid Trainers|only Druid
+	'If you haven't got all your level 28 spells/abilities you need yet, do so now. You can find the Shaman Trainers at The Spirit Rise.|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|only Shaman
+	'Priests, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainer|only Priest
+	'Mages, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainer|only Mage
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior,Hunter,Druid,Shaman,Priest,Mage
+// only !Paladin,!Warlock
 
-step //30
-    'If you haven't got all your level 28 spells/abilities yet, do so now. Warriors go to The Hunter Rise.|goto Thunder Bluff,57.59,85.51
-    only Warrior
-
-step //31
+step //15
     'At The Elder Rise:|goto Thunder Bluff,69.85,30.92
     .talk Magatha Grimtotem##4046
     ..turnin Sacred Fire##5062
-    ..accept Arikara##5088
+    ..accept Arikara##5088    
 
-step //32
-    'Priests, get new spells/abilities in the cave.|goto Thunder Bluff,24.56,22.58
-    only Priest
-
-step //33
-    'Mages, get new spells/abilities in the cave.|goto Thunder Bluff,22.74,14.52
-    only Mage
-
-step //34
-    'Get new spells/abilities from Shaman Trainers at The Spirit Rise.|goto Thunder Bluff,22.81,21.12
-    only Shaman
-
-
-step //35
-    'Get new spells/abilities from Druid Trainers.|goto Thunder Bluff,76.77,27.17
-    only Druid
-
-step //36
+step //16
     'At the top of the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.84
+	'From the Wind Rider Master,|icon Interface\\minimap\\Tracking\\Flightmaster
+	'Take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c
     .talk Tal##2995
-    ..fpath Freewind Post
 
-step //37
+step //17
     'Right when you land back at Freewind Post:|goto Thousand Needles,44.84,48.96
     .talk Elu##10377
     ..turnin Wind Rider##4767
-    info NOTE: I recommend saving the quest reward and using it for these boots##15458 and this chest piece##15471.
-    only Shaman or Hunter
+    info 
+	'NOTE: I recommend saving the Heavy Armor Kit quest reward , and using it at the end of the next section for Tundra Boots and Brawnhide Armor chest piece.|icon Interface\\cursor\\Directions|only Shaman,Hunter
 
-step //38
+step //18
     'In the Inn, set your hearthstone:|goto Thousand Needles,46.14,51.71
     .talk Innkeeper Abeqwa##11116
     .home Freewind Post|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
     'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
 
-step //39
+step //19
     'Next to you in the Inn:|goto Thousand Needles,46.07,51.51
     .talk Rau Cliffrunner##4722
     ..turnin The Sacred Flame##1197
 
-step //40
-    'Go up the mountain ramp to enter Shimmering Flats...|goto Thousand Needles,31.54,36.65
-    info WARNING: A rare kobold Harb Foulmountain##14426 can be patrolling around the pinnacles. He has a knock back which could knock you off!
+step //20
+	info |goto Silithus,0,400
+    'Go up the mountain ramp that allows you to enter Darkcloud Pinnacle...|goto Thousand Needles,31.54,36.65|title Go up the mountain ramp
+    info 
+	'Once at the top, cross the bridges up in Darkcloud Pinnacle until you get to the Document Chest #1 and loot it.|goto Thousand Needles,31.78,32.57|title Secret Note #1
+	.collect Secret Note #1##12765|q 5064/1|icon Interface\\icons\\inv_scroll_07
+	info |route Thousand Needles,31.54,36.65;33.11,35.04;32.60,31.89;32.00,31.08;32.57,27.78;33.38,28.78;34.87,32.20;33.94,36.28;33.18,35.94;31.78,32.57|title Go up across bridges
+	'WARNING: A rare Tauren Harb Foulmountain##14426 can be patrolling around the pinnacles. He has a knock back which could knock you off!|icon Interface\\cursor\\Directions
+	.talk Harb Foulmountain##14426|n
 
-step //41
-    'Cross the bridges up in Shimmering Flats until you get to the Head of Rend Blackhand #1 and loot it.|goto Thousand Needles,31.78,32.57
-    .get Head of Rend Blackhand##12630|q 5064/1
+step //21
+    'Cross the bridge and in the hut, loot Document Chest #2.|goto Thousand Needles,33.76,39.99
+    .collect Secret Note #2##12766|q 5064/2|icon Interface\\icons\\inv_scroll_07
 
-step //42
-    'Cross the bridge and in the hut, loot Fiery Plate Gauntlets #2.|goto Thousand Needles,33.76,39.99
-    .get Fiery Plate Gauntlets##12631|q 5064/2
+step //22
+    'Cross the bridge and in the hut, loot Document Chest #3.|goto Thousand Needles,39.35,41.53
+    .collect Secret Note #3##12768|q 5064/3|icon Interface\\icons\\inv_scroll_07
 
-step //43
-    'Cross the bridge and in the hut, loot Storm Gauntlets #3.|goto Thousand Needles,39.35,41.53
-    .get Storm Gauntlets##12632|q 5064/3
+step //23
+    'Go over to the other pinnacle and click on the Altar in the middle, then kill/loot Arikara (lvl 28 elite).|goto Thousand Needles,38.02,35.34
+	.kill Arikara##10882|n
+	.collect Arikara Serpent Skin##12925|q 5088/1|icon Interface\\icons\\inv_misc_monsterscales_16
+    info |route Thousand Needles,35.49,39.22;34.30,35.33;35.76,31.05;37.19,33.28;38.02,35.34|title Go across bridges and click on the Altar
+	'TIP: Use Hibernate and Starfire.|icon Interface\\cursor\\Directions|only Druid
+	info |only Druid
+	'WARNING: Hardcore players may want to skip this if not confident.|icon Interface\\cursor\\Directions
 
+step //24
+    'Over at the other pinnacle, kill/loot Arnak Grimtotem.|goto Thousand Needles,38.09,26.84
+	.kill Grimtotem##10896|n
+	.collect Arnak's Hoof##12884|q 5147/1|icon Interface\\icons\\inv_misc_foot_centaur
+    info |route Thousand Needles,37.76,31.32;39.00,29.20;38.09,26.84|title Go across bridge
+	'WARNING: A rare Tauren Harb Foulmountain can be patrolling around the pinnacles. He has a knock back which could knock you off!|icon Interface\\cursor\\Directions
+	.talk Harb Foulmountain##14426|n
 
-step //44
-    'Go over to the other pinnacle and click on the Altar in the middle, then kill/loot Arikara##10882 (lvl 28 elite).|goto Thousand Needles,38.02,35.34
-    info TIP: Use Hibernate and Starfire.
-    only Druid
-    only ERA or SOM1 or SOM2
-
-step //45
-    'Go over to the other pinnacle and click on the Altar in the middle, then kill/loot Arikara##10882 (lvl 28 elite).|goto Thousand Needles,38.02,35.34
-    info WARNING: Hardcore players may want to skip this if not confident.
-    only !Druid
-    only ERA or SOM1 or SOM2
-
-step //46
-    'Go over to the other pinnacle and click on the Altar in the middle, then kill/loot Arikara##10882 (lvl 28).|goto Thousand Needles,38.02,35.34
-    only WOTLK
-
-step //47
-    'Over at the other pinnacle, kill/loot Arnak Grimtotem##10896.|goto Thousand Needles,38.09,26.84
-    info WARNING: A rare kobold Harb Foulmountain##14426 can be patrolling. He has a knock back!
-
-step //48
-    'Do the escort: escort Lakota Windsong##10646 all the way out of Shimmering Flats.|goto Thousand Needles,37.98,26.45
+step //25
+    'Do the escort (same area): escort Lakota Windsong all the way out of Darkcloud Pinnacle.|goto Thousand Needles,37.98,26.45|title Escort Lakota Windsong
+	.talk Lakota Windsong##10646
     ..accept Free at Last##4904
-    info NOTE: Be prepared for multiple spawns at each pinnacle!
-    .complete Free at Last##4904
-    info NOTE: This escort can be difficult, skip if not confident!
-    only Hardcore
+    info |goto Thousand Needles,30.51,36.19|title Escort Ends Here
+	'NOTE: Be prepared for multiple spawns happening at each pinnacle!|icon Interface\\cursor\\Directions
+    .goal Escort Lakota Windsong from the Darkcloud Pinnacle|q 4904/1
+    info |route Thousand Needles,37.98,26.45;38.85,29.76;37.43,31.71;36.79,31.69;35.51,31.03;34.42,30.59;33.13,28.39;32.28,28.80;32.14,31.63;32.93,32.85;32.96,35.64;30.51,36.19|title Go across bridges and follow waypoints
+	'Hardcore Player: This escort can be difficult, skip if not confident!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
 
-step //49
-    'Do the escort: escort Lakota Windsong##10646 all the way out of Shimmering Flats.|goto Thousand Needles,37.98,26.45
-    ..accept Free at Last##4904
-    info NOTE: Be prepared for multiple spawns at each pinnacle!
-    .complete Free at Last##4904
-    only !Hardcore
-
-step //50
+step //26
     'At Whitereach Post:|goto Thousand Needles,21.50,32.42
     .talk Motega Firemane##10428
-    ..turnin Homeward Bound##4770|only QUEST[4770]>=COMPLETED
-    ..turnin Arikara##5088|only QUEST[5088]>=COMPLETED
+    ..turnin Homeward Bound##4770
+	info     only if you Escorted Pao'ka from Highperch
+    ..turnin Arikara##5088
+	info     only if you killed Arikara
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
 
-
-step //51
-    'Next to you:|goto Thousand Needles,21.43,32.55
+step //27
+    'Next to you:|goto Thousand Needles,21.43,32.55|title Wizlo Bearingshiner
     .talk Wizlo Bearingshiner##10941
-    ..turnin A Dip in the Moonwell##9433|only TBC or WOTLK
-    ..accept Testing the Tonic##9434|only TBC or WOTLK
-
-step //52
-    'Get resupplied at Brave Moonhorn.|goto Thousand Needles,21.06,31.87
+    ..turnin A Dip in the Moonwell##9433
+    ..accept Testing the Tonic##9434
+	info 
+	.talk Laer Stepperunner##3689|goto Thousand Needles,21.06,31.87|title Laer Stepperunner
     'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info 
+    'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
+	.kill Galak Messenger##10617|n
+    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
-step //53
-    'NOTE: Kill/loot Galak Messenger##10617 if you see this centaur. He drops an item which starts a quest.
-    .accept Assassination Plot##4881|optional
-
-step //54
+step //28
     .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
-    ..turnin Assassination Plot##4881|only QUEST[4881]>=ACCEPTED
-    ..accept Protect Kanati Greycloud##4966|only QUEST[4966]<=NONE
-    'Do the quick escort quest. Make sure you are prepared!
-    .complete Protect Kanati Greycloud##4966
-    ..turnin Protect Kanati Greycloud##4966|only QUEST[4966]>=COMPLETED
-    only QUEST[4881]>=ACCEPTED
+    ..turnin Assassination Plot##4881
+	info     Only if you get Assassination Note item from the Galak Messenger
+    ..accept Protect Kanati Greycloud##4966
+	info 
+    'Do the quick escort quest. Make sure you are prepared, three centaurs will just come charging in from the northeast!
+    .goal Protect Kanati Greycloud|q 4966/1
+    ..turnin Protect Kanati Greycloud##4966
+	info 
+	'If you didn't get the Assassination Note item yet just skip this part, we will do it later.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
 
-step //55
-    'Grind to level 29. You can grind at centaurs around Camp E'thok or wyverns at Darkcloud Pinnacle.|goto Thousand Needles,18.71,24.77
+step //29
+	info |goto Silithus,0,400
+    'Grind to level 29. You can grind at centaurs around Camp E'thok|goto Thousand Needles,18.71,24.77|title Around: Camp E'thok
+	'Or wyverns at Darkcloud Pinnacle.|goto Thousand Needles,13.42,33.97|title Mountain ramp entrance
     ding 29
 
-step //56
-    'Clear the mobs around the Panther Cage, open the cage and kill/loot the lvl 30 elite panther.|goto Thousand Needles,22.78,24.53
-    info TIP: Hunters, use immolation trap, fear, wing clip, mend pet.
-    only Hunter
-
-step //57
-    'Clear the mobs around the Panther Cage, open the cage and kill/loot the lvl 30 elite panther.|goto Thousand Needles,22.78,24.53
-    info NOTE: Without help this quest is near impossible to solo, you may need to skip it.
-    only Warrior
-
-step //58
-    'Clear the mobs around the Panther Cage, open the cage and kill/loot the lvl 30 elite panther.|goto Thousand Needles,22.78,24.53
-    info TIP: Use entangling roots, moonfire and starfire.
-    only Druid
-
-
-step //59
-    'Clear the mobs around the Panther Cage, open the cage and kill/loot the lvl 30 elite panther.|goto Thousand Needles,22.78,24.53
-    info WARNING: Hardcore players may want to skip this if not confident.
-    only !Hunter and !Warrior and !Druid
-
-step //60
+step //30
+    'Clear the mobs around the Panther Cage, open the cage and kill/loot the lvl 30 elite panther.|goto Thousand Needles,22.78,24.53|icon Interface\\cursor\\Attack
+	.kill Enraged Panther##10992|n
+	.collect Hypercapacitor Gizmo##12946|q 5151/1|icon Interface\\icons\\inv_gizmo_08
+    info |only Hunter,Warrior,Druid
+	'TIP: Hunters, use immolation trap, fear, wing clip, mend pet, ect... to kill it.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'NOTE: Unfortunately Without help this quest is near impossible to solo, so you may need to skip it.|icon Interface\\icons\\INV_Sword_27|only Warrior,Priest,Paladin
+	'TIP: Use entangling roots, moonfire and starfire to kill the panther.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info 
+	'WARNING: Hardcore players may want to skip this if not confident.|icon Interface\\cursor\\Directions
+	........'Skip This Elite Quest?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //31
     'At Whitereach Post:|goto Thousand Needles,21.43,32.56
     .talk Wizlo Bearingshiner##10941
     ..turnin Hypercapacitor Gizmo##5151
-    only QUEST[5151]>=COMPLETED
+    info       only if you killed the Enraged Panther
 
-step //61
-    'LAST REMINDER: Kill/loot Galak Messenger##10617 if you see this centaur. He drops an item which starts a quest.
-    .accept Assassination Plot##4881|optional
+step //32
+    'LAST REMINDER: Kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
+	.kill Galak Messenger##10617|n
+    .accept Assassination Plot##4881|icon Interface\\cursor\\Quest
 
-step //62
+step //33
     .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
-    ..turnin Assassination Plot##4881|only QUEST[4881]>=ACCEPTED
-    ..accept Protect Kanati Greycloud##4966|only QUEST[4966]<=NONE
-    .complete Protect Kanati Greycloud##4966
-    ..turnin Protect Kanati Greycloud##4966|only QUEST[4966]>=COMPLETED
-    only QUEST[4881]>=ACCEPTED
+    ..turnin Assassination Plot##4881
+	info     Only if you get Assassination Note item from the Galak Messenger
+    ..accept Protect Kanati Greycloud##4966
+	info 
+    'Do the quick escort quest. Make sure you are prepared, three centaurs will just come charging in from the northeast!
+    .goal Protect Kanati Greycloud|q 4966/1
+    ..turnin Protect Kanati Greycloud##4966
+	info 
+	'If you didn't get the Assassination Note item just skip this part.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
 
-step //63
-    'Grind until you achieve this. You can grind at centaurs around Camp E'thok or wyverns at Darkcloud Pinnacle.|goto Thousand Needles,18.71,24.77
-    ding 29|xp 37400|only QUEST[4904]>=COMPLETED
-    ding 29|xp 39650|only QUEST[4904]<=ACCEPTED
+step //34
+    'Grind until you achieve level 29 with 37400 XP if you escorted Lakota Windsong from the Darkcloud Pinnacle or level 29 and 39650 XP if you didn't do this quest. You can grind at centaurs around Camp E'thok|goto Thousand Needles,18.71,24.77|title Around: Camp E'thok
+	'Or wyverns at Darkcloud Pinnacle.|goto Thousand Needles,13.42,33.97|title Mountain ramp entrance
+	info 
+	'Reach level 29 and 37 400 XP (or 39 650 if you didn't completed the Lakota Windsong escort, Free at Last quest) before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
-    only LEVELD>29.5
+//    ding 29|xp 37400|only QUEST[4904]>=COMPLETED
+//    ding 29|xp 39650|only QUEST[4904]<=ACCEPTED
 
-step //64
-    'OPTIONAL Felhunter: The first thing to do is make sure you are at least 4 bars away from lvl 30 (but only if you have Free at Last, Official Section Head, Wanted - Arnak Grimtotem, and Message in a Bottle finished and needed to be turned in). The goal is to be lvl 30 before going to Hillsbrad soon.
-    ding 29|xp 35440
+step //35
+    'OPTIONAL Felhunter: The first thing to do is before hearthing to Freewind Post, make sure you are at least 4 bars away from lvl 30, which is level 29 and 37790 XP (but only if you have Free at Last, Grimtotem Spying, Wanted - Arnak Grimtotem finished and needed to be turned in). If not you may need more bars needed. The goal is to be lvl 30 before going to Orgrimmar soon.|icon Interface\\cursor\\Directions
+	info 
+	'If you want the Felhunter then grind to XP below, if not skip this.|icon Interface\\cursor\\Directions
+	info 
+    'Reach level 29 and 37 790 XP before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
-step //65
-    'Use your Teleport: Moonglade##19027 spell to take you to Moonglade.|goto Moonglade,52.53,40.57
+step //36
+    'Use your Teleport: Moonglade spell to take you to Moonglade if you are level 30. Skip otherwise.|goto Moonglade,56.3,32.5|c|title Go to Moonglade
+	.cast Teleport: Moonglade##19027
+	info 
+	info                         Skip this if you are not level 30
+	............'I'm level 30|confirm|next +1|icon Interface\\cursor\\Point
+	..........'I'm not level 30|confirm|next +2|icon Interface\\cursor\\Point
+	
     only Druid
-    only LEVEL>=30
+//    only LEVEL>=30
 
-
-step //66
-    'Head SW a bit to the Druid Trainer next to the Nighthaven to get your level 30 spells/abilities.|goto Moonglade,52.53,40.57
-    info NOTE: If gold is tight, you can skip some spells.
+step //37
+    'Head SW a bit to the Druid Trainer next to the Nighthaven to get your level 30 spells/abilities.|goto Moonglade,52.53,40.56|title Loganaar
+	.talk Loganaar##12042
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    info 
+	'NOTE: If gold is tight, you can skip some spells.|icon Interface\\cursor\\Directions
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Druid
-    only LEVEL>=30
+//    only LEVEL>=30
 
-step //67
-    'Hearth to Freewind Post.|goto Thousand Needles,45.53,50.21
+step //38
+    'Hearth to Freewind Post.|goto Thousand Needles,46.14,51.71|title Hearth to Freewind Post|c
     .use Hearthstone##6948
-    only !WITHIN[1]
 
-step //68
+step //39
     'In the Inn:|goto Thousand Needles,45.97,51.61
     .talk Thalia Amberhide##10645
     ..turnin Free at Last##4904
-    only QUEST[4904]>=COMPLETED
-
-step //69
+    info     only if you escorted Lakota Windsong from the Darkcloud Pinnacle
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //40
     'Just outside the Inn on your right:|goto Thousand Needles,46.21,50.40
     .talk Magistrix Elosai##17093
     ..turnin Testing the Tonic##9434
-    only TBC or WOTLK
 
-step //70
-    'Just outside the Inn by the Bonfire:|goto Thousand Needles,45.67,50.70
+step //41
+    'By the Bonfire:|goto Thousand Needles,45.67,50.70
     .talk Cliffwatcher Longhorn##10537
     ..turnin Grimtotem Spying##5064
     ..turnin Wanted - Arnak Grimtotem##5147
-    info NOTE: I recommend using the quest reward for these boots##15458 and this chest piece##15471.
-    only Shaman or Hunter
+	info 
+	'NOTE: I recommend saving the Heavy Armor Kit quest reward , and using it at the end of the next section for Tundra Boots and Brawnhide Armor chest piece.|icon Interface\\cursor\\Directions|only Shaman,Hunter
+	
+step //42
+    'Grind on any mobs in 1k Needles until you get level 29 and 44650 XP at least. If you can get level 30 to get your new spells/abilities, do it, but it's not mandatory.
+	info 
+	'Reach level 29 and 44 650 XP before continuing|optional
+    ..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
 
-step //71
-    'Just outside the Inn by the Bonfire:|goto Thousand Needles,45.67,50.70
-    .talk Cliffwatcher Longhorn##10537
-    ..turnin Grimtotem Spying##5064
-    ..turnin Wanted - Arnak Grimtotem##5147
-    only !Shaman and !Hunter
-
-step //72
-    'Grind on any mobs in 1k Needles until you achieve this.
-    ding 29|xp 41300|only (SOM1 or SOM2) and QUEST[1153]==COMPLETED
-    ding 29|xp 42300|only (TBC or WOTLK) and QUEST[1153]==COMPLETED
-    ding 29|xp 43650|only (SOM1 or SOM2) and QUEST[1153]~=COMPLETED
-    ding 29|xp 44650|only (TBC or WOTLK) and QUEST[1153]~=COMPLETED
-
-    only SOM1 or SOM2 or TBC or WOTLK
-
-step //73
-    'In Freewind Post:|goto Thousand Needles,45.15,49.10
+step //43
+	'Use your Teleport: Orgrimmar to get to Orgrimmar or take the flight if you can't use this spell.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|only Mage
+	.cast Teleport: Orgrimmar##3567|only Mage
+	info |only Mage
+	'In Freewind Post:|goto Thousand Needles,45.15,49.10
     .talk Nyse##4317
-    ..fpath Ratchet|only QUEST[1153]==COMPLETED
-    ..fpath Crossroads|only QUEST[1153]~=COMPLETED
-    only !Mage or (MAGE and (ITEM[17031]==0 or not SPELL[3567]))
+    'From the Wind Rider Master, take a flight to Orgrimmar.|goto Orgrimmar,45.13,63.89|c|title Ride to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster	
+	.........'Click When Done|confirm|next +1|n|icon Interface\\cursor\\Point|only Mage
 
-step //74
-    'Use your Teleport: Orgrimmar##3567 to get to Orgrimmar.
+step //44
+    'Get your level 30 spells/abilities. Mage Trainers are down at The Valley of Spirits in the hut.|goto Orgrimmar,38.79,85.66|title Mage Trainers|icon Interface\\icons\\inv_staff_13|only Mage
+	'Get your level 30 spells/abilities at the Valley of Wisdom in the hut at NE of Orgrimmar.|goto Orgrimmar,38.80,36.37|title Shaman Trainers|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+    .talk Searn Firewarder##5892|only Shaman
+	..accept Call of Air##1531|only Shaman
+	'Get your level 30 spells/abilities at the Valley of Wisdom in the hut at NE of Orgrimmar.|goto Orgrimmar,32.26,35.72|title Paladin Trainers|icon Interface\\icons\\INV_Hammer_01|only Paladin
+	'Get your level 30 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,48.48,45.43|title Warlock Trainers|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	'Get your level 30 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,43.05,53.73|title Rogue Trainers|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	'Get your level 30 spells/abilities. Priest Trainers are at The Valley of Spirits in the hut.|goto Orgrimmar,35.60,87.83|title Priest Trainers|icon Interface\\icons\\inv_staff_30|only Priest
+	'Once at Orgrimmar, get new spells/abilities. Hunter Trainers are NE at the Valley of Honor.|goto Orgrimmar,66.05,18.52|title Hunter Trainers|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	info |only Paladin,Warlock
+	'NOTE: Make sure you learn Summon Warhorse to get your free mount!|icon Interface\\cursor\\Directions|only Paladin
+	'NOTE: Make sure you get Summon Felsteed (free lvl 30 Warlock mount).|icon Interface\\cursor\\Directions|only Warlock
+    info |only Warlock
+	'Felhunter: Only accept if doing the Felhunter minion questline.|only Warlock
+    .talk Gan'rul Bloodeye##5875|only Warlock
+    ..accept Seeking Strahad##2996|only Warlock
+	info 
+	info                         Skip if you are not level 30!
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+	only Paladin,Hunter,Shaman,Rogue,Priest,Warlock,Mage
+// only !Druid,Warrior
+
+step //45
+	'Go up the stairs and learn|goto Orgrimmar,38.68,85.41|title Thuul (upstairs)
+	'Teleport: Orgrimmar from the Portal Trainer if you don't have it. Skip otherwise.|icon Interface\\icons\\spell_arcane_teleportorgrimmar
+    .talk Thuul##5958
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
-    only SPELL[3567]
 
-step //75
-    'At Ratchet:|goto The Barrens,45.10,57.69
-    .talk Tatternack Steelforge##3433
-    ..turnin A New Ore Sample##1153
-    only QUEST[1153]>=COMPLETED
-
-step //76
-    'At Ratchet:|goto The Barrens,44.45,59.16
-    .talk Nyse##4317
-    ..fpath Crossroads
-    only QUEST[1153]>=COMPLETED
-
-step //77
-    'Get your level 30 spells/abilities. Mage Trainers are down in the hut.|goto Orgrimmar,38.79,85.66
-    only Mage
-    only LEVEL>=30 and SPELL[3567]
-
-step //78
-    'Go up the stairs and learn Teleport: Orgrimmar##3567 from the Portal Trainer.|goto Orgrimmar,38.68,85.41
-    info NOTE: You will get Rune of Teleportation##17031 once we get to Undercity.
-    only Mage
-    only LEVEL>=30
-
-step //79
-    'Get your level 30 spells/abilities at the hut NE of Orgrimmar.|goto Orgrimmar,38.80,36.37
-    .talk Searn Firewarder##5892
-    ..accept Call of Air##1531|only LEVEL>=30
-    only Shaman
-    only LEVEL>=30
-
-step //80
-
-    'Get your level 30 spells/abilities at the hut NE of Orgrimmar.|goto Orgrimmar,32.26,35.72
-    info NOTE: Make sure you learn Summon Charger##34769 to get your mount!
-    only Paladin
-    only LEVEL>=30
-
-step //81
-    'Get your level 30 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,48.48,45.43
-    info NOTE: Make sure you get Summon Felsteed##5784 (free lvl 30 Warlock mount).
-    info OPTIONAL Felhunter: Only accept if doing the Felhunter minion questline.
-    .talk Gan'rul Bloodeye##5875
-    ..accept Seeking Strahad##2996|only LEVEL>=30
-    only Warlock
-    only LEVEL>=30
-
-step //82
-    'Get your level 30 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,43.05,53.73
-    only Rogue
-    only LEVEL>=30
-
-step //83
-    'Get your level 30 spells/abilities. Priest Trainers are at the hut.|goto Orgrimmar,35.60,87.83
-    only Priest
-    only LEVEL>=30
-
-step //84
-    'Once at Orgrimmar, get new spells/abilities. Hunter Trainers are NE at the building.|goto Orgrimmar,66.05,18.52
-    only Hunter
-    only LEVEL>=30
-
-step //85
-    'Go NE and train Thunder Clap R4 and skip the rest. Accept your class quest.|goto Orgrimmar,80.39,32.39
-    .talk Sorek##3354
-    ..accept The Islander##1718
-    only Warrior
-    only LEVEL>=30
-
-step //86
-    'Make sure you learn Growl##14918 R4 from the Pet Trainer.|goto Orgrimmar,66.32,14.79
+step //46
+    'Make sure you learn Growl R4 from the Pet Trainer.|goto Orgrimmar,66.32,14.79
     .talk Ormak Grimshot##3352
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.......'Only For TBC/Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
-    only LEVEL>=30
-    only !WOTLK
 
-step //87
-    'It's time to begin the daunting, but immensely rewarding, quest for your Whirlwind Axe##6975. First you need 8 
-
-Liferoot##3357. If you bought some from the vendor in 1k Needles, buy what you need. Now search for 8 Burning Charm##4479, 8 Cresting Charm##4481, and 8 Thundering Charm##4480 - you will have to farm these later.
-    only Warrior
-
-step //88
+step //47
     'In the Inn, from the Innkeeper:|goto Orgrimmar,54.10,68.39
     .talk Innkeeper Gryshka##6929
     .home Orgrimmar|icon Interface\\minimap\\Tracking\\Innkeeper
+//    only Warrior
+
+step //48
+    'At the Bank, deposit the Kodo Skin Scroll.|goto Orgrimmar,49.88,70.46
+	info |only !Druid
+	'Withdraw Swim Speed Potion from the bank. See if you can get some, potentially from the AH.|only !Druid
+    .collect Swim Speed Potion##6372|n|icon Interface\\icons\\inv_potion_13|only !Druid
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only !Druid
+
+step //49
+    'At level 30 mounts become available. If you are level 30 and have the gold, get your mount ASAP. It differs by class/race and costs roughly 45 gold. Check out my Mount Guide (www.joanasworld.com/mounts.php) on where to find your mount trainer & vendor.  My guide will remind you once more at level 40 for this.
+	.........'Only For TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+	only Warrior,Hunter,Shaman,Druid,Rogue,Priest,Mage
+//	only !Paladin and !Warlock
+
+step //50
+    'Go NE at the Valley of Wisdom and train Rend R4 and skip the rest. Accept your class quest.|goto Orgrimmar,80.39,32.39
+    .talk Sorek##3354
+    ..accept The Islander##1718
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	info                         Skip if you are not level 30!
+	...........'I am level 30|confirm|next +1|icon Interface\\cursor\\Point
+	..........'I'm not level 30|confirm|next +8|icon Interface\\cursor\\Point
+    only Warrior
+ //   only LEVEL>=30
+ 
+step //51
+    'It's time to begin the daunting, but immensely rewarding, quest for your Whirlwind Axe.  Go check the AH for a few items.  First, you need 8 Liferoot. If you bought some from the vendor Montarr in 1k Needles, buy what you need to get you to 8 total.|icon Interface\\cursor\\QuestTurnIn
+	'Now search for 8 Burning Charm, 8 Cresting Charm, and 8 Thundering Charm - you will have to farm these later.  If there aren't enough up there or you don't have enough money (both of which will be likely), check back a little later.|icon Interface\\cursor\\Directions
+	.collect 8 Liferoot##3357|q 1712/1|icon Interface\\icons\\inv_misc_root_02
+	info                         Skip if you are not level 30!
     only Warrior
 
-step //89
-    'At the Bank, deposit the Kodo Skin Scroll##5838.|goto Orgrimmar,49.88,70.46
-    only !Druid
+step //52
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+	'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Doras##3310
+	info                         Skip if you are not level 30!|only Warrior
+    only Warrior,Warlock
 
-step //90
-    'Withdraw Swim Speed Potion##6372 from the bank. See if you can get some, potentially from the AH.
-    .get Swim Speed Potion##6372
-    only !Druid
-
-step //91
-    'OPTIONAL Felhunter: Up on the platform:|goto Orgrimmar,45.13,63.89
-    .talk Doras##3310
-    ..fpath Camp Taurajo
-    only Warlock
-    only QUEST[2996]>=ACCEPTED
-
-step //92
-    'OPTIONAL Felhunter: At the Crossroads, go up behind the Engineering building:|goto The Barrens,62.63,35.50
+step //53
+    'OPTIONAL Felhunter: At the Ratchet, go up behind the Engineering building and in front of the hut:|goto The Barrens,62.63,35.50
     .talk Strahad Farsan##6251
     ..turnin Seeking Strahad##2996
     ..accept Tome of the Cabal##1801
     only Warlock
-    only QUEST[2996]>=ACCEPTED
+ //   only QUEST[2996]>=ACCEPTED
 
-step //93
-    'OPTIONAL Felhunter: At the Crossroads:|goto The Barrens,63.08,37.16
-    .talk Bragok##16227
-    ..fpath Crossroads
-    only Warlock
-    only QUEST[1801]>=ACCEPTED
-
-step //94
-    'At level 30 mounts become available. If you are level 30 and have the gold, get your mount ASAP. It differs by class/race and costs roughly 45 gold.
-    only !Paladin and !Warlock
-
-    only TBC
-
-step //95
-    'Up on the platform:|goto Orgrimmar,45.13,63.89
-    .talk Doras##3310
-    ..fpath Camp Taurajo
-    only Warrior
-    only LEVEL>=30
-
-step //96
+step //54
     'Go south along the coast then swim east to the island:|goto The Barrens,68.61,49.16
     .talk Klannoc Macleod##6236
     ..turnin The Islander##1718
     ..accept The Affray##1719
+	info                         Skip if you are not level 30!
     only Warrior
-    only LEVEL>=30
 
-step //97
-    'Go stand on the grate next to all the NPCs. Once combat starts, fight the challengers off the grate and away from the NPCs so you can drop combat to eat. Fight the challenger at full health and pop cds.|goto The Barrens,68.60,48.72
-    .complete The Affray##1719
+step //55
+    'Go stand on the grate next to all the NPCs. Once combat starts, fight the challengers off the grate and away from the NPCs a little bit so you can drop combat in between mobs to eat. Fight Big Will at full health and pop cds.|goto The Barrens,68.60,48.72|title Fight challengers here|icon Interface\\cursor\\Attack
+    .kill Big Will##6238|q 1719/1
+	info                         Skip if you are not level 30!
     only Warrior
-    only LEVEL>=30
 
-step //98
+step //56
     'Back at the island:|goto The Barrens,68.61,49.16
     .talk Klannoc Macleod##6236
     ..turnin The Affray##1719
     ..accept The Windwatcher##1791
+	info                         Skip if you are not level 30!
     only Warrior
-    only LEVEL>=30
 
-step //99
-    'Hearth if you can, or take the flight path.|goto The Barrens,63.08,37.16
+step //57
+    'Hearth if you can.
     .use Hearthstone##6948
-    only Warrior
-    only LEVEL>=30
+	info |goto The Barrens,63,37.2|title Take a flight
+	'Or from the Wind Rider Master, take the flight path back to Orgrimmar.|goto Orgrimmar,45.13,63.89|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+	.........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior,Warlock,
 
-step //100
-    'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.84,13.08
-    info NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the STV zeppelin (north landing)!
-    info TIP: You can save time by jumping off the zeppelin at a certain timing!
-    only Shaman or Warrior or (WARLOCK and QUEST[1801]>=ACCEPTED)
+step //57
+    'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.84,13.08|title Zeppelin (south landing)|c
+    info 
+	'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Stranglethorn Vale zeppelin (north landing)!|icon Interface\\cursor\\Directions
+    info 
+	'TIP: You can save time by jumping off the zeppelin at a certain timing!|icon Interface\\cursor\\Directions|only Shaman,Warrior,Warlock
+	'TIP: You can save time by jumping off the zeppelin at a certain timing so you won't die and continue south onto the path!|icon Interface\\cursor\\Directions|only Paladin,Hunter,Druid,Rogue,Priest,Mage
+// WARLOCK and QUEST[1801]>=ACCEPTED)
 
+step //58
+	info |goto Isle of Quel'Danas,600,0.0
+    'Enter Undercity...|goto Undercity,66.27,10.13|title Enter Undercity|only Shaman,Mage,Warlock,Warrior
+	info |only Shaman,Mage,Warlock,Warrior
+	'Get the Fly Path if you never entered in Undercity, skip it if you already have it.|goto Undercity,63.25,48.59|title Get Undercity Fly Path|only Shaman,Mage,Warlock,Warrior
+	.talk Michael Garrett##4551|only Shaman,Mage,Warlock,Warrior
+	.fpath Undercity|icon Interface\\minimap\\Tracking\\FlightMaster|only Shaman,Mage,Warlock,Warrior
+	info |only Shaman
+	'If you did the totems quests you should have the Tarren Mill Fly Path, then fly to Tarren Mill in Hillsbrad Foothills|icon Interface\\cursor\\Directions|only Shaman
+	info |only Mage 
+	'Also go to the Magic Quarter and Learn "Teleport: Undercity" from the portal trainer if you don't have it.|goto Undercity,84.6,16.8|title Portal Trainer|icon Interface\\icons\\spell_arcane_teleportundercity|only Mage
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Mage
+	.talk Lexington Mortaim##2492|only Mage
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+	only Shaman,Mage,Warlock,Warrior
 
-step //101
-    'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.84,13.08
-    info NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the STV zeppelin (north landing)!
-    info TIP: You can save time by jumping off the zeppelin at a certain timing so you won't die and continue south onto the path!
-    only !Shaman and !Warrior and !(WARLOCK and QUEST[1801]>=ACCEPTED)
-
-step //102
-    'Enter Undercity...|goto Undercity,66.27,10.13
-    'The goal now is to go all the way to Hillsbrad Foothills. Follow directions to get there.
-    only Shaman or Warrior or (WARLOCK and QUEST[1801]>=ACCEPTED)
-
-step //103
-    'Enter Tirisfal Glades...|goto Tirisfal Glades,70.19,7.87
-    'The goal now is to go all the way to Hillsbrad Foothills. Follow directions to get there.
-    only !Shaman and !Warrior and !(WARLOCK and QUEST[1801]>=ACCEPTED)
-
-step //104
-    'Use your Teleport: Undercity##3563 to get to Undercity.
+step //60
+	'Drop down and from the Reagent Vendor, purchase up to 10 Runes of Teleportation.
+	info 
+    'NOTES: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|goto Undercity,82.77,15.85|icon Interface\\cursor\\Directions
+	.talk Hannah Akelev##4575
+    .buy 10 Rune of Teleportation##17031|icon Interface\\icons\\inv_misc_rune_06
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
-    only SPELL[3563]
 
-step //105
-    'Go into Undercity and from the Bat Handler:|goto Undercity,63.25,48.55
-    .talk Michael Garrett##4551
-    ..fpath Brill
-    only Warrior
-
-step //106
-    'Exit Undercity...|goto Tirisfal Glades,61.88,64.44
-    only Warrior
-
-step //107
-    'Go into Undercity:|goto Undercity,63.25,48.55
-    .talk Michael Garrett##4551
-    ..fpath Brill
-    only Shaman
-
-step //108
-    'OPTIONAL Felhunter: Go into Undercity and from the Bat Handler:|goto Undercity,63.25,48.55
-    .talk Michael Garrett##4551
-    ..fpath Brill
-    only Warlock
-    only QUEST[1801]>=ACCEPTED
-
-
-step //109
+step //60
     'OPTIONAL Felhunter: At the Magic Quarter:|goto Undercity,75.92,37.91
     .talk Jorah Annison##6293
     ..turnin Tome of the Cabal##1801
     ..accept Tome of the Cabal##1803
     only Warlock
-    only QUEST[1801]>=ACCEPTED
+//    only QUEST[1801]>=ACCEPTED
 
-step //110
-    'Exit Undercity...|goto Tirisfal Glades,61.88,64.44
-    only Warlock
-    only QUEST[1801]>=ACCEPTED
+step //61
+	info |goto Isle of Quel'Danas,600,0.0
+	'If you did the totems quests, you should have the Tarren Mill Fly Path, then fly to Tarren Mill in Hillsbrad Foothills, otherwise follow the rest of the guide:|icon Interface\\cursor\\Directions|only Shaman
+	info |only Shaman
+    'Exit Undercity... (if you entered in)|goto Tirisfal Glades,61.88,64.44|title Exit Undercity|only Shaman,Mage,Warlock,Warrior
+	info |only Shaman,Mage,Warlock
+	'You can just bypass the Undercity for now (no need to get Undercity Flight Path yet)|icon Interface\\cursor\\Directions|only Paladin,Hunter,Druid,Rogue,Priest
+//	|only Shaman,Mage,Warlock,Warrior
+	'Enter Silverpine Forest...The goal now is to go all the way to Hillsbrad Foothills. Follow directions to get there.|goto Silverpine Forest,70.19,7.87|title Enter Silverpine Forest|icon Interface\\CURSOR\\Interact
+	info 
+	.'28-29 Thousand Needles is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 29-30 Hillsbrad Foothills|confirm|next "Joana's Guide\\Horde\\29-30 Hillsbrad Foothills"|icon Interface\\icons\\achievement_zone_hillsbradfoothills
 
-step //111
-	.....'28-29 Thousand Needles is complete!|icon Interface\\cursor\\Directions
-	...'Go to 29-30 Hillsbrad Foothills|confirm|next "Joana's Guide\\Horde\\29-30 Hillsbrad Foothills"|icon Interface\\icons\\achievement_zone_hillsbradfoothills
+// step //76
+//	info |goto Isle of Quel'Danas,600,0.0
+//    'Exit Undercity...|goto Tirisfal Glades,61.88,64.44|title Exit Undercity
+//	info 
+//    'Enter Silverpine Forest...|goto Silverpine Forest,70.19,7.87|title Enter Silverpine Forest
+//	info 
+//	'Go to The Sepulcher to get the Fly Path:
+//	.talk Karos Razok##2226|goto Silverpine Forest,45.62,42.60|title Karos Razok
+//    ..fpath The Sepulcher|icon Interface\\minimap\\Tracking\\FlightMaster
+//	info 
+//    'The goal now is to go all the way to Hillsbrad Foothills. Follow directions to get there.
+//	only !Shaman
+
+// step //111
+//	'After getting the Sepulcher fly path, Run all the way to Tarren Mill in Hillsbrad Foothills and from the Bat Handler:|only !Shaman
+//	..talk Zarise##2389|only !Shaman
+//	..fpath Tarren Mill|goto Hillsbrad Foothills,60.15,18.63|title Zarise|only !Shaman
+//	|route Alterac Mountains,23,53;29.6,94.4;44.6,96.4;58.7,80|title Follow waypoints|only !Shaman
+//	info |only !Shaman
+//	.'28-29 Thousand Needles is complete!|icon Interface\\cursor\\Directions
+//	.....'Go to 29-30 Hillsbrad Foothills|confirm|next "Joana's Guide\\Horde\\29-30 Hillsbrad Foothills"|icon Interface\\icons\\achievement_zone_hillsbradfoothills
 ]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\29-30 Hillsbrad Foothills",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 29
+next Joana's Guide\\Horde\\30-30 Arathi Highlands
+
+// step //1
+//    'Go into the Undercity and from the Bat Handler:|goto Undercity,63.25,48.55
+//    .talk Michael Garrett##4551
+//    ..fpath Undercity|icon Interface\\minimap\\Tracking\\FlightMaster
+//    only Mage
+
+// step //2
+//    'Go to the Magic Quarter and from the Portal Trainer learn Portal: Undercity.|goto Undercity,84.19,15.59
+//    .talk Lexington Mortaim##2492
+//	info 
+//    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+//    only Mage
+
+//step //3
+//    'Drop down and from the Reagent Vendor, purchase up to 10 Rune of Teleportation.
+//    'NOTES: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|goto Undercity,82.77,15.85
+//    .buy 10 Rune of Teleportation##17031|icon Interface\\minimap\\Tracking\\Reagents
+//    only Mage
+
+//step //4
+//    'Exit Undercity...|goto Tirisfal Glades,61.88,64.44
+//    only Mage
+
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    'Run all the way to Tarren Mill in Hillsbrad Foothills and from the Bat Handler:|goto Hillsbrad Foothills,60.15,18.63|title Zarise
+    .talk Zarise##2389
+    ..fpath Tarren Mill|icon Interface\\minimap\\Tracking\\FlightMaster
+    |route Alterac Mountains,10.9,6.4;26,44.2;29.6,94.4;44.6,96.4;58.7,80|title Follow waypoints
+	info 
+    'TIPS: Go across the small islands While running to Tarren Mill.|icon Interface\\cursor\\Directions|goto Silverpine Forest,70.79,10.35|title Follow waypoint
+    'You can just bypass the UC for now (no need to get UC's FP yet).|only Paladin,Hunter,Druid,Rogue,Priest,Warrior
+//	|only !Warrior,!Shaman,!Warlock,!Mage
+    'Use a Swim Speed Potion to cross the lake.|use Swim Speed Potion##6372|only !Druid
+	info |only Druid
+    'Use Aquatic Form to cross the lake faster.|cast Aquatic Form##1066|only Druid
+	info 
+    'TIPS: Once you reach Alterac Mountains you can start grinding on some mobs along the way to Tarren Mill. Focus on killing some Snapjaws turtles along the shore and save the Turtle Meat for a later quest (Soothing Turtle Bisque), I recommend obtaining at least 4 Turtle Meat before moving on (you can get more later on), and remember to not sell them to a vendor!|icon Interface\\cursor\\Directions|goto Alterac Mountains,21.5,48|title Snapjaws around the area
+	.collect 4 Turtle Meat##3712|icon Interface\\icons\\inv_misc_food_70
+	.kill Snapjaws##2408|n
+	only !Shaman
+
+step //2
+	info |goto Isle of Quel'Danas,600,0.0
+    'In the small house:|goto Hillsbrad Foothills,61.44,19.07|title Enter small house
+    .talk Apothecary Lydon##2216
+    ..accept Elixir of Suffering##496
+    ..accept Elixir of Pain##501
+    ..accept Elixir of Agony##509
+
+step //3
+    'In front of the church:|goto Hillsbrad Foothills,62.33,20.33
+    .talk High Executor Darthalia##2215
+    ..accept Battle of Hillsbrad##527
+
+step //4
+    'At the graveyard next to the church building:|goto Hillsbrad Foothills,63.88,19.65
+    .talk Novice Thaivand##2429
+    ..accept Helcular's Revenge##552
+
+step //5
+    'At the sign (next to the mailbox/Inn):|goto Hillsbrad Foothills,62.55,19.69|title Dangerous!
+    'Interact with Dangerous!
+    ..accept Dangerous!##567
+	info 
+    'NOTE: You can get repaired south of the dead tree farm at Tarren Mill from the male orc by the wagon, or from the goblin that patrols between Southshore and Tarren Mill (if he's there).|icon Interface\\cursor\\Directions
+	.talk Ott##3539|goto Hillsbrad Foothills,60.43,26.18
+	.talk Zixil##3537
+
+step //6
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go east to the vertical river running through Hillsbrad.|goto Hillsbrad Foothills,67.82,21.50|c|title Go towards river
+	info 
+    'Higher level Elder Gray Bears and Giant Moss Creepers are found east of the river.|icon Interface\\cursor\\Attack
+	.collect 10 Gray Bear Tongue##3476|q 496/1|n|icon Interface\\icons\\ability_druid_demoralizingroar
+	.kill Gray Bear##2351|n
+	.kill Vicious Gray Bear##2354|n
+    .kill Elder Gray Bear##2356|n
+	.collect 1 Creeper Ichor##3477|q 496/2|n|icon Interface\\icons\\inv_misc_slime_01
+	.kill Forest Moss Creeper##2350|n
+    .kill Giant Moss Creeper##2349|n
+	info 
+    'Start obtaining 10 Turtle Meat from the Snapjaws in the river for a later quest [Soothing Turtle Bisque] (and remember not to sell them).
+	.collect 10 Turtle Meat##3712|n|icon Interface\\icons\\inv_misc_food_70
+	.kill Snapjaws##2408|n
+	
+step //7
+    'At Nethander Stead, loot the Mudsnout Blossoms around the farm.|goto Hillsbrad Foothills,64.39,61.52
+    .collect 6 Mudsnout Blossom##3502|q 509/1|icon Interface\\icons\\inv_mushroom_10
+	info 
+	'Kill/loot Bears, Turtles, Spiders and Cats on the road.|icon Interface\\cursor\\Attack
+	.collect 10 Gray Bear Tongue##3476|q 496/1|n|icon Interface\\icons\\classic_ability_druid_demoralizingroar
+	.kill Gray Bear##2351|n
+	.kill Vicious Gray Bear##2354|n
+    .kill Elder Gray Bear##2356|n
+	.collect 1 Creeper Ichor##3477|q 496/2|n|icon Interface\\icons\\inv_misc_slime_01
+	.kill Forest Moss Creeper##2350|n
+    .kill Giant Moss Creeper##2349|n
+	info 
+	.collect 10 Mountain Lion Blood##3496|q 501|n|icon Interface\\icons\\spell_shadow_lifedrain
+	.kill Feral Mountain Lion##2385|n
+	info 
+    'Start obtaining 10 Turtle Meat from the Snapjaws in the river for a later quest [Soothing Turtle Bisque] (and remember not to sell them).
+	.collect 10 Turtle Meat##3712|n|icon Interface\\icons\\inv_misc_food_70
+	.kill Snapjaws##2408|n
+	
+step //8
+    'Finish kill/looting Bears and Spiders for what you need.|icon Interface\\cursor\\Attack
+    .collect 10 Gray Bear Tongue##3476|q 496/1|icon Interface\\icons\\classic_ability_druid_demoralizingroar
+	.kill Gray Bear##2351|n
+	.kill Vicious Gray Bear##2354|n
+    .kill Elder Gray Bear##2356|n
+	.collect 1 Creeper Ichor##3477|q 496/2|icon Interface\\icons\\inv_misc_slime_01
+	.kill Forest Moss Creeper##2350|n
+    .kill Giant Moss Creeper##2349|n
+    info 
+	'Kill/loot cats. They are south and west of the farm|icon Interface\\cursor\\Attack
+	.collect 10 Mountain Lion Blood##3496|q 501|n|icon Interface\\icons\\spell_shadow_lifedrain
+	.kill Feral Mountain Lion##2385|n
+	info 
+    'Finish obtaining 10 Turtle Meat from the Snapjaws in the river for a later quest [Soothing Turtle Bisque] (and remember not to sell them).
+	.collect 10 Turtle Meat##3712|icon Interface\\icons\\inv_misc_food_70
+	.kill Snapjaws##2408|n
+
+step //9
+    'Back at Tarren Mill, and in the small house:|goto Hillsbrad Foothills,61.44,19.07
+    .talk Apothecary Lydon##2216
+    ..turnin Elixir of Suffering##496
+    ..accept Elixir of Suffering##499
+    ..turnin Elixir of Agony##509
+    ..turnin Elixir of Pain##501
+	info          Only if you get 10 Mountain Lion Blood we will finish it later otherwise.
+    ..accept Elixir of Pain##502
+	info          Skip if you didn't finish the previous Elixir of Pain quest
+    'SKIP Elixir of Agony (Part 2) - Requires a trip to the UC, which we will not be going there for a long time. The follow up quests requires questing in Alliance territory, which can be a nuisance.|icon Interface\\cursor\\Directions
+	info 
+    'From the small toad next to you:
+    .talk Umpi##2230
+    ..turnin Elixir of Suffering##499
+
+step //10
+    'Go in the Inn (bigger house). From this NPC, buy a Soothing Spices. Then with your 10 Turtle Meat you farmed earlier:|goto Hillsbrad Foothills,62.29,19.04
+    .talk Christoph Jeffcoat##2393
+    ..accept Soothing Turtle Bisque##7321
+    ..turnin Soothing Turtle Bisque##7321
+	info 
+    'NOTE: Requires the cooking profession to accept.|icon Interface\\cursor\\Directions
+
+step //11
+    'At the yeti cave keep kill/looting yetis until|icon Interface\\cursor\\Attack
+	'Helcular's Rod drops (it's a very low drop rate).|goto Hillsbrad Foothills,46.26,31.85|icon Interface\\icons\\inv_wand_09
+	.collect Helcular's Rod##3708|q 552/1|icon Interface\\icons\\inv_wand_09
+    .kill Cave Yeti##2248|n
+    .kill Ferocious Yeti##2249|n
+	info 
+    'Kill/loot Starving Mountain Lions just outside of the yeti cave.|icon Interface\\cursor\\Attack
+	.collect 10 Mountain Lion Blood##3496|q 501/1|icon Interface\\icons\\spell_shadow_lifedrain
+	.kill Starving Mountain Lions##2384|n
+	
+step //12
+    'Back to the small house at Tarren Mill:|goto Hillsbrad Foothills,61.44,19.07
+    .talk Apothecary Lydon##2216
+    ..turnin Elixir of Pain##501
+    ..accept Elixir of Pain##502
+	info           Skip if you already turned in
+
+step //13
+    'At the graveyard next to the church:|goto Hillsbrad Foothills,63.88,19.65|title Novice Thaivand
+    .talk Novice Thaivand##2429
+    ..turnin Helcular's Revenge##552
+	info 
+    'WARNING: The next part involves dealing with high level Alliance guards (when turning it in). It's possible to solo, but you could get flagged and possibly die in the process, especially if you don't have others to help you. It's up to you if you want to accept and try to do this, if not then skip it now.|icon Interface\\cursor\\Directions
+    'HARDCORE: Hardcore players should skip this unless you want to take the risk!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+    ..accept Helcular's Revenge##553
+	info 
+    'NOTE: You can get repaired south of the dead tree farm at Tarren Mill from the male orc by the wagon, or from the goblin that patrols between Southshore and Tarren Mill (if he's there).|icon Interface\\cursor\\Directions
+	.talk Ott##3539|goto Hillsbrad Foothills,60.43,26.18
+	.talk Zixil##3537
+	............'Skip This?|confirm|next +3|n|icon Interface\\cursor\\Point
+	
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go back to enter the yeti cave, stay up and hug the right side, then click on the Flame of Azel.|goto Hillsbrad Foothills,46.26,31.85|title Enter the Yeti cave
+    .goal Flame of Azel charged|q 553/1|icon Interface\\cursor\\Interact|goto Hillsbrad Foothills,43.88,28.07|title Click: Flame of Azel
+    info          Skip if didn't accepted Helcular's Revenge quest|goto Hillsbrad Foothills,44.62,28.06|title Stay up on ledge
+
+step //15
+    'Drop down in the cave and go north a bit then click on Flame of Veraz.|goto Hillsbrad Foothills,44.16,29.25|title Drop down, enter cave shaft
+    .goal Flame of Veraz charged|q 553/2|icon Interface\\cursor\\Interact|goto Hillsbrad Foothills,44.05,26.55|title Click: Flame of Veraz
+	info 
+    'NOTE: The 3rd one will be done later in the guide.|icon Interface\\cursor\\Directions
+    info          Skip if didn't accepted Helcular's Revenge quest
+
+step //16
+    'Go west to the front of the house at the farm:|goto Hillsbrad Foothills,32.66,35.33
+    .talk Stanley##2274
+    ..turnin Elixir of Pain##502
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill Farmer Ray up in the house.|goto Hillsbrad Foothills,32.94,35.23|title Kill: Farmer Ray (up in house|icon Interface\\cursor\\Attack
+	'He could also be under the outdoor garden next to the house.|goto Hillsbrad Foothills,33.45,35.65|title Kill: Farmer Ray (in garden)
+    .kill Farmer Ray##232|q 527/3
+
+step //18
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill Citizen Wilkes. He patrols on the path around the area. Wilkes patrols between the house you are at now to the other small house to the east of the path.|goto Hillsbrad Foothills,32.54,40.07|title Around the area|icon Interface\\cursor\\Attack
+	'He could also be standing just outside of the Town Hall building.|goto Hillsbrad Foothills,30.97,42.24|title Front of Town Hall
+    .kill Citizen Wilkes##2449|q 567/2|goto Hillsbrad Foothills,36.46,39.46|title Other small house
+
+step //19
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill Farmer Getz, either in the small house, barn or field.|goto Hillsbrad Foothills,36.73,39.43|title Small house|icon Interface\\cursor\\Attack
+    .kill Farmer Getz##2403|q 527/4|goto Hillsbrad Foothills,35.16,38.13|title Barn (entrance)
+	info |goto Hillsbrad Foothills,35.2,40.4|title Field (apple orchard)
+
+step //20
+    'Kill Farmer Kalaba. She patrols around the farm.|goto Hillsbrad Foothills,35.14,46.53|icon Interface\\cursor\\Attack
+    .kill Farmer Kalaba##2451|q 567/4
+
+step //21
+	'Kill Clerk Horrace Whitesteed in the Town Hall building. He is wearing brown clothes. Be cautious he is heavily guarded.|goto Hillsbrad Foothills,30.36,42.19|title Enter Town Hall|icon Interface\\cursor\\Attack
+	.kill Whitesteed##2448|q 567/1|goto Hillsbrad Foothills,29.51,42.42|title Kill: Clerk Horrace Whitesteed
+	info |goto Hillsbrad Foothills,29.85,42.83|title Go in Town Hall
+
+step //22
+    'Finish killing Hillsbrad Farmer & Farmhand (the ones holding shovels or rakes) around the farms.|goto Hillsbrad Foothills,34.12,41.34|icon Interface\\cursor\\Attack
+    .kill 6 Hillsbrad Farmer##2266|q 527/1
+    .kill 6 Hillsbrad Farmhand##2360|q 527/2
+
+step //23
+    'Kill Miner Hackett in the mine. Check out the lower entrance first. Make sure you go to the lower mine entrance, then keep hugging the right side of the mine until you get to him.|goto Hillsbrad Foothills,26.52,58.63|icon Interface\\cursor\\Attack
+	info 
+    'NOTE: If he is not there, then he will be at another spot in the mine, look around for him.|icon Interface\\cursor\\Directions
+    .kill Miner Hackett##2450|q 567/3
+
+step //24
+    'OPTIONAL Felhunter: Exit the mine, then go south along the beach to the murloc camp and loot the Tome of the Cabal on the ground.|goto Hillsbrad Foothills,27.78,72.79
+    .collect Moldy Tome##6931|q 1803/1|icon Interface\\icons\\inv_misc_book_08
+    only Warlock
+	
+step //25
+    'Die on purpose and res at spirit.
+    'Hardcore Players just Follow the path to Tarren Mill.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	info 
+    'In front of the church at Tarren Mill:|goto Hillsbrad Foothills,62.33,20.33
+    .talk High Executor Darthalia##2215
+    ..turnin Battle of Hillsbrad##527
+	..turnin Dangerous!##567
+	info 
+    'SKIP Battle of Hillsbrad (Part 2) - Low XP/Time and there's better quests to do.|icon Interface\\cursor\\Directions
+
+step //26
+    'Grind on any mobs until you achieve this.
+    ding 30
+
+step //27
+    'In the church building:|goto Hillsbrad Foothills,63.24,20.65
+    .talk Krusk##2229
+    ..accept Regthar Deathgate##1361
+	info 
+    'NOTE: You can get repaired south of the dead tree farm at Tarren Mill from the male orc by the wagon, or from the goblin that patrols between Southshore and Tarren Mill (if he's there).|icon Interface\\cursor\\Directions
+	.talk Ott##3539|goto Hillsbrad Foothills,60.43,26.18
+	.talk Zixil##3537
+	
+step //28
+    'OPTIONAL Felhunter: Hearth to Orgrimmar.
+    .use Hearthstone##6948
+	info 
+    'Or take a flight to Undercity and Get on the Zeppelin outside of UC to get to Orgrimmar.|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Zarise##2389
+    'Enter Orgrimmar...|goto Orgrimmar,49.27,90.79|title Go to Orgrimmar
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //29
+    'OPTIONAL Felhunter: At Orgrimmar, go up on the platform:|goto Orgrimmar,45.13,63.89
+	'From the Wind Rider Master, take a flight to Freewind Post in Thousand Needles.|goto Thousand Needles,45.14,49.11|title Go to Thousand Needles|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Doras##3310
+    only Warlock
+
+step //30
+    'OPTIONAL Felhunter: Go north and enter the cave...
+    'In the middle of the cave, loot the Damaged Chest.|goto Thousand Needles,43.44,32.69
+    .collect Tattered Manuscript##6997|q 1803/2|icon Interface\\icons\\inv_misc_note_01
+    only Warlock
+
+step //31
+    'OPTIONAL Felhunter: Hearth (or go back) to Orgrimmar. 
+    .use Hearthstone##6948
+	info |goto Thousand Needles,45.14,49.11|title Nyse
+	'If you cannot hearth then go back up to Freewind Post and take a flight to Orgrimmar.|goto Thousand Needles,47.02,48.43|title Go up Lift to: Freewind Post
+    ..talk Nyse##4317
+    'Get to Orgrimmar...|goto Orgrimmar,49.27,90.79|title Go to Orgrimmar
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //32
+    'OPTIONAL Felhunter: leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.84,13.08|title Zeppelin (south landing)
+    info 
+	'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Stranglethorn Vale zeppelin (north landing)!|icon Interface\\cursor\\Directions
+    info 
+	'TIP: You can save time by jumping off the zeppelin at a certain timing!|icon Interface\\cursor\\Directions
+    'Enter Undercity...|goto Undercity,66.27,10.13|title Enter Undercity|c
+    only Warlock
+
+step //33
+    'OPTIONAL Felhunter: Once at the UC, go NE to the Magic Quarter:|goto Undercity,75.92,37.91
+    .talk Jorah Annison##6293
+    ..turnin Tome of the Cabal##1803
+    ..accept Tome of the Cabal##1805
+    only Warlock
+
+step //34
+	info |goto Undercity,63.25,48.59|title Michael Garrett
+    'OPTIONAL Felhunter: From the Bat Handler, take a flight to Tarren Mill|goto Hillsbrad Foothills,60.15,18.63|c|title Go to Tarren Mill|icon Interface\\minimap\\Tracking\\FlightMaster
+    ..talk Michael Garrett##4551
+    only Warlock
+
+step //35
+    'NOTE: We will now focus on the level 30 Warrior Whirlwind questline|icon Interface\\cursor\\Directions
+	info      Skip if you've already done it and stay at Tarren Mill
+	...'I've Already done this quest chain|confirm|next +12|icon Interface\\cursor\\Point
+	...'I haven't done this quest chain yet|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //36
+	'Hearth to Orgrimmar.|goto Orgrimmar,54.10,68.39|title Hearth to Orgrimmar|c
+	.use Hearthstone##6948
+	only Warrior
+step //37
+    'Deposit Rod of Helcular in bank.|goto Orgrimmar,49.59,69.10|title Bank
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //38
+    'Go NE to Valley of Honor and train Rend R4 and skip the rest.|goto Orgrimmar,80.39,32.38
+    .talk Torm Ragetotem##3041
+    ..accept The Islander##1718
+    only Warrior
+
+step //39
+	'It's time to begin the daunting, but immensely rewarding, quest for your Whirlwind Axe.  Go check the AH for a few items.  First, you need 8 Liferoot. If you bought some from the vendor Montarr in 1k Needles, buy what you need to get you to 8 total.|icon Interface\\cursor\\QuestTurnIn
+	'Now search for 8 Burning Charm, 8 Cresting Charm, and 8 Thundering Charm - you will have to farm these later.  If there aren't enough up there or you don't have enough money (both of which will be likely), check back a little later.|icon Interface\\cursor\\Directions
+	.collect 8 Liferoot##3357|q 1712/1|icon Interface\\icons\\inv_misc_root_02
+	'Charms:
+    .collect 8 Burning Charms##4479|n|icon Interface\\icons\\inv_jewelry_talisman_01
+    .collect 8 Cresting Charms##4481|n|icon Interface\\icons\\inv_jewelry_talisman_05
+    .collect 8 Thundering Charms##4480|n|icon Interface\\icons\\inv_jewelry_talisman_02
+    only Warrior
+
+step //40
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+	'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Doras##3310
+    only Warrior
+
+step //41
+    'Go south along the coast then swim east to the island:|goto The Barrens,68.61,49.16
+    .talk Klannoc Macleod##6236
+    ..turnin The Islander##1718
+    ..accept The Affray##1719
+    only Warrior
+
+step //42
+    'Go stand on the grate next to all the NPCs. Once combat starts, fight the challengers off the grate and away from the NPCs a little bit so you can drop combat in between mobs to eat. Fight Big Will at full health and pop cds.|goto The Barrens,68.60,48.72|title Fight challengers here|icon Interface\\cursor\\Attack
+    .kill Big Will##6238|q 1719/1
+    only Warrior
+
+step //43
+    'Back at the island:|goto The Barrens,68.61,49.16
+    .talk Klannoc Macleod##6236
+    ..turnin The Affray##1719
+    ..accept The Windwatcher##1791
+    only Warrior
+
+step //44
+    'Hearth if you can.
+    .use Hearthstone##6948
+	info |goto The Barrens,63,37.2|title Take a flight
+	'Or from the Wind Rider Master, take the flight path back to Orgrimmar.|goto Orgrimmar,45.13,63.89|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+	.........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //45
+    'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.84,13.08|title Zeppelin (south landing)
+    info 
+	'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Stranglethorn Vale zeppelin (north landing)!|icon Interface\\cursor\\Directions
+    info 
+	'TIP: You can save time by jumping off the zeppelin at a certain timing!|icon Interface\\cursor\\Directions
+    'Enter Undercity...|goto Undercity,66.27,10.13|title Enter Undercity|c
+    only Warrior
+
+step //46
+	'At the UC:|goto Undercity,63.25,48.55
+	'From the Bat Handler, take a flight to Tarren Mill|goto Hillsbrad Foothills,60.15,18.63|c|title Go to Tarren Mill|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Michael Garrett##4551
+    only Warrior
+
+step //47
+    'At Tarren Mill, go up north of the river:|goto Alterac Mountains,80.49,66.92
+    .talk Bath'rah the Windwatcher##6176
+    ..turnin The Windwatcher##1791
+    ..accept Cyclonian##1712
+    only Warrior
+
+step //48
+    'At Tarren Mill:|goto Hillsbrad Foothills,60.15,18.63|title Zarise
+	'Take a flight to Undercity:|goto Undercity,63.25,48.59|title Go to Undercity|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    .talk Zarise##2389
+    only Warrior
+
+step //49
+	info |goto Isle of Quel'Danas,600,0.0
+    'Exit the Undercity...|goto Tirisfal Glades,61.88,64.44|title Exit Undercity
+    'In Tirisfal Glades, take the eastern zeppelin to Grom'gol Base Camp.|goto Tirisfal Glades,61.89,59.12|title Take the eastern Zeppelin (to Grom'gol)|c
+    only Warrior
+
+step //50
+    'At Grom'gol Base Camp, from the Wind Rider Master:|goto Stranglethorn Vale,32.54,29.35
+    .talk Thysta##1387
+    ..fpath Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warrior
+
+step //51
+    'Next to the Cauldron:|goto Stranglethorn Vale,32.27,27.71
+    .talk Kin'weelay##2519
+    ..accept Bloody Bone Necklaces##596
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+    only Warrior
+
+step //52
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go north of Grom'gol Base Camp around the various Bloodscalp Troll Ruins (watch out for the high lvl mobs on the way) and obtain 30 Bloodscalp Tusks by kill/looting trolls.|goto Stranglethorn Vale,33.40,15.76|title Around the area|icon Interface\\cursor\\Attack
+	info 
+    'NOTES: There is another camp of these trolls NE around there. If you are alone, focus on the trolls outside around the ruins that you can pick off one by one. Avoid fighting the Bloodscalp Shamans as their Lightning Shields will rip you up. I also recommend Disarming them when they hit 30% so they don't destroy you during Enrage.|goto Stranglethorn Vale,29.46,19.78|title Around the area|icon Interface\\cursor\\Directions
+	info 
+    'If you run out of trolls to kill you can start doing the beast hunting quests at Nesingwary Expedition, but my guide will not cover that completely until later. Do not leave the zone until you have all 30 tusks.|optional
+	info 
+    'If you can group up or get some help, do so - this step can take awhile.|goto Stranglethorn Vale,35.49,10.47|title Nesingwary Expedition|icon Interface\\cursor\\Directions
+    .collect 30 Bloodscalp Tusk##3901|q 1712/2|icon Interface\\icons\\inv_misc_bone_06
+	info 
+	'Kill/loot trolls.|icon Interface\\cursor\\Attack
+	.collect 25 Bloody Bone Necklace##3915|q 596/1|n|icon Interface\\icons\\inv_misc_bone_07
+    only Warrior
+
+step //53
+    'Check the AH again (with your ALT) to see if you still need any of the following items:
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+	'Charms:
+    .collect 8 Burning Charms##4479|q 1712/2|n|icon Interface\\icons\\inv_jewelry_talisman_01
+    .collect 8 Cresting Charms##4481|q 1712/3|n|icon Interface\\icons\\inv_jewelry_talisman_05
+    .collect 8 Thundering Charms##4480|q 1712/1|n|icon Interface\\icons\\inv_jewelry_talisman_02
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //54
+    'BEFORE PROCEEDING: Ask friends/guildies/randoms to help you out. Bribe them if you have to. The elementals you'll be killing next are in the upper 30's and you cannot solo them without massive amounts of luck. There is also a level 40-43 Elite (Cyclonian) to kill in Hillsbrad Foothills, so a group of 5 with a healer (or SoM/WotLK very high level friends) is essential. If you can't get a group then continue on with the 30-40 guide until you are able to get one, then come back to these steps to continue working on obtaining your Whirlwind Axe.|optional
+	info 
+    'Hardcore players should not continue this quest chain until later once you are stronger, since you are unable to group in Hardcore! Continue on with the 30-40 guide until you are much stronger, then come back to these steps to continue working on obtaining your Whirlwind Axe.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //55
+    'Back at Grom'gol Base Camp, get on the Zeppelin to go to the Undercity, (up in the Inn). Don't take the Orgrimmar one!
+    'You can do a suicide warp by jumping off of the zeppelin at a certain timing (Not For Hardcore Players).
+	info 
+    'Enter Undercity...|goto Undercity,66.27,10.13|title Enter Undercity|c
+    only Warrior
+
+step //56
+	'From the Bat Handler,|goto Undercity,63.25,48.59
+	'Take a flight to Tarren Mill:|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c
+    .talk Michael Garrett##4551|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warrior
+
+step //57
+	info |goto Isle of Quel'Danas,600,0.0
+    'Enter Arathi Highlands...|goto Arathi Highlands,21.35,31.26|title Enter Arathi Highlands
+	info 
+    'At the Circle of West Binding, kill/loot Burning Exile	(fire elementals) for the 8 Burning Charms.|icon Interface\\cursor\\Attack
+	.kill Burning Exile##2760|n
+	.collect 8 Burning Charms##4479|q 1712/2|icon Interface\\icons\\inv_jewelry_talisman_01
+	info 
+    'WARNING: Obtaining the charms in Arathi Highlands is near to impossible to solo under level 36. If you cannot find a group, then you will need to skip this for now and try again later when you are stronger.|goto Arathi Highlands,25.45,30.16|title Circle of West Binding|icon Interface\\cursor\\Directions
+    'TOTAL ITEM COUNT (for reference):
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+    'Charms:
+    .collect 8 Cresting Charms##4481|q 1712/3|n|icon Interface\\icons\\inv_jewelry_talisman_05
+    .collect 8 Thundering Charms##4480|q 1712/1|n|icon Interface\\icons\\inv_jewelry_talisman_02
+	..........'i'll Continue|confirm|next +1|icon Interface\\cursor\\Point
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //58
+    'At the Circle of Outer Binding, kill/loot Thundering Exile (air elementals) for the 8 Thundering Charms.|icon Interface\\cursor\\Attack
+	.kill Thundering Exile##2762|n
+	.collect 8 Thundering Charms##4480|q 1712/1|icon Interface\\icons\\inv_jewelry_talisman_02
+	info 
+    'WARNING: Obtaining the charms in Arathi Highlands is near to impossible to solo under level 36. If you cannot find a group, then you will need to skip this for now and try again later when you are stronger.|goto Arathi Highlands,52.01,50.69|icon Interface\\cursor\\Directions
+    'TOTAL ITEM COUNT (for reference):
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+    'Charms:
+    .collect 8 Cresting Charms##4481|q 1712/3|n|icon Interface\\icons\\inv_jewelry_talisman_05
+	.collect 8 Burning Charms##4479|q 1712/2|n|icon Interface\\icons\\inv_jewelry_talisman_01
+    only Warrior
+
+step //59
+    'At the Circle of East Binding, kill/loot Cresting Exile (water elementals) for the 8 Cresting Charms.|icon Interface\\cursor\\Attack
+	.kill Cresting Exile##2761|n
+	.collect 8 Cresting Charms##4481|q 1712/3|icon Interface\\icons\\inv_jewelry_talisman_05
+	info 
+    'WARNING: Obtaining the charms in Arathi Highlands is near to impossible to solo under level 36. If you cannot find a group, then you will need to skip this for now and try again later when you are stronger.|goto Arathi Highlands,66.73,29.76
+    .collect 8 Cresting Charm##4481|q 1712|icon Interface\\icons\\inv_enchant_essencewaterlarge
+    'TOTAL ITEM COUNT (for reference):
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+    'Charms:
+    .collect 8 Thundering Charms##4480|q 1712/1|n|icon Interface\\icons\\inv_jewelry_talisman_02
+	.collect 8 Burning Charms##4479|q 1712/2|n|icon Interface\\icons\\inv_jewelry_talisman_01
+    only Warrior
+
+step //60
+    'Once all Charms are obtained, go east to the Horde town Hammerfall:|goto Arathi Highlands,73.07,32.61
+    .talk Urda##2851
+	'From the Wind Rider Master, take a flight to Tarren Mill|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	info 
+    'TOTAL ITEM COUNT (for reference):
+    .collect 8 Liferoot##3357|q 1712/1|n|icon Interface\\icons\\inv_misc_root_02
+    'Charms:
+    .collect 8 Thundering Charms##4480|q 1712/1|n|icon Interface\\icons\\inv_jewelry_talisman_02
+	.collect 8 Burning Charms##4479|q 1712/2|n|icon Interface\\icons\\inv_jewelry_talisman_01
+	.collect 8 Cresting Charms##4481|q 1712/3|n|icon Interface\\icons\\inv_jewelry_talisman_05
+    only Warrior
+
+step //61
+    'With your group, go north along the river and click on Bath'rah's Cauldron (in Alterac Mountains) to exchange all your Charms for the Essence of the Exile.|goto Alterac Mountains,79.31,66.73
+	.collect Essence of the Exile##6851|q 1712/3|icon Interface\\icons\\inv_stone_01
+    only Warrior
+
+step //62
+    .talk Bath'rah the Windwatcher##6176|goto Alterac Mountains,80.49,66.92
+    ..turnin Cyclonian##1712
+    only Warrior
+
+step //63
+    'When you are ready to fight Cyclonian (the lvl 40-43 Elite), then next to you in the hut:
+	.talk Bath'rah the Windwatcher##6176
+	info 
+    'GROUP 3+ Players: After accepting this, Bath'rah the Windwatcher will walk down the path and summon the Elite Cyclonian, kill/loot him.|icon Interface\\cursor\\Directions
+	info 
+    'NOTES: This can be a dangerous fight. He has a knockback (Knock Away) on the main target, Whirlwind attack (Attacks nearby enemies), and will randomly stun others for 4 seconds.|icon Interface\\cursor\\Directions
+    ..accept The Summoning##1713
+	info 
+    .kill Cyclonian##6239|n
+	.collect Whirlwind Heart##6894|q 1713|icon Interface\\icons\\inv_misc_gem_sapphire_01
+	info 
+    'NOTE: If you cannot find help, then this would need to be skipped.  This is pretty much impossible to solo right now, its recommended to skip this for now and try later in mid 40s.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+    only Warrior
+
+step //64
+    'Back up at the hut:|goto Alterac Mountains,80.49,66.92
+    .talk Bath'rah the Windwatcher##6176
+    ..turnin The Summoning##1713
+	info 
+    'NOTE: The Whirlwind Axe is the best choice regardless of your race.|icon Interface\\cursor\\Directions
+    only Warrior
+
+step //65
+    'The goal now is to go to Hammerfall. If you got the Fly Path there, then go to the Bat Handler at Tarren Mill and fly there|goto Hillsbrad Foothills,60.15,18.63|title Fly to Hammerfall if you have the FP
+	info |goto Arathi Highlands,21.35,31.26|title Enter Arathi Highlands if you don't have the FP to Hammerfall
+	'Otherwise head east on the main path to get there.|goto Arathi Highlands,73.07,32.61|title Go to Hammerfall
+	.talk Zarise##2389
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+    only Warrior
+
+step //66
+    'OPTIONAL Felhunter: As you enter Arathi Highlands, go east then head south on the main path to get to Wetlands...|goto Arathi Highlands,21.35,31.26|title Enter: Arathi Highlands
+	info |goto Arathi Highlands,45.48,91.39|title Enter: Wetlands
+	'WARNING: Watch out for high level elite patrollers on the main path!|icon Interface\\cursor\\Directions
+	info 
+    'South in the middle of Wetlands (around the Angerfang Encampment), kill/loot Dragonmaw Bonewarders and Dragonmaw Shadowwarders.|goto Wetlands,48.97,47.90|title Around: Angerfang Encampment|icon Interface\\cursor\\Attack
+	.collect 3 Rod of Channeling##6930|q 1805/1|icon Interface\\icons\\inv_wand_07
+    .kill Dragonmaw Bonewarder##1057|n
+    .kill Dragonmaw Shadowwarder##1038|n
+	info 
+	'WARNING: Watch out for the Alliance guards!|icon Interface\\cursor\\Directions
+    only Warlock
+
+step //67
+    'Follow the path all the way to Hammerfall and down by the Forge:|goto Arathi Highlands,72.64,33.93
+    .talk Gor'mul##2792
+    ..accept Hammerfall##655
+	info 
+    'Next to you:
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	info 
+	'WARNING: Watch out for the Alliance guards!|goto Arathi Highlands,45.46,48.03|title Alliance guards|icon Interface\\cursor\\Directions
+	
+step //68
+	..'29-30 Hillsbrad Foothills is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 30-30 Arathi Highlands|confirm|next "Joana's Guide\\Horde\\30-30 Arathi Highlands"|icon Interface\\icons\\achievement_zone_arathihighlands_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\30-30 Arathi Highlands",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\30-31 Stranglethorn Vale
+startlevel 30
+
+step //1
+	'Follow the path all the way to Hammerfall and down by the Forge:|goto Arathi Highlands,72.64,33.93
+    .talk Gor'mul##2792
+    ..accept Hammerfall##655
+	info 
+    'Next to you:
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	info 
+	'WARNING: Watch out for the Alliance guards!|goto Arathi Highlands,45.46,48.03|title Alliance guards|icon Interface\\cursor\\Directions
+	
+step //2
+    'At Hammerfall:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..turnin Hammerfall##655
+    ..accept Raising Spirits##672
+
+step //3
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go up the steps and:|goto Arathi Highlands,73.51,33.89|title Go up steps
+	'from the Wind Rider Master:|goto Arathi Highlands,73.07,32.61|title Get Hammerfall Fly Path
+    .talk Urda##2851
+    ..fpath Hammerfall|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //4
+    'Just to the west of Hammerfall, kill/loot Highland Striders (raptors). 23% drop rate.|goto Arathi Highlands,69.87,35.27|icon Interface\\cursor\\Attack
+    .collect 10 Highland Raptor Eye##4512|q 672/1|icon Interface\\icons\\inv_misc_eye_01
+	.kill Highland Strider##2559|n
+
+step //5
+    'Back at Hammerfall:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..turnin Raising Spirits##672
+    ..accept Raising Spirits##674
+
+step //6
+    'Down in Hammerfall:|goto Arathi Highlands,72.64,33.93
+    .talk Gor'mul##2792
+    ..turnin Raising Spirits##674
+    ..accept Raising Spirits##675
+
+step /7
+    'At Hammerfall:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..turnin Raising Spirits##675
+	info 
+    'SKIP "Guile of the Raptor" quest (for now)|icon Interface\\cursor\\Directions
+// |only WARLOCK
+
+step //8
+    'IF YOU STILL NEED LEVEL 30 ABILITIES: |icon Interface\\icons\\Ability_Druid_Maul
+	'Use your Teleport: Moonglade spell to take you to Moonglade.|only DRUID
+	info 
+    'Then head SW a bit to the Druid Trainer next to the Moonwell to get your level 30 spells/abilities.|goto Moonglade,52.53,40.57|only DRUID
+	info 
+    'NOTE: If money is tight, you can skip|icon Interface\\cursor\\Directions
+	'Rebirth|icon Interface\\icons\\spell_nature_reincarnation
+	'Tranquility |icon Interface\\icons\\spell_nature_tranquility
+	'and Wrath.|icon Interface\\icons\\spell_nature_abolishmagic
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only DRUID
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+step //9
+    'Hearth to Orgrimmar.|goto Orgrimmar,54.10,68.39|c|title Go to Orgrimmar|only !Mage
+    .use Hearthstone##6948|only !Mage
+    'Use your Teleport: Orgrimmar to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|c|title Go to Orgrimmar|only Mage
+    .cast Teleport: Orgrimmar##3567|only Mage
+
+step //10
+    'Get your level 30 spells/abilities under you in the hut at Valley of Spirits.|goto Orgrimmar,38.79,85.66|title Mage Trainers|icon Interface\\icons\\inv_staff_13
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only MAGE
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Mage
+
+step //11
+    'Bloodrobe Questline: Later on at lvl 31, Warlocks can start a questline to ultimately obtain a Enchanted Gold Bloodrobe chest(+10 stam,+17 intel).|goto Orgrimmar,54.15,64.21|only WARLOCK
+	info 
+    'This questline requires certain items that can be found from the AH or from Alchemy and Tailoring professions. See if you can get these two items from the AH for this questline:|only WARLOCK
+    .collect Robes of Arcana##5770|icon Interface\\icons\\inv_chest_cloth_29
+    .collect Gold Bar##3577|icon Interface\\icons\\inv_ingot_03
+	info 
+    'NOTE: You will be reminded again later if you can't get them yet.|icon Interface\\cursor\\Directions
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	only Warlock
+
+step //12
+    'At the Bank, deposit these items:|goto Orgrimmar,49.62,69.18
+    'Rod of Helcular|icon Interface\\icons\\inv_wand_09
+    'Robes of Arcana (if you get it)|icon Interface\\icons\\inv_chest_cloth_29|only Warlock
+    'Gold Bar (if you get it)|icon Interface\\icons\\inv_ingot_03|only Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //13
+    'Get your level 30 spells/abilities at Valley of Wisdom.|goto Orgrimmar,38.80,36.37|title Shaman Trainers|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+    .talk Searn Firewarder##5892|only Shaman
+    ..accept Call of Air##1531|only Shaman 
+	'Get your level 30 spells/abilities at Valley of Wisdom.|goto Orgrimmar,32.26,35.72|title Paladin Trainers|icon Interface\\icons\\INV_Hammer|only Paladin
+	'Get your level 30 spells/abilities at Cleft of Shadow.|goto Orgrimmar,47.99,45.96|title Warlock Trainers|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	'Get your level 30 spells/abilities at Cleft of Shadow.|goto Orgrimmar,43.05,53.73|title Rogue Trainers|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	'Get your level 30 spells/abilities. Priest Trainers are at Spirit Rise.|goto Orgrimmar,35.60,87.83|title Priest Trainers|icon Interface\\icons\\inv_staff_30|only Priest
+// 	'Get your level 30 spells/abilities. Hunter Trainers are NE at the Valley of Honor.|goto Orgrimmar,66.05,18.52|title Hunter Trainers|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Get your level 30 spells/abilities. The Warrior Trainers are NE at the Valley of Honor.|goto |goto Orgrimmar,80.39,32.39|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	info 
+	'Make sure you get Summon Felsteed (free lvl 30 Warlock mount).|icon Interface\\cursor\\Directions|only Warlock
+	'Make sure you learn Summon Warhorse to get your mount!|icon Interface\\cursor\\Directions|only Paladin
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Paladin,Warrior,Shaman,Rogue,Priest,Warlock,Mage
+// only !Druid,!Mage,!Hunter
+	
+step //14
+    'OPTIONAL Felhunter: Up on the platform:|goto Orgrimmar,45.13,63.89
+	'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Doras##3310
+	only Warlock
+
+step //15
+    'OPTIONAL Felhunter: At Ratchet, go up behind the Engineering building and in front of the hut:|goto The Barrens,62.63,35.50|only WARLOCK
+    .talk Strahad Farsan##6251|only WARLOCK
+    ..turnin Tome of the Cabal##1805|only WARLOCK
+    ..accept The Binding##1795
+	only Warlock
+
+step //16
+    'OPTIONAL Felhunter: Right there in the hut next to you use Tome of the Cabal quest item then kill the Summoned Felhunter that spawns.|goto The Barrens,62.60,35.26|only WARLOCK
+    .use Tome of the Cabal##6999
+    .kill Summoned Felhunter##6268|q 1795/1
+	only Warlock
+
+step //17
+    'OPTIONAL Felhunter: Next to you:|goto The Barrens,62.63,35.50|only WARLOCK
+    .talk Strahad Farsan##6251|only WARLOCK
+    ..turnin The Binding##1795|only WARLOCK
+	info 
+    'NOTE: Turning this in will give you|icon Interface\\cursor\\Directions
+	'Summon Felhunter and you will receive a|icon Interface\\icons\\spell_shadow_summonfelhunter
+	'Box of Souls (16 Slot Soul Bag).|icon Interface\\icons\\inv_poison_mindnumbing
+	only Warlock
+
+step //18
+    'At Ratchet:|goto The Barrens,63.09,37.16
+    .talk Bragok##16227
+    'From the Wind Rider Master, take a flight to Orgrimmar|goto Orgrimmar,45.13,63.89|c|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+	only Warlock
+
+step //19
+    'Leave Orgrimmar at the south entrance, then get on the Zeppelin (in Durotar) to go to Grom'gol Base Camp (in Stranglethorn Vale).|goto Durotar,50.61,12.63|title Take Zeppelin to: Stranglethorn Vale (north landing)
+	info 
+	'NOTE: Make sure you get on the Stranglethorn Vale Zeppelin (north landing) and not the Undercity zeppelin (south landing)!|icon Interface\\cursor\\Directions
+	info 
+	..'30-30 Arathi Highlands is complete!|icon Interface\\cursor\\Directions
+	....'Go to 30-31 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\30-31 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\30-31 Stranglethorn Vale",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\31-32 Shimmering Flats
+startlevel 30
+
+step //1
+    'At Grom'gol Base Camp, from the Wind Rider Master:|goto Stranglethorn Vale,32.5,29.4
+    .talk Thysta##1387
+    .fpath Grom'gol|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //2
+    'Hunters, get new spells/abilities at the Hunter Trainer at Grom'gol Base Camp.|goto Stranglethorn Vale,31.2,28.7|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Kragg##1404
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //3
+    'Make sure you learn Growl R4 from the Pet Trainer.|goto Stranglethorn Vale,31.1,28.9
+    .talk Zudd##3624
+	...'Only For TBC/Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //4
+    'NOTE: Due to the faster leveling rate, we come here only to get the FP, and will be skipping all Nesingwary hunting quests.|icon Interface\\cursor\\Directions
+	.......'Only For WOTLK Skip?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //5
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go north to Nesingwary's Expedition (follow waypoint for safer pathing):|goto Stranglethorn Vale,37.9,22.6|title Follow waypoint on path
+	info |goto Stranglethorn Vale,36.5,19.3|title Go across bridge
+    'At Nesingwary's Expedition:|goto Stranglethorn Vale,35.7,10.5|title Barnil Stonepot
+    .talk Barnil Stonepot##716
+    ..accept Welcome to the Jungle##583
+
+step //6
+    'Next to you:|goto Stranglethorn Vale,35.7,10.8
+    .talk Hemet Nesingwary Jr.##715
+    ..turnin Welcome to the Jungle##583
+    ..accept Raptor Mastery##194
+
+step //7
+    'Next to you:|goto Stranglethorn Vale,35.61,10.62
+    .talk Ajeck Rouack##717
+    ..accept Tiger Mastery##185
+	info 
+    'Next to you:|goto Stranglethorn Vale,35.56,10.55
+    .talk Sir S. J. Erlgadin##718
+    ..accept Panther Mastery##190
+
+step //8
+    'NOTE: The Green Hills of Stranglethorn quest requires that you save any Green Hills of Stranglethorn pages you find. These pages can drop from any humanoid mob in Stranglethorn Vale.|icon Interface\\cursor\\Directions
+	info 
+    'I recommend mailing them to your alt for storage. Once your alt collects all the pages, mail them back to your main. You can also find these pages in the AH or from other players.|icon Interface\\minimap\\Tracking\\Mailbox
+	info 
+    'You don't need to accept the quest to get the page drops, so accept and turn this in if you get all the pages. You will return to Stranglethorn Vale numerous times in the future for more chances to find the pages.|icon Interface\\cursor\\Quest
+	info 
+    'You need the following pages:
+    '1, 4, 6, 8, 10, 11, 14, 16, 18, 20, 21, 24, 25, 26, 27.|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //9
+    'Kill Young Stranglethorn Tiger, Done right around Nesingwary's Expedition camp to the SW.|goto Stranglethorn Vale,35.6,12.2|icon Interface\\cursor\\Attack
+    .kill 10 Young Stranglethorn Tiger##681|q 185/1
+
+step //10
+    'Back at Nesingwary's Expedition camp:|goto Stranglethorn Vale,35.6,10.6
+    .talk Ajeck Rouack##717
+    ..turnin Tiger Mastery##185
+    ..accept Tiger Mastery##186
+	info 
+    'From Jaquilina Dramet:|goto Stranglethorn Vale,35.8,10.7|title Get Repaired/Resupplied?
+	.talk Jaquilina Dramet##2483
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //11
+    'Kill Young Panther, Done east of the river around the area.|goto Stranglethorn Vale,40.6,10.6|icon Interface\\cursor\\Attack
+    'Warriors, Use the Hamstring Method if they are 2/3+ levels higher than you.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    .kill 10 Young Panther##683|q 190/1
+	info 
+    'Start on Stranglethorn Tigers - Done just SE around the area.|icon Interface\\cursor\\Attack
+    .kill 10 Stranglethorn Tiger##682|q 186/1|n
+
+step //12
+    'Kill Stranglethorn Tiger, Done just SE around the area.|goto Stranglethorn Vale,46.6,14.3|icon Interface\\cursor\\Attack
+    .kill 10 Stranglethorn Tiger##682|q 186/1
+
+step //13
+    'Back at Nesingwary's Expedition camp:|goto Stranglethorn Vale,35.6,10.5
+    .talk Sir S. J. Erlgadin##718
+    ..turnin Panther Mastery##190
+    ..accept Panther Mastery##191
+	info 
+    'Next to you:|goto Stranglethorn Vale,35.6,10.6
+    .talk Ajeck Rouack##717
+    ..turnin Tiger Mastery##186
+    ..accept Tiger Mastery##187
+	info 
+	.talk Jaquilina Dramet##2483
+    'Get repaired/resupplied|goto Stranglethorn Vale,35.8,10.7
+
+step //14
+    'Kill Panthers, Done up around the area.|goto Stranglethorn Vale,30.2,9.6|icon Interface\\cursor\\Attack
+    .kill 10 Panther##736|q 191/1
+	info 
+    'Start on Stranglethorn Raptors - Done up on the ledges around the area.|icon Interface\\cursor\\Attack
+    .kill 10 Stranglethorn Raptor##685|q 194/1|n
+
+step //15
+    'Kill Stranglethorn Raptor, Done up on the ledges around the area.|goto Stranglethorn Vale,27.1,15.4|icon Interface\\cursor\\Attack
+    .kill 10 Stranglethorn Raptor##685|q 194/1
+
+step //16
+    'Back at Nesingwary's Expedition camp:|goto Stranglethorn Vale,35.7,10.8
+    .talk Hemet Nesingwary Jr.##715
+    ..turnin Raptor Mastery##194
+    ..accept Raptor Mastery##195
+	info 
+    'Next to you:|goto Stranglethorn Vale,35.6,10.5
+    .talk Sir S. J. Erlgadin##718
+    ..turnin Panther Mastery##191
+	info 
+    'SKIP "Panther Mastery" - Shadowmaw Panther part (for now)|icon Interface\\cursor\\Directions
+	info 
+	.talk Jaquilina Dramet##2483
+    'Get repaired/resupplied|goto Stranglethorn Vale,35.8,10.7|icon Interface\\minimap\\Tracking\\Repair
+
+step //17
+    'Bloodrobe Questline: Make sure you are level 31 (grind until you are).
+    ding 31
+	info 
+    'Bloodrobe Questline Info: At lvl 31, Warlocks can start a Bloodrobe questline to obtain an Enchanted Gold Bloodrobe chest(+10 stam,+17 intel). It requires two pieces, you currently have:|optional
+    .collect Robes of Arcana##5770|icon Interface\\icons\\inv_chest_cloth_29
+    .collect Gold Bar##3577|icon Interface\\icons\\inv_ingot_03
+	..........'Or Skip This Questline?|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //18
+    'Hearth (or use your Teleport: Orgrimmar spell) to Orgrimmar.|only Mage
+	.cast Teleport: Orgrimmar##3567|only Mage
+	'Hearth to Orgrimmar.|only !Mage
+	.use Hearthstone##6948
+	info |only !Mage
+    'If hearthstone is still on a cooldown, then get back on the zeppelin to take you to Orgrimmar.|goto Stranglethorn Vale,31.35,30.11|title Or take zeppelin to: Orgrimmar (Enter Inn)|only !Mage
+	'If you do, make sure you take the Orgrimmar zeppelin and not the Undercity zeppelin!|only !Mage
+	info |only Shaman
+    'TIP: Shamans, remember you can use|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	'Astral Recall to do a hearth!|icon Interface\\icons\\spell_nature_astralrecal|only Shaman
+    .cast Astral Recall##556|only Shaman
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //19
+	info |goto Silithus,0,400
+    'Bloodrobe Questline: Warlocks can start a questline to ultimately obtain an Enchanted Gold Bloodrobe chest(+10 stam,+17 intel).|optional
+    'This questline requires certain items that can be found from the AH or from Alchemy and Tailoring professions. See if you can get these two items from the AH for this questline:|goto Orgrimmar,54.2,64.2|title Auction Hall|icon Interface\\minimap\\Tracking\\Auctioneer
+    .collect Robes of Arcana##5770|icon Interface\\icons\\inv_chest_cloth_29
+    .collect Gold Bar##3577|icon Interface\\icons\\inv_ingot_03
+	info 
+	'If you do not have these two items, you will need to skip the Bloodrobe Questline for now:
+	.........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	......'Can't Get Items Or Skip?|confirm|next +9|icon Interface\\cursor\\Point
+    only Warlock
+
+step //20
+    'At the Bank: Withdraw from bank if you have them.|goto Orgrimmar,49.7,70.1|title Bank
+    'Robes of Arcana|icon Interface\\icons\\inv_chest_cloth_29
+    'Gold Bar|icon Interface\\icons\\inv_ingot_03
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only WARLOCK
+
+step //21
+	'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Crossroads, The Barrens|goto The Barrens,51.50,30.34|c|title Go to Crossroads|icon Interface\\minimap\\Tracking\\FlightMaster
+	only !Warlock
+//    only !WARLOCK or (WARLOCK and ITEM[5770] == 0)
+
+step //22
+    'Bloodrobe Questline: Up on the platform:|goto Orgrimmar,45.13,63.89|optional
+	'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Doras##3310
+	only Warlock
+//    only WARLOCK and ITEM[5770] >= 1
+
+step //23
+    'Bloodrobe Questline: At Ratchet, go up behind the Engineering building:|goto The Barrens,62.5,35.5|optional
+    .talk Menara Voidrender##6266
+    ..accept Components for the Enchanted Gold Bloodrobe##1796
+	info 
+    'Then with your Robes of Arcana:
+    ..turnin Components for the Enchanted Gold Bloodrobe##1796
+    ..accept Components for the Enchanted Gold Bloodrobe##4781
+	only Warlock
+//    only WARLOCK and (ITEM[5770] >= 1 or QUEST[1796] >= TURNEDIN)
+
+step //24
+    'Bloodrobe Questline: Get on the boat to go to Booty Bay.|goto The Barrens,63.7,38.7|title Get on boat when it arrives|c|optional
+	only Warlock
+//    only WARLOCK and QUEST[4781] >= ACCEPTED and ITEM[3577] >= 1
+
+step //25
+	info |goto Isle of Quel'Danas,600,0.0
+    'Bloodrobe Questline: At Booty Bay, go up into the hut at A Tailor to Cities and with your Gold Bar:|goto Stranglethorn Vale,28.7,76.9|title Xizk Goodstitch|optional
+    .talk Xizk Goodstitch##2670
+    ..turnin Components for the Enchanted Gold Bloodrobe##4781
+    ..accept Components for the Enchanted Gold Bloodrobe##4782
+	only Warlock
+//    only WARLOCK and (ITEM[3577] >= 1 or QUEST[4781] >= TURNEDIN)
+
+step //26
+    'Bloodrobe Questline: Get on the boat to get back to Ratchet.|goto Stranglethorn Vale,25.9,73.1|title Take boat to: Ratchet|c|optional
+	only Warlock
+//    only WARLOCK and QUEST[4782] >= ACCEPTED
+
+step //27
+    'Bloodrobe Questline: At Ratchet, go up behind the Engineering building:|goto The Barrens,62.5,35.5|optional
+    .talk Menara Voidrender##6266
+    ..turnin Components for the Enchanted Gold Bloodrobe##4782
+    ..accept Components for the Enchanted Gold Bloodrobe##4783
+	only Warlock
+//    only WARLOCK and QUEST[4782] >= ACCEPTED
+
+step //28
+    'Go to Crossroads.
+    'From the Wind Rider Master, take a flight to Crossroads, The Barrens|goto The Barrens,51.50,30.34|c|title Go to Crossroads|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warlock
+
+step //29
+    'At Crossroads:|goto The Barrens,51.1,29.6
+    .talk Korran##3428
+    ..accept The Swarm Grows##1145
+
+step //30
+    'Go west from the Crossroads to the orc up in the burrow:|goto The Barrens,45.3,28.4
+    .talk Regthar Deathgate##3389
+    ..turnin Regthar Deathgate##1361
+    ..accept The Kolkar of Desolace##1362
+
+step //31
+    'At Crossroads:|goto The Barrens,51.5,30.3
+    'From the Wind Rider Master, take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c|icon Interface\\minimap\\Tracking\\Flightmaster|only !Mage
+	info |only Mage
+	'Since you don't have the Teleport: Thunder Bluff spell then take a flight to Thunder Bluff|goto Thunder Bluff,47.02,49.84|c|title Go to Thunder Bluff|only Mage
+	.talk Devrak##3615
+
+step //32
+    'Go in The Pools of Vision (cave) and learn 
+	'Teleport: Thunder Bluff from the Portal Trainer.|goto Thunder Bluff,28.7,28.9|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .talk Birgitte Cranston##5957
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //33
+    'At the top of the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.84
+	'From the Wind Rider Master,|icon Interface\\minimap\\Tracking\\Flightmaster
+	'Take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c
+    .talk Tal##2995
+    only Mage
+
+step //34
+	'At Freewind Post:|goto Thousand Needles,45.2,50.8
+    'You can restock on Rune of Teleportation, from Montarr. Purchase up to 10/20 of them.
+	info 
+    'NOTES: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|icon Interface\\cursor\\Directions
+    .collect 20 Rune of Teleportation##17031|n|icon Interface\\icons\\inv_misc_rune_06
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //35
+    'Go up the mountain ramp:|goto Thousand Needles,53.5,42.7|title Prate Cloudseer
+    .talk Prate Cloudseer##5905
+    ..turnin Call of Air##1531
+	info |goto Thousand Needles,54.5,44.1|title Go up mountain ramp
+    'NOTE: Turning this in will give you the|icon Interface\\cursor\\Directions
+	'Air Totem.|icon Interface\\icons\\spell_totem_wardofdraining
+    only Shaman
+
+step //36
+    'Head SE to the Mirage Raceway in the middle of Shimmering Flats...|goto Thousand Needles,77.8,77.3|title Go The Mirage Raceway
+	info |goto Thousand Needles,47.44,48.88|title Go down lift
+	..'30-31 Stranglethorn Vale is complete!|icon Interface\\cursor\\Directions
+	....'Go to 31-32 Shimmering Flats|confirm|next "Joana's Guide\\Horde\\31-32 Shimmering Flats"|icon Interface\\icons\\achievement_zone_thousandneedles_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\31-32 Shimmering Flats",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\32-34 Desolace
+startlevel 31
+
+step //1
+	info |goto Silithus,0,400
+    'Head SE to the Mirage Raceway in the middle of The Shimmering Flats...|goto Thousand Needles,47.44,48.88|title Go down lift
+	info 
+    'At Mirage Raceway in the middle of The Shimmering Flats:|goto Thousand Needles,77.79,77.27|title Kravel Koalbeard
+    .talk Kravel Koalbeard##4452
+    ..accept Rocket Car Parts##1110
+    'SKIP "Wharfmaster Dizzywig" and "Hemet Nesingwary Jr." (for now)|icon Interface\\cursor\\Directions
+	info 
+    .talk Fizzle Brassbolts##4454|goto Thousand Needles,78.06,77.12|title Fizzle Brassbolts
+    ..accept Salt Flat Venom##1104
+	info 
+    .talk Wizzle Brassbolts##4453|goto Thousand Needles,78.14,77.12|title Wizzle Brassbolts
+    ..accept Hardened Shells##1105
+
+step //2
+    'At the Goblin's side of Mirage Raceway:|goto Thousand Needles,80.18,75.88
+    .talk Pozzik##4630
+    ..accept Load Lightening##1176
+
+step //3
+    'By the starting line:|goto Thousand Needles,81.63,77.95
+    .talk Trackmaster Zherin##4629
+    ..accept A Bump in the Road##1175
+
+step //4
+    'Keep in mind: At level 50 you will be able to do a class quest called Elemental Mastery that involves turning in various elemental items.  So if you find any of the following items keep them in your bank/mailbox until you are ready to do this later on at level 50.  You will be able to farm these various elemental items in most zones coming up, especially Arathi Highlands and some right here in Thousand Needles.  You can also find these items in the AH as well as a last resort.  You will be reminded one more time before needing to turn this in later on at level 50.|icon Interface\\cursor\\Directions
+	The items are, one of each:
+	.collect 1 Elemental Air##7069|n|icon Interface\\icons\\spell_nature_tranquility
+	.collect 1 Elemental Fire##7068|n|icon Interface\\icons\\spell_fire_fire
+	.collect 1 Elemental Earth##7067|n|icon Interface\\icons\\inv_ore_iron_01
+	.collect 1 Elemental Water##7070|n|icon Interface\\icons\\inv_potion_03
+	.........'Click For Next Step|confirm|next +1|icon Interface\\cursor\\Point
+    only Shaman
+
+step //5
+	'Do the 5 quests below (in any order).|goto Silithus,0,400
+//	|goto Thousand Needles,78.62,76.8
+    'Kill/loot vultures.|goto Thousand Needles,87.56,65.83|title Lots of vultures around here|icon Interface\\cursor\\Attack
+	.collect 10 Hollow Vulture Bone##5848|q 1176/1|icon Interface\\icons\\inv_misc_bone_01
+    .kill Salt Flats Scavenger##4154|n
+	info 
+    'Kill/loot scorpids.|goto Thousand Needles,71.77,72.93|title Lots of scorpids around here|icon Interface\\cursor\\Attack
+	.collect 6 Salty Scorpid Venom##5794|q 1104/1|icon Interface\\icons\\inv_potion_17
+	.kill Scorpid Reaver##4140|n
+	info 
+    'Loot Rocket Car Parts.|goto Thousand Needles,72.5,62.27|title Lots of Car Rubble around here
+    .collect 30 Rocket Car Parts##5798|q 1110/1|icon Interface\\icons\\inv_gizmo_03
+	info 
+    'Kill basilisks.|goto Thousand Needles,77.41,86.18|title Saltstone Gazers around here|icon Interface\\cursor\\Attack
+    .kill 10 Saltstone Basilisk##4147|q 1175/1
+    .kill 10 Saltstone Crystalhide##4151|q 1175/2
+//    'Saltstone Gazers are south at Saltstone.
+    .kill 6 Saltstone Gazer##4150|q 1175/3
+	info 
+    'Kill/loot turtles.|goto Thousand Needles,82.54,54.94|title Lots of turtles around here|icon Interface\\cursor\\Attack
+	.collect 9 Hardened Tortoise Shell##5795|q 1105/1|icon Interface\\icons\\inv_misc_monsterscales_03
+	.kill Sparkleshell Borer##4144|n
+    .kill Sparkleshell Tortoise##4142|n
+    .kill Sparkleshell Snapper##4143|n
+	.kill Scorpid Terror##4139|n
+	.kill Salt Flats Vulture##4158|n
+
+step //6
+    'Back at Mirage Raceway (at the gnomes section):|goto Thousand Needles,77.79,77.27
+    .talk Kravel Koalbeard##4452
+    ..turnin Rocket Car Parts##1110
+    ..accept Wharfmaster Dizzywig##1111
+    ..accept Hemet Nesingwary##5762
+	info 
+    .talk Fizzle Brassbolts##4454|goto Thousand Needles,78.07,77.13|title Fizzle Brassbolts
+    ..turnin Salt Flat Venom##1104
+	info 
+    .talk Wizzle Brassbolts##4453|goto Thousand Needles,78.14,77.12|title Wizzle Brassbolts
+    ..turnin Hardened Shells##1105
+    ..accept Encrusted Tail Fins##1107
+
+step //7
+    'At the goblin section of Mirage Raceway:|goto Thousand Needles,80.18,75.88
+    .talk Pozzik##4630
+    ..turnin Load Lightening##1176
+    ..accept Goblin Sponsorship##1178
+
+step //8
+    'By the starting line:|goto Thousand Needles,81.63,77.95
+    .talk Trackmaster Zherin##4629
+    ..turnin A Bump in the Road##1175
+
+step //9
+    'Grind on any mobs in Thousand Needles.|goto Thousand Needles,74.15,88.92|title Next Destination
+    ding 32
+
+step //10
+	info |goto Silithus,0,400
+    'Go south to the path that leads into Tanaris...|goto Thousand Needles,74.30,94.87|title Enter: Tanaris|c
+	info 
+    'Follow the path south to Gadgetzan and from the Wind Rider Master:|goto Tanaris,51.60,25.44|title Bulkrek Ragefist
+    .talk Bulkrek Ragefist##7824
+    ..fpath Gadgetzan
+
+step //11
+	'From the Wind Rider Master,|goto Tanaris,51.60,25.44|icon Interface\\minimap\\Tracking\\Flightmaster
+	'Take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c
+    .talk Bulkrek Ragefist##7824
+
+step //12
+    'At Freewind Post, by the Bonfire:|goto Thousand Needles,45.67,50.73
+    .talk Cliffwatcher Longhorn##10537
+    ..accept Family Tree##5361
+	info 
+    'Make sure you are stocked up on meat (if your pet needs it) as you will not be able to purchase any at the Desolace section coming up!|goto Thousand Needles,45.44,51.17|title Turhaw|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	.talk Turhaw##4875|only Hunter
+	info |only Hunter
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+    
+step //13
+    'Use your Teleport: Moonglade spell to take you to Moonglade.
+	.cast Teleport: Moonglade##19027
+	info 
+    'Then head SW a bit to the Druid Trainer next to the Moonwell to get your level 32 spells/abilities.|goto Moonglade,52.53,40.57
+    .talk Loganaar##12042
+	info
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //14
+    'Hearth to Orgrimmar.|goto Orgrimmar,54.10,68.39|title Hearth to Orgrimmar|c
+    .use Hearthstone##6948
+
+step //15
+    'Make sure you are stocked up on meat (if your pet needs it) as you will not be able to purchase any at the Desolace section coming up!|goto Orgrimmar,54.1,68.4
+    .talk Innkeeper Gryshka##6929
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //16
+    'Deposit into bank:|goto Orgrimmar,49.59,69.14|title Bank|icon Interface\\GossipFrame\\HealerGossipIcon
+    'Kravel's Parts Order|icon Interface\\icons\\inv_misc_note_03
+    'Kravel's Crate|icon Interface\\icons\\inv_crate_01
+	info 
+    'Withdraw from the bank:|icon Interface\\GossipFrame\\HealerGossipIcon
+    'Elixir of Water Breathing|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	info            You don't need it if you are Undead|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+//	(if not Shaman/Druid/Warlock/Undead)
+	'Swim Speed Potion|icon Interface\\icons\\inv_potion_13
+    'Wool Cloth (60 or 120)|icon Interface\\icons\\inv_fabric_wool_01
+	info    60 or 120 depending on if you will turnin "A Donation of Wool" quest later
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only QUEST[7826] ~= TURNEDIN or QUEST[7833] ~= TURNEDIN
+
+step //17
+	info |goto Silithus,0,400
+    'For upcoming under water quests at Desolace:|goto Orgrimmar,54.11,64.25|title Auction Hall
+    .collect 3 Elixir of Water Breathing##5996|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	info            You don't need it if you are Undead|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    .collect 5 Swim Speed Potion##6372|icon Interface\\icons\\inv_potion_13
+	info |only Shaman
+	'Get 5 Shiny Fish Scales for your Water Breathing spell, and 5 Fish Oil For your Water Walking spell (don't get more you will loot more on mobs in Desolace)|only Shaman
+	.collect 5 Shiny Fish Scales##17057|icon Interface\\icons\\spell_shadow_demonbreath|only Shaman
+	.collect 5 Fish Oil##17058|icon Interface\\icons\\inv_potion_64|only Shaman
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only not (SHAMAN or DRUID or WARLOCK or SCOURGE)
+
+step //18
+    'Make sure you are stocked up on meat (if your pet needs it) as you will not be able to purchase any at the Desolace section coming up!
+    'You can find a meat vendor up in a hut at Borstan's Firepit:|goto Orgrimmar,57.22,53.32
+    .talk Borstan##3368
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+    only HUNTER
+//    completed VAR.TRAINED_H31SF_04_160
+
+step //19
+	info |goto Silithus,0,400
+    'NOTE: You can turn in cloth donations for the Orc faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+	.collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_wool_01
+	.collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+	info 
+    'NOTE: Save the Silk Cloth to build up First Aid first before the silk donations.|goto Orgrimmar,63.61,51.22|title Rashona Straglash|icon Interface\\cursor\\Directions
+    .talk Rashona Straglash##14726
+    ..turnin A Donation of Wool##7826
+    ..turnin A Donation of Silk##7827
+	info       If you have 60 and don't need for other profession
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //20
+    'Go to the Valley of Honor:|goto Orgrimmar,75.21,34.24
+    .talk Belgrom Rockmaul##4485
+    ..turnin The Swarm Grows##1145
+    ..accept The Swarm Grows##1146
+
+step //21
+    'Get your level 32 spells/abilities. Paladin Trainer is at Grommash Hold.|goto Orgrimmar,32.26,35.72|icon Interface\\icons\\INV_Hammer_01|only Paladin
+	.talk Master Pyreanor##23128|only Paladin
+	'Get your level 32 spells/abilities. Shaman Trainers are at Grommash Hold. Make sure to learn Water Breathing and Water Walking for a later quest in Desolace.|goto Orgrimmar,38.81,36.37|title Shaman Trainers|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	'Get your level 32 spells/abilities. Hunters go just north. You may want to consider skip getting new abilities, specially if you already got all the previous important ones as the new ones may not be worth the time.|goto Orgrimmar,66.05,18.52|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .talk Ormak Grimshot##3352|only Hunter
+	'Get your level 32 spells/abilities. Warriors, go next to you at the Hall of the Brave. Recommended abilities to get are: |goto Orgrimmar,80.39,32.39|title Warrior Trainers|icon Interface\\icons\\INV_Sword_27|only Warrior
+	'Heroic Strike R5, |icon Interface\\icons\\ability_rogue_ambush|only Warrior
+	'Berserker Rage, |icon Interface\\icons\\spell_nature_ancestralguardian|only Warrior
+	'Execute R2, |icon Interface\\icons\\inv_sword_48|only Warrior
+	'Battle Shout R4, |icon Interface\\icons\\ability_warrior_battleshout|only Warrior
+	'Improved Slam, |icon Interface\\icons\\ability_warrior_decisivestrike|only Warrior
+	'Hamstring R2, |icon Interface\\icons\\ability_shockwave|only Warrior
+	'and Shield Wall.|icon Interface\\icons\\ability_warrior_shieldwall|only Warrior
+	'Get your level 32 spells/abilities at Cleft of Shadow.|goto Orgrimmar,43.05,53.73|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	'Get your level 32 spells/abilities. Priest Trainers are at The Valley of Spirits.|goto Orgrimmar,35.60,87.83|title Priest Trainers|icon Interface\\icons\\inv_staff_30|only Priest
+	'Get your level 32 spells/abilities. Mage Trainers are at The Valley of Spirits.|goto Orgrimmar,38.52,85.86|title Mage Trainers|icon Interface\\icons\\inv_staff_13|only Mage
+	'Get your level 30 spells/abilities at Cleft of Shadow. Make sure to learn Unending Breath for a later quest in Desolace|goto Orgrimmar,47.99,45.96|title Warlock Trainers|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Warrior,Paladin,Hunter,Shaman,Rogue,Priest,Mage
+// only !Druid,
+	
+step //22
+    'Go down to the Cleft of Shadow:|goto Orgrimmar,46.1,49.95
+    .talk Craven Drok##5639
+	info          (patrols)
+    ..accept Alliance Relations##1431
+    
+step //23
+    'NOTE: You can turn in cloth donations for the Troll faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+	.collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_wool_01
+	.collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+	info 
+    .talk Vehena##14727|goto Orgrimmar,37.69,87.91
+    ..turnin A Donation of Wool##7826
+    ..turnin A Donation of Silk##7827
+	info       If you have 60 and don't need for other profession
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //24
+    'If you need to, upgrade First Aid from the First Aid Trainer at the Valley of Spirits.|goto Orgrimmar,34.17,84.56|icon Interface\\icons\\spell_holy_sealofsacrifice
+    .talk Arnok##3373
+	info 
+	'Get new Tradeskills|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //25
+    'West in Orgrimmar (in the hut):|goto Orgrimmar,22.55,52.64
+    .talk Keldran##5640
+    ..turnin Alliance Relations##1431
+    ..accept Alliance Relations##1432
+
+step //26
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon|icon Interface\\minimap\\Tracking\\Flightmaster
+	only !Mage
+	
+step //27
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+    only Mage
+
+step //28
+    'Up the tower in the middle of TB:|goto Thunder Bluff,47.02,49.84
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Sun Rock Retreat, Stonetalon Mountains|goto Stonetalon Mountains,45.1,59.8|c|title Go to Stonetalon|icon Interface\\minimap\\Tracking\\Flightmaster
+    only Mage
+
+step //29
+	info |goto Silithus,0,400
+    'Go to the path SW in Sun Rock Retreat to get to the Charred Vale.|goto Stonetalon Mountains,44.61,62.29|title Path Entrance
+	info |goto Stonetalon Mountains,40.35,69.49|title Follow path through mountains
+	'Then run south into Desolace...|goto Desolace,53.61,4.88|title Enter: Desolace|c
+	route Stonetalon Mountains,44.61,62.29;40.35,69.49;29.1,80.1|title Enter: Desolace
+	
+step //30
+    ..'31-32 Shimmering Flats is complete!|icon Interface\\cursor\\Directions
+	........'Go to 32-34 Desolace|confirm|next "Joana's Guide\\Horde\\32-34 Desolace"|icon Interface\\icons\\achievement_zone_desolace
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\32-34 Desolace",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\34-36 Stranglethorn Vale
+startlevel 32
+
+step //1
+	info |goto Silithus,0,400
+    'At Kormek's Hut:|goto Desolace,62.32,38.98|title Bibbly F'utzbuckle
+    .talk Bibbly F'utzbuckle##11438
+    ..accept Bone Collector##5501
+	info 
+	'NOTE: You can purchase potions (on a limited timer) from Vendor-Tron 1000 if he is there.|goto Desolace,60.30,38.19|title Vendor-Tron 1000|icon Interface\\cursor\\Directions
+	.talk Vendor-Tron 1000##12245
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	
+step //2
+    'Head south to the goblin next to the hut:|goto Desolace,60.86,61.86
+    'Stay near main path for safety.|goto Desolace,68.15,46.67|title Stay near main path for safety
+    .talk Smeed Scrabblescrew##11596
+    ..accept Kodo Roundup##5561
+
+step //3
+	info |goto Silithus,0,400
+    'Go west to the Kodo Graveyard and start working on this by using |goto Desolace,60.86,61.86|title Smeed Scrabblescrew
+	'Kodo Kombobulator quest item on any Ancient, Aged or Dying Kodo. Then bring them back one at a time to Smeed Scrabblescrew. You need to talk to the kodo once you bring them to Smeed.|icon Interface\\icons\\inv_battery_01
+    .use Kodo Kombobulator##13892|icon Interface\\icons\\inv_battery_01
+    .goal 5 Tamed Kodo|q 5561/1
+    info 
+	'Loot Kodo Bones around the Kodo Graveyard.|goto Desolace,54.85,61.95|title Around: Kodo Graveyard
+    .collect 5 Loot Kodo Bones|q 5501/1|n|icon Interface\\icons\\inv_misc_bone_09
+    info 
+	'NOTE: Looting some of these bones spawns a high lvl Kodo Apparition, just run away and loot others, We will get more later.|icon Interface\\cursor\\Directions
+	'Tips: You can tame a Kodo, loot a Kodo Bones and run away to bring back it to Smeed. and repeat then.|icon Interface\\cursor\\Directions
+//	'NOTE: You don't have to finish all of this now, but try to get a few Kodos tamed for now.|icon Interface\\cursor\\Directions
+
+step //4
+    'Turn in to Smeed (goblin next to hut):|goto Desolace,60.86,61.86
+    .talk Smeed Scrabblescrew##11596
+    ..turnin Kodo Roundup##5561
+
+step //5
+	info |goto Silithus,0,400
+    'Enter Ghost Walker Post, make a left at the main entrance...|goto Desolace,56.63,56.91|title Enter: Ghost Walker Post
+	info |goto Desolace,56.19,59.57|title Felgur Twocuts
+    .talk Felgur Twocuts##5395
+    ..turnin The Kolkar of Desolace##1362
+    ..accept Khan Dez'hepah##1365
+	info 
+    'Next to you:|goto Desolace,56.29,59.68|title Gurda Wildmane
+    .talk Gurda Wildmane##5412
+    ..accept Gelkis Alliance##1368
+    info 
+	'SKIP "Magram Alliance" quest - The Magram clan are further away on the questing routes, the Gelkis were closer.|icon Interface\\cursor\\Directions
+
+step //6
+    'Outside of the hut:|goto Desolace,55.59,56.50|title Get repaired / resupplied
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+    info 
+	'SKIP: "Magram Alliance" quest - The Magram clan are further away on the questing routes, the Gelkis are closer.|icon Interface\\cursor\\Directions
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //7
+    'In front of the hut entrance:|goto Desolace,55.41,55.81
+    .talk Nataka Longhorn##11259
+    ..turnin Family Tree##5361
+
+step //8
+	info |goto Silithus,0,400
+    'Go across the bridge in Ghost Walker Post...|goto Desolace,54.44,54.87|title Go across bridge
+    .talk Takata Steelblade##5641|goto Desolace,52.57,54.39|title Takata Steelblade
+    ..turnin Alliance Relations##1432
+    ..accept Alliance Relations##1433
+    ..accept Befouled by Satyr##1434
+
+step //9
+    'Next to you:|goto Desolace,52.25,53.44
+    .talk Maurin Bonesplitter##4498
+    ..turnin Alliance Relations##1433
+    ..accept The Burning of Spirits##1435
+
+step //10
+	info |goto Silithus,0,400
+    'Kill/loot Khan Dez'hepah at the Kolkar Village.|goto Desolace,73.38,41.62|title Kill/loot: Khan Dez'hepah (Bigger tent)|icon Interface\\cursor\\Attack
+	info 	
+	'This big bearded centaur is usually in the bigger tent, |goto Desolace,73.0,46.8|title Kill/loot: Khan Dez'hepah
+	'but can sometimes be found in these other areas around the Kolkar Village as well.|goto Desolace,74.6,48.8|title Kill/loot: Khan Dez'hepah (Small tent)
+    .kill Khan Dez'hepah##5600|n
+	.collect Khan Dez'hepah's Head##6066|q 1365/1|icon Interface\\icons\\inv_misc_head_centaur_01
+
+step //11
+    'Around Magram Village, keep killing the Magram centaur until you are friendly with the Gelkis Alliance.|icon Interface\\cursor\\Attack
+	info 	
+	'NOTES: You need to kill about 40 of them to achieve this. You can make it show on your XP bar from your character panel - reputation tab.|goto Desolace,72.27,69.41|icon Interface\\cursor\\Directions
+	info 
+//	.goal Get Friendly with Gelkis|q 1368/1
+	'|rep Gelkis Clan Centaur,Friendly
+	.kill Magram Stormer##4642|n
+	.kill Magram Windchaser##4641|n
+	.kill Magram Wrangler##4640|n
+	.kill Magram Pack Runner##4643|n
+	.kill Magram Mauler##4545|n
+	.kill Khan Jehn##5601|n
+	.kill Magram Scout##4638|n
+	.kill Magram Marauder##4644|n
+	.kill Magram Outrunner##4639|n
+	
+step //12
+    'finish looting Kodo Bones around the Kodo Graveyard.|goto Desolace,54.85,61.95
+    .collect 10 Loot Kodo Bones|q 5501/1|icon Interface\\icons\\inv_misc_bone_09
+    info 
+	'NOTE: Looting some of these bones spawns a high lvl Kodo Apparition, just run away and loot others.|icon Interface\\cursor\\Directions
+
+step //13
+	info |goto Silithus,0,400
+    'Enter Ghost Walker Post, make a left at the main entrance...|goto Desolace,56.63,56.91|title Enter: Ghost Walker Post
+	info |goto Desolace,56.19,59.57|title Felgur Twocuts
+    .talk Felgur Twocuts##5395
+    ..turnin Khan Dez'hepah##1365
+    ..accept Centaur Bounty##1366
+//    info 
+//	'SKIP "Centaur Bounty" - We skip this due to the faster questing rate (WOTLK only).
+//	info          Skip is only for WOTLK
+
+step //14
+    'Follow the main path SW and under the tent:|goto Desolace,36.24,79.25
+    .talk Uthek the Wise##5397
+    ..turnin Gelkis Alliance##1368
+    ..accept Stealing Supplies##1370
+
+step //15
+    'Continue following the main path west to Shadowprey Village:|goto Desolace,25.05,72.27
+    .talk Roon Wildmane##11877
+    ..accept Hunting in Stranglethorn##5763
+
+step //16
+    'Go up in the village, on top of the mound next to the gong:|goto Desolace,25.82,68.21
+    .talk Taiga Wisemane##11624
+    ..accept Hand of Iruxos##5381
+
+step //17
+    'Go in the Inn, and from the Innkeeper:|goto Desolace,24.09,68.21
+    .talk Innkeeper Sikewa##11106
+    .home Shadowprey Village|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //18
+    'Hunters, make sure you get a much larger supply of arrows/bullets as you will not be able to buy any for a long time.|goto Desolace,24.09,68.21|icon Interface\\minimap\\Tracking\\Ammunition
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //19
+    'Go down to the docks:|goto Desolace,23.32,72.88
+    .talk Drulzegar Skraghook##12340
+    ..accept Other Fish to Fry##6143
+
+step //20
+    'Next to you in the hut:|goto Desolace,22.64,71.96
+    .talk Mai'Lahii##12031
+    ..accept Clam Bait##6142
+
+step //21
+    'Go in the water all around Shadowprey Village and loot the Shellfish Traps to obtain 10 Shellfish.|goto Desolace,22.45,73.12
+	.collect 10 Shellfish##13545|icon Interface\\icons\\inv_misc_fish_14
+//|q 5386/1
+    info 
+	'NOTE: Make sure you use an Elixir of Water Breathing for this quest!|use Elixir of Water Breathing##5996|icon Interface\\cursor\\Directions|only Warrior,Paladin,Hunter,Rogue,Priest,Mage 
+	info              You don't need it if you are Undead|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	'Use Aquatic Form!|cast Aquatic Form##1066|only Druid
+	'Use Water Breathing spell (Requires Shiny Fish Scales)|cast Water Breathing##131|only Shaman
+	'Use Unending Breath spell|cast Unending Breath##5697|only Warlock
+//    only not (SHAMAN or DRUID or WARLOCK or SCOURGE)
+
+step //22
+    'Speak to Jinar'Zillen (on the dock):|goto Desolace,22.45,73.12
+    .talk Jinar'Zillen##11317
+    ..turnin Fish in a Bucket##5421
+	'Turn in twice to obtain:
+	.collect 2 Bloodbelly Fish##13546|q 5386/1|icon Interface\\icons\\inv_misc_fish_06
+    info 
+	'IMPORTANT: Do not sell your Bloodbelly Fish to a vendor, or don't use them!|icon Interface\\cursor\\Directions
+
+step //23
+    'From Mai'Lahii up in the hut:|goto Desolace,22.64,71.97|title Mai'Lahii
+	.talk Mai'Lahii##12031
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //24
+    'Swim north up the water. 
+	'Work your way to the wrecked boat at the shore and sitting on the barrel:|goto Desolace,36.07,30.41
+	'Interact with Rackmore's log
+	..accept Claim Rackmore's Treasure!##6161
+    info 
+	'TIP: You can just use Water Walking to cross the lake (Requires Fish Oil).|cast Water Walking##546|icon Interface\\cursor\\Directions|only Shaman
+	'TIP: You can just use Aquatic Form to cross the lake.|cast Aquatic Form##1066|icon Interface\\cursor\\Directions|only Druid
+	'TIP: Use a Swim Speed Potion to cross the water.|use Swim Speed Potion##6372|icon Interface\\cursor\\Directions|only !Druid
+//	not (DRUID or SHAMAN) and ITEM[6372] >= 1
+	info 
+    'Kill/loot crabs and loot Giant Softshell Clams on sea floor on the road.|goto Desolace,25.59,36.49|icon Interface\\cursor\\Attack
+	.kill Enraged Reef Crawler##12347
+    .collect 10 Soft-shelled Clam Meat##15924|q 6142/1|n|icon Interface\\icons\\inv_misc_food_51
+
+step //25
+    'Up on the mountain ledge:|goto Desolace,38.89,27.17
+    .talk Azore Aldamort##11863
+    ..accept Sceptre of Light##5741
+
+step //26
+	info |goto Silithus,0,400
+    'Enter Thunder Axe Fortress, make a left, go up the watchtower and kill/loot the Burning Blade Seer.|goto Desolace,56.03,29.46|title Enter: Thunder Axe Fortress|icon Interface\\cursor\\Attack
+	.kill Burning Blade Seer##13019|n
+    .collect Sceptre of Light##15750|q 5741/1|icon Interface\\icons\\inv_staff_24
+	info |goto Desolace,55.06,30.17|title Go up watchtower ramp
+    'Use the Burning Gem quest item on the mobs at the fortress right before they die to collect the Gems.
+    .use Burning Gem##6436
+    .collect 15 Infused Burning Gem##6435|q 1435/1|n|icon Interface\\icons\\inv_misc_gem_opal_02
+
+step //27
+    'GROUP 2+ Players: Go in the fortress, click on the Hand of Iruxos Crystal in the middle and then kill/loot the Demon Spirit that spawns. Be prepared to kill the lvl 37 demon!|goto Desolace,55.32,27.48|title Enter fortress|icon Interface\\cursor\\Attack
+    .kill Demon Spirit##11876|n
+	.collect Demon Box##13542|q 5381/1
+	info |goto Desolace,54.95,26.69|title Hand of Iruxos Crystal
+	'Use Bear Form against him.|cast Bear Form##5487|only Druid
+    info 
+	'WARNING: Hardcore players may not want to attempt this if you are not confident about it! atleast until level 33/34|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+//    only ((not (HUNTER or WARLOCK) and GROUPS) or LEVEL >= 35) or (HUNTER or WARLOCK)
+	info 
+	'Use the Burning Gem quest item on the mobs at the fortress right before they die to collect the Gems.
+    .use Burning Gem##6436
+    .collect 15 Infused Burning Gem##6435|q 1435/1|n|icon Interface\\icons\\inv_misc_gem_opal_02
+
+step //28
+	'Finish Using the Burning Gem quest item on the mobs at the fortress right before they die to collect the Gems.|goto Desolace,56.03,29.46
+    .use Burning Gem##6436
+    .collect 15 Infused Burning Gem##6435|q 1435/1|icon Interface\\icons\\inv_misc_gem_opal_02
+	info 
+    'Before leaving the Thunder Axe Fortress, make sure you have found an item named "Flayed Demon Skin" (2% drop rate), which starts a quest:|goto Desolace,56.03,29.46
+	.collect Flayed Demon Skin##20310|icon Interface\\icons\\inv_misc_leatherscrap_04
+    ..accept The Corrupter##1480
+
+step //29
+	info |goto Silithus,0,400
+    'At Kormek's Hut:|goto Desolace,62.33,38.99|title Bibbly F'utzbuckle
+    .talk Bibbly F'utzbuckle##11438
+    ..turnin Bone Collector##5501
+	info 
+	'NOTE: You can purchase potions (on a limited timer) from Vendor-Tron 1000 if he is there.|goto Desolace,60.30,38.19|title Vendor-Tron 1000|icon Interface\\cursor\\Directions
+	.talk Vendor-Tron 1000##12245
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	
+step //30
+	info |goto Silithus,0,400
+    'Go to Ghost Walker Post, take shortcut up hill...|goto Desolace,56.10,54.35|title Shortcut to enter: Ghost Walker Post
+    info 
+	'Abandon The Corrupter quest if your questlog is full, as you will need to save quest log space.
+	info 
+    'Straight forward at the shortcut, with your 2 Bloodbelly Fish:|goto Desolace,55.42,55.80|title Nataka Longhorn
+    .talk Nataka Longhorn##11259
+    ..accept Catch of the Day##5386
+    ..turnin Catch of the Day##5386
+	
+step //31
+	info |goto Silithus,0,400
+	info |goto Desolace,52.25,53.44|title Maurin Bonesplitter
+	'Go across the bridge in Ghost Walker Post...|goto Desolace,54.61,54.99|title Go across bridge
+    .talk Maurin Bonesplitter##4498
+    ..turnin The Burning of Spirits##1435
+    ..turnin The Corrupter##1480
+    ..accept The Corrupter##1481
+	info          if you get the Flayed Demon Skin
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|goto Desolace,51.20,53.26|title Get Resupplied
+
+step //32
+    'Around Sargeron, kill the required amount of Hatefury Satyrs.|goto Desolace,73.79,22.13|icon Interface\\cursor\\Attack
+    .kill 7 Hatefury Rogue##4670|q 1434/1
+	.kill 7 Hatefury Felsworn##4672|q 1434/2
+	.kill 7 Hatefury Betrayer##4673|q 1434/3
+	.kill 7 Hatefury Hellcaller##4675|q 1434/4
+	info 
+    'Kill/loot the Hatefury Shadowstalkers until a scalp drops.|goto Desolace,73.79,22.13|icon Interface\\cursor\\Attack
+    .collect Shadowstalker Scalp##6441|q 1481/1|icon Interface\\icons\\inv_misc_pelt_boar_01
+	info |only Warlock
+   'Bloodrobe Questline: Kill/loot any of the Satyrs for the Bloodrobe item.|icon Interface\\cursor\\Attack|only Warlock
+    .collect 10 Vial of Hatefury Blood##6989|q 4783/1|only Warlock
+ 
+// step //31
+//    'Go SW to Shadowprey Village:|goto Desolace,62.33,38.99
+//    .talk Bibbly F'utzbuckle##11438
+//    ..accept Bone Collector##5501
+//    only QUEST[5501] <= NONE
+
+step //33
+	info |goto Silithus,0,400
+    'Go to Ghost Walker Post, take shortcut up hill...|goto Desolace,56.10,54.35|title Shortcut to enter: Ghost Walker Post
+	info |goto Desolace,52.57,54.39|title Takata Steelblade
+    'Go across the bridge...|goto Desolace,54.61,54.99|title Go across bridge
+    .talk Takata Steelblade##5641
+    ..turnin Befouled by Satyr##1434
+    ..accept Alliance Relations##1436
+
+step //34
+    'Next to you:|goto Desolace,52.25,53.44
+    .talk Maurin Bonesplitter##4498
+    ..turnin The Corrupter##1481
+    ..accept The Corrupter##1482
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|goto Desolace,51.20,53.26|title Get Resupplied
+
+step //35
+    'Up on the mountain ledge:|goto Desolace,38.88,27.16
+    .talk Azore Aldamort##11863
+    ..turnin Sceptre of Light##5741
+    ..accept Book of the Ancients##6027
+
+step //36
+    'Under the water where the sunken boat is at, kill/loot the Drysnap mobs for the Silver Key (15% drop rate).|goto Desolace,33.57,31.79|icon Interface\\cursor\\Attack
+	.collect Rackmore's Silver Key##15878|q 6161/1|icon Interface\\icons\\inv_misc_key_03
+	.kill Drysnap Pincer##11563|n
+    info 
+	'TIP: Use an Elixir of Water Breathing.|use Elixir of Water Breathing##5996|icon Interface\\cursor\\Directions|only Warrior,Paladin,Hunter,Rogue,Priest,Mage 
+	info            You don't need it if you are Undead|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+///|only not (SHAMAN or DRUID or WARLOCK) and ITEM[5996] >= 1 and not BUFF[7178]
+    info |only Druid,Shaman,Warlock
+	'TIP: Use Aquatic Form throughout the water!|cast Aquatic Form##1066|icon Interface\\cursor\\Directions|only Druid
+	'TIP: Use Water Breathing spell (Requires Shiny Fish Scales)|cast Water Breathing##131|icon Interface\\cursor\\Directions|only Shaman
+	'TIP: Use Unending Breath spell|cast Unending Breath##5697|icon Interface\\cursor\\Directions|only Warlock
+	info 
+    'Kill/loot crabs and loot Giant Softshell Clams on sea floor.|goto Desolace,33.57,31.79|icon Interface\\cursor\\Attack
+	.kill Enraged Reef Crawler##12347|n
+    .collect 10 Soft-shelled Clam Meat##15924|q 6142/1|n|icon Interface\\icons\\inv_misc_food_51
+	'Kill Nagas on the road.|icon Interface\\cursor\\Attack
+    .kill 7 Slitherblade Myrmidon##4714|q 6143/1|n
+    .kill 7 Slitherblade Naga##4711|q 6143/2|n
+    .kill 5 Slitherblade Sorceress##4712|q 6143/3|n
+
+step //37
+    'Grind your way to the bigger island and click on the Serpent Statue, then kill/loot Lord Kragaru when he spawns.|goto Desolace,28.26,6.68|icon Interface\\cursor\\Attack
+    .kill Lord Kragaru##12369|n
+	.collect Book of the Ancients##15803|q 6027/1|icon Interface\\icons\\inv_misc_book_06
+	info 
+    'Kill/loot Slitherblade Oracles.|icon Interface\\cursor\\Attack
+    .collect Oracle Crystal##6442|q 1482/1|n|icon Interface\\icons\\inv_ore_arcanite_02
+	info 
+	'Kill Nagas on the road.|icon Interface\\cursor\\Attack
+    .kill 7 Slitherblade Myrmidon##4714|q 6143/1|n
+    .kill 7 Slitherblade Naga##4711|q 6143/2|n
+    .kill 5 Slitherblade Sorceress##4712|q 6143/3|n
+	info 
+    'Kill/loot crabs and loot Giant Softshell Clams on sea floor.|icon Interface\\cursor\\Attack
+	.kill Enraged Reef Crawler##12347|n
+    .collect 10 Soft-shelled Clam Meat##15924|q 6142/1|n|icon Interface\\icons\\inv_misc_food_51
+	'WARNING: Watch out for the lvl 38-39 elite Deepstrider giants!|icon Interface\\cursor\\Directions
+
+step //38
+    'Kill/loot Slitherblade naga until the Golden Key drops.|goto Desolace,30.01,8.70|icon Interface\\cursor\\Attack
+    .collect Rackmore's Golden Key##15881|q 6161/2|icon Interface\\icons\\inv_misc_key_04
+	info 
+    'Kill/loot Slitherblade Oracles.|icon Interface\\cursor\\Attack
+    .collect Oracle Crystal##6442|q 1482/1|n|icon Interface\\icons\\inv_ore_arcanite_02
+	info 
+	'Kill Nagas on the road.|icon Interface\\cursor\\Attack
+    .kill 7 Slitherblade Myrmidon##4714|q 6143/1|n
+    .kill 7 Slitherblade Naga##4711|q 6143/2|n
+    .kill 5 Slitherblade Sorceress##4712|q 6143/3|n
+    info 
+	'WARNING: Watch out for the lvl 38-39 elite Deepstrider giants!|icon Interface\\cursor\\Directions
+
+step //39
+    'On the bigger island:|goto Desolace,30.01,8.70
+	'Interact with Rakcmore's Chest
+    .goal Rackmore's Chest##177786|q 6161/3
+    ..turnin Claim Rackmore's Treasure!##6161
+
+step //40
+    'Kill/loot the Slitherblade Oracles in the water and on the 2 bigger islands until you get the Oracle Crystal (low drop rate).|goto Desolace,32.78,21.82
+    'Kill/loot Slitherblade Oracles.|icon Interface\\cursor\\Attack
+    .collect Oracle Crystal##6442|q 1482/1|icon Interface\\icons\\inv_ore_arcanite_02
+	info 
+	'Kill Nagas on the road.|icon Interface\\cursor\\Attack
+    .kill 7 Slitherblade Myrmidon##4714|q 6143/1|n
+    .kill 7 Slitherblade Naga##4711|q 6143/2|n
+    .kill 5 Slitherblade Sorceress##4712|q 6143/3|n
+
+step //41
+    'Kill the required amount of Slitherblade naga.|goto Desolace,35.78,23.57
+    info 
+	'The Slitherblade Myrmidon are scattered between the two biggest islands.  The Slitherblade Naga are more towards the shore.  There are only a few Slitherblade Sorceresses scattered everywhere.
+    'Kill Nagas on the road.|icon Interface\\cursor\\Attack
+    .kill 7 Slitherblade Myrmidon##4714|q 6143/1
+    .kill 7 Slitherblade Naga##4711|q 6143/2
+    .kill 5 Slitherblade Sorceress##4712|q 6143/3
+	info 
+    'Kill/loot crabs and loot Giant Softshell Clams on sea floor.|icon Interface\\cursor\\Attack
+    .collect 10 Soft-shelled Clam Meat##15924|q 6142/1|n|icon Interface\\icons\\inv_misc_food_51
+	.kill Enraged Reef Crawler##12347
+
+step //42
+    'Finish Kill/looting crabs and loot Giant Softshell Clams on sea floor.|goto Desolace,33.57,31.79|icon Interface\\cursor\\Attack
+    .collect 10 Soft-shelled Clam Meat##15924|q 6142/1|icon Interface\\icons\\inv_misc_food_51
+	.kill Enraged Reef Crawler##12347
+
+step //43
+    'Up on the mountain ledge:|goto Desolace,38.88,27.16
+    .talk Azore Aldamort##11863
+    ..turnin Book of the Ancients##6027
+
+step //44
+	info |goto Silithus,0,400
+    'Go to Ghost Walker Post, take shortcut up hill...|goto Desolace,56.10,54.35|title Shortcut to enter: Ghost Walker Post
+	info 
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair|goto Desolace,55.59,56.51|title Get repaired
+	info |goto Desolace,52.25,53.44|title Maurin Bonesplitter
+    'Go across the bridge...|goto Desolace,54.61,54.99|title Go across bridge
+    .talk Maurin Bonesplitter##4498
+    ..turnin The Corrupter##1482
+    ..accept The Corrupter##1484
+
+step //45
+    'Next to you:|goto Desolace,52.57,54.39
+    .talk Takata Steelblade##5641
+    ..turnin The Corrupter##1484
+    info 
+	'SKIP (for now) "The Corrupter" quest - High level Elite quest, too hard to solo, especially now. You will come back to Desolace again in the future to try it.|icon Interface\\cursor\\Directions
+
+step //46
+    'Bloodrobe Questline: Kill/loot the Lesser Infernals for the Bloodrobe item.|goto Desolace,51.2,75.8|optional
+    .collect Lesser Infernal Stone##6990|q 4783/2
+	.kill Lesser Infernal##4676|n
+    only Warlock
+
+step //47
+    'Kill/loot any centaur around the Magram Village for the ears.|goto Desolace,70.21,72.29
+    .collect 15 Centaur Ear##6067|q 1366/1|icon Interface\\icons\\inv_misc_ear_human_02
+	info 
+    'Loot Sacks of Meats around the tents.|goto Desolace,70.21,72.29
+    .collect 6 Crudely Dried Meat##6069|q 1370/1|icon Interface\\icons\\inv_misc_food_16
+
+step //48
+	info |goto Silithus,0,400
+    'Enter Ghost Walker Post, make a left at the main entrance...|goto Desolace,56.63,56.91|title Enter: Ghost Walker Post
+	info |goto Desolace,56.19,59.57|title Felgur Twocuts
+    .talk Felgur Twocuts##5395
+    ..turnin Centaur Bounty##1366
+
+step //49
+    'Stop at the hut:|goto Desolace,55.59,56.51
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //50
+    'Grind on any mobs until you achieve 3 bars away from level 34 (level 33 and 49810 XP).
+    'Reach level 33 and 49 810 XP before continuing|optional
+    ..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //51
+    'Hearth to Shadowprey Village.|goto Desolace,24.09,68.21|title Hearth to Shadowprey Village|c
+    .use Hearthstone##6948
+
+step //52
+    'Go to the Stable Master just right outside the Inn and stable your pet.|goto Desolace,24.90,68.66
+    .talk Aboda##11105
+	info 
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter 
+//	(ERA or SOM1 or SOM2 or TBC)
+
+step //53
+    'Just outside of the Inn, and up on the mound:|goto Desolace,25.81,68.22
+    .talk Taiga Wisemane##11624
+    ..turnin Hand of Iruxos##5381
+    info 
+	'SKIP (for now) "Portals of the Legion" quest - Too high level right now. Can be done later in the guide.|icon Interface\\cursor\\Directions
+
+step //54
+    'Under the tent:|goto Desolace,36.24,79.25
+    .talk Uthek the Wise##5397
+    ..turnin Stealing Supplies##1370
+	info 
+	'For Vanilla|optional
+	..Accept Ongeku##1373
+    info 
+	'For TBC/WOTLK|optional
+	'SKIP "Ongeku" quest - This will be out of the way of the incoming route.|icon Interface\\cursor\\Directions
+
+step //55
+    'Go down to the docks:|goto Desolace,23.32,72.87
+    .talk Drulzegar Skraghook##12340
+    ..turnin Other Fish to Fry##6143
+	info 
+    'Under the hut:|goto Desolace,22.64,71.97|title Talk To Mai'Lahii
+    .talk Mai'Lahii##12031
+    ..turnin Clam Bait##6142
+
+step //56
+    'Make sure you are level 34.
+    ding 34
+    only Hunter
+
+step //57
+    'Now tame a Scorpashi Lasher (lvl 34-35) to get Claw R5. You would need to tame a lvl 34. Try to tame a lvl 35.|goto Desolace,37.95,74.84|icon Interface\\icons\\ability_hunter_beasttaming
+    info There's two slightly north around the area.
+    info 
+	'NOTE: Keep using this tamed scorpid for now (until the next section in Stranglethorn Vale). So just move on after taming the pet, you will get Claw R5 at Stranglethorn Vale.|icon Interface\\cursor\\Directions
+	.......'Only For TBC/Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only HUNTER
+//	and (ERA or SOM1 or SOM2 or TBC)
+
+step //58
+    'At the end of the docks at Shadowprey Village:|goto Desolace,21.60,74.13
+    .talk Thalon##6726
+    'Take the flight to Camp Taurajo|goto The Barrens,44.45,59.15|title Go to Camp Taurajo|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	info |only Hunter,Warrior
+	'NOTE: Hunters, DON'T stop at Thunder Bluff to get new spells/abilities because you will get them in Stranglethorn Vale soon.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    'NOTE: Warriors, DON'T stop at Thunder Bluff to get new abilities because the lvl 34 abilities are not worth much for PvE, so it's recommended to skip them.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    only Hunter,Warrior,Warlock,Rogue,Paladin
+
+step //59
+    'At the end of the docks at Shadowprey Village:|goto Desolace,21.60,74.13
+    .talk Thalon##6726
+	.fpath Shadowprey Village
+    'Take a flight to Thunder Bluff|goto Thunder Bluff,47.02,49.84|c|title Go to Thunder Bluff|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Druid,Shaman,Priest
+
+step //60
+    'Use your Teleport: Moonglade to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+    only Mage
+
+step //61
+    'At Thunder Bluff, get your lvl 34 spells/abilities NE on the Elder Rise.|goto Thunder Bluff,76.44,27.21|title Druid Trainers|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	'Priests, get new spells/abilities in Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainers|icon Interface\\icons\\inv_staff_30|only Priest
+	'Mages, get new spells/abilities in Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainers|icon Interface\\icons\\inv_staff_13|only Mage
+	'At Thunder Bluff, get your lvl 34 spells/abilities. Shaman Trainers are in the big tent up at The Spirit Rise.|goto Thunder Bluff,22.81,21.12|title Shaman Trainers|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid,Shaman,Priest,Mage
+	
+step //62
+    'At the top of the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.84
+    .talk Tal##2995
+    'Take the flight to Camp Taurajo|goto The Barrens,44.45,59.15|title Go to Camp Taurajo|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	only Druid,Shaman,Priest,Mage
+
+step //63
+	info |goto Silithus,0,400
+    'Go SE into Dustwallow Marsh to Shady Rest Inn...|goto The Barrens,50.89,78.64|title Shady Rest Inn
+	info 
+    'At Shady Rest Inn, collect the 3 quest-objects on the ground in front of the old Inn:|goto Dustwallow Marsh,29.84,48.25|title Suspicious Hoofprint
+	'Interact with Suspicious Hoofprint
+    ..accept Suspicious Hoofprints##1268
+	info
+    'Small white dot on a plank:|goto Dustwallow Marsh,29.84,48.25|title Theramore Guard Badge
+	'Interact with Theramore Guard Badge
+    ..accept Lieutenant Paval Reethe##1269
+	info 
+    'On the fireplace:|goto Dustwallow Marsh,29.63,48.60|title Black Shield
+    'Interact with Black Shield
+    ..accept The Black Shield##1251
+
+step //64
+    'At Brackenwall Village:|goto Dustwallow Marsh,36.42,31.88
+    .talk Krog##4926
+    ..turnin The Black Shield##1251
+    ..accept The Black Shield##1321
+    ..turnin Suspicious Hoofprints##1268
+    ..turnin Lieutenant Paval Reethe##1269
+
+step //65
+    'Next to you:|goto Dustwallow Marsh,36.53,30.80
+    .talk Do'gol##5087
+    ..turnin The Black Shield##1321
+    info 
+	'SKIP (for now) "The Black Shield" quest|icon Interface\\cursor\\Directions
+
+step //66
+    'From the female troll, buy the 3 First Aid books:|goto Dustwallow Marsh,36.49,30.35
+	.talk Balai Lok'Wein##13476
+    .buy Expert First Aid - Under Wraps##16084|icon Interface\\Icons\\inv_misc_book_08
+    .buy Manual: Heavy Silk Bandage##16112|icon Interface\\Icons\\inv_misc_book_03
+    .buy Manual: Mageweave Bandage##16113|icon Interface\\Icons\\inv_misc_book_03
+    info 
+	'NOTE: Read what you can on the boat in a bit.|icon Interface\\cursor\\Directions
+	info        You don't need these book in WOTLK
+	.......'Only For TBC/Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //67
+    'Take flight to Ratchet.|goto Dustwallow Marsh,35.57,31.88
+    .talk Shardi##11899
+	.fpath Brackenwall Village|icon Interface\\minimap\\Tracking\\FlightMaster
+    'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //68
+    'In the engineering building at Ratchet:|goto The Barrens,62.68,36.23
+    .talk Gazlowe##3391
+    ..turnin Goblin Sponsorship##1178
+    ..accept Goblin Sponsorship##1180
+
+step //69
+    'Bloodrobe Questline: Go up behind the Engineering building:|goto The Barrens,62.51,35.45|optional
+    .talk Menara Voidrender##6266
+    ..turnin Components for the Enchanted Gold Bloodrobe##4783
+    ..accept Components for the Enchanted Gold Bloodrobe##4784
+    only Warlock
+
+step //70
+    'Go up behind the Engineering building and from the Warlock Trainer:|goto The Barrens,62.44,35.45
+    .talk Babagaya Shadowcleft##23534
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //71
+    'Withdraw from the Bank:|goto The Barrens,62.66,37.42|title Bank
+    'Bloody Bone Necklace##3915|icon Interface\\icons\\inv_misc_bone_07|only Warrior
+	'Kravel's Parts Order|icon Interface\\icons\\inv_misc_note_03
+    'Kravel's Crate|icon Interface\\icons\\inv_crate_01
+    'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+    info 
+	'Deposit into bank: 
+	'Belgrom's Sealed Note|icon Interface\\icons\\inv_letter_12
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //72
+    'On the docks:|goto The Barrens,63.35,38.45
+    .talk Wharfmaster Dizzywig##3453
+    ..turnin Wharfmaster Dizzywig##1111
+    ..accept Parts for Kravel##1112
+
+step //73
+    'Get on the boat to go to Booty Bay.|goto The Barrens,63.66,38.68|title Get on Boat
+    info 
+	'While waiting for the boat, build up First Aid. And read what you can of your First Aid books.
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //74
+    .....'32-34 Desolace is complete!|icon Interface\\cursor\\Directions
+	....'Go to 34-36 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\34-36 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\34-36 Stranglethorn Vale",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\36-37 Arathi Highlands
+startlevel 34
+
+step //1
+    'As soon as you get off the boat:|goto Stranglethorn Vale,26.3,73.6
+    .talk Wharfmaster Lozgil##4631
+    ..turnin Goblin Sponsorship##1180
+    ..accept Goblin Sponsorship##1181
+
+step //2
+    'Bloodrobe Questline: At Booty Bay, go up into the hut at A Tailor to Cities:|goto Stranglethorn Vale,28.7,76.9|optional
+    .talk Xizk Goodstitch##2670
+    ..turnin Brimstone Belt##4785
+    only Warlock
+
+step //3
+    'Bloodrobe Questline: Deposit in the bank:|goto Stranglethorn Vale,26.6,76.5|optional
+	'Fine Gold Thread|icon Interface\\icons\\inv_fabric_linen_02
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //4
+    'In the Inn (The Salty Sailor Tavern), from the Innkeeper:|goto Stranglethorn Vale,27.04,77.31
+    .talk Innkeeper Skindle##6807
+    .home Booty Bay|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //5
+    'Next to you in the Inn:|goto Stranglethorn Vale,27.1,77.2
+    .talk Crank Fizzlebub##2498
+    ..accept "Singing Blue Shards"##605
+
+step //6
+    'Go upstairs in the Inn:|goto Stranglethorn Vale,27.0,77.1|title Kebok
+    .talk Kebok##737
+    ..accept Bloodscalp Ears##189
+    ..accept Hostile Takeover##213
+	info 
+    .talk Krazek##773|goto Stranglethorn Vale,26.94,77.20|title Krazek
+    ..accept Investigate the Camp##201
+
+step //7
+    'Stay up on the top of the docks and go over past the Alliance FP to Tan-Your-Hide Leatherworks:|goto Stranglethorn Vale,28.3,77.6
+    .talk Drizzlik##2495
+    ..accept Supply and Demand##575
+
+step //8
+    'Go back over to the top of the Inn and then go up the steps on the boat-deck:|goto Stranglethorn Vale,27.2,76.9
+    .talk Baron Revilgaz##2496
+    ..turnin Goblin Sponsorship##1181
+    ..accept Goblin Sponsorship##1182
+
+step //9
+    'Next to you on the roof:|goto Stranglethorn Vale,26.9,77.1
+//.fpath Booty Bay
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster|goto Stranglethorn Vale,32.5,29.4|title Go to Grom'gol|c
+
+step //10
+	info |goto Isle of Quel'Danas,600,0.0
+    'At Grom'gol, accept the following:
+    .talk Commander Aggro'gosh##2464|goto Stranglethorn Vale,32.2,28.9
+    ..accept The Defense of Grom'gol##568
+	info 
+    .talk Far Seer Mok'thardin##2465|goto Stranglethorn Vale,32.12,29.24|title Far Seer Mok'thardin
+    ..accept Mok'thardin's Enchantment##570
+	info 
+    .talk Nemeth Hawkeye##17094|goto Stranglethorn Vale,31.97,28.61|title Nemeth Hawkeye
+    ..accept Bloodscalp Insight##9436
+	info 
+    .talk Nimboya##2497|goto Stranglethorn Vale,32.16,27.72|title Nimboya
+    ..accept Hunt for Yenniku##581
+
+step //11
+    .talk Kin'weelay##2519|goto Stranglethorn Vale,32.27,27.71|title Kin'weelay
+    ..accept Bloody Bone Necklaces##596
+    ..accept The Vile Reef##629
+    info 
+    'Get Repaired/Resupplied|goto Stranglethorn Vale,32.37,27.95|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //12
+    'Get new spells/abilities at the Hunter Trainer.|goto Stranglethorn Vale,31.2,28.7
+    .talk Kragg##1404
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //13
+    'Grind up north on the plateaus around the area then abandon your scorpid (make sure you have Claw R5 first) then tame a Stranglethorn Tiger for Dash R1. Try to tame a lvl 33. This is also the main pet I personally use for while.|goto Stranglethorn Vale,30.0,15.0|title Tame a Stranglethorn Tiger around here|icon Interface\\icons\\ability_hunter_beasttaming
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+//	|ERA|SOM|TBC
+
+step //14
+	'REMINDER: The Green Hills of Stranglethorn quest requires that you save any Green Hills of Stranglethorn pages you find. These pages can drop from any humanoid mob in Stranglethorn Vale.|goto Stranglethorn Vale,35.66,10.53|title Nesingwary's Expedition|icon Interface\\cursor\\Directions
+	info 
+    'I recommend mailing them to your alt for storage. Once your alt collects all the pages, mail them back to your main. You can also find these pages in the AH or from other players.|icon Interface\\minimap\\Tracking\\Mailbox
+	info 
+    'You don't need to accept the quest to get the page drops, so accept and turn this in if you get all the pages. You will return to Stranglethorn Vale numerous times in the future for more chances to find the pages.|icon Interface\\cursor\\Quest
+	info 
+    'You need the following pages (although they could be in your mailbox):
+    '1, 4, 6, 8, 10, 11, 14, 16, 18, 20, 21, 24, 25, 26, 27.|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //15
+	info |goto Stranglethorn Vale,35.66,10.53|title Nesingwary's Expedition
+	.collect Page 1##2725|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 4##2728|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 6##2730|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 8##2732|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 10##2734|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 11##2735|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 14##2738|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 16##2740|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 18##2742|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 20##2744|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 21##2745|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 24##2748|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 25##2749|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 26##2750|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 27##2751|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //16
+    'Around the ledges along the shore kill/loot Crystal Spine Basilisks. 80% drop rate. There's only 9 mob spawns in the area.|goto Stranglethorn Vale,26.9,18.5|icon Interface\\cursor\\Attack
+    .kill Crystal Spine Basilisk##689|n
+	.collect 10 Singing Crystal Shard##3918|q 605/1|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+    'When you run out of mobs, just continue on, we will revisit this spot later!
+	.........'Skip This? (For Now)|confirm|next +1|icon Interface\\cursor\\Point
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'NOTE: These involve kill/looting trolls at the various troll ruins. |goto Stranglethorn Vale,29.4,19.8|title Around: Bal'lal Ruins|icon Interface\\cursor\\Directions
+	'There is another Ruins up NE around the area.|goto Stranglethorn Vale,33.68,15.71|title Around: Kal'ai Ruins
+	.collect 15 Bloodscalp Ear##1519|q 189/1|icon Interface\\icons\\inv_misc_organ_06
+	.collect 9 Bloodscalp Tusk##3901|q 581/1|icon Interface\\icons\\inv_misc_bone_06
+	.collect Bloodscalp Totem##23679|q 9436/1|n|icon Interface\\icons\\spell_totem_wardofdraining
+	.collect 25 Bloody Bone Necklace##3915|q 596/1|n|icon Interface\\icons\\inv_misc_bone_07
+	.kill Bloodscalp Axe Thrower##694|n
+    .kill Bloodscalp Warrior##587|n
+    .kill Bloodscalp Beastmaster##699|n
+    .kill Bloodscalp Mystic##701|n
+	.kill Bloodscalp Shaman##697|n
+	info 
+	'Kill tigers on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Elder Stranglethorn Tiger##1085|q 187/1|n
+
+step //18
+    'Kill/loot Bloodscalp Shamans.|goto Stranglethorn Vale,29.4,19.8|icon Interface\\cursor\\Attack
+    .kill Bloodscalp Shaman##697|n|goto Stranglethorn Vale,33.68,15.71|title Around: Kal'ai Ruins
+	.collect Bloodscalp Totem##23679|q 9436/1|icon Interface\\icons\\spell_totem_wardofdraining
+	.collect 25 Bloody Bone Necklace##3915|q 596/1|n|icon Interface\\icons\\inv_misc_bone_07
+	info 
+	'Kill tigers on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Elder Stranglethorn Tiger##1085|q 187/1|n
+
+step //19
+    'The Elder Stranglethorn Tigers are between the two troll Ruins from the previous step. Finish killing them.|goto Stranglethorn Vale,32.9,18.5|icon Interface\\cursor\\Attack
+    .kill Elder Stranglethorn Tiger##1085|q 187/1
+
+step //20
+    'Lashtail Raptors are found just north of Grom'gol Base Camp.|goto Stranglethorn Vale,32.0,22.9|icon Interface\\cursor\\Attack
+    .kill 15 Lashtail Raptor##686|q 568/1
+    .kill 10 Lashtail Raptor##686|q 195/1
+
+step //21
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.2,27.7
+    .talk Nimboya##2497
+    ..turnin Hunt for Yenniku##581
+    ..accept Headhunting##582
+
+step //22
+    'Next to the Bonfire:|goto Stranglethorn Vale,32.0,28.6
+    .talk Nemeth Hawkeye##17094
+    ..turnin Bloodscalp Insight##9436
+    ..accept An Unusual Patron##9457
+
+step //23
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.2,28.9
+    .talk Commander Aggro'gosh##2464
+    ..turnin The Defense of Grom'gol##568
+    ..accept The Defense of Grom'gol##569
+
+step //24
+    'Up Coming: Once you turn lvl 35, start using the higher tier food/drink.|icon Interface\\minimap\\Tracking\\Food
+	info 
+    'Get Repaired/Resupplied|goto Stranglethorn Vale,32.2,29.3|title Get Repaired / Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //25
+    'Under the water at The Vile Reef, loot the Gri'lek the Wanderer tablet.|goto Stranglethorn Vale,24.8,23.0
+	info 
+    'Use your Swim Speed Potion to escape out.|use Swim Speed Potion##6372|only !Druid
+    'Druids: Use Aquatic Form.|cast Aquatic Form##1066|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+    .collect Tablet Shard##4094|q 629/1|icon Interface\\icons\\inv_misc_rune_02
+    info 
+    'Kill/loot murlocs around the area.|icon Interface\\cursor\\Attack
+	.collect 10 Encrusted Tail Fin##5796|q 1107/1|icon Interface\\icons\\inv_misc_monsterscales_03
+    .kill Saltscale Forager##877|n
+    .kill Saltscale Warrior##871|n
+    .kill Saltscale Hunter##879|n
+	info          only for TBC/WOTLK
+//    only TBC|WOTLK
+
+step //26
+    'OPTIONAL: Travel in Aquatic Form in the water up the coast and pick up Blue Pearls from Giant Clams. You can use 9 Pearls for a later optional turn-in (Pearl Diving) at Badlands. |goto Stranglethorn Vale,24.8,23.0|optional
+	'You will have more opportunities to get these (even at level 39), but my guide will not remind you, so feel free to get these if you want.  You can also find thses from the AH.
+    .collect 9 Blue Pearl##4611|n|icon Interface\\icons\\inv_ore_arcanite_02
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //27
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go to the Savage Coast (island) and at the Altar of Naias use the quest item "Gift of Naias" then kill/loot Naias (water elemental) when he spawns.|goto Stranglethorn Vale,19.8,22.6|title Altar of Naias|icon Interface\\cursor\\Attack
+    .use Gift of Naias##23680
+    .kill Naias##17207|n
+	.collect Heart of Naias##23681|q 9457/1|icon Interface\\icons\\inv_misc_gem_sapphire_01
+
+step //28
+    'Around the Zuuldaia Ruins (troll Ruins), kill/loot the Bloodscalp Headhunters for the Shrunken Heads.|goto Stranglethorn Vale,20.3,13.7|icon Interface\\cursor\\Attack
+    .kill Bloodscalp Headhunter##671|n
+    .collect 20 Shrunken Head##1532|q 582/1|icon Interface\\icons\\inv_misc_bone_humanskull_01
+	info 
+	'Kill/loot any trolls.|icon Interface\\cursor\\Attack
+	.collect 25 Bloody Bone Necklace##3915|q 596/1|n|icon Interface\\icons\\inv_misc_bone_07
+
+step //29
+	info |goto Isle of Quel'Danas,600,0.0
+    'Finish Kill/looting any trolls. You can kill lower level trolls for the necklaces down south at the two ruins.|goto Stranglethorn Vale,29.4,19.8|title Around: Bal'lal Ruins|icon Interface\\cursor\\Attack
+    .collect 25 Bloody Bone Necklace##3915|q 596/1|icon Interface\\icons\\inv_misc_bone_07
+    'Also around:|goto Stranglethorn Vale,33.7,15.7|title Around: Kal'ai Ruins
+
+step //30
+    'At Nesingwary's Expedition:|goto Stranglethorn Vale,35.7,10.5|title Hemet Nesingwary Jr.
+    .talk Hemet Nesingwary Jr.##715
+    ..turnin Raptor Mastery##195
+    ..accept Raptor Mastery##196
+    ..turnin Hemet Nesingwary##5762
+    ..turnin Hunting in Stranglethorn##5763
+	info 
+    .talk Ajeck Rouack##717
+    ..turnin Tiger Mastery##187
+    ..accept Tiger Mastery##188
+	info 
+    .talk Sir S. J. Erlgadin##718
+    ..accept Panther Mastery##192
+	info 
+	.talk Jaquilina Dramet##2483|goto Stranglethorn Vale,35.8,10.7|title Get Repaired / Resupplied
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //31
+    'At the mound, kill/loot Sin'Dall. This lvl 37 tiger could be on top of the mound or patrolling around it.|goto Stranglethorn Vale,32.2,17.4
+    .kill Sin'Dall##729|n
+	.collect Paw of Sin'Dall##3879|q 188/1|icon Interface\\icons\\ability_hunter_mendpet
+
+step //32
+    'Back at Nesingwary's Expedition:|goto Stranglethorn Vale,35.6,10.6
+    .talk Ajeck Rouack##717
+    ..turnin Tiger Mastery##188
+
+step //33
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot River Crocolisks around the river.|goto Stranglethorn Vale,34.2,9.0|title Around the river from here|icon Interface\\cursor\\Attack
+	.collect 2 Large River Crocolisk Skin##4053|q 575/1|icon Interface\\icons\\inv_misc_monsterscales_02
+    .kill River Crocolisk##1150|n
+	info |goto Stranglethorn Vale,35.6,6.8|title Stone Maw Basilisks around the area
+    'Kill/loot Stone Maw Basilisks around the north end of the river.|goto Stranglethorn Vale,41.0,14.0|title Around the river to here|icon Interface\\cursor\\Attack
+	.collect 10 Singing Crystal Shard##3918|q 605/1|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+    .kill Stone Maw Basilisk##688|n
+
+step //34
+    'Do the first part of "Goblin Sponsorship" by kill/looting Foreman Cozzle in the control room at the top of the Venture Co. Operations Center.|goto Stranglethorn Vale,42.2,19.1|title Foreman Cozzle|icon Interface\\cursor\\Attack
+    .kill Foreman Cozzle##4723|n
+    .collect Cozzle's Key##5851|q 1182/2|icon Interface\\icons\\inv_misc_key_07
+	info 
+    'Kill/loot Venture Co. Geologists scattered around the Operations.|icon Interface\\cursor\\Attack
+    .kill Venture Co. Geologist##1096|n
+	.collect 8 Tumbled Crystal##4106|q 213/1|n|icon Interface\\icons\\inv_misc_gem_sapphire_02
+
+step //35
+    'Loot Cozzle's Footlocker (in the small house).|goto Stranglethorn Vale,43.3,20.3
+	info 
+    'NOTE: Your key will disappear as soon as you click the chest, so make sure you have room in your bags for the Blueprints.|icon Interface\\cursor\\Directions
+    .collect Fuel Regulator Blueprints##5852|q 1182/1|icon Interface\\icons\\inv_misc_note_04
+	info 
+    'Kill/loot Venture Co. Geologists scattered around the Operations.|icon Interface\\cursor\\Attack
+    .kill Venture Co. Geologist##1096|n
+	.collect 8 Tumbled Crystal##4106|q 213/1|n|icon Interface\\icons\\inv_misc_gem_sapphire_02
+
+step //36
+    'Finish Kill/looting Venture Co. Geologists scattered around the Venture Co. Base Camp.|goto Stranglethorn Vale,44.0,21.2|icon Interface\\cursor\\Attack
+    .kill Venture Co. Geologist##1096|n
+	.collect 8 Tumbled Crystal##4106|q 213/1|icon Interface\\icons\\inv_misc_gem_sapphire_02
+
+step //37
+    'Up around the ledges kill/loot Shadowmaw Panthers.|goto Stranglethorn Vale,49.1,23.0|icon Interface\\cursor\\Attack
+    'TIP: Hunters - Use Track Hidden to find the panthers easier.|cast Track Hidden##19885|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .kill 10 Shadowmaw Panther##684|q 192/1
+    .collect 8 Shadowmaw Claw##3838|q 570/1|icon Interface\\icons\\inv_misc_gem_sapphire_02
+	info 
+	'Also kill/loot Stranglethorn Tigress for the fang.|icon Interface\\cursor\\Attack
+	.kill Stranglethorn Tigress##772|n
+	.collect Pristine Tigress Fang##3839|q 570/2|icon Interface\\icons\\inv_misc_bone_08
+	info 
+    'WARNING: Watch out for Bhag'thera!|icon Interface\\cursor\\Directions
+	
+step //38
+    'Kill/loot Crystal Spine Basilisks just NE around the mountain ledges.|goto Stranglethorn Vale,48.2,7.7
+    .collect 10 Singing Crystal Shard##3918|q 605/1|icon Interface\\icons\\inv_misc_gem_sapphire_03
+    .kill Crystal Spine Basilisk##689|n
+
+step //39
+    'Go across the river to Mizjah Ruins...|goto Stranglethorn Vale,37.2,31.1
+    'Around Mizjah Ruins, kill the required amount of Mosh'Ogg ogres.
+    .kill 10 Mosh'Ogg Brute##1142|q 569/1
+    .kill 5 Mosh'Ogg Witch Doctor##1144|q 569/2
+
+step //40
+    'Go to Nesingwary's Expedition:|goto Stranglethorn Vale,35.6,10.6
+    .talk Sir S. J. Erlgadin##718
+    ..turnin Panther Mastery##192
+    ..accept Panther Mastery##193
+
+step //41
+    'OPTIONAL: If you are level 36, Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Druid Trainer next to the Moonwell to get your level 36 spells/abilities. Also the lvl 36 upgrades are limited and you may wish to wait until Level 38 instead.|goto Moonglade,52.5,40.6|title Moonglade|optional
+    .talk Loganaar##12042
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+step //42
+    'Hearth to Booty Bay.|goto Stranglethorn Vale,27.04,77.31|title Hearth to Booty Bay|c
+    .use Hearthstone##6948
+
+step //43
+    'In the Inn:|goto Stranglethorn Vale,27.1,77.2
+    .talk Crank Fizzlebub##2498
+    ..turnin Singing Blue Shards##605
+	info 
+    'SKIP "Venture Company Mining" for now.|icon Interface\\cursor\\Directions
+
+step //44
+    'Go upstairs in the Inn:|goto Stranglethorn Vale,27.0,77.1
+    .talk Kebok##737
+    ..turnin Bloodscalp Ears##189
+    ..turnin Hostile Takeover##213
+	info 
+    .talk Krazek##773
+    ..turnin Investigate the Camp##201
+
+step //45
+    'Stay up on the top of the docks and go over past the Alliance FP to Tan-Your-Hide Leatherworks:|goto Stranglethorn Vale,28.3,77.6
+    .talk Drizzlik##2495
+    ..turnin Supply and Demand##575
+    ..accept Some Assembly Required##577
+
+step //46
+    'Go back over to the top of the Inn and then go up the steps on the boat-deck:|goto Stranglethorn Vale,27.2,76.9
+    .talk Baron Revilgaz##2496
+    ..turnin Goblin Sponsorship##1182
+    ..accept Goblin Sponsorship##1183
+
+step //47
+    'Next to you on the roof:|goto Stranglethorn Vale,26.9,77.1
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster|goto Stranglethorn Vale,32.5,29.4|title Go to Grom'gol|c
+
+step //48
+    'Turn in ALL quests at Grom'gol Base Camp:|goto Stranglethorn Vale,32.2,28.9
+    .talk Commander Aggro'gosh##2464
+    ..turnin The Defense of Grom'gol##569
+	info 
+    .talk Far Seer Mok'thardin##2465
+    ..turnin Mok'thardin's Enchantment##570
+	info 
+    'SKIP "Mok'thardin's Enchantment" part 2 for now.|icon Interface\\cursor\\Directions
+	info 
+    .talk Nemeth Hawkeye##17094
+    ..turnin An Unusual Patron##9457
+    info 
+    .talk Nimboya##2497
+    ..turnin Headhunting##582
+    ..accept Trollbane##638
+
+step //49
+    .talk Kin'weelay##2519
+    ..turnin Bloody Bone Necklaces##596
+    ..turnin The Vile Reef##629
+
+step //50
+    'Grind on any mobs around Grom'gol Base Camp.
+    ding 36|goto Stranglethorn Vale,32.8,24.0
+	info 
+    'Also Destroy the remaining Shrunken Heads as it has no more use.|icon Interface\\icons\\inv_misc_bone_humanskull_01
+
+step //51
+    'Get new spells/abilities from the Hunter Trainer at Grom'gol Base Camp.|goto Stranglethorn Vale,31.2,28.7
+    .talk Kragg##1404
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //52
+    'You can upgrade pet abilities at the Pet Trainer next to you as well.|goto Stranglethorn Vale,31.1,28.9
+    .talk Zudd##3624
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+// |not WOTLK
+
+step //53
+	info |goto Isle of Quel'Danas,600,0.0
+    'Get on the zeppelin to go to the Undercity (up in the Inn).|goto Stranglethorn Vale,31.4,29.6|title Up in the Inn
+	info 
+    'Build up First Aid while waiting.|icon Interface\\cursor\\Directions
+	info 
+    'TIP: You can save a good chunk of time by doing a suicide warp by jumping off of the zeppelin at a certain timing.|icon Interface\\cursor\\Directions
+	info 
+	'Enter Undercity...|goto Tirisfal Glades,62.2,66.89|title Enter: Undercity|c
+    only !Mage
+
+step //54
+    'Use your Teleport: Undercity to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to Undercity|c|icon Interface\\icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+    only Mage
+
+step //55
+	info |goto Isle of Quel'Danas,600,0.0
+    'At the Undercity, get new spells/abilities.
+	info 
+    'Go NW to the War Quarter. Train |icon Interface\\icons\\INV_Sword_27|only Warrior
+	'Whirlwind R1. This is going to be your fury spender for the next few levels - weave it in between auto attacks.|goto Undercity,47.4,16.0|title Warrior Trainer|icon Interface\\icons\\ability_whirlwind|only Warrior
+	'Go NE to the Magic Quarter.|goto Undercity,86.2,15.9|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+    'Orb of Orahil Questline - From your trainer, you can start a questline to obtain one of these 4 items: |icon Interface\\cursor\\Directions|only Warlock
+	'Orb of Dar'Orahil (Off Hand: +5 intel,+14 Shadow damage (12 spell power for WOTLK), Restores 40 Health/3 sec for 30 sec.)|icon Interface\\icons\\inv_misc_orb_03|only Warlock
+	'Orb of Noh'Orahil (Off Hand: +5 intel,+14 Fire damage (12 spell power for WOTLK), Restores 40 Health/3 sec for 30 sec.)|icon Interface\\icons\\inv_misc_orb_03|only Warlock
+	'Staff of Dar'Orahil (Staff: +3 stam, +6 intel, +19 Shadow spells (15 spell power for WOTLK)|icon Interface\\icons\\inv_staff_12 |only Warlock
+	'or Staff of Noh'Orahil (Staff: +3 stam, +6 intel, +19 Fire spells (15 spell power for WOTLK)||icon Interface\\icons\\inv_staff_14 |only Warlock
+	'If you do not need any one of those items you can skip the questline, otherwise it's worth doing.|only Warlock
+    .talk Kaal Soulreaper##4563|only Warlock
+    ..accept "Knowledge of the Orb of Orahil"##4969|only Warlock
+	'Next to you|goto Undercity,85.0,14.0|title Mage Trainer|icon Interface\\icons\\inv_staff_13|only Mage
+	'Rogue Trainers are at the Rogue' Quarters.|goto Undercity,83.9,72.1|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	'Paladin Trainer is at the Royal Quarter.|goto Undercity,52.49,63.87|title Enter: Royal Quarter|icon Interface\\icons\\INV_Hammer|only Paladin
+    .talk Champion Cyssa Dawnrose##20406|goto Undercity,58.0,90.5|title Paladin Trainer|only Paladin
+	'Priest Trainers are at the War Quarter.|goto Undercity,49.3,17.1|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+    info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Warrior,Paladin,Rogue,Warlock,Mage,Priest
+// only !Hunter,!Shaman,!Druid
+
+step //58
+    'Drop down and from the Reagent Vendor, purchase up to 10/20 Runes of Portals.
+	info 
+    'NOTES: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|goto Undercity,82.8,15.9|icon Interface\\cursor\\Directions
+    .talk Hannah Akeley##4575
+    .buy 10 Rune of Teleportation##17031|icon Interface\\icons\\inv_misc_rune_06
+    only Mage
+
+step //59
+    'Next to you (no exclamation mark):|goto Undercity,57.8,90.6
+    .talk Ambassador Sunsorrow##16287
+    ..accept Report to Tarren Mill##9425
+    only Paladin
+
+step //60
+    'Next to you:|goto Undercity,57.6,93.8
+    .talk Sharlindra##2227
+    ..accept The Crown of Will##495
+    only Paladin
+
+step //61
+    'Withdraw from the bank: |goto Undercity,66.0,44.1|title Bank
+	'Rod of Helcular|icon Interface\\icons\\inv_wand_09
+	'Elixir of Water Breathing|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	'Swim Speed Potion|icon Interface\\icons\\inv_potion_13
+	info 
+    'Deposit: 
+	'Encrusted Tail Fin|icon Interface\\icons\\inv_misc_monsterscales_03
+	'Fuel Regulator Blueprints|icon Interface\\icons\\inv_misc_note_04
+	'Kravel's Parts|icon Interface\\icons\\inv_crate_03
+
+step //62
+    'For upcoming under water quests at Faldir's Cove in Arathi Highlands:|goto Undercity,67.67,35.88|title AH
+    'Get Elixir of Water Breathing and Swim Speed Potions from the Auction Hall if needed.|goto Undercity,68.2,38.3|title Mailbox
+    .collect 1 Elixir of Water Breathing##5996|n
+    .collect 1 Swim Speed Potion##6372|n
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+//    only not Shaman|not Druid|not Warlock|optional
+
+step //63
+    'Go up:|goto Undercity,63.8,49.5
+    .talk Genavie Callow##4486
+    ..accept To Steal From Thieves##1164
+
+step //64
+    'Next to you:|goto Undercity,63.3,48.5
+    .talk Michael Garrett##4551
+    'From the Bat Handler, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //65
+    'At Tarren Mill:|goto Hillsbrad Foothills,61.9,19.6
+    .talk Tallow##2770
+    ..accept The Hammer May Fall##676
+
+step //66
+    'In front of the church:|goto Hillsbrad Foothills,62.6,20.6
+    .talk Melisara##2278
+    ..turnin The Crown of Will##495
+    ..accept The Crown of Will##518
+    info 
+    .talk Advisor Duskingdawn##17092
+    ..turnin Report to Tarren Mill##9425
+    only Paladin
+
+step //67
+    'Take Flight Path to Arathi Highlands.|goto Hillsbrad Foothills,60.2,18.6
+    .talk Zarise##2389
+	'From the Bat Handler, take a flight to Hammerfall, Arathi|goto Arathi Highlands,73.07,32.61|title Go to Hammerfall|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //68
+	.'34-36 Stranglethorn Vale is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 36-37 Arathi Highlands|confirm|next "Joana's Guide\\Horde\\36-37 Arathi Highlands"|icon Interface\\icons\\achievement_zone_arathihighlands_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\36-37 Arathi Highlands",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\37-37 Alterac Mountains
+startlevel 36
+	
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    'From the Innkeeper in the Inn.|goto Arathi Highlands,73.79,32.95|title Enter Inn
+    .talk Innkeeper Adegwa##9501|goto Arathi Highlands,73.84,32.46|title Innkeeper Adegwa
+    .home Hammerfall|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+	.talk Mu'uta##9555|goto Arathi Highlands,72.52,33.35|title Mu'uta
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //2
+    'On the balcony next to you:|goto Arathi Highlands,73.80,33.96
+    .talk Zengu##2703
+    ..turnin Trollbane##638
+    ..accept Sigil of Strom##639
+	info  Group of 3 players quest for Vanilla only
+
+step //3
+    'Go down:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..accept Foul Magics##671
+    ..accept Guile of the Raptor##701
+
+step //4
+    'Go west:|goto Arathi Highlands,62.49,33.72
+    Interact with Shards of Myzrael
+    ..accept The Princess Trapped##642
+
+step //5
+    'Around Drywhisker Gorge, kill/loot the Drywhisker kobolds, in and outside of the cave.|goto Arathi Highlands,82.98,35.62|icon Interface\\cursor\\Attack
+	.collect 12 Mote of Myzrael##4435|q 642/1|icon Interface\\icons\\inv_misc_gem_sapphire_03
+    .kill Drywhisker Kobold##2572|n
+    .kill Drywhisker Digger##2574|n
+    .kill Drywhisker Surveyor##2573|n
+    info 
+	'TIP: If you are a Miner, mine as many Lesser Bloodstone Deposits in the cave as you can. These are used for an Alliance quest only at STV and sell good in the neutral AH.|icon Interface\\cursor\\Directions
+
+step //6
+    'Go to the end of the cave:|goto Arathi Highlands,84.31,30.96
+    Interact with Iridescent Shards
+    ..turnin The Princess Trapped##642
+    ..accept Stones of Binding##651
+
+step //7
+    'If your First Aid is greater than 225, go to Hammerfall and in the building:|goto Arathi Highlands,73.42,36.89|optional|only if skill("First Aid")>=225
+    .talk Doctor Gregory Victor##12920|only if skill("First Aid")>=225
+    ..accept Triage##6622|only if skill("First Aid")>=225
+    info |only if skill("First Aid")>=225
+	'NOTE: The quest will then start immediately. Use the Triage Bandage quest item right there in the room on the Injured Soldiers.|icon Interface\\cursor\\Directions|only if skill("First Aid")>=225
+	'Level up your First Aid to 225 to do "Triage" quest which let you level your First aid to 300. Only for TBC/Vanilla|only if skill("First Aid")<225
+	'In WotLK, this doctor no longer advances your First Aid, you now just do that at any First Aid trainer.
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //8
+    'Stand here to reach all Injured Soldiers:|goto Arathi Highlands,73.01,36.82
+	info 
+	'Use the Triage Bandage on the Critically Injured Soldier, then badly Injured Soldiers, then Injured Soldiers.|icon Interface\\icons\\inv_misc_bandage_12
+    .use Triage Bandage##16991
+	.talk Critically Injured Soldier##12925
+	.talk Badly Injured Soldier##12924
+	.talk Injured Soldier##12923
+    .goal Patients Saved!|q 6622/1
+	info 
+	'Tip: You can Press Ctrl V to activate the health bar over the heads of the patients for easy health monitoring, and just left click and use your Triage Bandage. If you want to be even faster, you can put the Triage bandage on your action bar (like 1 button) and set a keybind to target faster nearest NPC (in Keybindings, at "Target Nearest Friend")|icon Interface\\cursor\\Directions
+    only if skill("First Aid")>=225
+	
+step //9
+    'Back in the building:|goto Arathi Highlands,73.42,36.89
+    .talk Doctor Gregory Victor##12920
+    ..turnin Triage##6622
+    info 
+	'NOTES: Your First Aid should boost to 300 max skill. You will also be revisiting this Doctor in the future to get: Heavy Runecloth Bandage (240 skill), Runecloth Bandage (260 skill), Heavy Runecloth Bandage (290 skill), only for Vanilla and TBC. In WotLK, this doctor no longer advances your First Aid, you now just do that at any First Aid trainer.|icon Interface\\cursor\\Directions
+	only if skill("First Aid")>=225
+
+step //10
+    'Destroy the Triage Bandage as it is no longer needed.|icon Interface\\icons\\inv_misc_bandage_12
+    ..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	only if skill("First Aid")>=225
+
+step //11
+    'Get repaired at the Orc male vendor:|goto Arathi Highlands,72.52,33.35
+	.talk Mu'uta##9555
+    'Get Repaired|icon Interface\\minimap\\Tracking\\Repair
+	info 
+    'Or get resupplied (food/drink) up in the Inn:|goto Arathi Highlands,73.84,32.46|title Innkeeper Adegwa
+    .talk Innkeeper Adegwa##9501
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	only Paladin,Hunter,Shaman,Druid,Mage,Priest,Warlock
+//    only !Rogue !Warrior
+
+step //12
+    'Take the north exit and go west to the Circle of East Binding and loot the Stone of East Binding for the Cresting Key:|goto Arathi Highlands,66.70,29.73
+    .collect Cresting Key##4484|q 651/2|icon Interface\\icons\\inv_misc_key_03
+
+step //13
+    'West at Dabyrie's Farmstead, kill/loot Kenata Dabyrie (up in the small house).|goto Arathi Highlands,56.38,36.09|icon Interface\\cursor\\Attack
+    .kill Kenata Dabyrie##4480|n
+	.collect Kenata's Head##5830|q 1164/1|icon Interface\\icons\\inv_misc_head_human_02
+
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot Fardel Dabyrie (standing outside next to the barn or in front of the stables).|goto Arathi Highlands,56.54,38.70|title Kill/loot: Fardel Dabyrie (front of barn)|icon Interface\\cursor\\Attack
+    .kill Fardel Dabyrie##4479|n
+	.collect Fardel's Head##5831|q 1164/3|icon Interface\\icons\\inv_misc_head_human_01
+    info |goto Arathi Highlands,54.49,38.25|title Kill/loot: Fardel Dabyrie (front of stables)
+
+step //15
+    'Kill/loot Marcel Dabyrie (in the stables).|goto Arathi Highlands,54.14,38.15|icon Interface\\cursor\\Attack
+    .kill Marcel Dabyrie##4481|n
+	.collect Marcel's Head##5832|q 1164/2|icon Interface\\icons\\inv_misc_head_human_01
+
+step //16
+    'Over at Circle of Outer Binding, loot the Stone of Outer Binding for the Thundering Key:|goto Arathi Highlands,52.03,50.73
+    .collect Thundering Key##4485|q 651/3|icon Interface\\icons\\inv_misc_key_02
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot Highland Fleshstalkers around the area:|goto Arathi Highlands,50.45,64.10|title Around the area|icon Interface\\cursor\\Attack
+    .kill Highland Fleshstalker##2561|n
+	.collect 12 Raptor Heart##4513|q 701/1|icon Interface\\icons\\inv_misc_organ_02
+    info 
+	'More around here:|goto Arathi Highlands,46.52,77.23|title More around here
+
+step //18
+    'At Boulderfist Mine, kill the Boulderfist Ogres (outside of the mine) and the Boulderfist Enforcers (inside of the mine).|goto Arathi Highlands,34.88,44.18|icon Interface\\cursor\\Attack
+    .kill 8 Boulderfist Ogre##2562|q 676/1
+    .kill 10 Boulderfist Enforcer##2564|q 676/2
+
+step //19
+    'Around Northfold Manor, kill/loot the Syndicate humans. Any of them can drop the amulets.|goto Arathi Highlands,32.35,28.50|icon Interface\\cursor\\Attack
+    .collect 10 Bloodstone Amulet##4495|q 671/1|icon Interface\\icons\\inv_jewelry_necklace_05
+
+step //20
+    'Over at Circle of West Binding, loot the Stone of West Binding for the Burning Key:|goto Arathi Highlands,25.47,30.09
+    .collect Burning Key##4483|q 651/1|icon Interface\\icons\\inv_misc_key_01
+	info |only Warlock
+    'Bloodrobe Questline: Kill/loot the Burning Exile for the Smoldering Coal.|icon Interface\\cursor\\Attack|optional|only Warlock
+    .kill Burning Exile##2760|n|only Warlock
+	.collect 2 Smoldering Coal##6991|q 4784/2|icon Interface\\icons\\inv_ore_mithril_01|only Warlock
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point|only Warlock
+
+step //21
+	info |goto Isle of Quel'Danas,600,0.0
+    'At the east side in Stromgarde Keep, kill/loot the Syndicate Prowlers, Conjurors and Magus for the Sigil of Strom.|goto Arathi Highlands,26.10,56.94|title Enter: Stromgarde Keep|icon Interface\\cursor\\Attack
+    .collect 1 Sigil of Strom##4440|q 639/1|icon Interface\\icons\\inv_misc_rune_01
+	.kill Syndicate Prowler##2588|n
+	.kill Syndicate Conjuror##2590|n
+	.kill Syndicate Magus##2591|n
+	info For Vanilla it's an ELITE QUEST: This requires a group. For TBC/WOTLK it's ok.|goto Arathi Highlands,28.30,60.85|title Around the area
+
+step //22
+    'Over at Circle of Inner Binding:|goto Arathi Highlands,36.23,57.38
+    'Interact with Stone of Inner Binding
+    ..turnin Stones of Binding##651
+    ..accept Breaking the Keystone##652
+
+step //23
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go SW through the hidden path.|goto Arathi Highlands,30.69,66.69|title Take hidden pathway
+    info |goto Arathi Highlands,21.33,73.39|title Follow waypoint
+	It leads through a cave.|goto Arathi Highlands,21.75,76.16|title Go through cave
+	info |goto Arathi Highlands,22.52,80.39|title Go through cave
+	'Then Go across the water...|route Arathi Highlands,30.69,66.69;21.33,73.39;21.75,76.16;22.52,80.39;31.79,82.67|title Take hidden pathway
+	info 
+	'TIP: Use a Swim Speed Potion.|use Swim Speed Potion##6372|icon Interface\\cursor\\Directions|only !Druid
+    'TIP: Use Aquatic Form.|cast Aquatic Form##1066|icon Interface\\cursor\\Directions|only Druid
+	'TIP: Or use Water Walking to cross the Water.|cast Water Walking##546|icon Interface\\cursor\\Directions|only Shaman
+	info 
+	'At Faldir's Cove:|goto Arathi Highlands,31.79,82.67|title Lolo the Lookout
+    .talk Lolo the Lookout##2766
+    ..accept Land Ho!##663
+
+step //24
+    'On the dock next to you:|goto Arathi Highlands,32.28,81.38
+    .talk Shakes O'Breen##2610
+    ..turnin Land Ho!##663
+//    only ERA SOM1 TBC
+
+step //25
+    'Next to you:|goto Arathi Highlands,32.80,81.48
+    .talk First Mate Nilzlix##2767
+    ..accept Deep Sea Salvage##662
+//    only ERA SOM1 TBC
+
+step //26
+    'At the Bonfire:|goto Arathi Highlands,34.00,80.79
+    .talk Captain Steelgut##2769
+    ..accept Drowned Sorrows##664
+	info 
+    'Accept and do the escort:|goto Arathi Highlands,33.87,80.54|title Professor Phizzlethorpe
+    .talk Professor Phizzlethorpe##2768
+    ..accept Sunken Treasure##665
+    info 
+	'Escort Professor Phizzlethorpe to the small cave to the east. You will have to fight two or more lvl 40 water elementals. This quest is not easy but doable. You will need to let enough time pass in order to complete this escort, so try to survive for about a minute or so when the water elementals come to accomplish this.
+	.goal Defend Professor Phizzlethorpe|q 665/1
+	info 
+	'WARNING: Harcore player, There is a chance of death here if you are not confident about this!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	.........'Skip The Escort?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    only ERA SOM1 TBC
+
+step //27
+    'Back at the Bonfire:|goto Arathi Highlands,33.86,80.44
+    .talk Doctor Draxlegauge##2774
+    ..turnin Sunken Treasure##665
+    ..accept Sunken Treasure##666
+//    only ERA SOM1 TBC
+
+step //28
+    'Loot Maiden's Folly Log in the middle layer of the boat within a bunch of junk, and it's in a cauldron.|goto Arathi Highlands,23.39,85.08
+	info 
+	'TIP: Use Elixir of Water Breathing|use Elixir of Water Breathing##5996|icon Interface\\cursor\\Directions|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	'TIP: Use Aquatic Form throughout the water!|cast Aquatic Form##1066|icon Interface\\cursor\\Directions|only Druid
+	'TIP: Use Water Breathing spell|cast Water Breathing##131|icon Interface\\cursor\\Directions|only Shaman
+	'TIP: Use Unending Breath spell|cast Unending Breath##5697|icon Interface\\cursor\\Directions|only Warlock
+	'TIP: Use also Swim Speed Potion to help you|use Swim Speed Potion##6372|icon Interface\\cursor\\Directions|only !Druid
+    .collect Maiden's Folly Log##4489|q 662/2|icon Interface\\icons\\inv_misc_book_09
+	info 
+	'Loot Calcified Elven Gem around
+	.collect 10 Elven Gem##4492|q 666/1|n|icon Interface\\icons\\inv_misc_gem_opal_02
+    info 
+	'TIP: Use the Goggles of Gem Hunting quest item (Head piece) to help you find the Calcified Elven Gems.|icon Interface\\cursor\\Directions
+	info 
+	'Kill water elementals on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Daggerspine Raider##2595|q 664/1|n
+	.kill 3 Daggerspine Sorceress##2596|q 664/2|n
+//    only ERA SOM1 TBC
+
+step //29
+    'On the same boat you are on and at the same level, go over in the other room and on a ledge next to a crack in the floor (kind of hard to see), loot Maiden's Folly Charts (brown piece of paper).|goto Arathi Highlands,23.05,84.50
+	.collect Maiden's Folly Charts##4487|q 662/1|icon Interface\\icons\\inv_misc_map_01
+    info 
+	'Loot Calcified Elven Gem around
+	.collect 10 Elven Gem##4492|q 666/1|n|icon Interface\\icons\\inv_misc_gem_opal_02
+    info 
+	'TIP: Use the Goggles of Gem Hunting quest item (Head piece) to help you find the Calcified Elven Gems.|icon Interface\\cursor\\Directions 
+	info 
+	'Kill water elementals on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Daggerspine Raider##2595|q 664/1|n
+	.kill 3 Daggerspine Sorceress##2596|q 664/2|n
+//    only ERA SOM1 TBC
+
+step //30
+    'Go over to the other boat and at the bottom touching the floor of the sea, loot the Spirit of Silverpine Log (white book).|goto Arathi Highlands,20.65,85.11
+	.collect Spirit of Silverpine Log##4490|q 662/4|icon Interface\\icons\\inv_misc_book_03
+	info 
+	'Loot Calcified Elven Gem around
+	.collect 10 Elven Gem##4492|q 666/1|n|icon Interface\\icons\\inv_misc_gem_opal_02
+    info 
+	'TIP: Use the Goggles of Gem Hunting quest item (Head piece) to help you find the Calcified Elven Gems.|icon Interface\\cursor\\Directions 
+	info 
+	'Kill water elementals on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Daggerspine Raider##2595|q 664/1|n
+	.kill 3 Daggerspine Sorceress##2596|q 664/2|n
+//    only ERA SOM1 TBC
+
+step //31
+    'Just above you on the middle layer on the boat you are at and in front of the ship, next to a cannon, sitting on a crate, loot the Spirit of Silverpine Charts.|goto Arathi Highlands,20.47,85.61
+	.collect Spirit of Silverpine Charts##4488|q 662/3|icon Interface\\icons\\inv_misc_map_01
+	info 
+	'Finish looting Calcified Elven Gem around
+	.collect 10 Elven Gem##4492|q 666/1|icon Interface\\icons\\inv_misc_gem_opal_02
+    info 
+	'TIP: Use the Goggles of Gem Hunting quest item (Head piece) to help you find the Calcified Elven Gems.|icon Interface\\cursor\\Directions 
+	info 
+	'Kill water elementals on the road.|icon Interface\\cursor\\Attack
+	.kill 10 Daggerspine Raider##2595|q 664/1|n
+	.kill 3 Daggerspine Sorceress##2596|q 664/2|n
+//    only ERA SOM1 TBC
+
+step //32
+    'Finish kill/looting any remaining water elementals around under water:|goto Arathi Highlands,23.6,85.0|icon Interface\\cursor\\Attack
+    .kill 10 Daggerspine Raider##2595|q 664/1
+	.kill 3 Daggerspine Sorceress##2596|q 664/2
+//    only ERA SOM1 TBC
+
+step //33
+    'Back at Faldir's Cove on the dock:|goto Arathi Highlands,32.80,81.49
+    .talk First Mate Nilzlix##2767
+    ..turnin Deep Sea Salvage##662
+    info 
+	'Remember to un-equip your Goggles of Gem Hunting quest item (Head piece) and put your normal helm back on!|icon Interface\\cursor\\Directions
+//    only ERA SOM1 TBC
+
+step //34
+    'East by the Bonfire:|goto Arathi Highlands,34.00,80.79
+    .talk Captain Steelgut##2769
+    ..turnin Drowned Sorrows##664
+	info 
+    'Next to you:|goto Arathi Highlands,33.86,80.44|title Doctor Draxlegauge
+    .talk Doctor Draxlegauge##2774
+    ..turnin Sunken Treasure##666
+    ..accept Sunken Treasure##668
+//    only ERA SOM1 TBC
+
+step //35
+    'On the dock:|goto Arathi Highlands,32.28,81.38
+    .talk Shakes O'Breen##2610
+    ..turnin Sunken Treasure##668
+    ..accept Sunken Treasure##669
+//    only ERA SOM1 TBC
+
+step //36
+    'IF YOU HAVEN'T GOT LVL 36 ABILITIES YET: Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Druid Trainer next to the Moonwell to get your level 36 spells/abilities. Also the lvl 36 upgrades are limited and you may wish to wait until Level 38 instead.|goto Moonglade,52.5,40.6|title Moonglade|optional
+    .cast Teleport: Moonglade##19027
+	.talk Loganaar##12042
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //37
+    'Hearth to Hammerfall.|goto Arathi Highlands,73.84,32.46|title Hearth to Hammerfall|c
+    .use Hearthstone##6948
+
+step //38
+    'On the balcony just outside the Inn:|goto Arathi Highlands,73.80,33.97
+    .talk Zengu##2703
+    ..turnin Sigil of Strom##639
+    info 
+	'SKIP "The Broken Sigil" quest for now.|icon Interface\\cursor\\Directions
+
+step //39
+    'Next to you on the balcony:|goto Arathi Highlands,74.24,33.92
+    .talk Drum Fel##2771
+    ..turnin The Hammer May Fall##676
+    ..accept Call to Arms##677
+
+step //40
+    'SE in Hammerfall:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..turnin Foul Magics##671
+    ..turnin Guile of the Raptor##701
+    ..accept Guile of the Raptor##702
+
+step //41
+    'Down in Hammerfall:|goto Arathi Highlands,72.77,33.66
+    .talk Gor'mul##2792
+    ..turnin Guile of the Raptor##702
+    info 
+	'Wait a few seconds then:
+    ..accept Guile of the Raptor##847
+	info 
+    'By the Forge:|goto Arathi Highlands,72.52,33.35|title Mu'uta
+	.talk Mu'uta##9555
+    'Get Repaired|icon Interface\\minimap\\Tracking\\Repair
+    
+step //42
+    'Go back up:|goto Arathi Highlands,74.72,36.29
+    .talk Tor'gan##2706
+    ..turnin Guile of the Raptor##847
+    info 
+	'SKIP "Foul Magics" quest|icon Interface\\cursor\\Directions
+
+step //43
+    'Kill the required amount of Witherbark trolls around the Witherbark Village:|goto Arathi Highlands,67.15,62.79|icon Interface\\cursor\\Attack
+    .kill 10 Witherbark Axe Thrower##2554|q 677/1
+    .kill 10 Witherbark Headhunter##2556|q 677/2
+    .kill 8 Witherbark Witch Doctor##2555|q 677/3
+
+step //44
+    'Grind back north to Hammerfall and up the steps:|goto Arathi Highlands,74.25,33.91
+    .talk Drum Fel##2771
+    ..turnin Call to Arms##677
+    ..accept Call to Arms##678
+	info 
+    'Next to you:|goto Arathi Highlands,74.18,33.95|title Uttnar
+    .talk Uttnar##4954
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //45
+    'While doing the rest of the Arathi quests, if you happen to run across the lvl 42 Giant named Fozruk, kill/loot him. This giant has a large patrol path. Don't intentionally try to find him.|icon Interface\\cursor\\Attack
+    .kill Fozruk##2611|n
+	.collect Rod of Order##4469|q 652/1|n|icon Interface\\icons\\inv_wand_01
+	info This Giant is an Elite on Vanilla, it's a GROUP 3+ Players quest. You can kill him alone on TBC/WOTLK
+	info 
+	'NOTE: The follow up quests are worth doing as they are easy to solo, but are not covered in the guide.|icon Interface\\cursor\\Directions
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //46
+    'If you killed the Giant named Fozruk, then At the Keystone:|goto Arathi Highlands,36.08,58.09
+	.collect Rod of Order##4469|q 652/1|icon Interface\\icons\\inv_wand_01
+    ..turnin Breaking the Keystone##652
+    ..accept Myzrael's Allies##688
+	info 
+	'You can do this later on.
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //47
+    'Grind SW to Boulderfist Hall and kill the required amount of Boulderfist ogres:|goto Arathi Highlands,53.57,72.95|icon Interface\\cursor\\Attack
+    .kill 10 Boulderfist Brute##2566|q 678/1
+    .kill 4 Boulderfist Magus##2567|q 678/2
+	info |only if skill("First Aid")<225
+    'NOTE: If you still need to do "Triage" Quest then make sure you get your First Aid skill to 225 before proceeding, kill more ogres to get enough cloth.|icon Interface\\cursor\\Directions|only if skill("First Aid")<225
+    info Advance First Aid to 225 Skill Points|only if skill("First Aid")<225
+
+step //48
+    'If you killed the Giant named Fozruk, then At the Keystone:|goto Arathi Highlands,36.08,58.09
+	.collect Rod of Order##4469|q 652/1|icon Interface\\icons\\inv_wand_01
+    ..turnin Breaking the Keystone##652
+    ..accept Myzrael's Allies##688
+	info 
+	'You can do this later on.
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //49
+    'Hearth (or grind back if its still on a cooldown) to Hammerfall:|goto Arathi Highlands,73.89,35.52|title Go Back to Hammerfall|c
+    .use Hearthstone##6948
+
+step //50
+    'On the deck:|goto Arathi Highlands,74.25,33.92
+    .talk Drum Fel##2771
+    ..turnin Call to Arms##678
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //51
+	'If you killed Fozruk and get the following then:
+    .talk Zaruk##2787|goto Arathi Highlands,74.54,35.64
+    ..turnin Myzrael's Allies##688
+    'Skip otherwise.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //52
+    'If your First Aid is greater than 225, go to Hammerfall and in the building:|goto Arathi Highlands,73.42,36.89|only if skill("First Aid")>=225
+    .talk Doctor Gregory Victor##12920|only if skill("First Aid")>=225
+    ..accept Triage##6622|only if skill("First Aid")>=225
+    info |only if skill("First Aid")>=225
+	'NOTE: The quest will then start immediately. Use the Triage Bandage quest item right there in the room on the Injured Soldiers.|icon Interface\\cursor\\Directions|only if skill("First Aid")>=225
+	'Level up your First Aid to 225 to do "Triage" quest which let you level your First aid to 300. Only for TBC/Vanilla|only if skill("First Aid")<225
+	'In WotLK, this doctor no longer advances your First Aid, you now just do that at any First Aid trainer.
+    ............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //53
+    'Stand here to reach all Injured Soldiers:|goto Arathi Highlands,73.01,36.82
+	info 
+	'Use the Triage Bandage on the Critically Injured Soldier, then badly Injured Soldiers, then Injured Soldiers.
+    .use Triage Bandage##16991
+	.talk Critically Injured Soldier##12925
+	.talk Badly Injured Soldier##12924
+	.talk Injured Soldier##12923
+    .goal Patients Saved!|q 6622/1
+	info 
+	'Tip: You can Press Ctrl V to activate the health bar over the heads of the patients for easy health monitoring, and just left click and use your Triage Bandage. If you want to be even faster, you can put the Triage bandage on your action bar (like 1 button) and set a keybind to target faster nearest NPC (in Keybindings, at "Target Nearest Friend")|icon Interface\\cursor\\Directions
+    only if skill("First Aid")>=225
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //54
+    'Back in the building:|goto Arathi Highlands,73.42,36.89
+    .talk Doctor Gregory Victor##12920
+    ..turnin Triage##6622
+    info 
+	'NOTES: Your First Aid should boost to 300 max skill. You will also be revisiting this Doctor in the future to get: Heavy Runecloth Bandage (240 skill), Runecloth Bandage (260 skill), Heavy Runecloth Bandage (290 skill), only for Vanilla and TBC. In WotLK, this doctor no longer advances your First Aid, you now just do that at any First Aid trainer.|icon Interface\\cursor\\Directions
+	only if skill("First Aid")>=225
+
+step //55
+    'Destroy the Triage Bandage as it is no longer needed.|icon Interface\\icons\\inv_misc_bandage_12
+    ..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	only if skill("First Aid")>=225
+
+step //56
+    'Up on the platform:|goto Arathi Highlands,73.06,32.67
+    .talk Urda##2851
+    'From the Wind Rider Master, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    info 
+	'Abandon any leftover Stromgarde or Fozruk quests if you still have them.|icon Interface\\cursor\\Directions
+
+step //57
+	'36-37 Arathi Highlands Vale is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 37-37 Alterac Mountains|confirm|next "Joana's Guide\\Horde\\37-37 Alterac Mountains"|icon Interface\\icons\\achievement_zone_alteracmountains_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\37-37 Alterac Mountains",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\37-38 Thousand Needles
+startlevel 37
+	
+step //1
+    'At Tarren Mill, go in the small house:|goto Hillsbrad Foothills,61.56,21.02
+    .talk Magus Wordeen Voidglare##2410
+    ..accept Prison Break in##544
+	info 
+    'Next to you:|goto Hillsbrad Foothills,61.50,20.94|title Keeper Bel'varil
+    .talk Keeper Bel'varil##2437
+    ..accept Stone Tokens##556
+
+step //2
+    'At the church entrance:|goto Hillsbrad Foothills,62.63,20.64
+    .talk Melisara##2278
+    ..accept The Crown of Will##518
+	info        TBC/WOTLK only
+//    only TBC or WOTLK
+
+step //3
+    'Go in the Inn and from the Innkeeper:|goto Hillsbrad Foothills,62.53,19.58
+    .talk Innkeeper Shay##2388
+    .home Tarren Mill|icon Interface\\minimap\\Tracking\\Innkeeper
+    only Shaman
+
+step //4
+    'Go north to the small cave (in Alterac Mountains).|goto Alterac Mountains,37.54,66.23
+	info 
+    'On the way, do part of Frostmaw quest by kill/looting a cat for a Fresh Carcass.|icon Interface\\cursor\\Attack
+    .collect Fresh Carcass##5810|c|icon Interface\\icons\\inv_misc_pelt_wolf_ruin_01
+	.kill Mountain Lion##2406
+	.kill Starving Moutain Lion##2384
+	.kill Hulking Mountain Lion##2407
+	info 
+    'In the small cave, click on the Flame of Uzel.
+    .goal Flame of Uzel charged|q 553/1
+
+step //5
+    'In that same cave use the Fresh Carcass quest item at the Flame of Uzel, then kill/loot Frostmaw. This yeti spawns just outside of the cave.|icon Interface\\cursor\\Attack
+    .use Fresh Carcass##5810
+    .kill Frostmaw##4504|n
+	.collect Frostmaw's Mane##5811|q 1136/1|icon Interface\\icons\\inv_misc_pelt_bear_ruin_01
+
+step //6
+	info |goto Isle of Quel'Danas,600,0.0
+    'Take hill entrance to enter Ruins of Alterac...|goto Alterac Mountains,38.05,61.97|title Take hill entrance
+    'Done around Ruins of Alterac.|goto Alterac Mountains,41.27,48.52|title Around: Ruins of Alterac|icon Interface\\cursor\\Attack
+    .kill 10 Crushridge Mauler##2254|q 518/1
+//    only TBC or WOTLK
+
+step //7
+    'Go west to Lordamere Internment Camp...|goto Alterac Mountains,20.16,84.29
+	info 
+    'At Lordamere Internment Camp, kill/loot Ricter outside in front of the outhouses.|icon Interface\\cursor\\Attack
+    .kill Ricter##2411|n
+	.collect 1 Bloodstone Marble##3689|q 544/2|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	info 
+    'Kill/loot the Dalaran humans for the Worn Stone Tokens.|icon Interface\\cursor\\Attack
+    .collect 10 Worn Stone Token##3714|q 556/1|n|icon Interface\\icons\\inv_misc_rune_01
+
+step //8
+    'At Lordamere Internment Camp, kill/loot Dermot and Alina inside the building next to the outhouses.|goto Alterac Mountains,20.11,86.27|icon Interface\\cursor\\Attack
+    .kill Dermot##2413|n
+	.collect 1 Bloodstone Wedge##3691|q 544/1|icon Interface\\icons\\inv_misc_gem_ruby_01
+    .kill Alina##2412|n
+	.collect 1 Bloodstone Shard##3690|q 544/3|icon Interface\\icons\\inv_misc_gem_bloodstone_01
+	info 
+    'Kill/loot the Dalaran humans for the Worn Stone Tokens.|icon Interface\\cursor\\Attack
+    .collect 10 Worn Stone Token##3714|q 556/1|n|icon Interface\\icons\\inv_misc_rune_01
+
+step //9
+    'Kill/loot Kegan Darkmar upstairs in the other building.|goto Alterac Mountains,17.77,83.19|icon Interface\\cursor\\Attack
+    .kill Kegan Darkmar##2414|n
+	.collect 1 Bloodstone Oval##3688|q 544/4|icon Interface\\icons\\inv_misc_gem_bloodstone_03
+    info 
+    'Kill/loot the Dalaran humans for the Worn Stone Tokens.|icon Interface\\cursor\\Attack
+    .collect 10 Worn Stone Token##3714|q 556/1|n|icon Interface\\icons\\inv_misc_rune_01
+
+step //10
+    'Finish Kill/looting the Dalaran humans for the Worn Stone Tokens.|icon Interface\\cursor\\Attack
+	info 
+    'NOTE: There are more around the big purple globe.|goto Alterac Mountains,17.90,75.91|icon Interface\\cursor\\Directions
+    .collect 10 Worn Stone Token##3714|q 556/1|icon Interface\\icons\\inv_misc_rune_01
+
+step //11
+    'South in the shore, next to the Alliance town Southshore:|goto Hillsbrad Foothills,52.76,53.38
+    'Click on the Helcular's Grave (eastern most tombstone).
+    .turnin Helcular's Revenge##553
+	info 
+    'WARNING: Watch out for the Alliance Southshore Guards!|icon Interface\\cursor\\Directions
+	.talk Southshore Guard##2386|n
+	info        Just for targeting to be aware
+    info 
+	'If you are not confident about this on Hardcore, then skip it!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //12
+    'Go back to Tarren Mill and in the small house:|goto Hillsbrad Foothills,61.56,21.02
+    .talk Magus Wordeen Voidglare##2410
+    ..turnin Prison Break in##544
+	info 
+    'Next to you:|goto Hillsbrad Foothills,61.50,20.94|title Keeper Bel'varil
+    .talk Keeper Bel'varil##2437
+    ..turnin Stone Tokens##556
+    ..accept Dalaran Patrols##545
+    ..accept Bracers of Binding##557
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|goto Hillsbrad Foothills,62.56,19.91|title Get Resupplied
+    info 
+	'You can destroy the Belamoore's Research Journal. Or bank it for your collection|icon Interface\\icons\\inv_misc_book_04
+
+step //13
+    'At the church entrance:|goto Hillsbrad Foothills,62.63,20.64
+    .talk Melisara##2278
+    ..turnin The Crown of Will##518
+	info 
+    'SKIP the next "The Crown of Will" quest - Too far off the route for time/xp.|icon Interface\\cursor\\Directions
+//    only TBC or WOTLK
+
+step //14
+    'These are done around the purple Dalaran globe in Alterac Mountains.|goto Alterac Mountains,19.39,76.22
+    .kill 6 Dalaran Summoner##2358|q 545/1
+    .kill 12 Elemental Slave##2359|q 545/2
+	info 
+    'Kill/loot Elemental Slaves.|icon Interface\\cursor\\Attack
+    .collect 4 Bracers of Earth Binding##3713|q 557/1|icon Interface\\icons\\inv_bracer_13
+    info 
+	'Warlock: Make sure you save at least one Soul Shard|icon Interface\\icons\\spell_nature_drowsy.|only Warlock
+
+step //15
+	info |goto Isle of Quel'Danas,600,0.0
+    'Once done, Enter in Hillsbrad Foothills, die on purpose and res at spirit to go back to Tarren Mill...|only !Shaman
+	'Hardcore players, Go back to Tarren Mill...|icon Interface\\icons\\Spell_Holy_HarmUndeadAura|only !Shaman
+    'Once done, use Astral Recall (or Hearth) to go back to Tarren Mill...|icon Interface\\icons\\spell_nature_astralrecal|only Shaman
+	info 
+    'In the small house:|goto Hillsbrad Foothills,61.56,21.02
+    .talk Magus Wordeen Voidglare##2410
+    ..turnin Dalaran Patrols##545
+	info 
+    'Next to you:|goto Hillsbrad Foothills,61.50,20.94|title Keeper Bel'varil
+    .talk Keeper Bel'varil##2437
+    ..turnin Bracers of Binding##557
+	info 
+    'NOTE: You can get repaired south of the dead tree farm at Tarren Mill from the male orc by the wagon, or from the goblin that patrols between Southshore and Tarren Mill (if he's there).|icon Interface\\cursor\\Directions
+	.talk Ott##3539|goto Hillsbrad Foothills,60.43,26.18|title Ott
+	.talk Zixil##3537
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //16
+    'At Tarren Mill:|goto Hillsbrad Foothills,60.15,18.63|title Zarise
+	'Take a flight to Undercity:|goto Undercity,63.25,48.59|title Go to Undercity|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    .talk Zarise##2389
+	info 
+    'Abandon "Helcular's Revenge" quest if you didn't do/skipped it.|icon Interface\\cursor\\Directions
+    only !Mage
+
+step //17
+    'Use your Teleport: Undercity to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to: Undercity|c|icon Interface\\Icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+    only Mage
+
+step //18
+    'At the Undercity, next to you:|goto Undercity,84.19,15.59|title Mage Trainer
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //19
+    'Drop down and from the Reagent Vendor, purchase up to 10/20 Runes of Portals.
+	info 
+    'NOTES: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|goto Undercity,82.8,15.9|icon Interface\\cursor\\Directions
+    .talk Hannah Akeley##4575
+    .buy 20 Rune of Teleportation##17031|icon Interface\\icons\\inv_misc_rune_06
+    only Mage
+
+step //20
+    'Right where you land at the Undercity:|goto Undercity,63.84,49.45
+    .talk Genavie Callow##4486
+    ..turnin To Steal From Thieves##1164
+//    only !Mage
+
+step //21
+    'At the Bank (middle of Undercity):|goto Undercity,65.95,44.05|title Bank
+	info 
+	'Withdraw from the bank:
+	'Encrusted Tail Fin|icon Interface\\icons\\inv_misc_monsterscales_03
+	'Belgrom's Sealed Note|icon Interface\\icons\\inv_letter_12
+	'Fuel Regulator Blueprints|icon Interface\\icons\\inv_misc_note_04
+	'Kravel's Parts|icon Interface\\icons\\inv_crate_03
+	'Wool Cloth|icon Interface\\icons\\inv_fabric_wool_01
+	'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	'Fine Gold Thread|icon Interface\\icons\\inv_fabric_linen_02|only Warlock
+	info        Only if you do the Bloodrobe Questline|only Warlock
+	info 
+    'Deposit: 
+	'Swim Speed Potion|icon Interface\\icons\\inv_potion_13
+	'Sample Elven Gem|icon Interface\\icons\\inv_misc_gem_opal_01
+	
+step //22
+	info |goto Isle of Quel'Danas,600,0.0
+    'For cloth donations in Orgrimmar coming up:|goto Undercity,67.67,35.88|title AH
+    info |goto Undercity,68.2,38.3|title Mailbox
+    .collect 60 Wool Cloth##2592|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|icon Interface\\icons\\inv_fabric_silk_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //23
+    'At the Mushroom Vendor that circles around the top ledge (where the Bat Handler is at), purchase 3 of Delicious Cave Mold to feed a turtle you are about to tame. You can take more for later.|goto Undercity,62.2,45.0|title Around the top ledge
+	info |goto Undercity,69.8,44.0|title Around the top ledge
+	.talk Tawny Grisette##4554
+    .buy 15 Delicious Cave Mold##4607|icon Interface\\icons\\inv_misc_herb_06
+    only Hunter
+
+step //24
+	info |goto Isle of Quel'Danas,600,0.0
+    'Exit Undercity and head north to get on the Zeppelin to go to Orgrimmar.|goto Tirisfal Glades,61.88,64.44|title Exit: Undercity
+	info 
+    'NOTE: There are two Zeppelins, the eastern one takes you to Grom'gol at Stranglethorn Vale and the western one to Orgrimmar.|goto Tirisfal Glades,60.69,58.77|title Take the western Zeppelin (to Orgrimmar)|icon Interface\\cursor\\Directions
+	info 
+	Enter Orgrimmar...|goto Orgrimmar,48.98,93|title Enter Orgrimmar|c
+    only !Mage
+
+step //25
+    'Use your Teleport: Orgrimmar to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\Icons\\spell_arcane_portalorgrimmar
+    .cast Teleport: Orgrimmar##3567
+    only Mage
+
+step //26
+    'Go west in Orgrimmar (take the ramp)...|goto Orgrimmar,37.69,87.90
+	info 
+    'NOTE: You can turn in cloth donations for the Troll faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+    'Wool Cloth|icon Interface\\icons\\inv_fabric_linen_01
+    'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+    .talk Vehena##14727
+    ..turnin A Donation of Wool##7833
+    ..turnin A Donation of Silk##7834
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //27
+    'You can stop at the First Aid Trainer to upgrade First Aid.|goto Orgrimmar,34.16,84.56
+    .talk Arnok##3373
+    'Get new Tradeskills|icon Interface\\minimap\\Tracking\\Class
+    info         only for WOTLK
+
+step //28
+    'In the hut:|goto Orgrimmar,22.55,52.64
+    .talk Keldran##5640
+    ..turnin Alliance Relations##1436
+
+step //29
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Crossroads, The Barrens|goto The Barrens,51.50,30.34|c|title Go to Crossroads|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Warlock
+
+step //30
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warlock
+
+step //31
+    'Up behind the Engineering building:|goto The Barrens,62.51,35.45
+    .talk Menara Voidrender##6266
+    'Bloodrobe Questline:
+    ..turnin Components for the Enchanted Gold Bloodrobe##4784
+    ..turnin The Completed Robe##4786
+	info 
+    'Enjoy your new Enchanted Gold Bloodrobe!|icon Interface\\icons\\inv_chest_cloth_25
+	info 
+    'Orb of Orahil Questline:
+    ..turnin Knowledge of the Orb of Orahil##4969
+    ..accept Fragments of the Orb of Orahil##1799
+    only Warlock
+
+step //32
+    'Orb of Orahil Questline: In the hut next to you, accept one of two quests depending on which reward you ultimately want.|goto The Barrens,62.60,35.21
+	info 
+	'For Shard of an Infernal quest, you would get:|optional
+	'Orb of Noh'Orahil (Off Hand: +5 intel,+14 Fire damage (12 spell power for WOTLK), Restores 40 Health/3 sec for 30 sec.)|icon Interface\\icons\\inv_misc_orb_03
+	'Staff of Noh'Orahil (Staff: +3 stam, +6 intel, +19 Fire spells (15 spell power for WOTLK)||icon Interface\\icons\\inv_staff_14
+	info 
+	'Or for Shard of a Felhound quest, you would get:|optional
+	'Staff of Dar'Orahil (Staff: +3 stam, +6 intel, +19 Shadow spells (15 spell power for WOTLK)|icon Interface\\icons\\inv_staff_12
+	'Orb of Dar'Orahil (Off Hand: +5 intel,+14 Shadow damage (12 spell power for WOTLK), Restores 40 Health/3 sec for 30 sec.)|icon Interface\\icons\\inv_misc_orb_03
+	info 
+    'Make your choice:
+    .talk Acolyte Magaz##6252
+    ..accept Shard of an Infernal##4963
+    'OR:
+    .talk Acolyte Wytula##6254
+    ..accept Shard of a Felhound##4962
+    only Warlock
+
+step //33
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Wind Rider Master, take a flight to Crossroads, The Barrens|goto The Barrens,51.50,30.34|c|title Go to Crossroads|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warlock
+
+step //34
+    'From Innkeeper Boorand Plainswind in Crossroads Inn:|goto The Barrens,51.99,29.89
+    .talk Innkeeper Boorand Plainswind##3934
+    .home Crossroads|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    'If you need to:
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //35
+	info |goto Silithus,0,400
+    'Exit Inn|goto The Barrens,51.99,30.24|title Exit Inn
+    .talk Devrak##3615|goto The Barrens,51.50,30.34|title Devrak
+    'From the Wind Rider Master, take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //36
+	..'37-37 Alterac Mountains is complete!|icon Interface\\cursor\\Directions
+	....'Go to 37-38 Thousand Needles|confirm|next "Joana's Guide\\Horde\\37-38 Thousand Needles"|icon Interface\\icons\\achievement_zone_thousandneedles_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\37-38 Thousand Needles",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\38-38 Dustwallow Marsh
+startlevel 37
+
+step //1
+    'Go to the Stable Master (next to the Inn/mailbox) and stable your main pet. You will get your old pet back out, but abandon it once you tame your turtle in a bit.|goto Thousand Needles,45.77,51.06
+    .talk Awenasa##11117
+    'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+    only Hunter
+
+step //2
+    'Run east towards Ironstone Camp (right next to The Shimmering Flats):|goto Thousand Needles,67.58,63.94
+    .talk Moktar Krin##4483
+    ..turnin The Swarm Grows##1146
+    ..accept The Swarm Grows##1147
+
+step //3
+    'Hunters, just north of the Mirage Raceway tame a Sparkleshell Snapper turtle (try to get a lvl 35) for Bite R5.|goto Thousand Needles,77.17,69.42|title Tame a Turtle|icon Interface\\icons\\ability_hunter_beasttaming
+	info 
+    'NOTES: Be careful, these turtles have an ability that will disrupt your taming. Use|icon Interface\\cursor\\Directions 
+	'Freezing Trap and |icon Interface\\icons\\spell_frost_chainsofice
+	'Aspect of the Monkey to increase taming success rate. Use the |icon Interface\\icons\\ability_hunter_aspectofthemonkey
+	'fungus to feed him. Use this turtle for the next steps...|icon Interface\\icons\\inv_misc_herb_06
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //4
+    'At Mirage Raceway:|goto Thousand Needles,77.78,77.26
+    .talk Kravel Koalbeard##4452
+    ..turnin Parts for Kravel##1112
+    'Wait a few seconds, then:|icon Interface\\cursor\\Directions
+    ..accept Delivery to the Gnomes##1114
+
+step //5
+    'Next to you:|goto Thousand Needles,78.09,77.12
+    .talk Fizzle Brassbolts##4454
+    ..turnin Delivery to the Gnomes##1114
+    ..accept Martek the Exiled##1106
+	info 
+    'Next to you:|goto Thousand Needles,78.14,77.12
+    .talk Wizzle Brassbolts##4453
+    ..turnin Encrusted Tail Fins##1107
+    info        If you finished it
+
+step //6
+    'Next to you:|goto Thousand Needles,77.78,77.26
+    .talk Kravel Koalbeard##4452
+    ..accept The Rumormonger##1115
+
+step //7
+    'At the goblin's side:|goto Thousand Needles,80.18,75.88
+    .talk Pozzik##4630
+    ..turnin Goblin Sponsorship##1183
+    ..accept The Eighteenth Pilot##1186
+
+step //8
+    'Next to you:|goto Thousand Needles,80.33,76.10
+    .talk Razzeric##4706
+    ..turnin The Eighteenth Pilot##1186
+    ..accept Razzeric's Tweaking##1187
+
+step //9
+	info |goto Silithus,0,400
+    'At The Rustmaul Dig Site, kill the required amount of Silithid bugs.|goto Thousand Needles,65.82,86.28|title Cave entrance|icon Interface\\cursor\\Attack
+	info 
+    'There is only a few Invaders in the cave so go for these bugs first.
+	info 
+    'The Searchers are up and around the Dig Site.
+    .kill 5 Silithid Searcher##4130|q 1147/1|icon Interface\\icons\\inv_misc_bug_02
+    .kill 5 Silithid Hive Drone##4133|q 1147/2|icon Interface\\icons\\inv_misc_bug_03
+    .kill 5 Silithid Invader##4131|q 1147/3|icon Interface\\icons\\inv_misc_bug_01
+	info 
+    'Within the first few bugs you kill, you should receive an item|goto Thousand Needles,65.82,86.28
+	'Cracked Silithid Carapace which starts:|icon Interface\\icons\\inv_shoulder_03
+    ..accept Parts of the Swarm##1148
+	info 
+    'Kill/loot the Silithid bugs, and the items you need can drop from any of them.|icon Interface\\cursor\\Attack
+	.collect Silithid Heart##5855|q 1148/1|icon Interface\\icons\\inv_misc_organ_02
+    .collect 5 Silithid Talon##5854|q 1148/2|icon Interface\\icons\\inv_misc_monsterclaw_02
+    .collect 3 Intact Silithid Carapace##5853|q 1148/3|icon Interface\\icons\\inv_shoulder_04
+
+step //10
+    'Make sure you are at least 2 bars away from level 38. Grind on the bugs until you are.|goto Thousand Needles,67.58,63.94
+    'Reach level 37 and 35 010 XP before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+
+step //11
+    'At Ironstone Camp:|goto Thousand Needles,67.58,63.94
+    .talk Moktar Krin##4483
+    ..turnin The Swarm Grows##1147
+
+step //12
+    'Hearth to The Crossroads.|goto The Barrens,51.99,29.89|title Hearth to Crossroads|c
+    .use Hearthstone##6948
+
+step //13
+    'Abandon your turtle and get your cat back out from the Stable Master (next to the Inn) and teach him Bite R5.|goto The Barrens,51.74,29.66
+    .talk Sikwa##9981
+    'Retrieve your main Pet|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //14
+    .talk Korran##3428|goto The Barrens,51.07,29.63
+    ..turnin Parts of the Swarm##1148
+    ..accept Parts of the Swarm##1184
+
+step //15
+    'Destroy the Cracked Silithid Carapace item as it's no longer used for anything.|goto The Barrens,51.50,30.34|icon Interface\\Icons\\inv_shoulder_03
+    .talk Devrak##3615
+    'From the Wind Rider Master, take a flight to Thunder Bluff.|goto Thunder Bluff,47.02,49.84|title Go to Thunder Bluff|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //16
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+    only Mage
+
+step //17
+    'Go just east a bit to the Cooking Supplier and purchase 3 Soothing Spices from him, this is for a later quest (Soothing Spices) in Dustwallow Marsh, and remember to not sell this to a vendor!|goto Thunder Bluff,51.01,52.47
+    .talk Naal Mistrunner##3027
+    .buy 3 Soothing Spices##3713|icon Interface\\minimap\\Tracking\\Food
+    info        only For Vanilla, TBC/WOTLK just skip
+	......'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //18
+    'Go NE to the Elder Rise to get your lvl 38 Spells/abilities.|goto Thunder Bluff,76.83,27.08|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Druid
+
+step //19
+    'At the Hunter Rise:|goto Thunder Bluff,61.54,80.94
+    .talk Melor Stonehoof##3441
+    ..turnin Frostmaw##1136
+    ..accept Deadmire##1205
+
+step //20
+    'Get lvl 38 spells/abilities right next to you.|goto Thunder Bluff,59.17,86.86|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Get lvl 38 spells/abilities right next to you. Train Pummel.|goto Thunder Bluff,57.58,85.52|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	'Priests, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+	'Mages, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainer|icon Interface\\icons\\inv_staff_13|only Mage
+	'Get lvl 38 spells/abilities in the big tent up at The Spirit Rise from a Shaman Trainer.|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Warrior,Hunter,Shaman,Priest,Mage
+
+step //21
+    'Go to the Bank.|goto Thunder Bluff,47.40,58.57|title Bank
+	info 
+	'Deposit into bank:
+	'Fizzle Brassbolts' Letter|icon Interface\\icons\\inv_letter_13
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //22
+	info |goto Silithus,0,400
+    'Get a Moonsteel Broadsword item, used for an upcoming quest (Jarl Needs a Blade) at Dustwallow Marsh, and remember not to sell it to a vendor!|goto Thunder Bluff,40.41,51.75|title AH|icon Interface\\minimap\\Tracking\\Banker
+    .collect Moonsteel Broadsword##3853|icon Interface\\icons\\inv_sword_25
+	info        Only for Vanilla phase. TBC/WOTLK just skip this.|goto Thunder Bluff,45.25,59.39|title Mailbox
+	.......'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //23
+    'If Using Guns: Please note that you cannot buy bullets at Dustwallow Marsh coming up. You can get them SE at Thunder Bluff from the General Goods vendor.|goto Thunder Bluff,38.90,64.67
+    .talk Kuruk##8362
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //24
+    'Up the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.86
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+    only !Warlock
+
+step //25
+	'Orb of Orahil Questline: Shard of an Infernal quest or Shard of a Felhound quest!|optional
+	info 
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	............'Skip This?|confirm|next +4|icon Interface\\cursor\\Point
+	only Warlock
+	
+step //26
+    'Up the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.86
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Shadowprey Village, Desolace, Dustwallow Marsh|goto Desolace,21.60,74.13|c|title Go to Shadowprey Village|icon Interface\\minimap\\Tracking\\Flightmaster
+    only Warlock
+
+step //27
+	info |goto Silithus,0,400
+    'Orb of Orahil Questline: At Desolace, follow the main path east to Mannoroc Coven to do these quests.|goto Desolace,28.06,75.62|title Follow waypoint east|optional
+    'Kill/loot Burning Blade Summoners around Mannoroc Coven for the Infernal Orb (55% droprate).|icon Interface\\cursor\\Attack
+	.kill Burning Blade Summoner##4668|n
+    .collect 1 Infernal Orb##7291|q 1799/1|icon Interface\\icons\\inv_misc_orb_04
+	info 
+	'If you accepted Shard of an Infernal quest!
+    'Orb of Orahil Questline: Kill a Lesser Infernal with the Infus Emerald quest item.|goto Desolace,49.66,77.15|title Around Mannoroc Coven|optional
+	.use Infus Emerald##12646|n
+    .collect Imprisoned Infernal Spirit##12649|q 4963/1|icon Interface\\icons\\inv_misc_gem_emerald_01
+	info 
+	'If you accepted Shard of a Felhound quest!
+    'Orb of Orahil Questline: Kill a Felhunter type mob (either a Mage Hunter, Ley Hunter or a Mana Eater) with the Felhas Ruby quest item.|optional
+	.use Felhas Ruby##12647|n
+    .collect Imprisoned Felhound Spirit##12648|q 4962/1|icon Interface\\icons\\inv_misc_gem_ruby_01
+    only Warlock
+
+step //28
+	info |goto Silithus,0,400
+    'Orb of Orahil Questline: If you can, hearth to Crossroads, then fly to Brackenwall Village.|goto The Barrens,51.5,30.3|title From Crossroads|optional
+    .use Hearthstone##6948
+	.talk Devrak##3615
+	info 
+	'Or if Hearthstone is on a cooldown, go back to the Shadowprey Village and fly to Brackenwall Village.|goto Desolace,21.60,74.13|title From Shadowprey Village
+    .talk Thalon##6726
+    'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+    only Warlock
+
+step //29
+	'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+    only Warlock
+	
+step //30
+	.'37-38 Thousand Needles is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 38-38 Dustwallow Marsh|confirm|next "Joana's Guide\\Horde\\38-38 Dustwallow Marsh"|icon Interface\\icons\\achievement_zone_dustwallowmarsh
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\38-38 Dustwallow Marsh",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 38
+next Joana's Guide\\Horde\\38-40 Stranglethorn Vale
+
+step //1
+    'At Brackenwall Village:|goto Dustwallow Marsh,35.21,30.66
+    .talk Nazeer Bloodpike##4791
+    ..accept Theramore Spies##1201
+    ..accept Check Up on Tabetha##11213
+	info        Only For TBC/WOTLK
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //2
+    .talk Balandar Brightstar##17095|goto Dustwallow Marsh,35.86,31.74
+    ..accept Twilight of the Dawn Runner##9437
+    info        Only For TBC/WOTLK
+
+step //3
+	'Next to you:|goto Dustwallow Marsh,36.52,30.79
+    .talk Do'gol##5087
+    ..accept The Black Shield##1322
+	info 
+    .'Next to you:|title Krak
+	.talk Krak##4883|goto Dustwallow Marsh,36.39,30.85
+    .'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //4
+    'At the Innkeeper (blue ogre small cave entrance):|goto Dustwallow Marsh,36.9,32.35
+    .talk "Little" Logok##24208
+    .home Brackenwall Village|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //5
+    'In the small cave:|goto Dustwallow Marsh,37.15,33.09
+    .talk Draz'Zilb##4501
+    ..accept The Hermit of Witch Hill##11225
+	info        Only For TBC/WOTLK
+	
+step //6
+    'Slightly south of Brackenwall Village:|goto Dustwallow Marsh,35.15,38.25
+    .talk Mudcrush Durtfeet##4503
+    ..accept Hungry!##1177
+
+step //7
+    'See if you can do the easy escort from "Stinky" Ignatz.|goto Dustwallow Marsh,46.88,17.52
+	info 
+    .'NOTE: If he is not there, then skip this for now. You will have two more opportunities to try again later.|icon Interface\\cursor\\Directions
+    .talk "Stinky" Ignatz##4880
+    ..accept Stinky's Escape##1270
+    .'Escort "Stinky" Ignatz south a bit to the main path (easy escort). Grind on mobs during the escort, or build up First Aid.
+    .goal Help Stinky find Bogbean Leaves|q 1270/1
+	info 
+    .'Kill the stealthed Theramore Infiltrators on the road.|icon Interface\\cursor\\Attack
+    .kill 9 Theramore Infiltrator##4834|q 1201/1|n
+    .'TIP: Use Track Hidden ability to spot the Infiltrators easier.|icon Interface\\icons\\ability_stealth|only Hunter
+	info 
+    .'Kill/loot Darkfang spiders on the road.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sacs on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+	......'"Stinky" Not There?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //8
+    'Go in North Point Tower, and at the bottom of the tower talk to Ithania to free her.|goto Dustwallow Marsh,46.64,24.47
+	'Then go to the top of the tower to loot the Warped Crates.
+	.goal Rescue Ithania from North Point Tower|q 9437/1
+	info 
+    'Kill/loot Darkfang spiders.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+    info        Only For TBC/WOTLK
+
+step //9
+    'Go to the top of the tower and loot the Warped Crates.|goto Dustwallow Marsh,46.60,24.59
+    .collect Dawn Runner Cargo##23657|q 9437/2
+    info        Only For TBC/WOTLK
+
+step //10
+    'East at Jarl's cabin:|goto Dustwallow Marsh,55.44,26.27
+    .talk "Swamp Eye" Jarl##4792
+	'For TBC/WOTLK
+    ..turnin The Hermit of Witch Hill##11225
+	..accept Marsh Frog Legs##1218
+	info 
+	.'Next to you at the cabin, (this NPC is either in the cabin or on the dock):
+    .talk Mordant Grimsby##23843
+    ..accept What's Haunting Witch Hill?##11180
+    info        Only For TBC/WOTLK
+	info 
+	'For Vanilla
+    ..accept Soothing Spices##1218
+	info        Named Soothing Spices in Vanilla
+	..turnin Soothing Spices##1218
+	info        Only For Vanilla with your 3 Soothing Spices    
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //11
+    'Next to Jarl's cabin:|goto Dustwallow Marsh,55.45,25.92
+	'Interact with Loose Dirt
+    ..accept The Lost Report##1238
+
+step //12
+    'Kill/loot Giant Marsh Frogs (frog critters) all around Jarl's cabin.|goto Dustwallow Marsh,55.44,26.27|icon Interface\\cursor\\Attack
+    .kill Giant Marsh Frog##23979|n
+    .collect 10 Marsh Frog Leg##33202|q 1218/1
+	info 
+    .'Kill the undead mobs (Risen Spirits and Risen Husks) around Jarl's cabin, then talk to the Restless Apparition when you kill one spirit to gather informations.|icon Interface\\cursor\\Attack
+	.kill Risen Spirit##23554|n
+    .kill Risen Husk##23555|n
+	.talk Restless Apparition##23861
+    .goal Information Gathered|q 11180/1
+    info        Only For TBC/WOTLK for all the step
+
+step //13
+    'Back at Jarl's cabin:|goto Dustwallow Marsh,55.44,26.27
+    .talk "Swamp Eye" Jarl##4792
+    ..turnin Soothing Spices##1218
+    ..accept Jarl Needs Eyes##1206
+	info 
+    .'Also at the cabin:
+    .talk Mordant Grimsby##23843
+    ..turnin What's Haunting Witch Hill?##11180
+    ..accept The Witch's Bane##11181
+    info        Only For TBC/WOTLK for all the step
+
+step //14
+	info |goto Silithus,0,400
+    'Kill/loot Mirefin (murlocs) around Dreadmurk Shore.|goto Dustwallow Marsh,57.3,16.87|title Around: Dreadmurk Shore|icon Interface\\cursor\\Attack
+    .collect 8 Mirefin Head##5847|q 1177/1
+	.kill Mirefin Coastrunner##4362|n
+	.kill Mirefin Murloc##4359|n
+	.kill Mirefin Muckdweller##4361|n
+	info |goto Dustwallow Marsh,54.10,15.00|title More north around here
+    .'Kill/loot Darkfang spiders.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+	info 
+    .'Loot witchbane (plants, mostly around Jarl's cabin):
+    .collect 9 Witchbane##33112|q 11181/1|n|icon Interface\\icons\\inv_misc_herb_01
+    info        Only For TBC/WOTLK
+
+step //15
+    'See if you can do the easy escort from "Stinky" Ignatz.|goto Dustwallow Marsh,46.88,17.52
+	info 
+    .'NOTE: If he is not there, then skip this for now. You will have opportunities to try again.|icon Interface\\cursor\\Directions
+    .talk "Stinky" Ignatz##4880
+    ..accept Stinky's Escape##1270
+    .'Escort "Stinky" Ignatz south a bit to the main path (easy escort). Grind on mobs during the escort, or build up First Aid.
+    .goal Help Stinky find Bogbean Leaves|q 1270/1
+	info 
+    .'Kill/loot Darkfang spiders.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+	info 
+    .'Loot witchbane (plants, mostly around Jarl's cabin):
+    .collect 9 Witchbane##33112|q 11181/1|n|icon Interface\\icons\\inv_misc_herb_01
+    info        Only For TBC/WOTLK
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //16
+    'All around Jarl's cabin finish looting witchbane (plants).|goto Dustwallow Marsh,55.58,26.15
+     .collect 9 Witchbane##33112|q 11181/1|icon Interface\\icons\\inv_misc_herb_01
+    info        Only For TBC/WOTLK
+    info 
+    .'Kill/loot Darkfang spiders.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+
+step //17
+    'Back at Jarl's cabin:|goto Dustwallow Marsh,55.58,26.15
+    .talk Mordant Grimsby##23843
+    ..turnin The Witch's Bane##11181
+    ..accept Cleansing Witch Hill##11183
+    info        Only For TBC/WOTLK for all the step
+
+step //18
+    'At the end of the dock there at Jarl's cabin use the Witchbane Torch quest item then kill Zelfrax (gargoyle) when he spawns.|goto Dustwallow Marsh,55.18,26.69
+	.use Witchbane Torch##33113
+    .kill Zelfrax##23864|n
+    .goal Witch Hill Cleansed|q 11183/1
+    info        Only For TBC/WOTLK for all the step
+
+step //19
+    'Back at Jarl's cabin:|goto Dustwallow Marsh,55.58,26.15
+    .talk Mordant Grimsby##23843
+    ..turnin Cleansing Witch Hill##11183
+    info        Only For TBC/WOTLK for all the step
+
+step //20
+	.'Finish Killing the stealthed Theramore Infiltrators.|goto Dustwallow Marsh,41.2,24.2|icon Interface\\cursor\\Attack
+    .kill 9 Theramore Infiltrator##4834|q 1201/1
+    .'TIP: Use Track Hidden ability to spot the Infiltrators easier.|icon Interface\\icons\\ability_stealth|only Hunter
+	info 
+    .'Kill/loot Darkfang spiders.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|n|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+
+step //21
+    'Kill/loot Darkmist spiders for the eyes around Darkmist Cavern.|goto Dustwallow Marsh,34.9,21.9|icon Interface\\cursor\\Attack
+    .collect 20 Unpopped Darkmist Eye##5884|q 1206/1|icon Interface\\icons\\inv_misc_eye_01
+	info        For Vanilla you need 40 Unpopped Darkmist Eye
+	info 
+    .'Finish Kill/looting any type of spider.|icon Interface\\cursor\\Attack
+    .kill Darkfang Venomspitter##4414|n
+	.collect 5 Acidic Venom Sac##5959|q 1322/1|icon Interface\\icons\\inv_misc_slime_01
+	info         It's 6 Acidic Venom Sac on Vanilla
+	.kill Darkfang Lurker##4411|n
+	.kill Darkfang Spider##4413|n
+
+step //22
+    'At the west side in Brackenwall Village:|goto Dustwallow Marsh,35.21,30.66
+    .talk Nazeer Bloodpike##4791
+    ..turnin Theramore Spies##1201
+    ..accept The Theramore Docks##1202
+    ..turnin The Lost Report##1238
+	info 
+	.'Next to you:|goto Dustwallow Marsh,36.39,30.85|title Krak
+	.talk Krak##4883
+    .'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //23
+    .talk Balandar Brightstar##17095|goto Dustwallow Marsh,35.86,31.74
+    ..turnin Twilight of the Dawn Runner##9437
+    info        Only For TBC/WOTLK
+
+step //24
+    .talk Do'gol##5087|goto Dustwallow Marsh,36.53,30.79
+    ..turnin The Black Shield##1322
+    ..accept The Black Shield##1323
+
+step //25
+    .talk Krog##4926|goto Dustwallow Marsh,36.42,31.88
+    ..turnin The Black Shield##1323
+
+step //26
+    'Just south of Brackenwall Village:|goto Dustwallow Marsh,35.15,38.25
+    .talk Mudcrush Durtfeet##4503
+    ..turnin Hungry!##1177
+
+step //27
+    'From the ogre on the path, accept and do the escort by following Ogron, then kill the mobs that spawn in next to Paval Reethe.|goto Dustwallow Marsh,40.96,36.69|title Ogron
+    .talk Ogron##4983
+    ..accept Questioning Reethe##1273
+    .goal Question Reethe with Ogron|q 1273/1
+	info |goto Dustwallow Marsh,42.57,38.01|title Escort leads here
+    .'Use Bear Form.|icon Interface\\icons\\ability_racial_bearform|only Druid
+    info        Only For TBC/WOTLK for all the step
+
+step //28
+    'Head SE to Tabetha's Farm and inside the cabin:|goto Dustwallow Marsh,46.06,57.09
+    .talk Tabetha##6546
+    ..turnin Check Up on Tabetha##11213
+    ..accept Help for Mudsprocket##11211
+	info 
+    .'Next to you:
+    .talk Apprentice Garion##23601
+    ..accept The Grimtotem Weapon##11169
+    ..accept The Reagent Thief##11173
+	info        Only For TBC/WOTLK for all the step
+
+step //29
+    'Just outside at the side of the cabin:|goto Dustwallow Marsh,46.1,57.44
+    .talk Apprentice Morlann##23600
+    ..accept Direhorn Raiders##11156
+    ..accept The Zeppelin Crash##11172
+    info        Only For TBC/WOTLK for all the step
+
+step //30
+    'Orb of Orahil Questline: Go north a bit in the hut:|goto Dustwallow Marsh,46.06,57.09|optional
+    .talk Tabetha##6546
+    ..turnin Fragments of the Orb of Orahil##1799
+    ..accept Cleansing of the Orb of Orahil##4961
+	info 
+    .'Be prepared! You will need to kill a lvl 40 Elite demon that spawns! Make sure you continuously Fear it.|icon Interface\\cursor\\Attack
+    .kill Demon of the Orb##6549|q 4961/1
+	info 
+    .'WARNING: This can be easily doable, but hardcore players may wish to skip this if you are not confident about it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	only Warlock
+
+step //31
+    'In the hut:|goto Dustwallow Marsh,46.06,57.09|optional
+    .talk Tabetha##6546
+    ..turnin Cleansing of the Orb of Orahil##4961
+    ..accept Returning the Cleansed Orb##4976
+    only Warlock
+	
+step //32
+    'Go east to Beezil's Wreck:|goto Dustwallow Marsh,53.58,56.92
+    .talk Moxie Steelgrille##23797
+    ..turnin The Zeppelin Crash##11172
+    ..accept Corrosion Prevention##11174
+    ..accept Secure the Cargo!##11207
+    info        Only For TBC/WOTLK for all the step
+
+step //33
+    'At Beezil's Wreck, loot Gizmorium Shipping Crate.|goto Dustwallow Marsh,54.07,56.48
+    .collect Seaforium Booster##5862|q 1187/1|icon Interface\\icons\\inv_ammo_bullet_03
+    info        Only For TBC/WOTLK for all the step
+
+step //34
+    'Around the immediate area, stand near a Power Core Fragment to obtain a buff (Energized!), then use the Ooze Buster quest item on oozes.|goto Dustwallow Marsh,53.58,56.92|title Next Destination
+	info 
+    .'NOTE: You don't actually need to attack the oozes.|icon Interface\\cursor\\Directions
+	.use Ooze Buster##33108
+    .goal Oozes Dissolved|q 11174/1
+	info 
+    .'Loot Zeppelin Cargo (boxes laying around).
+    .collect 8 Zeppelin Cargo##33163|q 11207/1|icon Interface\\icons\\inv_crate_03
+    info        Only For TBC/WOTLK for all the step
+
+step //35
+    'Back at Beezil's Wreck:|goto Dustwallow Marsh,53.58,56.92
+    .talk Moxie Steelgrille##23797
+    ..turnin Corrosion Prevention##11174
+    ..turnin Secure the Cargo!##11207
+    ..accept Delivery for Drazzit##11208
+    info        Only For TBC/WOTLK for all the step
+
+step //36
+    'Go NW to Direhorn Post Den and in the NE tent kill/loot Apothecary Cylla, she drops a Sealed Letter item which starts a quest.|goto Dustwallow Marsh,47.21,46.59|icon Interface\\cursor\\Attack
+    .kill Apothecary Cylla##23881|n
+	.collect Sealed Letter##33115|n|icon Interface\\icons\\inv_letter_16
+    ..accept Signs of Treachery?##11186
+	info 
+    .'Kill Grimtotem Destroyer or Grimtotem Earthbinder around Direhorn Post Den.|icon Interface\\cursor\\Attack
+    .kill Grimtotem Destroyer##23594|n 
+    .kill Grimtotem Earthbinder##23595|n
+	.goal Direhorn Grimtotems killed|q 11156/1|n
+	info 
+    .'NOTE: The Destroyers have a 5 second stun!|icon Interface\\cursor\\Directions
+    info        Only For TBC/WOTLK for all the step
+
+step //37
+    .'Kill Grimtotem Destroyer or Grimtotem Earthbinder around Direhorn Post Den.|goto Dustwallow Marsh,47.21,46.59|icon Interface\\cursor\\Attack
+    .kill Grimtotem Destroyer##23594|n 
+    .kill Grimtotem Earthbinder##23595|n
+	.goal Direhorn Grimtotems killed|q 11156/1
+	info 
+    .'NOTE: The Destroyers have a 5 second stun!|icon Interface\\cursor\\Directions
+    info        Only For TBC/WOTLK for all the step
+
+step //38
+    'These are all done around The Quagmire together:|goto Dustwallow Marsh,47.84,55.57|title Kill Deadmire (around the area)
+	info 
+    .'Use the Captured Totem quest item at the Mottled Drywallow Crocolisk or a Drywallow Daggermaw, then kill them.|icon Interface\\cursor\\Attack
+	info 
+    .'NOTE: The crocs must be pulsed by the totem on death to get credit.|icon Interface\\cursor\\Directions
+    .'And make sure the crocs are targeting you and not your pet on death (so turn off growl)|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .'And make sure the crocs are targeting you and not your pet on death (so turn off taunt if using voidwalker)|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	.use Captured Totem##33101
+    .goal Totem Tests Performed|q 11169/1
+	info 
+    .'Kill/loot Noxious Shredders (green serpents) or Darkfang Creepers (orange spiders).|icon Interface\\cursor\\Attack
+	.collect 6 Marsh Venom##33103|q 11173/1|icon Interface\\icons\\inv_potion_162
+    .kill Noxious Shredder##4348|n
+    .kill Darkfang Creeper##4412|n
+	info 
+    .'Kill/loot Deadmire. This white crocolisk patrols around.|icon Interface\\cursor\\Attack
+	.kill Deadmire##4841|n
+	.collect Deadmire's Tooth##5945|q 1205/1|icon Interface\\icons\\inv_misc_monsterfang_01
+    info        Only For TBC/WOTLK for all the step
+
+step //39
+    'Back inside the cabin at Tabetha's Farm:|goto Dustwallow Marsh,46.06,57.24
+    .talk Apprentice Garion##23601
+    ..turnin The Grimtotem Weapon##11169
+    ..turnin The Reagent Thief##11173
+    info        Only For TBC/WOTLK for all the step
+
+step //40
+    'Just outside at the side of the cabin:|goto Dustwallow Marsh,46.1,57.44
+    .talk Apprentice Morlann##23600
+    ..turnin Direhorn Raiders##11156
+    info        Only For TBC/WOTLK for all the step
+
+step //41
+    'Head SW to Mudsprocket (neutral goblin town specific to TBC) and in the hut:|goto Dustwallow Marsh,42.33,72.93
+    .talk Drazzit Dripvalve##23572
+    ..turnin Delivery for Drazzit##11208
+    ..turnin Help Mudsprocket##11215
+	info 
+    .'At Mudsprocket:
+	.talk Krixil Slogswitch##23573
+    .'Get resupplied|icon Interface\\minimap\\Tracking\\Banker
+    info        Only For TBC/WOTLK for all the step
+
+step //42
+    'At the outskirts of town:|goto Dustwallow Marsh,42.82,72.43
+    .talk Dyslix Silvergrub##23612
+    .fpath Mudsprocket|icon Interface\\minimap\\Tracking\\FlightMaster
+	info
+	'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+	info 
+    .'NOTE: We will do the Mudsprocket quests when we return back to Dustwallow Marsh at level 43.|icon Interface\\cursor\\Directions
+    info        Only For TBC/WOTLK for all the step
+
+step //43
+    .talk Krog##4926|goto Dustwallow Marsh,36.42,31.88
+    ..turnin Questioning Reethe##1273
+    ..accept The Black Shield##1276
+    info        Only For TBC/WOTLK for all the step
+
+step //44
+    'Check one last time to see if you can do the easy escort from "Stinky" Ignatz.|goto Dustwallow Marsh,46.88,17.52
+    .'NOTE: If he is not there, then this will have to be skipped.|icon Interface\\cursor\\Directions
+    .talk "Stinky" Ignatz##4880
+    ..accept Stinky's Escape##1270
+    .'Escort "Stinky" Ignatz south a bit to the main path (easy escort). Grind on mobs during the escort, or build up First Aid.
+    .goal Help Stinky find Bogbean Leaves|q 1270/1
+    info        Only For TBC/WOTLK for all the step
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //45
+    'At Jarl's cabin:|goto Dustwallow Marsh,55.43,26.27
+    .talk "Swamp Eye" Jarl##4792
+    ..turnin Jarl Needs Eyes##1206
+    ..accept Jarl Needs a Blade##1203
+	info 
+	'For Vanilla
+	.'With your Moonsteel Broadsword:|icon Interface\\icons\\inv_sword_25
+    ..turnin Jarl Needs a Blade##1203
+    info    Only For Vanilla, this will be done somewhere else for TBC/WOTLK
+	
+step //46
+    'Destroy any remaining Unpopped Darkmist Eye if you have some in your bags.
+    info 
+    'Right next to Jarl's cabin:|goto Dustwallow Marsh,55.44,25.92
+    Interact with Loose Dirt
+    ..accept The Severed Head##1239
+	
+step //47
+	info |goto Silithus,0,400
+    'Just NE at Witch Hill, kill/loot Razorspine. He Patrols around the area. Spawns here.|goto Dustwallow Marsh,57.8,18.8|title Razorspine (patrols around the area)|icon Interface\\cursor\\Attack
+    .kill Razorspine##23841|n|goto Dustwallow Marsh,57.95,18.04|title Razorspine spawns here
+    .collect Razorspine's Sword##33110|q 1203/1|icon Interface\\icons\\inv_sword_32
+    info        Only For TBC/WOTLK
+
+step //48
+    'Back at Jarl's cabin:|goto Dustwallow Marsh,55.44,26.27
+    .talk "Swamp Eye" Jarl##4792
+    ..turnin Jarl Needs a Blade##1203
+    info        Only For TBC/WOTLK
+
+step //49
+	info |goto Silithus,0,400
+    .'Go all the way behind the Alliance town (Theramore Isle) and loot Captain's Footlocker (under the water).|goto Dustwallow Marsh,71.54,51.18|title Under the water
+	info 
+    .'WARNING: Watch out for the Alliance guards! Start swimming off the island to avoid the Alliance Theramore Guards!|goto Dustwallow Marsh,66.62,43.64|title Go to the side of the Alliance town of: Theramore|icon Interface\\cursor\\Directions
+    .collect Captain's Documents##5882|q 1202/1|icon Interface\\icons\\inv_letter_11
+
+step //50
+    'Hearth to Brackenwall Village.
+    .use Hearthstone##6948
+	info 
+    'At Brackenwall Village:|goto Dustwallow Marsh,35.21,30.66
+    .talk Nazeer Bloodpike##4791
+    ..turnin The Theramore Docks##1202
+    ..turnin The Severed Head##1239
+    ..accept The Troll Witchdoctor##1240
+    ..turnin Signs of Treachery?##11186
+	
+step //51
+    'From the Wind Rider Master,|goto Dustwallow Marsh,35.57,31.88
+    'Take a flight to Thunder Bluff:|goto Thunder Bluff,47.00,49.84|c|title Go to Thunder Bluff
+	.talk Shardi##11899
+	only !Mage
+	
+step //52
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+	only Mage
+	
+step //53
+    'For cloth donations here in Thunder Bluff:|goto Thunder Bluff,47.44,58.6
+	info 
+    .'Withdraw from the bank:
+	'Wool Cloth|icon Interface\\icons\\inv_fabric_linen_01
+    'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //54
+    'For cloth donations here in Thunder Bluff:|goto Thunder Bluff,47.44,58.6|title AH
+	info 
+	.collect 60 Wool Cloth##2592|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|icon Interface\\icons\\inv_fabric_silk_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //55
+    'Go to the NW hut on Hunter Rise:|goto Thunder Bluff,54.02,80.77
+    .talk Mosarn##4943
+    ..turnin The Black Shield##1276
+    ..accept Return to Krog##11204
+
+step //56
+    'Also on the Hunter Rise:|goto Thunder Bluff,61.52,80.91
+    .talk Melor Stonehoof##3441
+    ..turnin Deadmire##1205
+	info        Only For TBC/WOTLK
+
+step //57
+    'Get new spells/abilities (if you need to).
+    .'Hunters go just right next to you on The Hunter Rise.|goto Thunder Bluff,59.12,86.86|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .'Go NE to the Elder Rise. New abilities to get: |goto Thunder Bluff,76.79,27.11|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	'Barkskin,|icon Interface\\icons\\spell_nature_stoneclawtotem|only Druid
+	'Healing Touch,|icon Interface\\icons\\spell_nature_healingtouch|only Druid
+	'Rake,|icon Interface\\icons\\ability_druid_disembowel|only Druid
+	'Rip,|icon Interface\\icons\\ability_ghoulfrenzy|only Druid
+	'Swipe,|icon Interface\\icons\\inv_misc_monsterclaw_03|only Druid
+	'Thorns.|icon Interface\\icons\\spell_nature_thorns|only Druid
+    .'Warriors, go right next to you in the hut.|goto Thunder Bluff,57.61,85.53|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'Priests, get new spells/abilities in Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainer (down in cave)|icon Interface\\icons\\inv_staff_30|only Priest
+    'Mages, get new spells/abilities in Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainer (down in cave)|icon Interface\\icons\\inv_staff_13|only Mage
+    'Shaman Trainers are in the big tent up at The Spirit Rise.|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Hunter,Druid,Warrior,Priest,Mage,Shaman
+
+step //58
+    'NOTE: You can turn in cloth donations for the Tauren faction. You would need 60 of the following for all possible cloth turn-ins:|goto Thunder Bluff,43.04,42.77|icon Interface\\cursor\\Directions
+    'Wool Cloth|icon Interface\\icons\\inv_fabric_linen_01
+    'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	info 
+    .talk Rumstag Proudstrider##14728
+    ..turnin A Donation of Wool##7820
+    ..turnin A Donation of Silk##7821
+
+step //59
+    'Up the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47,49.84
+	info |only Rogue,Paladin
+	'If you are level 40 or need to get your level 38 new spells/abilities, then you can go to Orgrimmar to get them. Otherwise:|goto Orgrimmar,45.13,63.89|title Go to Orgrimmar for your new spells/abilities|only Rogue,Paladin
+	info |only Rogue,Paladin
+    'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	.talk Tal##2995
+	.......'I want to go to Orgrimmar|confirm|next +1|icon Interface\\cursor\\Point|only Rogue,Paladin
+	.........'Continue to Ratchet|confirm|next +4|icon Interface\\cursor\\Point|only Rogue,Paladin
+
+step //60
+    'Get level 40 spells/abilities. Paladin Trainer is at Valley of Wisdom.|goto Orgrimmar,32.26,35.72|title Paladin Trainer|only Paladin
+	'Get level 40 spells/abilities. Rogue Trainers are at Cleft of Shadow.|goto Orgrimmar,43.06,53.72|title Rogue Trainer|only Rogue
+	info 
+    .'NOTE: Also remember at level 40 epic ground mounts become available, and only cost about 12 gold. You can get that at your faction's mount vendor.|icon Interface\\cursor\\Directions
+	info        Only for WOTLK
+	info 
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	Only Rogue,Paladin
+
+step //61
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'from Wind Rider Master, take a flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	Only Rogue,Paladin
+	
+step //62
+    'Orb of Orahil Questline: At Ratchet, go up behind the Engineering building:|goto Orgrimmar,62.51,35.45|optional
+    .talk Menara Voidrender##6266
+	..turnin Returning the Cleansed Orb##4976
+    ..turnin Shard of a Felhound##4962
+	.'Or
+    ..turnin Shard of an Infernal##4963
+	info 
+    .'Then accept and complete the next quest to obtain your new Orb & Staff!
+    ..turnin The Completed Orb of Dar'Orahil##4964
+	'Or
+    ..turnin The Completed Orb of Noh'Orahil##4975
+	info 
+	'Get any new spells/abilities if you haven't previously.
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Warlock
+
+step //63
+    'At Ratchet, next to the bank:|goto The Barrens,62.37,37.62
+    .talk Mebok Mizzyrix##3446
+    ..turnin Stinky's Escape##1270
+	info        If you escorted "Stinky" Ignatz
+	
+step //64
+    'Withdraw from the Bank|goto The Barrens,62.65,37.44|title Bank
+    ..'Swim Speed Potion|icon Interface\\icons\\inv_potion_13
+	..'Sample Elven Gem|icon Interface\\icons\\inv_misc_gem_opal_01
+    ..'Elixir of Water Breathing|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	info 
+    'Deposit into bank:
+    ..'Seaforium Booster|icon Interface\\icons\\inv_ammo_bullet_03
+
+step //65
+    'Get on the boat to go to Booty Bay...|goto The Barrens,63.65,38.69|title Get on the boat to Booty Bay
+	info 
+	.'38-38 Dustwallow Marsh is complete!|icon Interface\\cursor\\Directions
+	....'Go to 38-40 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\38-40 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01	
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\38-40 Stranglethorn Vale",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\40-41 Badlands
+startlevel 38
+
+step //1
+    'Once at Booty Bay, follow the lower docks:|goto Stranglethorn Vale,28.10,76.22
+    .talk First Mate Crazz##2490
+    ..accept The Bloodsail Buccaneers##595
+
+step //2
+    'In the small cabin (next to the hanging shark):|goto Stranglethorn Vale,27.78,77.07
+    .talk "Sea Wolf" MacKinley##2501
+    ..accept Scaring Shaky##606
+
+step //3
+    'For an upcoming quest (Pool of Tears) at Dustwallow Marsh, check the Mailbox / Neutral AH for items:|goto Stranglethorn Vale,26.64,76.40|title Mailbox / Neutral AH 
+    .collect Swim Speed Potion##6372|n|icon Interface\\icons\\inv_potion_13
+	info        You don't need it if you are Undead
+    .collect Elixir of Water Breathing##5996|n|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only !Druid
+
+step //4
+    'Go in the Inn and from Innkeeper Skindle:|goto Stranglethorn Vale,27.04,77.31
+    .talk Innkeeper Skindle##6807
+    .home Booty Bay|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //5
+    'Go up the stairs in the Inn:|goto Stranglethorn Vale,26.94,77.21
+    .talk Krazek##773
+    ..turnin The Rumormonger##1115
+    ..accept Dream Dust in the Swamp##1116
+
+step //6
+    'Up the steps on the boat-deck:|goto Stranglethorn Vale,27.17,77.01
+    .talk Fleet Master Seahorn##2487
+    ..turnin Sunken Treasure##669
+	info 
+    .'SKIP the next "Sunken Treasure" for now (Too far off the route, not worth the xp/time).|icon Interface\\cursor\\Directions
+
+step //7
+    'On the roof:|goto Stranglethorn Vale,26.87,77.09
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster|goto Stranglethorn Vale,32.5,29.4|title Go to Grom'gol|c
+
+step //8
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.12,29.25
+    .talk Far Seer Mok'thardin##2465
+    ..accept Mok'thardin's Enchantment##572
+
+step //9
+    'By the Cauldron:|goto Stranglethorn Vale,32.27,27.71
+    .talk Kin'weelay##2519
+    ..turnin The Troll Witchdoctor##1240
+	info 
+	'For Vanilla
+	..accept The Vile Reef##629
+	info        Only for Vanilla
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //10
+    'If you need to, get new spells/abilities at the Hunter Trainer.|goto Stranglethorn Vale,31.23,28.69|only Hunter
+    .talk Kragg##1404|only Hunter
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Hunter
+	info |only Hunter
+    'Get repaired/resupplied from any vendor at the camp.
+	'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //11
+    'Kill/loot Jungle Stalkers around the area.|goto Stranglethorn Vale,31.12,41.58
+	.collect 10 Jungle Stalker Feather##3863|q 572/1|icon Interface\\icons\\spell_magic_featherfall
+    .kill 10 Jungle Stalker##687|q 196/1
+    info 
+    .'WARNING: Watch out for Tethis, the elite raptor in the area!|icon Interface\\cursor\\Directions
+	info        Elite only on Vanilla
+	
+step //12
+    'Keep grinding on Jungle Stalkers & Cold Eye Basilisks until you achieve this.|goto Stranglethorn Vale,33.43,37.43|title Next Destination
+	'Reach level 38 and 37 950 XP before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+
+step //13
+    'Go back to Grom'gol Base Camp:|goto Stranglethorn Vale,32.12,29.24
+	'TIP: Shamans, you can use Astral Recall, then fly to Grom'gol Base Camp from Booty Bay.|icon Interface\\icons\\spell_nature_astralrecal|only Shaman
+	.cast Astral Recall##556|only Shaman
+    .talk Far Seer Mok'thardin##2465
+    ..turnin Mok'thardin's Enchantment##572
+    ..accept Mok'thardin's Enchantment##571
+    info 
+	'Next to you:
+	.talk Nargatt##7485
+	'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	
+
+step //14
+    'Go NW under the water at Ruins of Zul'Kunda and distract the elite murlocs so you can loot the Gri'lek the Wanderer tablet.|goto Stranglethorn Vale,24.82,23.02
+    info 
+	'You may need to kill one or two of them depending on your class.
+    .'Use Swim Speed Potion if you have it.|use Swim Speed Potion##6372|only !Druid
+    .'Druids, use Aquatic Form.|cast Aquatic Form##1066|only Druid
+    .'Shamans, use Water Walking first.|cast Water Walking##546|only Shaman
+    .goal Loot Gri'lek the Wanderer Tablet|q 629/1
+	info 
+    .'WARNING: As this quest involves elites, you may want to skip this if you are not confident on Hardcore!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+    .'Use an Elixir of Water Breathing!|use Elixir of Water Breathing##5996|icon Interface\\cursor\\Directions|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    ........'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //15
+    'Back at Grom'gol Base Camp:|goto Stranglethorn Vale,32.27,27.71
+    .talk Kin'weelay##2519
+    ..turnin The Vile Reef##629
+    ........'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //16
+    'Go east to the river and kill/loot Snapjaw Crocolisks along the river.|goto Stranglethorn Vale,39.47,28.88
+	.collect 5 Snapjaw Crocolisk Skin##4104|q 577/1|icon Interface\\icons\\inv_misc_monsterscales_03
+    .kill Snapjaw Crocolisk##1152|n
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go east and kill/loot Bhag'thera.|goto Stranglethorn Vale,49.61,24.03|title Bhag'thera (Middle spawn)
+	'This lvl 40 black panther has 3 different spawn points. He is mostly at the Middle spawn.|goto Stranglethorn Vale,47.6,28.8|title Bhag'thera (South spawn)
+    .kill Bhag'thera##728|n
+	.collect Fang of Bhag'thera##3876|q 193/1|icon Interface\\icons\\inv_misc_monsterfang_01
+	info |goto Stranglethorn Vale,49,20.6|title Bhag'thera (North spawn)
+
+step //18
+    'At Nessingwary's Camp:|goto Stranglethorn Vale,35.56,10.55
+    .talk Sir S. J. Erlgadin##718
+    ..turnin Panther Mastery##193
+	info 
+    .talk Hemet Nesingwary##715
+    ..turnin Raptor Mastery##196
+    ..accept Raptor Mastery##197
+
+step //19
+    'Hearth to Booty Bay.|goto Stranglethorn Vale,27.07,75.49|title Hearth to Booty Bay|c
+    .use Hearthstone##6948
+	info 
+	.talk Innkeeper Skindle##6807|goto Stranglethorn Vale,27.04,77.31|title Innkeeper Skindle
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //20
+    'Go just slightly NW of Booty Bay and clear the Bloodsail (humans) from the area, then:|goto Stranglethorn Vale,27.28,69.51
+    'Interact with Bloodsail Correspondence
+	info        (scroll on a barrel)
+    ..turnin The Bloodsail Buccaneers##595
+    ..accept The Bloodsail Buccaneers##597
+    info |only Druid
+	'TIP: Root Mages and run to deal with melee by itself by out ranging and potentially resetting the mage.|icon Interface\\cursor\\Directions|only Druid
+    info 
+	'NOTE: Be extra careful here, the mobs can trap you and the mages do a lot of damage.|icon Interface\\cursor\\Directions
+
+step //21
+    'Around Mistvale Valley, kill/loot Elder Mistvale Gorillas.|goto Stranglethorn Vale,31.85,66.92
+	.collect 5 Mistvale Giblets##3919|q 606/1|icon Interface\\icons\\inv_misc_organ_04
+    .collect Aged Gorilla Sinew##3862|q 571/1|icon Interface\\icons\\inv_misc_leatherscrap_02
+	.kill Elder Mistvale Gorilla##1557|n
+    info 
+	'NOTE: Very low drop rate for the |icon Interface\\cursor\\Directions
+	'Aged Gorilla Sinew (but keep grinding until you get it).|icon Interface\\icons\\inv_misc_leatherscrap_02
+
+step //22
+    'Back at Booty Bay and near the boat pickup:|goto Stranglethorn Vale,26.90,73.59
+    .talk "Shaky" Phillipe##2502
+    ..turnin Scaring Shaky##606
+    ..accept Return to MacKinley##607
+
+step //23
+    'On the lower docks:|goto Stranglethorn Vale,28.09,76.22
+    .talk First Mate Crazz##2490
+    ..turnin The Bloodsail Buccaneers##597
+    ..accept The Bloodsail Buccaneers##599
+
+step //24
+    'In the cabin (next to the hanging shark):|goto Stranglethorn Vale,27.78,77.07
+    .talk "Sea Wolf" MacKinley##2501
+    ..turnin Return to MacKinley##607
+	info 
+    .'SKIP "Voodoo Dues" quest for now.|icon Interface\\cursor\\Directions
+
+step //25
+    'Go all the way upstairs in the Inn then go over past the Alliance FP to Tan-Your-Hide Leatherworks:|goto Stranglethorn Vale,28.29,77.59
+    .talk Drizzlik##2495
+    ..turnin Some Assembly Required##577
+    ..accept Excelsior##628
+
+step //26
+    'Go back to the top of the Inn (on the boat-deck):|goto Stranglethorn Vale,27.17,77.00
+    .talk Fleet Master Seahorn##2487
+    ..turnin The Bloodsail Buccaneers##599
+	info 
+    .'SKIP "The Bloodsail Buccaneers" for now.|icon Interface\\cursor\\Directions
+	info 
+    ..accept Sunken Treasure##670 
+	info        only if you turned in Sunken Treasure quest before
+
+step //27
+    'Next to you on the roof, take flight path:|goto Stranglethorn Vale,26.87,77.09
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster|goto Stranglethorn Vale,32.5,29.4|title Go to Grom'gol|c
+
+step //28
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.12,29.24
+    .talk Far Seer Mok'thardin##2465
+    ..turnin Mok'thardin's Enchantment##571
+    ..accept Mok'thardin's Enchantment##573
+
+step //29
+    'By the Bubbling Cauldron:|goto Stranglethorn Vale,32.27,27.71
+    .talk Kin'weelay##2519
+    ..accept Split Bone Necklace##598
+
+step //30
+    'Go in the Inn:|goto Stranglethorn Vale,31.49,29.75
+    .talk Innkeeper Thulbek##5814
+    .home Grom'gol Base Camp|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+	'from any vendor at the camp:
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //31
+	info |goto Isle of Quel'Danas,600,0.0
+    'Grind to level 40 on Jungle Thunderers around here or the Venture Co. Geologists around the other waypoint. These mobs have less armor and die faster.|goto Stranglethorn Vale,42.32,26.98|title Jungle Thunderers Around Here
+    info |goto Stranglethorn Vale,45.04,20.78|title Venture Co. Geologists Around Here
+	'Instead of the grinding, you could get a 5 man group to do the Scarlet Monastery dungeon.
+    ding 40
+
+step //32
+    'Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Druid Trainer next to the Moonwell to get your level 40 spells/abilities.|goto Moonglade,52.53,40.57
+	.cast Teleport: Moonglade##19027
+    .talk Loganaar##12042
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    info 
+	'If money is tight, you can skip some spells like Cower, Rebirth and Tranquility.|icon Interface\\cursor\\Directions
+    only Druid
+
+step //33
+    'Hearth (or go back) to Grom'gol Base Camp.|goto Stranglethorn Vale,32.14,29.04||title Hearth to Grom'gol|c
+    .use Hearthstone##6948
+
+step //34
+    'Hunters, get new spells/abilities at the Hunter Trainer.|goto Stranglethorn Vale,31.23,28.69
+    .talk Kragg##1404
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    info 
+	'Make sure you learn Mail.|icon Interface\\cursor\\Directions
+    only Hunter
+
+step //35
+    'From the Pet Trainer next to you, learn Growl R5.|goto Stranglethorn Vale,31.11,28.94
+    .talk Zudd##3624
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //36
+    'Make sure you upgrade to the lvl 40 
+	'Jagged Arrow|icon Interface\\icons\\inv_weapon_shortblade_25
+	'or Accurate Slugs|icon Interface\\icons\\inv_ammo_bullet_01
+	.talk Uthok##1149
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|goto Stranglethorn Vale,31.55,27.95|title Talk to Uthok
+    only Hunter
+
+step //37
+    'At the top of Grom'gol's Inn, get on the zeppelin to go to Undercity.|goto Stranglethorn Vale,31.55,29.08|title Take the zeppelin to Undercity
+    info 
+	'You can save a good chunk of time by doing a suicide warp by jumping off of the zeppelin at a certain timing.|icon Interface\\cursor\\Directions
+	info 
+	'Enter Undercity...|goto Tirisfal Glades,62.2,66.89|title Enter: Undercity|c
+//    only if not Warlock
+
+step //38
+    'Drop down and from Hannah Akeley, purchase up to 20 Rune of Teleportation.|goto Undercity,82.77,15.85
+    .talk Hannah Akeley##4575
+    .buy 20 Rune of Teleportation##17031|icon Interface\\icons\\inv_misc_rune_06
+    info 
+	'NOTE: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //39
+    'Withdraw from the bank|goto Undercity,66.01,44.12
+	.''Fizzle Brassbolts' Letter,|icon Interface\\icons\\inv_letter_13
+    .'Blue Pearl,|icon Interface\\icons\\inv_ore_arcanite_02
+	.'Frost Oil,|icon Interface\\icons\\inv_potion_20
+	.'Gyrochronatom,|icon Interface\\icons\\inv_misc_pocketwatch_02
+	.'Healing Potion, |icon Interface\\icons\\inv_potion_51
+	.'Lesser Invisibility Potion, |icon Interface\\icons\\inv_potion_18
+	.'Patterned Bronze Bracers, |icon Interface\\icons\\inv_bracer_07
+	.'Elixir of Water Breathing|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+	.'Swim Speed Potion|icon Interface\\icons\\inv_potion_13
+	.'Mageweave Cloth|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+    'Deposit into bank: 
+	.'Split Bone Necklace|icon Interface\\icons\\inv_misc_bone_10
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only !Warlock
+
+step //40
+    'The following items are used for easy quest turn-ins at the Badlands coming up. And remember to not sell these items to a vendor:|goto Undercity,68.16,38.27
+    .collect 9 Blue Pearl##4611|n|icon Interface\\icons\\inv_ore_arcanite_02
+    .collect Frost Oil##3829|n|icon Interface\\icons\\inv_potion_20
+    .collect Gyrochronatom##4389|n|icon Interface\\icons\\inv_misc_pocketwatch_02
+	'For an upcoming quest (Pool of Tears) at Swamp of Sorrows|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    .collect Elixir of Water Breathing##5996|icon Interface\\icons\\inv_potion_17|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only if not Warlock
+
+step //41
+    'If managed to get a Frost Oil and a Gyrochronatom, you can also benefit from obtaining the following:|goto Undercity,66.01,44.12
+    .collect Healing Potion##929|n|icon Interface\\icons\\inv_potion_51
+    .collect Lesser Invisibility Potion##3823|n|icon Interface\\icons\\inv_potion_18
+    .collect Patterned Bronze Bracers##2868|n|icon Interface\\icons\\inv_bracer_07
+    info 
+	'NOTE: All these items are used for easy turn-in quests in the Badlands. And remember to not sell these items to a vendor!|icon Interface\\cursor\\Directions
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+//    only if not Warlock
+
+step //42
+    'At Undercity, get lvl 40 spells/abilities. (if you haven't yet)|only Warrior,Rogue,Priest,Paladin
+    info 
+	'Warriors go NW to the War Quarter.|goto Undercity,47.42,15.96|title Warrior Trainer|only Warrior
+	'Rogue Trainers are at the Rogue' Quarters.|goto Undercity,83.86,72.06|title Rogue Trainer|only Rogue
+	'Priest Trainers are at the War Quarter.|goto Undercity,49.26,17.14|title Priest Trainer|only Priest
+	'A Paladin Trainer is at the Royal Quarter.|goto Undercity,58.00,90.45|title Paladin Trainer|only Paladin
+	.talk Champion Cyssa Dawnrose##20406|only Paladin
+	'Get new spells/abilities from the Warlock Trainers in the Magic Quarter.|goto Undercity,86.06,15.68|title Warlock Trainer|only Warlock
+	info |goto Undercity,52.49,63.87|title Enter: Royal Quarter|only Paladin
+	info |only !Paladin
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	only Warrior,Rogue,Priest,Warlock,Paladin
+//    only if not Shaman and not Druid and not Hunter and not Warlock and not Mage
+
+step //43
+    'At Undercity, get lvl 40 spells/abilities (if you haven't yet).
+	info 
+	'Mage Trainers are at the Magic Quarter.|goto Undercity,85.14,10.07
+	'Also accept your class quest:
+    ..accept Journey to the Marsh##1947
+    ..accept Return to the Marsh##1953
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Mage
+
+step //44
+    'TBC REMINDER: If you haven't yet, go buy your level 30 mount. It costs roughly 45 gold.|goto Undercity,66.01,44.12|icon Interface\\cursor\\Directions
+    info 
+	'WOTLK EPIC MOUNT: At level 40 epic ground mounts become available (WotLK), and only cost about 12 gold.|icon Interface\\cursor\\Directions
+    ..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+//    only if not Paladin and not Warlock and (TBC or WotLK)
+
+step //45
+    'In the  Undercity,|goto Undercity,63.26,48.56
+    .talk Michael Garrett##4551
+    'From the Bat Handler, take a flight to Hammerfall, Arathi|goto Arathi Highlands,73.07,32.61|title Go to Hammerfall|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //46
+    'Build up First Aid. And if you are able to get to skill level 240, go talk to Doctor Gregory Victor at Hammerfall (in the building), to learn Heavy Mageweave Bandage.|goto Arathi Highlands,73.42,36.90
+    .talk Doctor Gregory Victor##12920
+	..learn Heavy Mageweave Bandage##8545|icon Interface\\icons\\inv_misc_bandage_20
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //47
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go SW through the hidden path.|goto Arathi Highlands,30.69,66.69|title Take hidden pathway
+    info |goto Arathi Highlands,21.33,73.39|title Follow waypoint
+	It leads through a cave.|goto Arathi Highlands,21.75,76.16|title Go through cave
+	info |goto Arathi Highlands,22.52,80.39|title Go through cave
+	'Then Go across the water...|route Arathi Highlands,30.69,66.69;21.33,73.39;21.75,76.16;22.52,80.39;32.28,81.38|title Take hidden pathway
+	info 
+    .'Use Swim Speed Potion if you have it.|use Swim Speed Potion##6372|only !Druid
+    .'Druids, use Aquatic Form.|cast Aquatic Form##1066|only Druid
+    .'Shamans, use Water Walking first.|cast Water Walking##546|only Shaman
+	'At Faldir's Cove:|goto Arathi Highlands,32.28,81.38|title Shakes O'Breen
+    .talk Shakes O'Breen##2610
+    ..turnin Sunken Treasure##670
+    ..accept Death From Below##667
+    info 
+	'NOTE: This starts an escort!|icon Interface\\cursor\\Directions
+
+step //48
+    'Go on top of the ship and fire the cannon to kill the three waves of naga that come in.|goto Arathi Highlands,31.55,81.97|title Go on top of the ship
+    .goal Defend Shakes O'Breen|q 667/1
+
+step //49
+	'Next to you:
+	.talk Shakes O'Breen##2610
+	..turnin Death From Below##667
+	info |goto Arathi Highlands,29.15,89.97|title Follow waypoint to go Wetlands
+	'When done, go at Wetlands from the water...|goto Wetlands,32.88,10.51|title Go to Wetlands|c
+
+step //50
+	info |goto Isle of Quel'Danas,600,0.0
+    If you come from Hammerfall, follow waypoints to Wetlands.|goto Arathi Highlands,74.03,40.14|title Coming from Hammerfall - Follow waypoint
+    info |goto Arathi Highlands,44.05,85.06|title Coming from Hammerfall - Follow waypoint
+	'TIP: For Vanilla, When you get to Wetlands go south in the small cave and stand on top of the middle mushroom in the back of the cave, then log out and log back in. You will end up at the flight master and save several minutes. This is called a logout skip.|icon Interface\\cursor\\Directions
+	info        Only for Vanilla|goto Arathi Highlands,45.47,90.93|title Coming from Hammerfall - Follow waypoint
+	info |goto Wetlands,53.77,45.78|title Follow waypoint
+	route Wetlands,53.67,70.34;49.12,70.46;48.16,67.38;50.14,71.57;50.63,82.57;55.26,83.58;55.6,86;55.7,92|title Go through: Dun Algaz (tunnels) to Loch Modan
+	info 
+	'Go south of Loch Modan, be carefull there is some Alliance Guards.|goto Loch Modan,41.93,56.55|title Follow waypoint
+	'Run all the way to the Badlands...|goto Badlands,50.59,13.21|title Enter: Badlands|c
+	info 
+	
+	//ERA route (logout skip)
+	//goto Wetlands,63.94,78.56|title Do Logout Skip (in small cave, top of mushroom)
+	
+	//WOTLK route:
+	//goto Wetlands,53.67,70.34|title WOTLK route
+	//goto Wetlands,49.12,70.46|title WOTLK route
+	//goto Wetlands,48.16,67.38|title WOTLK route
+	//goto Wetlands,50.14,71.57|title WOTLK route
+	//goto Wetlands,50.63,82.57|title WOTLK route
+	//goto Wetlands,55.26,83.58|title WOTLK route
+	//goto Loch Modan,25.28,0.29|title WOTLK route
+	//goto Loch Modan,25.58,11.03|title WOTLK route
+	
+	//Converge in Loch Modan:	
+
+step //51
+	..'38-40 Stranglethorn Vale is complete!|icon Interface\\cursor\\Directions
+	.........'Go to 40-41 Badlands|confirm|next "Joana's Guide\\Horde\\40-41 Badlands"|icon Interface\\icons\\achievement_zone_badlands_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\40-41 Badlands",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 40
+next Joana's Guide\\Horde\\41-42 Swamp of Sorrows
+	
+step //1
+    .'As you enter the Badlands, see if Broken Tooth (lvl 37 rare cat) is available for taming. This cat has several possible spawn locations.|goto Badlands,54.0,15.2|title Tame: Broken Tooth?
+	info |goto Badlands,62.6,31.2|title Tame: Broken Tooth?
+    .'If he is there, abandon your current main pet and tame this pet as your new main pet.
+	info |goto Badlands,44.6,36.6|title Tame: Broken Tooth?
+    .'NOTE: Broken Tooth is special because it has the fastest attack speed out of any pets in Classic WoW. Faster attack speeds work great with the Frenzy talent. If he is not there, don't worry, just move on and consider coming back later to grab him.|icon Interface\\cursor\\Directions
+	info 
+	'In TBC, Broken tooth becomes a regular mob in 2.0, Just skip this if you are in TBC/WOTLK phase.|optional
+    only Hunter
+	........'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //2
+    .'In Badlands, grind your way SW to Valley of Fangs: |goto Badlands,42.2,52.7
+    .talk Martek the Exiled##4618
+    ..turnin Martek the Exiled##1106
+    ..accept Indurium##1108
+	info 
+    .'Next to you: |goto Badlands,42.4,52.9|title Rigglefuzz
+    .talk Rigglefuzz##2817
+    ..accept Barbecued Buzzard Wings##703
+	info 
+    .'With your 9 Blue Pearls (Skip if you don't have them):|icon Interface\\icons\\inv_ore_arcanite_02
+    ..accept Pearl Diving##705
+    ..turnin Pearl Diving##705
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //3
+    .'Kill/loot Stonevault troggs around Agmond's End. |goto Badlands,51.6,66.3|icon Interface\\cursor\\Attack
+	.collect 10 Indurium Flake##5797|q 1108/1|icon Interface\\icons\\inv_misc_stonetablet_02
+    .kill Stonevault Shaman##2894|n
+    .kill Stonevault Bonesnapper##2893|n
+    .kill Stonevault Basher##6733|n
+    .kill Stonevault Seer##2892|n
+
+step //4
+    .'Back at Valley of Fangs: |goto Badlands,42.2,52.7|title Martek the Exiled
+    .talk Martek the Exiled##4618
+    ..turnin Indurium##1108
+    .'Wait a few seconds then:
+    ..accept News for Fizzle##1137
+	info 
+	.talk Jazzrik##9179|goto Badlands,42.5,52.5|title Get Repaired/Resupplied
+    .'Get Repaired/Resupplied |icon Interface\\minimap\\Tracking\\Repair
+
+step //5
+    .'Go NW to The Dustbowl: |goto Badlands,26.0,44.9
+    .talk Lotwil Veriatus##2921
+    ..accept Study of the Elements: Rock##710
+	info 
+    .'With your Frost Oil (skip if you don't have it):|icon Interface\\icons\\inv_potion_20
+    ..accept Coolant Heads Prevail##713
+    ..turnin Coolant Heads Prevail##713
+	info 
+    .'With your Gyrochronatom (skip if you don't have it):|icon Interface\\icons\\inv_misc_pocketwatch_02
+    ..accept Gyro... What?##714
+    ..turnin Gyro... What?##714
+
+step //6
+    .'Grind west to Kargath, and from the Wind Rider Master: |goto Badlands,4.0,44.8
+    .talk Gorrik##2861
+    ..fpath Kargath|icon Interface\\minimap\\Tracking\\FlightMaster
+	info 
+    .'Kill/loot Lesser Rock Elementals on your way.|goto Badlands,4.0,44.8|icon Interface\\cursor\\Attack
+	.collect 10 Small Stone Shard##4626|q 710/1|n|icon Interface\\icons\\inv_stone_07
+    .kill Lesser Rock Elemental##2735|n
+
+step //7
+    .'Down below at the watchtower entrance: |goto Badlands,6.0,48.1
+    .talk Advisor Sarophas##17097
+    ..accept Unclaimed Baggage##9439
+	info only TBC, WOTLK
+
+step //8
+    .'Up the watchtower: |goto Badlands,6.5,47.2
+    .talk Neeka Bloodscar##5394
+    ..accept Coyote Thieves##1419
+    ..accept Report to Helgrum##1420
+
+step //9
+    .'Down in the Inn: |goto Badlands,2.9,45.6|title Gorn
+    .talk Gorn##1068
+    ..accept Broken Alliances##782
+	info 
+    .'Upstairs in the Inn: |goto Badlands,2.4,46.1|title Jarkal Mossmeld
+    .talk Jarkal Mossmeld##6868
+    ..accept Badlands Reagent Run##2258
+	info 
+    .'NOTE: Keep your Hearthstone set to Grom'gol Base Camp!|icon Interface\\cursor\\Directions
+	info 
+	.talk Sranda##1407|goto Badlands,2.9,47.3|title Sranda
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //10
+    .'Kill/loot Lesser Rock Elementals up north around on the cliffs. |goto Badlands,17.1,42.8|icon Interface\\cursor\\Attack
+    .collect 10 Small Stone Shard##4626|q 710/1|icon Interface\\icons\\inv_stone_07
+    .kill Lesser Rock Elemental##2735|n
+
+step //11
+    .'At The Dustbowl: |goto Badlands,26.0,44.9
+    .talk Lotwil Veriatus##2921
+    ..turnin Study of the Elements: Rock##710
+    ..accept Study of the Elements: Rock##711
+
+step //12
+    .'Grind your way south and kill/loot Rock Elementals around the cliffs. |goto Badlands,37.8,74.4|icon Interface\\cursor\\Attack
+	.collect 3 Large Stone Slab##4627|q 711/1|icon Interface\\icons\\inv_stone_08
+    .kill Rock Elemental##92|n
+	info 
+    .'Kill/loot Buzzards and Coyotes on the road.|icon Interface\\cursor\\Attack
+	.collect 5 Buzzard Gizzard##7847|q 2258/1|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 10 Crag Coyote Fang##7846|q 2258/2|n|icon Interface\\icons\\inv_misc_monsterfang_01
+	.collect 5 Rock Elemental Shard##7848|q 2258/3|n|icon Interface\\icons\\inv_misc_stonetablet_01
+	.collect 30 Coyote Jawbone##6166|q 1419/1|n|icon Interface\\icons\\inv_misc_bone_09
+	.collect 4 Buzzard Wing##3404|q 703/1|n|icon Interface\\icons\\inv_misc_monsterscales_02
+    .kill Buzzard##2830|n
+    .kill Crag Coyote##2727|n
+	.kill Lesser Rock Elemental##2735|n
+	info 
+    .'Note: Don't sell the |icon Interface\\cursor\\Directions
+	'Buzzard Wings!|icon Interface\\icons\\inv_misc_monsterscales_02
+	.kill Giant Buzzard##2831|n
+	.kill Feral Crag Coyote##2728|n
+	.kill Elder Crag Coyote##2729|n
+
+step //13
+    .'Grind your way back north to The Dustbowl: |goto Badlands,26.0,44.9
+    .talk Lotwil Veriatus##2921
+    ..turnin Study of the Elements: Rock##711
+    ..accept Study of the Elements: Rock##712
+    info 
+	.'Kill/loot Buzzards and Coyotes on the road.|icon Interface\\cursor\\Attack
+	.collect 5 Buzzard Gizzard##7847|q 2258/1|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 10 Crag Coyote Fang##7846|q 2258/2|n|icon Interface\\icons\\inv_misc_monsterfang_01
+	.collect 5 Rock Elemental Shard##7848|q 2258/3|n|icon Interface\\icons\\inv_misc_stonetablet_01
+	.collect 30 Coyote Jawbone##6166|q 1419/1|n|icon Interface\\icons\\inv_misc_bone_09
+	.collect 4 Buzzard Wing##3404|q 703/1|n|icon Interface\\icons\\inv_misc_monsterscales_02
+	info 
+    .'Note: Don't sell the |icon Interface\\cursor\\Directions
+	'Buzzard Wings!|icon Interface\\icons\\inv_misc_monsterscales_02
+
+step //14
+    .'Go NE to enter Angor Fortress, make a left at the entrance then in the room before going down the steps, loot the orange Empty Barrel. |goto Badlands,42.4,30.2
+    .collect Advisor's Pack##23658|q 9439/1|icon Interface\\icons\\inv_misc_bag_10_blue
+    info 
+	.'Kill/loot Buzzards and Coyotes on the road.|icon Interface\\cursor\\Attack
+	.collect 5 Buzzard Gizzard##7847|q 2258/1|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 10 Crag Coyote Fang##7846|q 2258/2|n|icon Interface\\icons\\inv_misc_monsterfang_01
+	.collect 5 Rock Elemental Shard##7848|q 2258/3|n|icon Interface\\icons\\inv_misc_stonetablet_01
+	.collect 30 Coyote Jawbone##6166|q 1419/1|n|icon Interface\\icons\\inv_misc_bone_09
+	.collect 4 Buzzard Wing##3404|q 703/1|n|icon Interface\\icons\\inv_misc_monsterscales_02
+	info 
+    .'Note: Don't sell the |icon Interface\\cursor\\Directions
+	'Buzzard Wings!|icon Interface\\icons\\inv_misc_monsterscales_02
+	info only TBC, WOTLK
+	
+step //15
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Go in the other room across the building and loot the Weapon Rack. |goto Badlands,41.58,29.27|title Follow waypoint
+    .collect Advisor's Rapier##23660|q 9439/2|icon Interface\\icons\\inv_sword_30
+    info only TBC, WOTLK|goto Badlands,42.40,27.43|title Follow waypoint
+	info |goto Badlands,41.6,26.9|title Loot: Weapon Rack
+			
+step //16
+	info |goto Isle of Quel'Danas,600,0.0
+	.'Kill/loot Buzzards. Remember to not sell the |goto Badlands,15.7,60.6|title Lots of Buzzards around here|icon Interface\\cursor\\Attack
+	'Buzzard Wings to a vendor!|icon Interface\\icons\\inv_misc_monsterscales_02
+	.collect 4 Buzzard Wing##3404|q 703/1|icon Interface\\icons\\inv_misc_monsterscales_02
+	info 
+	.'Kill/loot Coyotes. Focus more on the Elder Crag Coyotes around the western side of Badlands.|goto Badlands,12.3,69.5|title Around the area|icon Interface\\cursor\\Attack
+	.collect 30 Coyote Jawbone##6166|q 1419/1|icon Interface\\icons\\inv_misc_bone_09
+	info 
+	.'Kill/loot Boss Tho'grun (if you see him). This ogre patrols in a large circle counter-clockwise around the SW part of Badlands. He has 5 bodyguards. Pull/kite him away from his guards to take him on 1v1.|icon Interface\\cursor\\Attack
+    .kill Boss Tho'grun##2944|n
+	.collect Sign of the Earth##4640|q 782/1|n|icon Interface\\icons\\inv_ore_copper_01
+	info 
+	'Collect this on the road:
+	.collect 5 Buzzard Gizzard##7847|q 2258/1|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 10 Crag Coyote Fang##7846|q 2258/2|n|icon Interface\\icons\\inv_misc_monsterfang_01
+	.collect 5 Rock Elemental Shard##7848|q 2258/3|n|icon Interface\\icons\\inv_misc_stonetablet_01
+
+step //17
+    .'Kill/loot Greater Rock Elementals around the cliffs. |goto Badlands,3.5,79.1|icon Interface\\cursor\\Attack
+	.collect 5 Bracers of Rock Binding##4628|q 712/1|icon Interface\\icons\\inv_bracer_02
+    .kill Greater Rock Elemental##2736|n
+    info 
+	'Finish Collecting this around:|goto Badlands,14.00,86.31|title Around the area
+	.collect 5 Buzzard Gizzard##7847|q 2258/1|icon Interface\\icons\\inv_misc_organ_06
+	.collect 10 Crag Coyote Fang##7846|q 2258/2|icon Interface\\icons\\inv_misc_monsterfang_01
+	.collect 5 Rock Elemental Shard##7848|q 2258/3|icon Interface\\icons\\inv_misc_stonetablet_01
+	info 
+    .'Kill/loot Boss Tho'grun (if you see him). This ogre patrols in a large circle counter-clockwise around the SW part of Badlands. He has 5 bodyguards. Pull/kite him away from his guards to take him on 1v1.|icon Interface\\cursor\\Attack
+    .kill Boss Tho'grun##2944|n
+	.collect Sign of the Earth##4640|q 782/1|n|icon Interface\\icons\\inv_ore_copper_01
+
+step //18
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Find and kill/loot Boss Tho'grun. This ogre patrols in a large circle counter-clockwise around the SW part of Badlands. He has 5 bodyguards. Pull/kite him away from his guards to take him on 1v1.|icon Interface\\cursor\\Attack 
+	route Badlands,13.4,70.8;23.8,58.4;36.6,56.8;49.4,51.6;60.0,62.6;48.0,73.8;35.0,70.2;17.0,79.2;12.6,72.6|title Follow waypoint to find and kill/loot: Boss Tho'grun|n
+    .kill Boss Tho'grun##2944|n
+	.collect Sign of the Earth##4640|q 782/1|icon Interface\\icons\\inv_ore_copper_01
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //19
+    .'Head back to Kargath... |goto Badlands,6.0,48.1|title Advisor Sarophas
+	info 
+    .'At the bottom of the watchtower:
+    .talk Advisor Sarophas##17097
+    ..turnin Unclaimed Baggage##9439
+	info 
+    .'Up in the watchtower: |goto Badlands,6.5,47.2|title Neeka Bloodscar
+    .talk Neeka Bloodscar##5394
+    ..turnin Coyote Thieves##1419
+
+step //20
+    .'In the Inn: |goto Badlands,2.9,45.6
+    .talk Gorn##1068
+    ..turnin Broken Alliances##782
+	info 
+    .'SKIP next "Broken Alliances" quest (high level group quest)|icon Interface\\cursor\\Directions
+    .'REMINDER: Don't sell the Buzzard Wings!|icon Interface\\icons\\inv_misc_monsterscales_02
+
+step //21
+    .'Go upstairs in the Inn: |goto Badlands,2.4,46.1
+    .talk Jarkal Mossmeld##6868
+    ..turnin Badlands Reagent Run##2258
+	info 
+    .'SKIP "Uldaman Reagent Run" (Uldaman Dungeon)|icon Interface\\cursor\\Directions
+	info 
+	'You can get repaired just outside of the inn|goto Badlands,2.90,47.25|title Get Repaired/Resupplied
+	.talk Sranda##1407
+    .'Get Repaired/Resupplied |icon Interface\\minimap\\Tracking\\Repair
+
+step //22
+    .'Destroy any remaining Crag Coyote Fang.|icon Interface\\icons\\inv_misc_monsterfang_01
+	info 
+    .'Go east to The Dustbowl: |goto Badlands,26.0,44.9
+    .talk Lotwil Veriatus##2921
+    ..turnin Study of the Elements: Rock##712
+	info 
+	'Only if you accepted and turned in the quests "Coolant Heads Prevail" (with Frost Oil item) and "This Is Going to Be Hard" (with Gyrochronatom item)
+    ..accept This Is Going to Be Hard##734 
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	'Skip "This Is Going to Be Hard" Questline|confirm|next +7|icon Interface\\cursor\\Point
+//	|only if questcomplete(713) and questcomplete(714)
+
+step //23
+    .'Next to you: |goto Badlands,25.8,44.2
+    .talk Lucien Tosselwrench##2920
+    ..turnin This Is Going to Be Hard##734
+    ..accept This Is Going to Be Hard##777
+	info Only if you accepted and turned in the quests "Coolant Heads Prevail" (with Frost Oil item) and "This Is Going to Be Hard" (with Gyrochronatom item)
+//	|only if questcomplete(713) and questcomplete(714)
+
+step //24
+    .'Next to you: |goto Badlands,25.8,44.3
+    .talk Lotwil Veriatus##2921
+    ..turnin This Is Going to Be Hard##777
+    ..accept This Is Going to Be Hard##778
+	info Only if you accepted and turned in the quests "Coolant Heads Prevail" (with Frost Oil item) and "This Is Going to Be Hard" (with Gyrochronatom item)
+//    |only if questcomplete(713) and questcomplete(714)
+
+step //25
+    .'Kill/loot the Fam'retor Guardian that spawns in. Be prepared, this is not easy! |goto Badlands,26.1,46.8|icon Interface\\cursor\\Attack
+    .kill Fam'retor Guardian##2919|n 
+	.collect Lotwil's Shackles of Elemental Binding##4847|q 778/1|icon Interface\\icons\\inv_bracer_09
+//    |only if questcomplete(713) and questcomplete(714)
+
+step //26
+    .talk Lotwil Veriatus##2921 |goto Badlands,26.0,44.9
+    ..turnin This Is Going to Be Hard##778
+	info 
+    .'NOTE: Turning this in will give you an |icon Interface\\cursor\\Directions
+	'Nifty Stopwatch (Use: Increases run speed by 40% for 10 sec).|icon Interface\\icons\\inv_misc_pocketwatch_01
+//    |only if questcomplete(713) and questcomplete(714)
+
+step //27
+    .'With your Healing Potion and Lesser Invisibility Potion: |goto Badlands,25.8,44.2
+    .talk Lucien Tosselwrench##2920
+    ..accept Liquid Stone##715
+    ..turnin Liquid Stone##715
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    |only if questcomplete(713) and questcomplete(714) and item(929)>=1 and item(3823)>=1
+
+step //28
+    .'With your Patterned Bronze Bracers: |goto Badlands,25.8,44.2
+    .talk Lucien Tosselwrench##2920
+    ..accept Stone Is Better than Cloth##716
+    ..turnin Stone Is Better than Cloth##716
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    |only if questcomplete(713) and questcomplete(714) and questcomplete(715) and item(2868)>=1
+
+step //29
+    .'Go east (in the middle of Badlands): |goto Badlands,42.4,52.9
+    .talk Rigglefuzz##2817
+    ..turnin Barbecued Buzzard Wings##703
+
+step //30
+    .'Grind your way east to Lethlor Ravine to discover it for XP and then grind on Scalding Whelps for a bit. Watch out for the elite Scorched Guardians! Keep grinding on the whelps (or any mob in the Badlands) until you are level 41.|goto Badlands,69.5,52.8
+    .kill Scalding Whelp##2725|n
+    ding 41
+
+step //31
+    .'Hearth to Grom'gol Base Camp. |goto Stranglethorn Vale,31.49,29.75|title Hearth to Grom'gol|c
+    .use Hearthstone##6948
+
+step //32
+	info |goto Isle of Quel'Danas,600,0.0
+    .'General Supplies: |goto Stranglethorn Vale,31.6,28.0|title Uthok
+	.talk Uthok##1149
+    .'Get Repaired: |goto Stranglethorn Vale,31.6,29.2|title Hragran
+	.talk Hragran##1147
+    .'Food & Drink: |goto Stranglethorn Vale,32.2,29.3|title Nargatt
+	.talk Nargatt##7485
+	info |only Hunter
+    .'NOTE: Hunters, make sure you have plenty of arrows/bullets as you cannot buy them in Swamp of Sorrows.|icon Interface\\cursor\\Directions|only Hunter
+	info 
+    .'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //33
+    .'Now could be a good time to see if you have all the pages for Green Hills of Stranglethorn quest. This quest requires that you save any Green Hills of Stranglethorn pages you find. These pages can drop from any humanoid mob in STV. |goto Stranglethorn Vale,35.7,10.5|icon Interface\\cursor\\Directions
+	info 
+    .'I recommend mailing them to your alt for storage. Once your alt collects all the pages, mail them back to your main. You can also find these pages in the AH or from other players.|icon Interface\\minimap\\Tracking\\Mailbox
+	info 
+    .'You don't need to accept the quest to get the page drops, so accept and turn this in if you get all the pages. You will return to STV numerous times in the future for more chances to find the pages.|icon Interface\\cursor\\Quest
+	info 
+	You need the following pages (although they could be in your mailbox):
+    '1, 4, 6, 8, 10, 11, 14, 16, 18, 20, 21, 24, 25, 26, 27.|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //34
+	info |goto Stranglethorn Vale,35.66,10.53|title Nesingwary's Expedition
+	.collect Page 1##2725|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 4##2728|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 6##2730|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 8##2732|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 10##2734|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 11##2735|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 14##2738|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 16##2740|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 18##2742|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 20##2744|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 21##2745|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 24##2748|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 25##2749|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 26##2750|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 27##2751|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //35
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Run all the way to Swamp of Sorrows, stopping along the way at Beggar's Haunt (in Duskwood): |goto Duskwood,87.8,35.6|title Deathstalker Zraedus
+    .talk Deathstalker Zraedus##5418
+    ..accept Nothing But The Truth##1372
+	info |goto Duskwood,44.91,83.02|title Enter: Duskwood
+	route Duskwood,44.7,89.4;44.7,82.6;44.91,83.02;56.76,66.91;76.77,51.61;85.55,40.49;87.8,35.6|title Run all the way to Swamp of Sorrows
+	info 
+    .'Abandon "Broken Alliances" if you still have it.|icon Interface\\cursor\\Directions|goto Stranglethorn Vale,40.73,3.86|title Go across bridge
+
+step //36
+    .'Next to you: |goto Duskwood,87.5,35.2
+    .talk Apothecary Faustin##5414
+    ..turnin Nothing But The Truth##1372
+	info 
+	'Only for Vanilla|optional
+    ..accept Nothing But The Truth##1383
+	info 
+	'TBC/WOTLK:|optional
+    .'SKIP "Nothing But The Truth" (We will not be going to Desolace at lvl 44, due to the faster leveling enhancements, as such this quest will be skipped as it requires going there to complete it.)|icon Interface\\cursor\\Directions
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //37
+    .'Go east through Deadwind Pass, follow the main path and then make a left into the Ariden's Camp just to discover it for XP.|goto Deadwind Pass,51.4,39.4|title Discover: Ariden's Camp (for XP)
+
+step //38
+    .'Continue east into Swamp of Sorrows... |goto Deadwind Pass,60.5,41.0|title Enter: Swamp of Sorrows
+	info |goto Deadwind Pass,52.43,43.66|title Follow waypoint
+	.....'40-41 Badlands is complete!|icon Interface\\cursor\\Directions
+	....'Go to 41-42 Swamp of Sorrows|confirm|next "Joana's Guide\\Horde\\41-42 Swamp of Sorrows"|icon Interface\\icons\\achievement_zone_swampsorrows_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\41-42 Swamp of Sorrows",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\42-43 Stranglethorn Vale
+startlevel 41
+
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    .'As you enter Swamp of Sorrows, start kill/looting dragon whelps around the swamp for the Speck of Dream Dust. |icon Interface\\cursor\\Attack
+	'Just clear the whelps in this area once. When you run out of whelps to kill, move on to the next steps.|route Swamp of Sorrows,13.19,59.46;14.76,64.36;16.08,52.36|title Follow Waypoint around Swamp
+    .collect 10 Speck of Dream Dust##5803|q 1116/1|n|icon Interface\\icons\\inv_misc_dust_02
+	.kill Adolescent Whelp##740|n
+	.kill Adolescent Whelp##741|n
+	..........'Continue On...|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //2
+    
+    .'Go north to Misty Valley Junction and kill/loot Mire Lord in the small cave for Mire Lord Fungus.|goto Swamp of Sorrows,15.63,39.87|icon Interface\\cursor\\Attack
+    .kill Mire Lord##1081|n
+	.collect Mire Lord Fungus##6081|q 1383/2|icon Interface\\icons\\inv_misc_herb_06
+    info        only for Vanilla
+	........'Skip Vanilla part?|confirm|next +2|n|icon Interface\\cursor\\Point
+
+step //3
+    .'Go back SW to the swamp and continue kill/looting dragon whelps around the area. |route Swamp of Sorrows,13.19,59.46;14.76,64.36;17.97,53.33
+	'NOTE: You will be able to kill dragons around the Stagalbog lake later on for more Speck of Dream Dust.|icon Interface\\cursor\\Attack
+    .collect 10 Speck of Dream Dust##5803|q 1116/1|n|icon Interface\\icons\\inv_misc_dust_02
+	.kill Adolescent Whelp##740|n
+	.kill Adolescent Whelp##741|n
+    info         only for Vanilla
+	........'Skip Vanilla part?|confirm|next +2|n|icon Interface\\cursor\\Point
+
+step //4
+    .'Go NE, find and kill/loot Noboru the Cudgel. He drops an item (Noboru's Cudgel) which starts a quest.|goto Swamp of Sorrows,47.08,38.84|title Kill/loot: Noboru the Cudgel (spawns here)|icon Interface\\cursor\\Attack
+    .kill Noboru the Cudgel##5477|n
+    .collect Noboru's Cudgel##6196|n|icon Interface\\icons\\inv_mace_10
+    ..accept Noboru the Cudgel##1392
+	info |only Druid,Hunter
+    .'TIP: You can use Track Humanoids in Cat Form to find him easier.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+    .'TIP: You can use Track Humanoids to find him easier.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	info 
+    .'NOTE: Accept it from clicking the item in your backpack.|icon Interface\\cursor\\Directions
+
+step //5
+    .'At The Harborage:|goto Swamp of Sorrows,25.98,31.40
+    .talk Magtoor##1776
+    ..turnin Noboru the Cudgel##1392
+    ..accept Draenethyst Crystals##1389
+    info        (no exclamation mark)
+
+step //6
+    .'Enter the Inn at Stonard and from the Innkeeper:|goto Swamp of Sorrows,45.16,56.66
+	.talk Innkeeper Karakul##6930
+    .home Stonard|icon Interface\\minimap\\Tracking\\FlightMaster
+    info 
+    .'NOTE: You can purchase potions from the vendor upstairs in the Inn.|goto Swamp of Sorrows,45.39,56.87|title Rartar|icon Interface\\cursor\\Directions
+	.talk Rartar##8177
+    .'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info |only Warrior
+    .'Warriors, note that there is a Warrior Trainer in the Inn.|goto Swamp of Sorrows,44.89,57.63|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	.talk Malosh##985|only Warrior
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Warrior
+
+step //7
+    .'Next to you in the Inn:|goto Swamp of Sorrows,44.70,57.21
+    .talk Dar##5591
+    ..accept Lack of Surplus##698
+	info 
+	'For Vanilla only|optional
+    ..accept Fresh Meat##1430
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //8
+    .'Just outside of the Inn (next to the mailbox), stable your pet at the Stable Master.|goto Swamp of Sorrows,45.56,55.14
+	.talk Hekkru##10049
+	info 
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+//    only if ERA or SOM1 or SOM2 or TBC
+
+step //9
+    .'Go in the building:|goto Swamp of Sorrows,47.81,54.95
+    .talk Cersei Dusksinger##17109
+    ..accept Little Morsels##9440
+    info        only for TBC or WOTLK
+
+step //10
+    .'NOTE: There is a Warlock Trainer in the building just up the steps, if you need to get new spells/abilities.|goto Swamp of Sorrows,48.64,55.63|title Warlock Trainer|icon Interface\\cursor\\Directions
+    .talk Kartosh##988
+	info 
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //11
+    .'Go in the building to the top:|goto Swamp of Sorrows,47.74,55.21
+    .talk Helgrum the Swift##1442
+    ..turnin Report to Helgrum##1420
+    ..accept Pool of Tears##1424
+	info |only Shaman
+    .'NOTE: There is a Shaman Trainer behind the building if you need to get new spells/abilities.|goto Swamp of Sorrows,48.18,57.94|title Shaman Trainer|icon Interface\\cursor\\Directions|only Shaman
+    .talk Haromm##986|only Shaman
+	info |only Shaman
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Shaman
+    
+step //12
+    .'NOTE: There is another potion vendor here you can check for Healing/Mana potions.|goto Swamp of Sorrows,45.77,52.83|title Thultazor|icon Interface\\cursor\\Directions
+	.talk Thultazor##983
+	info 
+    .'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //13
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Go east and tame a Deathstrike Tarantula for Bite R6.|goto Swamp of Sorrows,57.03,61.32|title Tame a Spider around here|icon Interface\\icons\\ability_hunter_beasttaming
+	info 
+    .'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+    
+
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Continue east to the shore, then abandon your spider (make sure you get Bite R6 first), then tame a Silt Crawler for Claw R6. Attack any mob in the area until you get it.|goto Swamp of Sorrows,84.90,83.00|title Tame a Crab|icon Interface\\icons\\ability_hunter_beasttaming
+   info 
+   .'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+//    only if ERA or SOM1 or SOM2 or TBC
+
+step //15
+    .'Hearth to Stonard.|goto Swamp of Sorrows,45.16,56.66|title Hearth to Stonard|c
+    .use Hearthstone##6948
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+    only Hunter
+//    only if ERA or SOM1 or SOM2 or TBC
+
+step //16
+    .'Abandon your crab and get your cat back out from the Stable Master (next to the Inn entrance and mailbox) and teach him the new abilities.|goto Swamp of Sorrows,45.56,55.14
+	.talk Hekkru##10049
+	......'Only For Vanilla/TBC Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+//    only if ERA or SOM1 or SOM2 or TBC
+
+step //17
+    .'Loot the Atal'ai Artifacts under the lake around Teh Temple of Atal'Hakkar. |goto Swamp of Sorrows,65.19,53.89
+	info 
+	.'NOTE: See Questie/pfQuest locations on minimap (if using it).|icon Interface\\cursor\\Directions
+    .collect 10 Atal'ai Artifact##6175|q 1424/1|icon Interface\\icons\\inv_misc_idol_03
+	info 
+    .'Use a Elixir of Water Breathing if you have one!|use Elixir of Water Breathing##5996|icon Interface\\cursor\\Directions|only Warrior,Paladin,Hunter,Rogue,Priest,Mage
+    .'Use any Swim Speed Potions##6372 too.|use Swim Speed Potion##6372|only !Druid
+	info |only Warrior,Paladin,Hunter,Shaman,Rogue,Priest,Mage,Warlock
+    .'Kill/loot dragons around the lake.|icon Interface\\cursor\\Attack
+    .collect 10 Speck of Dream Dust##5803|q 1116/1|n|icon Interface\\icons\\inv_misc_dust_02
+	info 
+    .'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+
+step //18
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Kill/loot crocolisks. There are Sawtooth Snappers (around the NE of Swamp of Sorrows) and Sawtooth Crocolisks (around the middle of Swamp of Sorrows).|goto Swamp of Sorrows,56.85,52.87|title Kill/loot: Sawtooth Crocolisks (around the area)|icon Interface\\cursor\\Attack
+	.collect 8 Unprepared Sawtooth Flank##6169|q 698/1|icon Interface\\icons\\inv_misc_food_14
+    .kill Sawtooth Crocolisk##1082|n
+	.kill Sawtooth Snapper##1087|n
+	info |goto Swamp of Sorrows,79.89,27.93|title Kill/loot: Sawtooth Snappers (around the area)
+	'Only for vanilla|optional
+    .'Kill/loot the Shadow Panthers (around the cliffs above the shoreline) for the Shadow Panther Hearts.|icon Interface\\cursor\\Attack
+    .collect 5 Shadow Panther Heart##6080|q 1383/1|n|icon Interface\\icons\\inv_misc_organ_01
+	.kill Shadow Panthers##768|n
+    info 
+    .'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+
+step //19
+    .'Go SE to Misty Reed Strand:|goto Swamp of Sorrows,81.31,80.96
+    .talk Tok'Kar##5592
+    ..turnin Lack of Surplus##698
+	info 
+	.'Only for Vanilla|optional
+    ..accept Lack of Surplus##699|n
+	info 
+	.'Only for TBC/WOTLK|optional
+    .'SKIP next "Lack of Surplus" quest: Due to the faster leveling enhancements and it will take a bit longer to go turn this in once completed.|icon Interface\\cursor\\Directions
+
+step //20
+	info |goto Isle of Quel'Danas,600,0.0
+    .'North at Fallow Sanctuary, from human in the cage, accept and try to do the escort (it's wise to clear the mobs around the cage first).|goto Swamp of Sorrows,65.47,18.15|title Galen Goodward (in cage)
+    .talk Galen Goodward##5391
+    ..accept Galen's Escape##1393
+    .goal Escort Galen out of the Fallow Sanctuary|q 1393/1
+	info |goto Swamp of Sorrows,53.05,29.65|title Escort ends here
+	.'Feed the captured animals in the cages you can reach while doing the escort.
+    .use Fel-Tainted Morsels##23659 
+	.goal Captured Crocolisk Fed|q 9440/1|goto Swamp of Sorrows,60.49,22.19|title Feed: Captured Crocolisk
+	.goal Captured Jaguar Fed|q 9440/2|goto Swamp of Sorrows,65.37,22.74|title Feed: Captured Jaguar
+	.goal Captured Tarantula Fed|q 9440/3|goto Swamp of Sorrows,62.91,23.67|title Feed: Captured Tarantula
+	info 
+	.'Loot the Draenethyst Crystals around the village.
+    .collect 6 Draenethyst Crystal##6071|q 1389/1|icon Interface\\icons\\inv_misc_gem_crystal_01
+	info 
+	'Only for Vanilla|optional
+    .'Kill/loot Ongeku.|goto Swamp of Sorrows,65.07,21.96|title Kill/loot: Ongeku (Only for Vanilla)|icon Interface\\cursor\\Attack
+    .kill Ongeku##5622|n
+	.collect Draenethyst Shard##6190|q 1373/1|n|icon Interface\\icons\\inv_misc_gem_ruby_01
+
+step //21
+	.'Finish Kill/looting dragons around the lake.|goto Swamp of Sorrows,62.68,38.85|icon Interface\\cursor\\Attack
+    .collect 10 Speck of Dream Dust##5803|q 1116/1|icon Interface\\icons\\inv_misc_dust_02
+	info 
+    .'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+    info        only for TBC or WOTLK
+
+step //22
+    .'Next to a tent:|goto Swamp of Sorrows,47.81,39.76
+	.'Interact with Galen's Strongbox
+    ..turnin Galen's Escape##1393
+
+step //23
+    .'Go west to The Harborage:|goto Swamp of Sorrows,25.98,31.40
+    .talk Magtoor##1776
+    ..turnin Draenethyst Crystals##1389
+
+step //24
+    .'Hearth (or go SE) to Stonard and in the building:|goto Swamp of Sorrows,47.81,54.95
+	.use Hearthstone##6948
+    .talk Cersei Dusksinger##17109
+    ..turnin Little Morsels##9440
+    info 
+    .'Up in the building:|goto Swamp of Sorrows,47.93,54.79|title Fel'zerul
+    .talk Fel'zerul##1443
+    ..turnin Pool of Tears##1424
+    ..accept The Atal'ai Exile##1429
+	info 
+    .'From any vendor:
+	info 
+    .'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	......'Continue to Vanilla Questline|confirm|next +1|icon Interface\\cursor\\Point
+	...'Continue to TBC/WOTLK Questline|confirm|next +9|icon Interface\\cursor\\Point
+	
+step //25
+    .'Go east to Misty Reed Strand:|goto Swamp of Sorrows,81.32,80.97
+    .talk Tok'Kar##5592
+    ..turnin Lack of Surplus##699
+    ..accept Threat From the Sea##1422
+    info only for Vanilla
+
+step //26
+    .talk Katar##5593|goto Swamp of Sorrows,83.76,80.43
+    ..turnin Threat From the Sea##1422
+    ..accept Threat From the Sea##1426
+    info only for Vanilla
+
+step //27
+    .'Kill the required amount of murlocs. |goto Swamp of Sorrows,84.62,85.51|icon Interface\\cursor\\Attack
+	NOTE: Marsh Flesheaters are in limited numbers so go for them more often.|icon Interface\\cursor\\Directions
+    .kill 10 Marsh Murloc##747 |q 1426/1
+    .kill 10 Marsh Inkspewer##750 |q 1426/2
+    .kill 10 Marsh Flesheater##751 |q 1426/3
+	info 
+    .'Kill/loot Monstrous Crawlers along the shoreline.|icon Interface\\cursor\\Attack
+	.kill Monstrous Crawler##1088|n
+	.collect 10 Monstrous Crawler Leg##6184|q 1430/1|n|icon Interface\\icons\\inv_misc_monsterclaw_01
+    
+	info 
+    .'Around the cliffs above the shoreline, kill/loot Shadow Panthers for the Shadow Panther Hearts. There are only a few spawns.|icon Interface\\cursor\\Attack
+    .collect 5 Shadow Panther Heart##6080|q 1383/1|n|icon Interface\\icons\\inv_misc_organ_01
+	.kill Shadow Panthers##768|n
+    info only for Vanilla
+
+step //28
+    .'Finish Kill/looting Monstrous Crawlers along the shoreline.|goto Swamp of Sorrows,84.62,85.51|icon Interface\\cursor\\Attack
+	.kill Monstrous Crawler##1088|n
+    .collect 10 Monstrous Crawler Leg##6184|q 1430/1|icon Interface\\icons\\inv_misc_monsterclaw_01
+	info 
+    .'Around the cliffs above the shoreline, kill/loot Shadow Panthers for the Shadow Panther Hearts. There are only a few spawns.|icon Interface\\cursor\\Attack
+    .collect 5 Shadow Panther Heart##6080|q 1383/1|n|icon Interface\\icons\\inv_misc_organ_01
+	.kill Shadow Panthers##768|n
+    info only for Vanilla
+
+step //29
+	info |goto Isle of Quel'Danas,600,0.0
+    .'Around the cliffs above the shoreline, kill/loot Shadow Panthers for the Shadow Panther Hearts. Check map for possible spawn locations.|route Swamp of Sorrows,90.83,47.63;92.8,44.6;91.0,39.4;87.4,28.8;85.6,21.0;81.8,14.0;70.8,10.4;74.6,24.0;69.6,26.4;84.6,59.8;89.0,63.4;82.6,67.6;87.6,74.6;81.6,75.6;77.0,86.0;73.6,80.6;68.6,76.2;69.6,68.6;66.2,68.6|title Kill/loot: Shadow Panthers
+    .collect 5 Shadow Panther Heart##6080|q 1383/1|icon Interface\\icons\\inv_misc_organ_01
+	.kill Shadow Panthers##768|n
+	info 
+    .'Finish Kill/looting dragons around Stagalbog (lake).|icon Interface\\cursor\\Attack
+    .collect 20 Speck of Dream Dust##5803 |q 1116/1
+    info only for Vanilla
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //30
+    .'At Misty Reed Strand (next to the cliff):|goto Swamp of Sorrows,83.76,80.43
+    .talk Katar##5593
+    ..turnin Threat From the Sea##1426
+    ..accept Threat From the Sea##1427
+	info 
+    .'SKIP (for now) "Continued Threat".|icon Interface\\cursor\\Directions
+    info only for Vanilla
+
+step //31
+    .'Next to you, at Misty Reed Strand:|goto Swamp of Sorrows,81.32,80.97
+    .talk Tok'Kar##5592
+    ..turnin Threat From the Sea##1427
+    info only for Vanilla
+
+step //32
+	.'Hearth to Stonard.
+	.use Hearthstone##6948
+	info 
+	.'Next to you in the Inn:|goto Swamp of Sorrows,44.70,57.22
+    .talk Dar##5591
+    ..turnin Fresh Meat##1430
+	info 
+    .'From any vendor:
+    .'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info only for Vanilla
+
+// /!\ end of Vanilla questline
+step //33
+    .'Make sure you are level 42 (grind until you are).
+    ding 42
+    only Druid
+
+step //34
+    .'Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Loganaar next to the Moonwell to get your level 42 spells/abilities. |goto Moonglade,52.53,40.57|title Druid Trainer
+	.cast Teleport: Moonglade##19027
+	info 
+	'NEW ABILITIES TO GET: 
+	'Demoralizing Roar, |icon Interface\\icons\\ability_druid_demoralizingroar
+	'Maul, |icon Interface\\icons\\ability_druid_maul
+	'Ravage, |icon Interface\\icons\\ability_druid_ravage
+	'Regrowth, |icon Interface\\icons\\spell_nature_resistnature
+	'Starfire.|icon Interface\\icons\\spell_arcane_starfire
+	info 
+    .talk Loganaar##12042
+	info 
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //35
+    .'Grind on any mobs in Swamp of Sorrows.
+    ding 42
+    only Warlock,Warrior,Shaman
+
+step //36
+	info |goto Isle of Quel'Danas,600,0.0
+    .'If you are level 42, Get new spells/abilities from the Hunter Trainer at Stonard. Skip otherwise|goto Swamp of Sorrows,47.26,53.42|title Hunter Trainer|only Hunter
+    .talk Ogromm##987|only Hunter
+    .'Get new abilities from the Warrior Trainer in the Inn at Stonard.|goto Swamp of Sorrows,44.89,57.62|title Warrior Trainer|only Warrior
+    .talk Malosh##985|only Warrior
+    .'Get new spells/abilities from the Warlock Trainer in the building at Stonard.|goto Swamp of Sorrows,48.64,55.63|title Warlock Trainer|only Warlock
+    .talk Kartosh##988|only Warlock
+    .'Get new spells/abilities from the Shaman Trainer behind the building at Stonard.|goto Swamp of Sorrows,48.18,57.94|title Shaman Trainer|only Shaman
+    .talk Haromm##986|only Shaman
+	info 
+    .'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Hunter,Warrior,Warlock,Shaman
+
+step //37
+    'At Stonard:|goto Swamp of Sorrows,46.07,54.83
+    .talk Breyk##6026
+	.fpath Stonard|icon Interface\\minimap\\Tracking\\FlightMaster
+    .'From the Wind Rider Master, take a flight to Booty Bay, Stranglethorn.|goto Stranglethorn Vale,26.9,77.1|title Go to Booty Bay|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //38
+	..'41-42 Swamp of Sorrows is complete!|icon Interface\\cursor\\Directions
+	....'Go to 42-43 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\42-43 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\42-43 Stranglethorn Vale",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 42
+next Joana's Guide\\Horde\\43-44 Dustwallow Marsh
+
+step //1
+    'Once you land at Booty Bay:|goto Stranglethorn Vale,27.17,77.00
+    .talk Fleet Master Seahorn##2487
+    ..accept The Bloodsail Buccaneers##604
+
+step //2
+    'Next to you at the top of the Inn:|goto Stranglethorn Vale,27.00,77.13
+    .talk Kebok##737
+    ..accept Skullsplitter Tusks##209
+
+step //3
+    'Next to you:|goto Stranglethorn Vale,26.94,77.21
+    .talk Krazek##773
+    ..turnin Dream Dust in the Swamp##1116
+	info 
+    .'SKIP (for now) "Rumors for Kravel"|icon Interface\\cursor\\Directions
+
+step //4
+    'Next to you:|goto Stranglethorn Vale,26.92,77.35
+    .talk Deeg##2488
+    ..accept Up to Snuff##587
+
+step //5
+    'Drop down in the Inn:|goto Stranglethorn Vale,27.04,77.31
+    .talk Innkeeper Skindle##6807
+    .home Booty Bay|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    .'You will not come back to town for awhile, so make sure you are well stocked.|icon Interface\\cursor\\Directions
+	info |only Hunter
+    .'NOTE: You can buy arrows at the waypoint.|goto Stranglethorn Vale,28.31,74.56|title Haren Kanmae (Arrows)|icon Interface\\icons\\inv_weapon_shortblade_25|only Hunter
+	.talk Haren Kanmae##2839|only Hunter
+    .'Or bullets at the waypoint.|icon Interface\\icons\\inv_ammo_bullet_01|goto Stranglethorn Vale,28.50,75.12|title Mazk Snipeshot (Bullets)|only Hunter
+	.talk Mazk Snipeshot##2685|only Hunter
+	info 
+    .'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //6
+    'Next to you:|goto Stranglethorn Vale,27.12,77.21
+    .talk Crank Fizzlebub##2498
+    ..accept Venture Company Mining##600
+    ..accept Zanzil's Secret##621
+
+step //7
+    'Go down next to the bank:|goto Stranglethorn Vale,26.76,76.38
+    .talk Privateer Bloads##2494
+    ..accept Akiris by the Bundle##617
+
+step //8
+    .'Deposit into bank:|goto Stranglethorn Vale,26.53,76.52
+	...'Bundle of Atal'ai Artifacts|icon Interface\\icons\\inv_misc_bag_11
+	...'Draenethyst Shard (Vanilla only)|icon Interface\\icons\\inv_misc_gem_ruby_01
+	...'Mire Lord Fungus (Vanilla only)|icon Interface\\icons\\inv_misc_herb_06
+	...'Shadow Panther Heart (Vanilla only)|icon Interface\\icons\\inv_misc_organ_01
+	info 
+    .'Withdraw from the bank:
+	...'Split Bone Necklace|icon Interface\\icons\\inv_misc_bone_10
+
+step //9
+    'In the cabin (next to the hanging shark):|goto Stranglethorn Vale,27.78,77.07
+    .talk "Sea Wolf" MacKinley##2501
+    ..accept Voodoo Dues##609
+
+step //10
+    'Up the docks:|goto Stranglethorn Vale,28.59,75.90
+    .talk Dizzy One-Eye##2493
+    ..accept Keep An Eye Out##576
+
+step //11
+	info |goto Isle of Quel'Danas,600,0.0
+    'Loot the Bloodsail Orders on the small boat, or it could be on the table at the camp at the end of the beach (or other spots around the camps).|goto Stranglethorn Vale,27.74,83.13|title Small boat
+	'And Loot the Bloodsail Charts on top of the box next to the eastern most tent.  It could also be at other spots at the various camps along the beach. |goto Stranglethorn Vale,27.18,82.67|title Table
+	.kill 10 Bloodsail Swashbuckler##1563|q 604/1
+    .collect Bloodsail Charts##3920|q 604/2|icon Interface\\icons\\inv_misc_map_01
+    .collect Bloodsail Orders##3921|q 604/3|icon Interface\\icons\\inv_letter_15
+	info |goto Stranglethorn Vale,27.15,82.68|title Top of box
+    'Kill/loot Bloodsail humans around for the Snuff.|goto Stranglethorn Vale,30.59,80.57|title Bloodsail around the area|icon Interface\\cursor\\Attack
+    .collect 15 Snuff##3910|q 587/1|icon Interface\\icons\\inv_misc_dust_02
+	info 
+    'Kill/loot Bloodsail humans for the Dizzy's Eye (low drop rate).|icon Interface\\cursor\\Attack
+    .collect Dizzy's Eye##3897|q 576/1|icon Interface\\icons\\inv_misc_eye_01
+    info 
+	'NOTE: It's possible to finish this quest later on route. If you would like to just click to skip.|icon Interface\\cursor\\Directions
+	..........'Continue on...|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //12
+    'Work your way up to the top and loot The Holy Spring water fountain over the bridge.|goto Stranglethorn Vale,25.13,63.70|title Follow waypoint up path
+    .use Holy Spring Water##737|q 573/2
+	info |goto Stranglethorn Vale,28.31,62.57|title Go up and go across bridge
+    'Kill/loot Naga Explorers (medium drop rate).|goto Stranglethorn Vale,27.03,62.89|title Around the area|icon Interface\\cursor\\Attack
+    .kill 10 Naga Explorer##1907|q 573/1
+	.collect 10 Akiris Reed##4029|q 617/1|icon Interface\\icons\\inv_misc_herb_06
+
+step //13
+    'Finish to Kill/looting Bloodsail humans for the Snuff and loot Bloodsail Charts/Orders around the beach.|goto Stranglethorn Vale,23.52,54.09|icon Interface\\cursor\\Attack
+    .kill 10 Bloodsail Swashbuckler##1563|q 604/1
+    .collect Bloodsail Charts##3920|q 604/2|icon Interface\\icons\\inv_misc_map_01
+    .collect Bloodsail Orders##3921|q 604/3|icon Interface\\icons\\inv_letter_15
+	info 
+    'Kill/loot Bloodsail humans around for the Snuff.|icon Interface\\cursor\\Attack
+    .collect 15 Snuff##3910|q 587/1|icon Interface\\icons\\inv_misc_dust_02
+	info 
+    'Kill/loot Bloodsail humans for the Dizzy's Eye (low drop rate).|icon Interface\\cursor\\Attack
+    .collect 15 Dizzy's Eye##3897|q 576/1|icon Interface\\icons\\inv_misc_eye_01
+
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot Tethis (lvl 43, he has 4 possible spawns, see map).|goto Stranglethorn Vale,29.6,44.8|title Kill/loot: Tethis (spawn #1)|icon Interface\\cursor\\Attack
+    .kill Tethis##730|n|goto Stranglethorn Vale,33.4,39.4|title Kill/loot: Tethis (could be wandering over here)
+	.collect Talon of Tethis##3877|q 197/1|icon Interface\\icons\\spell_nature_natureswrath
+    info |goto Stranglethorn Vale,28.6,42.4|title Kill/loot: Tethis (spawn #2)
+	'Only For Vanilla|optional
+	'Tough Quest: He is Elite on Vanilla, If you cannot find a group to do this now, you can try again later at level 47 Stranglethorn Vale section!
+    info |goto Stranglethorn Vale,31.6,43.6|title Kill/loot: Tethis (spawn #3)
+	'Warlocks, this is possible to solo right now with Fear / Dots.|icon Interface\\cursor\\Directions|only Warlock
+    'Hunters, this is possible to solo right now but its not easy.|icon Interface\\cursor\\Directions|only Hunter
+    'Druids, this is possible to solo with Entangling Roots and Starfire.|icon Interface\\cursor\\Directions|only Druid
+	info |goto Stranglethorn Vale,31.6,41.4|title Kill/loot: Tethis (spawn #4)
+
+step //15
+    'Kill/loot Maury "Club Foot" Wilkins at Ruins of Jubuwal. Mobs are tightly packed so be careful.|goto Stranglethorn Vale,35.25,51.26|title Kill/loot: Maury "Club Foot" Wilkins|icon Interface\\cursor\\Attack
+    .kill Maury "Club Foot" Wilkins##2535|n
+	.collect Maury's Clubbed Foot##3924|q 609/1|icon Interface\\icons\\inv_mace_01
+	info |goto Stranglethorn Vale,32.21,46.94|title Jump over the root along the wall (shortcut)
+	'Start working on Kill/looting Zanzil mobs.|icon Interface\\cursor\\Attack
+    .collect 12 Zanzil's Mixture##4016|q 621/1|n|icon Interface\\icons\\inv_potion_19
+
+step //16
+    'Kill/loot Jon-Jon the Crow by the Bonfire.|goto Stranglethorn Vale,34.92,51.84|icon Interface\\cursor\\Attack
+    .kill Jon-Jon the Crow##2536|n
+	.collect Jon-Jon's Golden Spyglass##3925|q 609/2|icon Interface\\icons\\inv_misc_spyglass_02
+	info 
+	'Start working on Kill/looting Zanzil mobs.|icon Interface\\cursor\\Attack
+    .collect 12 Zanzil's Mixture##4016|q 621/1|n|icon Interface\\icons\\inv_potion_19
+	
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go to Ruins of Aboraz... |goto Stranglethorn Vale,34.39,54.32|title Take Path entrance
+	'NOTE: Watch out there is numerous stealthed panthers on the pathway there.|icon Interface\\cursor\\Directions
+	info 
+    'Kill/loot Chucky "Ten Thumbs" at the Ruins of Aboraz.|goto Stranglethorn Vale,40.01,58.24|title Kill/loot: Chucky "Ten Thumbs"|icon Interface\\cursor\\Attack
+    .kill Chucky "Ten Thumbs"##2537|n
+	.collect Chucky's Huge Ring##3926|q 609/3|icon Interface\\icons\\inv_jewelry_ring_02
+    info 
+	'Finish Kill/looting Zanzil mobs.|icon Interface\\cursor\\Attack
+    .collect 12 Zanzil's Mixture##4016|q 621/1|icon Interface\\icons\\inv_potion_19
+
+step //18
+    'Around the mountain ledges, kill/loot the Venture Co. goblins.|goto Stranglethorn Vale,41.22,43.53|icon Interface\\cursor\\Attack
+    .collect 10 Singing Blue Crystal##3917|q 600/1|icon Interface\\icons\\inv_misc_gem_sapphire_02
+	.kill Venture Co. Surveyor##676|n
+	.kill Venture Co. Strip Miner##674|n
+	.kill Venture Co. Foreman##675|n
+	.kill Venture Co. Tinkerer##677|n
+
+step //19
+    'Kill/loot Skullsplitter trolls around the 3 troll Ruins.|goto Stranglethorn Vale,42.16,36.00|title Around: Ziata'jai Ruins|icon Interface\\cursor\\Attack
+	info |goto Stranglethorn Vale,46.68,39.82|title Around: Balia'mah Ruins
+    .collect 18 Skullsplitter Tusk##1524|q 209/1|icon Interface\\icons\\inv_misc_monsterfang_01
+    .collect 25 Split Bone Necklace##3916|q 598/1|icon Interface\\icons\\inv_misc_bone_10
+	info |goto Stranglethorn Vale,45.99,32.59|title Around: Ruins of Zul'Mamwe
+
+step //20
+	'Only For Vanilla|optional
+    'Kill/loot Bhag'thera. |goto Stranglethorn Vale,49.61,24.03|title Bhag'thera (Middle spawn)|icon Interface\\cursor\\Attack
+	'This lvl 40 black panther has 3 different spawn points. He is mostly at the Middle spawn.|goto Stranglethorn Vale,47.6,28.8|title Bhag'thera (South spawn)
+    .kill Bhag'thera##728|n
+	.collect Fang of Bhag'thera##3876|q 193/1|icon Interface\\icons\\inv_misc_monsterfang_01
+    info 
+	'If you cannot solo this now, you can try again later at level 47 STV section.
+    info 
+	'Hunters, this is possible to solo at lvl 42/43.|icon Interface\\cursor\\Directions|only Hunter
+    'Warlocks, this is possible to solo with Fear/Dots.|icon Interface\\cursor\\Directions|only Warlock
+    'Druids, clear the area of adds, pull and use Entangling Roots and Starfire to kill her.|icon Interface\\cursor\\Directions|only Druid
+	info |goto Stranglethorn Vale,49,20.6|title Bhag'thera (North spawn)
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //21
+    'At Nesingwary's Expedition:|goto Stranglethorn Vale,35.66,10.81
+    .talk Hemet Nesingwary##715
+    ..turnin Raptor Mastery##197
+	info 
+    .talk Sir S. J. Erlgadin##718
+    ..turnin Panther Mastery##193
+	'If you can find a group you can try this quest:
+    ..accept Big Game Hunter##208
+	info 
+    .'SKIP (for now) Big Game Hunter, if you can't find anyone to help you.|icon Interface\\cursor\\Directions
+    info 
+    .'Get Resupplied/Repaired|icon Interface\\minimap\\Tracking\\Repair
+
+step //22
+    'Go to Grom'gol Base Camp...
+	info 	
+	'By the Cauldron:|goto Stranglethorn Vale,32.27,27.71
+    .talk Kin'weelay##2519
+    ..turnin Split Bone Necklace##598
+	info 
+    Interact with the Bubbling Cauldron
+    ..accept Marg Speaks##1261
+	info 
+    .'Get repaired / resupplied|goto Stranglethorn Vale,32.36,27.95|title Get Repaired / Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	info 
+	'Only for Vanilla:|optional
+    .talk Nimboya##2497
+    ..accept Grim Message##2932|n
+	
+step //23
+    .talk Far Seer Mok'thardin##2465|goto Stranglethorn Vale,32.12,29.24
+    ..turnin Mok'thardin's Enchantment##573
+
+step //24
+    'Get new spells/abilities at the Hunter Trainer (if you need to).|goto Stranglethorn Vale,31.24,28.68|title Hunter Trainer
+    .talk Kragg##1404
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Hunter
+
+step //25
+    .'Now could be a good time to see if you have all the pages for Green Hills of Stranglethorn quest. |goto Stranglethorn Vale,35.7,10.5|icon Interface\\cursor\\Directions
+	info 
+    .'You can also find these pages in the AH or from other players.|icon Interface\\minimap\\Tracking\\Auctioneer
+	info 
+	.'If you have all of them, get them out now (we will turn it in a few steps later).  If not, you will return to Stranglethorn Vale one more time in the future for one last chance to find the pages.
+	info 
+	You need the following pages (although they could be in your mailbox):
+    '1, 4, 6, 8, 10, 11, 14, 16, 18, 20, 21, 24, 25, 26, 27.|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //26
+	info For informations|goto Stranglethorn Vale,35.66,10.53|title Nesingwary's Expedition
+	.collect Page 1##2725|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 4##2728|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 6##2730|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 8##2732|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 10##2734|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 11##2735|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 14##2738|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 16##2740|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 18##2742|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 20##2744|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 21##2745|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 24##2748|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 25##2749|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 26##2750|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 27##2751|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //27
+	info |goto Isle of Quel'Danas,600,0.0
+    'West at the shore, kill/loot an Elder Saltwater Crocolisks lvl 38). There are 4 possible spawn locations, see map.  You should only need to kill/loot one of them.|goto Stranglethorn Vale,33.43,32.52|title Kill/loot: Elder Saltwater Crocolisk (Try this one first)|icon Interface\\cursor\\Attack
+    .kill Elder Saltwater Crocolisk##2635|n|goto Stranglethorn Vale,29.8,25.6|title Kill/loot: Elder Saltwater Crocolisk (#2)
+	.collect Elder Crocolisk Skin##4105|q 628/1|icon Interface\\icons\\inv_misc_monsterscales_01|goto Stranglethorn Vale,29.2,22.6|title Kill/loot: Elder Saltwater Crocolisk (#3)
+    info |goto Stranglethorn Vale,25.6,19.2|title Kill/loot: Elder Saltwater Crocolisk (#4)
+	'You may need to kill regular Saltwater Crocolisks first to get the elite to spawn on Vanilla.|optional
+    info |goto Stranglethorn Vale,22.6,19.2|title Kill/loot: Elder Saltwater Crocolisk (#5)
+	'Kill the elite in Bear Form and take healing breaks with Entangling Roots.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info |goto Stranglethorn Vale,21.6,16.0|title Kill/loot: Elder Saltwater Crocolisk (#6)
+
+step //28
+	info |goto Isle of Quel'Danas,600,0.0
+    'GROUP 2+ Players (or soloable?): Just SE of Nesingwary's Expedition, kill/loot King Bangalash (lvl 43 Elite white tiger).|goto Stranglethorn Vale,38.19,35.56|title Kill/loot: King Bangalash (white tiger)|icon Interface\\cursor\\Attack
+    .kill King Bangalash##731|q 208/1
+    info 
+	'NOTE: If you cannot do this now, you can try again later at level 47 Stranglethorn Vale section.|icon Interface\\cursor\\Directions
+    info 
+	'Hunters, this is possible to solo at lvl 42/43.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    'TIP: Druids, clear all tigers, Mana up and attack King Bangalash with starfire and entangle. When the adds come at around 50% keep King Bangalash rooted while you kill the adds with moonfire, Heal and then kill King Bangalash in Bear Form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+
+step //29
+    'Abandon Big Game Hunter for now to free quest-log space if you didn't do it, otherwise:
+    'At Nesingwary's Expedition:|goto Stranglethorn Vale,35.66,10.81
+    .talk Hemet Nesingwary##715
+    ..turnin Big Game Hunter##208
+	info 
+    'Turn in what you can of the Green Hills of Stranglethorn pages:|goto Stranglethorn Vale,35.66,10.53
+    .talk Barnil Stonepot##716
+    ..turnin The Green Hills of Stranglethorn##338
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //30
+    'If you need any new abilities, then use your Teleport: Moonglade spell to get to Moonglade. Head SW a bit to the Druid Trainer next to the Moonwell to get any new abilities you could not afford previously.|goto Moonglade,52.53,40.57|title Druid Trainer
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //31
+    'Hearth to Booty Bay.|goto Stranglethorn Vale,27.04,77.31|title Hearth to Booty Bay|c
+    .use Hearthstone##6948
+
+step //32
+    'Next to you in the Inn:|goto Stranglethorn Vale,27.12,77.21
+    .talk Crank Fizzlebub##2498
+    ..turnin Venture Company Mining##600
+    ..turnin Zanzil's Secret##621
+
+step //33
+    'Go up in the Inn:|goto Stranglethorn Vale,27.00,77.12
+    .talk Kebok##737
+    ..turnin Skullsplitter Tusks##209
+	info 
+    .talk Krazek##773
+    ..accept Rumors for Kravel##1117
+    ..accept Tran'rek##2864
+	info 
+    .talk Deeg##2488
+    ..turnin Up to Snuff##587
+
+step //34
+    'Next to you up the steps on the boat-deck:|goto Stranglethorn Vale,27.17,77.01
+    .talk Fleet Master Seahorn##2487
+    ..turnin The Bloodsail Buccaneers##604
+	info 
+    .'SKIP (for now) "The Bloodsail Buccaneers"|icon Interface\\cursor\\Directions
+
+step //35
+    'Stay up on the top of the docks and go over past the Alliance FP to Tan-Your-Hide Leatherworks:|goto Stranglethorn Vale,28.29,77.59
+    .talk Drizzlik##2495
+    ..turnin Excelsior##628
+
+step //36
+    'Drop down by the bank:|goto Stranglethorn Vale,26.75,76.38
+    .talk Privateer Bloads##2494
+    ..turnin Akiris by the Bundle##617
+	info 
+    .'At the Bank, deposit:|goto Stranglethorn Vale,26.56,76.50|title Bank
+	...'Nimboya's Pike (only for Vanilla)|icon Interface\\icons\\inv_spear_05
+	...'Goblin Rumors|icon Interface\\icons\\inv_letter_13
+
+step //37
+    'In the cabin (next to the hanging shark):|goto Stranglethorn Vale,27.78,77.07
+    .talk "Sea Wolf" MacKinley##2501
+    ..turnin Voodoo Dues##609
+	'wait a sec, then:
+    ..accept Stoley's Debt##2872
+
+step //38
+    'Up on the docks:|goto Stranglethorn Vale,28.59,75.90
+    .talk Dizzy One-Eye##2493
+    ..turnin Keep An Eye Out##576
+
+step //39
+    'Get on the boat at the end of docks to go to Ratchet.|goto Stranglethorn Vale,25.85,73.11|title Tak boat to Ratchet|c|only !Mage
+    'Use your Teleport: Orgrimmar spell to get to Orgrimmar instead.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\icons\\spell_arcane_teleportorgrimmar|only Mage
+	.cast Teleport: Orgrimmar##3567|only Mage
+	
+step //40
+    'Down below at the Mage Trainers:|goto Orgrimmar,38.79,85.66|title Mage Trainer
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //41
+    'At Ratchet:|goto The Barrens,63.09,37.16
+	'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+    only !Mage
+
+step //42
+	..'42-43 Stranglethorn Vale is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 43-44 Dustwallow Marsh|confirm|next "Joana's Guide\\Horde\\43-44 Dustwallow Marsh"|icon Interface\\icons\\achievement_zone_dustwallowmarsh
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\43-44 Dustwallow Marsh",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\44-44 Desolace
+startlevel 43
+
+step //1
+	'Since the guide's path will be different for Vanilla and TBC/WOTLK. Choose your path.|icon Interface\\cursor\\Directions
+	............'Vanilla path|confirm|next +1|icon Interface\\cursor\\Point
+	..........'TBC/WOTLK path|confirm|next +34|icon Interface\\cursor\\Point
+	
+step //2
+	'Vanilla path|optional
+	info 
+    'By the Bonfire:|goto Dustwallow Marsh,36.29,31.41
+    .talk Overlord Mok'Morokk##4500
+    ..accept Overlord Mok'Morokk's Concern##1166
+	info 
+    'Get repaired/resupplied|goto Dustwallow Marsh,36.39,30.85|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //3
+    'At the east entrance of Brackenwall Village:|goto Dustwallow Marsh,37.36,31.39
+    .talk Tharg##4502
+    ..accept Army of the Black Dragon##1168
+
+step //4
+    'In the small cave in Brackenwall Village:|goto Dustwallow Marsh,37.15,33.09
+    .talk Draz'Zilb##4501
+    ..accept Identifying the Brood##1169
+
+step //5
+    'From the ogre on the path, accept and do the escort by following him, then kill the mobs that spawn in next to him.|goto Dustwallow Marsh,40.96,36.69|title Ogron
+    .talk Ogron##4983
+    ..accept Questioning Reethe##1273
+    .goal Question Reethe with Ogron|q 1273/1
+    info |goto Dustwallow Marsh,42.57,38.01|title Escort leads here
+	'Druids: Use Bear Form.|only Druid
+	
+step //6
+    'Kill/loot Deadmire around in the streams. This white colored lvl 45 crocolisk patrols up and down the river and is with some elites around the river as well, so be careful!|goto Dustwallow Marsh,45.2,52.1|icon Interface\\cursor\\Attack
+    .kill Deadmire##4841|n
+	.collect Deadmire's Tooth##5945|q 1205/1|icon Interface\\icons\\inv_misc_monsterfang_01
+
+step //7
+    'Loot the supplies at the crashed zeppelin.|goto Dustwallow Marsh,54.07,56.48
+    .collect Seaforium Booster##5862|q 1187/1|icon Interface\\icons\\inv_ammo_bullet_03
+
+step //8
+    'Kill/loot Muckshell mobs in the water around the area until the item drops (very low drop rate).|goto Dustwallow Marsh,56.37,61.25|icon Interface\\cursor\\Attack
+    .collect Jeweled Pendant##5942|q 1261/1|icon Interface\\icons\\inv_jewelry_amulet_03
+
+step //9
+	'Loot Mok'Morokk's Snuff (middle of the fenced area).|goto Dustwallow Marsh,44.54,66.06
+    .collect Mok'Morokk's Snuff##5834 |q 1166/1|icon Interface\\icons\\inv_cask_03
+	info 
+    'Start Killing Firemane dragons.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+	info 
+    'Start Kill/looting dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //10
+    'Go west and loot Mok'Morokk's Grog (before the cave entrance).|goto Dustwallow Marsh,38.66,65.57
+    .collect Mok'Morokk's Grog##5835|q 1166/2|icon Interface\\icons\\inv_drink_09
+    info 
+    'Start Killing Firemane dragons.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+	info 
+    'Start Kill/looting dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //11
+    'Go in the cave and at the end of it loot Mok'Morokk's Strongbox.|goto Dustwallow Marsh,36.64,69.57
+    .collect Mok'Morokk's Strongbox##5836 |q 1166/3|icon Interface\\icons\\inv_box_02
+	info 
+	'Start Killing required Firemane dragons.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+
+step //12
+    'Before leaving the cave, make sure you finish killing the 5 Firemane Scalebanes (as they are generally only found here).|goto Dustwallow Marsh,38.57,65.86|icon Interface\\cursor\\Attack
+    .kill 5 Firemane Scalebane##4328 |q 1168/3
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+
+step //13
+	''Finish killing the required amount of Firemane dragons around the area.|goto Dustwallow Marsh,44.30,67.40|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1
+	.kill 10 Firemane Ash Tail##4331|q 1168/2
+	
+step //14
+    'Grind your way back to Brackenwall Village and before getting there make sure you meet the following XP requirement:|goto Dustwallow Marsh,38.90,33.46
+	'Reach level 43 and 80 180 XP before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+
+step //15
+    'At the west side of Brackenwall Village:|goto Dustwallow Marsh,35.21,30.65
+    .talk Nazeer Bloodpike##4791
+    ..turnin Marg Speaks##1261
+    ..accept Report to Zor##1262
+
+step //16
+    'By the Bonfire:|goto Dustwallow Marsh,36.29,31.42
+    .talk Overlord Mok'Morokk##4500
+    ..turnin Overlord Mok'Morokk's Concern##1166
+
+step //17
+    .talk Krog##4926|goto Dustwallow Marsh,36.42,31.89
+    ..turnin Questioning Reethe##1273
+    ..accept The Black Shield##1276
+    info (no exclamation mark)
+
+step //18
+    'At the east entrance of Brackenwall Village:|goto Dustwallow Marsh,37.36,31.39
+    .talk Tharg##4502
+    ..turnin Army of the Black Dragon##1168
+
+step //19
+    'In the small cave:|goto Dustwallow Marsh,37.15,33.08
+    .talk Draz'Zilb##4501
+    ..turnin Identifying the Brood##1169
+    info Wait a few seconds then:
+    ..accept The Brood of Onyxia##1170
+
+step //20
+    'Next to the Bonfire:|goto Dustwallow Marsh,36.29,31.42
+    .talk Overlord Mok'Morokk##4500
+    ..turnin The Brood of Onyxia##1170
+    ..accept The Brood of Onyxia##1171
+
+step //21
+    'Go back in the cave:|goto Dustwallow Marsh,37.15,33.08
+    .talk Draz'Zilb##4501
+    ..turnin The Brood of Onyxia##1171
+	info 
+    'SKIP (for now) "The Brood of Onyxia"|icon Interface\\cursor\\Directions
+
+step //22
+    'Get repaired/resupplied|goto Dustwallow Marsh,36.70,30.97|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+    info 
+	'Remember at level 45 you can upgrade your food/drink to next tier.
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //23
+    'Take the flight path.|goto Dustwallow Marsh,35.57,31.88
+    .talk Shardi##11899
+    'From the Wind Rider Master, take a flight to Thunder Bluff.|goto Thunder Bluff,47.02,49.84|title Go to Thunder Bluff|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	only !Mage
+
+step //24
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+    only Mage
+
+step //25
+    'Withdraw from the bank:|goto Thunder Bluff,47.44,58.62|title Bank
+	..'Draenethyst Shard|icon Interface\\icons\\inv_misc_gem_ruby_01
+	..'Wool Cloth|icon Interface\\icons\\inv_fabric_linen_01
+    ..'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+    info 
+	'Deposit into the bank:
+	..'Jeweled Pendant|icon Interface\\icons\\inv_jewelry_amulet_03
+	..'Seaforium Booster|icon Interface\\icons\\inv_ammo_bullet_03
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //26
+    'For cloth donations here in Thunder Bluff:|goto Thunder Bluff,47.44,58.6|title AH
+	info 
+	.collect 60 Wool Cloth##2592|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|icon Interface\\icons\\inv_fabric_silk_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //27
+    'In the Inn, from the Innkeeper:|goto Thunder Bluff,45.81,64.71
+    .talk Innkeeper Pala##6746
+    .home Thunder Bluff|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //28
+    'Go to the NW hut on The Hunter Rise:|goto Thunder Bluff,54.01,80.77
+    .talk Mosarn##4943
+    ..turnin The Black Shield##1276
+
+step //29
+    'Also on the Spirit Rise:|goto Thunder Bluff,61.52,80.91
+    .talk Melor Stonehoof##3441
+    ..turnin Deadmire##1205
+
+step //30
+    'You should be level 44 now. Get new spells/abilities while in Thunder Bluff.
+    info 
+	'Hunters go just right next to you on The Hunter Rise.|goto Thunder Bluff,59.11,86.86|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Druids: Go NE to the Elder Rise to get your lvl 44 Spells/abilities. New abilities to get:|goto Thunder Bluff,76.50,27.23|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	'Barkskin,|icon Interface\\icons\\spell_nature_stoneclawtotem|only Druid
+	'Healing Touch,|icon Interface\\icons\\spell_nature_healingtouch|only Druid
+	'Rake,|icon Interface\\icons\\ability_druid_disembowel|only Druid
+	'Rip,|icon Interface\\icons\\ability_ghoulfrenzy|only Druid
+	'Swipe,|icon Interface\\icons\\inv_misc_monsterclaw_03|only Druid
+	'Thorns.|icon Interface\\icons\\spell_nature_thorns|only Druid
+    'Warriors: The Warrior Trainers are next to you on The Hunter Rise.|goto Thunder Bluff,57.59,85.51|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'Priests: Get new spells/abilities in the The Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainer (down in cave)|icon Interface\\icons\\inv_staff_30|only Priest
+    'Mages: Get new spells/abilities in the Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainer (down in cave)|icon Interface\\icons\\inv_staff_13|only Mage
+    'Shamans: In the big tent up at The Spirit Rise get new spells/abilities from a Shaman Trainer.|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+    info 
+	.'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Hunter,Druid,Warrior,Priest,Mage,Shaman
+
+step //31
+    'NOTE: You can turn in cloth donations for the Tauren faction. You would need 60 of the following for all possible cloth turn-ins:|goto Thunder Bluff,43.05,42.73|icon Interface\\cursor\\Directions
+    .talk Rumstag Proudstrider##14728
+    ..turnin A Donation of Wool##7820
+    ..turnin A Donation of Silk##7821
+    ..turnin A Donation of Mageweave##7822
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //32
+    'Up the tower in the middle of Thunder Bluff:|goto Thunder Bluff,46.98,49.84
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Shadowprey Village, Desolace, Dustwallow Marsh|goto Desolace,21.60,74.13|c|title Go to Shadowprey Village|icon Interface\\minimap\\Tracking\\Flightmaster
+	only Hunter,Druid,Warrior,Priest,Mage,Shaman
+
+step //33
+	'At Brackenwall Village:|goto Dustwallow Marsh,35.57,31.88
+    .talk Shardi##11899
+    'From the Wind Rider Master, take a flight to Shadowprey Village, Desolace, Dustwallow Marsh|goto Desolace,21.60,74.13|c|title Go to Shadowprey Village|icon Interface\\minimap\\Tracking\\Flightmaster
+	info 
+	'NOTE: If you need to get your level 44 new spells/abilities you go to Orgrimmar before going to Desolace.|icon Interface\\cursor\\Directions
+	only Paladin,Rogue,Warlock
+	
+step //34
+	'43-44 Dustwallow Marsh Vanilla is complete!|icon Interface\\cursor\\Directions
+	.......'Go to 44-44 Desolace|confirm|next "Joana's Guide\\Horde\\44-44 Desolace (Vanilla only)"|icon Interface\\icons\\achievement_zone_desolace
+	
+// /!\ TBC part
+step //35
+	'TBC/WOTLK path|optional
+	info 
+    'From the ogre:|goto Dustwallow Marsh,36.17,31.79
+    .talk Zulrg##4884
+	info 
+    'Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //36
+    'By the Bonfire:|goto Dustwallow Marsh,36.29,31.41
+    .talk Overlord Mok'Morokk##4500
+    ..accept Overlord Mok'Morokk's Concern##1166
+
+step //37
+    .talk Krog##4926|goto Dustwallow Marsh,36.42,31.88
+    ..turnin Return to Krog##11204
+    ..accept More than Coincidence##11200
+    ..accept The Grimtotem Plot##11201
+
+step //38
+    'At the Innkeeper:|goto Dustwallow Marsh,36.89,32.35
+    .talk "Little" Logok##24208
+    .home Brackenwall Village|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //39
+    'In the small cave:|goto Dustwallow Marsh,37.15,33.09
+    .talk Draz'Zilb##4501
+    ..accept Identifying the Brood##1169
+
+step //40
+    'At the east entrance of Brackenwall Village:|goto Dustwallow Marsh,37.36,31.39
+    .talk Tharg##4502
+    ..accept Army of the Black Dragon##1168
+
+step //41
+    'Around Blackhoof Village, kill/loot Grimtotem (taurens) to obtain 4 Grimtotem Notes, then click on them.|goto Dustwallow Marsh,41.96,12.69|icon Interface\\cursor\\Attack
+    .collect 4 Grimtotem Note##33050|n|icon Interface\\icons\\inv_misc_note_02
+	.collect Grimtotem Battle Plan##33051|q 11201/1|icon Interface\\icons\\inv_misc_note_05
+	info 
+    'Loot Blackhoof Armaments (spear racks) around the village.
+    .collect 7 Blackhoof Armaments##33071|q 11200/1|icon Interface\\icons\\inv_axe_19
+
+step //42
+    'Hearth (or go back) to Mudsprocket.|goto Dustwallow Marsh,36.42,31.88
+	.use Hearthstone##6948
+	'Shaman: use Astral Recall.|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .talk Krog##4926
+    ..turnin More than Coincidence##11200
+    ..turnin The Grimtotem Plot##11201
+    ..accept Seek Out Tabetha##11203
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //43
+    'At Brackenwall Village:|goto Dustwallow Marsh,35.57,31.88
+    .talk Shardi##11899
+    'From the Wind Rider Master, take a flight to Mudsprocket, Dustwallow Marsh|goto Dustwallow Marsh,42.82,72.43|c|title Go to Mudsprocket|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //44
+    'At Mudsprocket, by the green containers:|goto Dustwallow Marsh,41.54,73
+    .talk Gizzix Grimegurgle##23570
+    ..accept Catch a Dragon by the Tail##11217
+
+step //45
+    'Next to you:|goto Dustwallow Marsh,41.76,73.11
+	'Interact with Wanted Poster
+    ..accept WANTED: Goreclaw the Ravenous##11184
+
+step //46
+    'In the Inn:|goto Dustwallow Marsh,41.86,73.98
+    .talk Brogg##23579
+    ..accept Bloodfen Feathers##11158
+
+step //47
+    'In the Inn, talk to the Innkeeper (goblin). He is most likely up the steps.|goto Dustwallow Marsh,41.93,74.19
+    .talk Axle##23995
+    .home Mudsprocket|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //48
+    'Kill Goreclaw the Ravenous (bigger raptor) at the area.|goto Dustwallow Marsh,33.7,65|icon Interface\\cursor\\Attack
+    .kill Goreclaw the Ravenous##23873|q 11184/1
+	info 
+    'Kill/loot the Bloodfen raptors.|icon Interface\\cursor\\Attack
+	.collect 5 Bloodfen Feather##33085|q 11158/1|icon Interface\\icons\\inv_feather_11
+    .kill Bloodfen Razormaw##4356|n
+
+step //49
+    'Hearth (or go back) to Mudsprocket.|goto Dustwallow Marsh,42.34,72.93
+	.use Hearthstone##6948
+	info 
+	'At Mudsprocket, in the smal hut:
+    .talk Drazzit Dripvalve##23572
+    ..turnin WANTED: Goreclaw the Ravenous##11184
+
+step //50
+    'In the Inn:|goto Dustwallow Marsh,41.86,73.98
+    .talk Brogg##23579
+    ..turnin Bloodfen Feathers##11158
+    ..accept Banner of the Stonemaul##11160
+    ..accept The Essence of Enmity##11161
+
+step //51
+    'Work your way NE to Tabetha's Farm and in the hut:|goto Dustwallow Marsh,46.05,57.09
+    .talk Tabetha##6546
+	..turnin Seek Out Tabetha##11203
+    ..accept Raze Direhorn Post!##11205
+    ..turnin Journey to the Marsh##1947|only Mage
+    ..accept Hidden Secrets##1949|only Mage
+    ..turnin Return to the Marsh##1953|only Mage
+	info |only Mage
+	'SKIP "The Infernal Orb" because we will not be going back to Desolace.|icon Interface\\cursor\\Directions|only Mage
+    'SKIP "Items of Power" because we will not be going back to Arathi Highlands.|icon Interface\\cursor\\Directions|only Mage
+
+step //52
+    'At Direhorn Post, use the quest item (Tabeth's Torch) on the East Tent.|goto Dustwallow Marsh,47.52,47.65|title Burn: East Tent
+    .use Tabetha's Torch##33072
+	.goal East Tent Burned|q 11205/3
+
+step //53
+	info |goto Isle of Quel'Danas,600,0.0
+    'Use the quest item (Tabeth's Torch) on the Northeast Tent.|goto Dustwallow Marsh,47.25,46.54|title Burn: Northeast Tent
+    .use Tabetha's Torch##33072 
+	.goal Northeast Tent Burned|q 11205/2
+	info 
+    'Also at this tent, kill/loot Apothecary Cylla, she drops an item (Sealed Letter) which starts a quest.|icon Interface\\cursor\\Attack
+    .kill Apothecary Cylla##23881|n
+	.collect Sealed Letter##33114|n|icon Interface\\icons\\inv_letter_16
+    ..accept The Apothecary's Letter##11185
+
+step //54
+    'Use the quest item (Tabeth's Torch) on the North Tent.|goto Dustwallow Marsh,46.61,45.96|title Burn: North Tent
+    .use Tabetha's Torch##33072 
+	.goal North Tent Burned|q 11205/1
+
+step //55
+    'Back inside the cabin:|goto Dustwallow Marsh,46.05,57.09
+    .talk Tabetha##6546
+    ..turnin Raze Direhorn Post!##11205
+    ..accept Justice Dispensed##11206
+
+step //56
+    'Kill/loot Muckshell mobs in the water around the area until the item drops (very low drop rate).|goto Dustwallow Marsh,56.37,61.25|icon Interface\\cursor\\Attack
+	.collect Jeweled Pendant##5942|q 1261/1|icon Interface\\icons\\inv_jewelry_amulet_03
+
+step //57
+    'Loot Mok'Morokk's Snuff (middle of the fenced area).|goto Dustwallow Marsh,44.54,66.06
+    .collect Mok'Morokk's Snuff##5834 |q 1166/1|icon Interface\\icons\\inv_cask_03
+	info 
+    'Start Killing Firemane dragons and use the quest item (Brogg's Totem) on Firemane dragon corpses.|icon Interface\\cursor\\Attack
+    .use Brogg's Totem##33088 
+	.collect 10 Black Dragonkin Essence##33087|q 11161/1|n|icon Interface\\icons\\spell_shadow_focusedpower
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+	info 
+    'Start Kill/looting dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //58
+    'Go west and loot Mok'Morokk's Grog (before the cave entrance).|goto Dustwallow Marsh,38.66,65.57
+    .collect Mok'Morokk's Grog##5835|q 1166/2|icon Interface\\icons\\inv_drink_09
+    info 
+    'Start Killing Firemane dragons and use the quest item (Brogg's Totem) on Firemane dragon corpses.|icon Interface\\cursor\\Attack
+    .use Brogg's Totem##33088 
+	.collect 10 Black Dragonkin Essence##33087|q 11161/1|n|icon Interface\\icons\\spell_shadow_focusedpower
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+	info 
+    'Start Kill/looting dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //59
+    'Go in the cave and at the end of it loot Mok'Morokk's Strongbox.|goto Dustwallow Marsh,36.64,69.57
+    .collect Mok'Morokk's Strongbox##5836 |q 1166/3|icon Interface\\icons\\inv_box_02
+	info 
+    'Start Using the quest item (Brogg's Totem) on Firemane dragon corpses.
+    .use Brogg's Totem##33088 
+	.collect 10 Black Dragonkin Essence##33087|q 11161/1|n|icon Interface\\icons\\spell_shadow_focusedpower
+	info 
+	'Start Killing required Firemane dragons.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+	
+step //60
+    'In the cave loot the Stonemaul Clan Banner.|goto Dustwallow Marsh,38.13,69.44
+    .collect Stonemaul Banner##33086|q 11160/1|icon Interface\\icons\\inv_banner_03
+	info 
+    'Start Using the quest item (Brogg's Totem) on Firemane dragon corpses.
+    .use Brogg's Totem##33088 
+	.collect 10 Black Dragonkin Essence##33087|q 11161/1|n|icon Interface\\icons\\spell_shadow_focusedpower
+	info 
+	'Start Killing required Firemane dragons.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	.kill 5 Firemane Scalebane##4328|q 1168/3|n
+
+step //61
+    'Before leaving the cave, make sure you finish killing the 5 Firemane Scalebanes (as they are generally only found here).|goto Dustwallow Marsh,38.57,65.86|icon Interface\\cursor\\Attack
+    .kill 5 Firemane Scalebane##4328 |q 1168/3
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+    info 
+    'Finish Using the quest item (Brogg's Totem) on Firemane dragon corpses.
+    .use Brogg's Totem##33088 
+	.collect 10 Black Dragonkin Essence##33087|q 11161/1|icon Interface\\icons\\spell_shadow_focusedpower
+
+step //62
+    'Hearth to Mudsprocket and in the Inn:|goto Dustwallow Marsh,41.85,73.97
+	'Shaman: use Astral Recall.|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+    .talk Brogg##23579
+    ..turnin Banner of the Stonemaul##11160
+    ..turnin The Essence of Enmity##11161
+    ..accept Spirits of Stonemaul Hold##11159
+
+step //63
+    'Around the Stonemaul Ruins, click on the Ogre Remains (skeletons on the ground), then kill the ogre spirits that spawn.|goto Dustwallow Marsh,44.58,65.8|icon Interface\\cursor\\Attack
+    .kill Stonemaul Spirit##23786|q 11159/1
+	info 
+	'Kill Firemane dragons around.|icon Interface\\cursor\\Attack
+	.kill 10 Firemane Scout##4329|q 1168/1|n
+	.kill 10 Firemane Ash Tail##4331|q 1168/2|n
+	info 
+    'Kill/loot dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //64
+    'Finish killing the required amount of Firemane dragons around the area.|goto Dustwallow Marsh,44.30,67.40|icon Interface\\cursor\\Attack
+    .kill 10 Firemane Scout##4329|q 1168/1
+	.kill 10 Firemane Ash Tail##4331|q 1168/2
+	
+step //65
+    'Back in the Inn at Mudsprocket:|goto Dustwallow Marsh,41.85,73.97
+    .talk Brogg##23579
+    ..turnin Spirits of Stonemaul Hold##11159
+    ..accept Challenge to the Black Flight##11162
+
+step //66
+    'Go SE to the entrance of Onyxia's Lair and use the quest item (Stonemaul Banner) at the entrance.|goto Dustwallow Marsh,52.03,76.70
+    .use Stonemaul Banner##33095
+	.kill Smolderwing##23789|q 11162/1
+	info 
+    'Loot Wyrmtail plants along the way.
+    .collect 8 Wyrmtail##33175|q 11217/1|n|icon Interface\\icons\\inv_misc_herb_15
+	info 
+	'Kill/loot any dragon whelps.|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|n|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|n|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n
+	.kill Searing Hatchling##4323|n
+
+step //67
+	info |goto Isle of Quel'Danas,600,0.0
+    'Loot Wyrmtail plants as you work your way back to Mudsprocket.|goto Dustwallow Marsh,44.17,74.28|title Next Destination
+    .collect 8 Wyrmtail##33175|q 11217/1|icon Interface\\icons\\inv_misc_herb_15
+	info |goto Dustwallow Marsh,39.84,73.37|title Whelps around here
+    'Finish kill/looting any dragon whelps.|goto Dustwallow Marsh,42.26,76.57|title Whelps around here|icon Interface\\cursor\\Attack
+	.collect 7 Searing Tongue##5840|q 1169/1|icon Interface\\icons\\inv_misc_monsterscales_15
+	.collect 7 Searing Heart##5841|q 1169/2|icon Interface\\icons\\inv_misc_organ_01
+    .kill Dragon Whelp##4324|n|goto Dustwallow Marsh,45.61,73.11|title Whelps around here
+	.kill Searing Hatchling##4323|n|goto Dustwallow Marsh,43.21,80.34|title Whelps around here
+	info |goto Dustwallow Marsh,47.2,82.63|title Whelps around here
+
+step //68
+    'Back at Mudsprocket by the green containers:|goto Dustwallow Marsh,41.54,73
+    .talk Gizzix Grimegurgle##23570
+    ..turnin Catch a Dragon by the Tail##11217
+
+step //69
+    'In the Inn:|goto Dustwallow Marsh,41.85,73.97
+    .talk Brogg##23579
+    ..turnin Challenge to the Black Flight##11162
+
+step //70
+    'At the NE outskirts of town:|goto Dustwallow Marsh,42.82,72.43
+    .talk Dyslix Silvergrub##23612
+    'From the Wind Rider Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //71
+    'At the west side of Brackenwall Village:|goto Dustwallow Marsh,35.21,30.65
+    .talk Nazeer Bloodpike##4791
+    ..turnin Marg Speaks##1261
+    ..accept Report to Zor##1262
+
+step //72
+    'By the Bonfire:|goto Dustwallow Marsh,36.29,31.42
+    .talk Overlord Mok'Morokk##4500
+    ..turnin Overlord Mok'Morokk's Concern##1166
+
+step //73
+    'At the east entrance of Brackenwall Village:|goto Dustwallow Marsh,37.36,31.39
+    .talk Tharg##4502
+    ..turnin Army of the Black Dragon##1168
+
+step //74
+    'In the small cave:|goto Dustwallow Marsh,37.15,33.08
+    .talk Draz'Zilb##4501
+    ..turnin Identifying the Brood##1169
+    'Wait a few seconds then:
+    ..accept The Brood of Onyxia##1170
+
+step //75
+    .talk Krog##4926|goto Dustwallow Marsh,36.42,31.88
+    ..turnin Justice Dispensed##11206
+
+step //76
+    'Next to the Bonfire:|goto Dustwallow Marsh,36.29,31.42
+    .talk Overlord Mok'Morokk##4500
+    ..turnin The Brood of Onyxia##1170
+    ..accept The Brood of Onyxia##1171
+
+step //77
+    'Back in the small cave:|goto Dustwallow Marsh,37.15,33.08
+    .talk Draz'Zilb##4501
+    ..turnin The Brood of Onyxia##1171
+	info 
+    'SKIP (for now) "The Brood of Onyxia"|icon Interface\\cursor\\Directions
+
+step //78
+	'Remember at level 45 you can upgrade your food/drink to next tier.|goto Dustwallow Marsh,36.70,30.97|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Food
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //79
+    'Take the flight path.|goto Dustwallow Marsh,35.57,31.88
+    .talk Shardi##11899
+	'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+// /!\ end of TBC part
+
+step //80
+	'43-44 Dustwallow Marsh TBC/WOTLK is complete!|icon Interface\\cursor\\Directions
+	.........'Go to 44-45 Tanaris|confirm|next "Joana's Guide\\Horde\\44-45 Tanaris"|icon Interface\\icons\\achievement_zone_tanaris_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\44-44 Desolace (Vanilla only)",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\44-45 Tanaris
+startlevel 44
+
+step //0
+	'If you are playing TBC/WOTLK phase, just skip this guide, otherwise you can continue for Vanilla part:|icon Interface\\cursor\\Directions
+	............'Vanilla path|confirm|next +1|icon Interface\\cursor\\Point
+	..........'TBC/WOTLK path|confirm|next +17|icon Interface\\cursor\\Point
+step //1
+    'At Shadowprey Village, on top of the mound next to the gong:|goto Desolace,25.82,68.22
+    .talk Taiga Wisemane##11624
+    ..accept Portals of the Legion##5581
+    info         (no exclamation mark)
+
+step //2
+    'Go SE and under the tent:|goto Desolace,36.23,79.25
+    .talk Uthek the Wise##5397
+    ..turnin Ongeku##1373
+    ..accept Khan Jehn##1374
+    info 
+	'While in Desolace, try to find and kill/loot a Deepstrider Giant or Deepstrider Searcher (lvl 38-40 elite giants). There are 3 of these giants and they drop the Deepstrider Tumor. They have large patrol paths around Desolace. If you cannot find one before leaving Desolace then you can skip/abandon the quest.|icon Interface\\cursor\\Attack
+	.collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+
+step //3
+    'Go NE to the Kodo Graveyard:|goto Desolace,47.83,61.82
+    ..accept Ghost-o-plasm Round Up##6134
+    info 
+	'Kill/loot a lvl 40 elite Deepstrider giant.|icon Interface\\cursor\\Attack
+    .collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+
+step //4
+	info |goto Silithus,0,400
+    'Enter Shadowbreak Ravine:|goto Desolace,55.80,57.41|title Enter: Ghost Walker Post
+    'Make a left at the entrance of Ghost Walker Post...
+    'Go across bridge:|goto Desolace,54.49,54.90|title Go across bridge
+    .talk Takata Steelblade##5641|goto Desolace,52.57,54.39|title Takata Steelblade
+    ..accept The Corrupter##1488
+
+step //5
+    'Kill/loot Khan Jehn (in the tent) at Magram Village:|goto Desolace,66.23,80.25
+    .kill Khan Jehn##5601|n
+	.collect Khan Jehn's Head##6072|q 1374/1|icon Interface\\icons\\inv_misc_head_centaur_01
+    info 
+	'Kill/loot a lvl 40 elite Deepstrider giant.
+    .collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+
+step //6
+    'At the Valley of Bones around where the big skeleton bones are sticking out of the ground:|goto Desolace,64.21,91.41
+    'First clear out the Undead Ravagers (skeletons), then use the quest item (Crate of Ghost Magnets) there, then kill/loot the Magrami Spectres that spawn in for the plasms.
+    .use Crate of Ghost Magnets##15848
+    .kill Magrami Spectre##11560
+    .collect 8 Ghost-o-plasm##15849|q 6134/1|icon Interface\\icons\\inv_misc_slime_01
+    info 
+	'Kill/loot a lvl 40 elite Deepstrider giant.
+    .collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+
+step //7
+    'Go NW to Mannoroc Coven and kill Lord Azrethoc (lvl 40 elite doomguard that patrols around):|goto Desolace,57.08,77.73
+    'And also kill Jugkar Grim'rod##5771 (lvl 40 orc warlock):|goto Desolace,55.91,77.76
+    .kill Lord Azrethoc##5760|q 1488/1
+    .kill Jugkar Grim'rod##5771|q 1488/2
+    info 
+	'NOTE: If you are still cursed (Curse of the Fallen Magram) from the previous quest, you may need to wait until it wears off first before killing the elite doomguard. If so consider grinding on any mobs until it wears off first.|only Warrior
+
+step //8
+    'At Mannoroc Coven, click on the Demon Portals, then kill the Demon Portal Guardians that spawn to banish the portals:|goto Desolace,55.08,79.38
+    .kill 6 Demon Portal Guardian##11937|q 5581/1
+
+step //9
+    'Get repaired/resupplied:|goto Desolace,55.59,56.50|icon Interface\\minimap\\Tracking\\Repair
+	info 
+    'Then go across bridge at Ghost Walker Post:|goto Desolace,54.49,54.90
+    .talk Takata Steelblade##5641|goto Desolace,52.57,54.39
+    ..turnin The Corrupter##1488
+
+step //10
+    'At the Kodo Graveyard:|goto Desolace,47.83,61.83
+    ..turnin Ghost-o-plasm Round Up##6134
+
+step //11
+    'SW under a tent:|goto Desolace,36.23,79.25
+    .talk Uthek the Wise##5397
+    ..turnin Khan Jehn##1374
+    info 
+	'SKIP Khan Hratha##1380 - Quest takes too long and is extremely hard to solo and there are elites involved.|icon Interface\\cursor\\Directions
+    info 
+	'Kill/loot a lvl 40 elite Deepstrider giant.
+    .collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+
+step //12
+    'Last chance: Try to find and kill/loot a Deepstrider Giant or Deepstrider Searcher (lvl 38-40 elite giants):|goto Desolace,28.22,77.45
+    'There are 3 of these giants and they drop the Deepstrider Tumor.
+    'They patrol all around Desolace.
+    'If you cannot find one before leaving Desolace then it will have to be skipped/abandoned.
+    .collect Deepstrider Tumor##6082||q 1383/3|n|icon Interface\\icons\\inv_ore_thorium_01
+    .kill Deepstrider Giant##4686|n
+    .kill Deepstrider Searcher##4687|n
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //13
+    'Back at Shadowprey Village and on top of the mound next to the gong:|goto Desolace,25.81,68.22
+    .talk Taiga Wisemane##11624
+    ..turnin Portals of the Legion##5581
+
+step //14
+    'Hearth to Thunder Bluff.|goto Thunder Bluff,45.81,64.71|title Hearth to Thunder Bluff|c
+    .use Hearthstone##6948
+
+step //15
+    'If you need to, get new spells/abilities while in Thunder Bluff.
+    'Hunters go to The Hunter Rise:|goto Thunder Bluff,59.11,86.86|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Go NE to the Elder Rise to get new spells/abilities:|goto Thunder Bluff,76.50,27.23|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	'The Warrior Trainers are on The Hunter Rise:|goto Thunder Bluff,57.59,85.51|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	'Priests, get new spells/abilities in Pools of Vision (cave):|goto Thunder Bluff,24.56,22.58|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+	'Mages, get new spells/abilities in Pools of Vision (cave):|goto Thunder Bluff,22.74,14.52|title Mage Trainer|icon Interface\\icons\\inv_staff_13|only Mage
+	'In the big tent up at The Spirit Rise get new spells/abilities from a Shaman Trainer:|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Hunter,Druid,Warrior,Priest,Mage,Shaman
+	
+step //16
+    'Up the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.02,49.85
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //17
+	...'44-44 Desolace Vanilla is complete!|icon Interface\\cursor\\Directions
+	.........'Go to 44-45 Tanaris|confirm|next "Joana's Guide\\Horde\\44-45 Tanaris"|icon Interface\\icons\\achievement_zone_tanaris_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\44-45 Tanaris",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\45-46 Feralas
+startlevel 44
+
+step //1
+    'As you enter Gadgetzan (next to the crane):|goto Tanaris,51.5,26.7
+    .talk Tran'rek##7876
+    ..turnin Tran'rek##2864
+	info 
+    'SKIP "Scarab Shells" (Zul'farrak Dungeon)|icon Interface\\cursor\\Directions
+
+step //2
+    'Next to the cage entrance:|goto Tanaris,51.8,27.0
+	'Interact with Wanted Poster
+    ..accept WANTED: Caliph Scorpidsting##2781
+    ..accept WANTED: Andre Firebeard##2875
+
+step //3
+    'Go in the Inn, and from the Innkeeper:|goto Tanaris,52.5,27.9
+    .talk Innkeeper Fizzgrimble##7733
+    .home Gadgetzan|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //4
+    'Next to the Inn at the windmill:|goto Tanaris,52.4,28.4
+    .talk Spigot Operator Luglunket##7408
+    ..accept Water Pouch Bounty##1707
+	info 
+    'Next to you:|goto Tanaris,52.4,28.5|title Chief Engineer Bilgewhizzle
+    .talk Chief Engineer Bilgewhizzle##7407
+    ..accept Wastewander Justice##1690
+
+step //5
+    'Withdraw from the bank:|goto Tanaris,52.3,28.9|title Banker
+    ..'Goblin Rumors|icon Interface\\icons\\inv_letter_13
+	..'Seaforium Booster|icon Interface\\icons\\inv_ammo_bullet_03
+    info 
+	'Deposit into bank:
+	..'Green Whelp Blood (Vanilla only if you have)|icon Interface\\icons\\spell_shadow_bloodboil
+	..'Jeweled Pendant (only TBC/WOTLK)|icon Interface\\icons\\inv_jewelry_amulet_03
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //6
+    'At the western side of Gadgetzan on top of the hill:|goto Tanaris,50.2,27.4
+    .talk Senior Surveyor Fizzledowser##7724
+    ..accept Gadgetzan Water Survey##992
+
+step //7
+    'Go north to the Thousand Needles at Mirage Raceway:|goto Thousand Needles,77.7,77.2
+    .talk Kravel Koalbeard##4452
+    ..turnin Rumors for Kravel##1117
+    'Wait a few seconds, then:
+    ..accept Back to Booty Bay##1118
+
+step //8
+    'Next to you:|goto Thousand Needles,78.0,77.1
+    .talk Fizzle Brassbolts##4454
+    ..turnin News for Fizzle##1137
+
+step //9
+    'Mages, turn in your class quest:|icon Interface\\icons\\inv_staff_13|goto Thousand Needles,78.3,75.7
+    .talk Magus Tirth##6548
+    ..turnin Hidden Secrets##1949
+    ..accept Get the Scoop##1950
+    only Mage
+
+step //10
+    'Find the chicken named "Plucky" Johnson, then type /beckon in the chat at him. He will then turn into human form, talk to him to complete the quest.|goto Thousand Needles,79.6,75.6
+	.talk "Plucky" Johnson##6626
+	.goal Secret phrase found|q 1950/1
+    only Mage
+
+step //11
+    'Go over to the goblin's side of Mirage Raceway:|goto Thousand Needles,80.3,76.0
+    .talk Razzeric##4706
+    ..turnin Razzeric's Tweaking##1187
+    ..accept Safety First##1188
+	info 
+    'Next to you:|goto Thousand Needles,80.1,75.8|title Pozzik
+    .talk Pozzik##4630
+    ..accept Keeping Pace##1190
+
+step //12
+	info |goto Silithus,0,400
+    'At the goblin Zamek next to the Goblin Racer, click on Complete Quest to setup a distraction.|goto Thousand Needles,79.8,77.0|title Zamek
+    .talk Zamek##4709
+    'Then go in the gnome's hut to: Interact with Rizzle's Unguarded Plans.|goto Thousand Needles,77.2,77.4|title Click on: Rizzle's Unguarded Plans (when it spawns)
+    ..turnin Keeping Pace##1190
+    ..accept Rizzle's Schematics##1194
+
+step //13
+    'Next to you:|goto Thousand Needles,80.1,75.8
+    .talk Pozzik##4630
+    ..turnin Rizzle's Schematics##1194
+
+step //14
+    'Mages, turn in your class quest:|icon Interface\\icons\\inv_staff_13|goto Thousand Needles,78.3,75.7
+    .talk Magus Tirth##6548
+    ..turnin Get the Scoop##1950
+	info 
+    'SKIP "Rituals of Power" (Scarlet Monastery Dungeon)|icon Interface\\cursor\\Directions
+    only Mage
+
+step //15
+    'Destroy the Sample of Indurium Ore as it is no longer used for anything.
+	info 
+    'Hearth (or go back) to Gadgetzan.
+    .use Hearthstone##6948
+	info 
+    'At the western side of Gadgetzan:|goto Tanaris,50.9,27.2
+    .talk Shreev##4708
+    ..turnin Safety First##1188
+	info 
+    'SKIP the next "Safety First" (Not worth XP/Time.)|icon Interface\\cursor\\Directions
+
+step //16
+    'Grind your way east to Noonshade Ruins and kill/loot the Wastewander humans around the ruins. |goto Tanaris,59.7,24.4|icon Interface\\cursor\\Attack
+    .kill 10 Wastewander Bandit##5618 |q 1690/1|n
+    .kill 10 Wastewander Thief##5616 |q 1690/2|n
+	info 
+	'Start to get Wastewander Water Pouch.
+	.collect Wastewander Water Pouch##8483|q 1707/1|n|icon Interface\\icons\\inv_drink_milk_02
+	info 
+	'NOTE: Just clear the area once and continue on...|icon Interface\\cursor\\Directions
+	..........'Continue on...|confirm|next +1|icon Interface\\cursor\\Point
+step //17
+    'Go east to Steamwheedle Port and under the red tent:|goto Tanaris,66.5,22.2
+    .talk Haughty Modiste##15165
+    ..accept Pirate Hats Ahoy!##8365
+
+step //18
+    'Under the green tent:|goto Tanaris,66.9,22.3
+    .talk Yeh'kinya##8579
+    ..accept Screecher Spirits##3520
+	info 
+    'In the hut: |goto Tanaris,67.0,21.9
+	'NOTE: Do not sell the |icon Interface\\cursor\\Directions
+	'Wastewander Water Pouches to a vendor!|icon Interface\\icons\\inv_drink_milk_02
+    .talk Jabbey##8139
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info |only Hunter
+    'Hunters, it's important to note that you cannot buy arrows at Gadgetzan, but you can get them at Steamwheedle Port from Jabbey in the hut.|goto Tanaris,67.0,21.9 |icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+
+step //19
+    'At the other side of the Port, in the hut:|goto Tanaris,67.1,23.9
+    .talk Stoley##7881
+    ..turnin Stoley's Debt##2872
+    ..accept Stoley's Shipment##2873
+	info 
+    'Next to you:|goto Tanaris,67.0,23.8|title Security Chief Bilgewhizzle
+    .talk Security Chief Bilgewhizzle##7882
+    ..accept Southsea Shakedown##8366
+
+step //20
+    'Kill/loot Wastewander mobs around Waterspring Field.|goto Tanaris,63.9,30.0|icon Interface\\cursor\\Attack
+    .kill 10 Wastewander Bandit##5618 |q 1690/1
+    .kill 10 Wastewander Thief##5616 |q 1690/2
+	.collect Wastewander Water Pouch##8483|q 1707/1|icon Interface\\icons\\inv_drink_milk_02
+	info 
+    'Keep an eye out for Caliph Scorpidsting, he patrols around the area and has 2 rogues following him.
+    .kill Caliph Scorpidsting##7847|n
+	.collect Caliph Scorpidsting's Head##8723|q 2781/1|n|icon Interface\\icons\\inv_misc_head_human_01
+    info |only Druid
+	'Druids: Caliph Scorpidsting can be a bit hard. Root him and switch to bear to take out his two stealthed rogue bodyguards first.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+
+step //21
+	info |goto Silithus,0,400
+    'Enter Lost Rigger Cove (through a small cave)...|goto Tanaris,68.9,41.5|title Enter: Lost Rigger Cove
+	info |goto Tanaris,73.0,45.7|title Go through the gate
+    'Warriors: This is a rough area. Use consumables, use Hamstring when needed and save Retaliation for the next step. |icon Interface\\icons\\INV_Sword_27|only Warrior
+	info |only Warrior
+    'Loot the Stolen Cargo up in the building.|goto Tanaris,72.17,46.80|title Enter House, Go up steps and Loot: Stolen Cargo
+    .collect Stoley's Shipment##9244|q 2873/1|icon Interface\\icons\\inv_cask_01
+    info 
+	'NOTE: Pull the first two Swashbucklers outside of the building and cleave. Then, kill the 3rd on the first floor. Go up the small stairs and you'll pull all 3 in the next room - use Retaliation.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'Start Kill/looting Southsea pirates.|icon Interface\\cursor\\Attack
+    .kill 10 Southsea Pirate##7855|q 8366/1|n
+    .kill 10 Southsea Freebooter##7856|q 8366/2|n
+    .kill 10 Southsea Dock Worker##7857|q 8366/3|n
+    .kill 10 Southsea Swashbuckler##7858|q 8366/4|n
+	.collect Southsea Pirate Hat##20519|q 8365/1|n|icon Interface\\icons\\inv_helmet_66
+	info 
+    'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
+	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
+	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+    ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
+
+step //22
+    'Kill/loot Andre Firebeard in the middle of the cove. Watch out this fight usually involves 3 adds.|goto Tanaris,73.3,47.1|icon Interface\\cursor\\Attack
+    .kill Andre Firebeard##7883|n 
+	.collect Firebeard's Head##9246|q 2875/1|icon Interface\\icons\\inv_misc_head_human_01
+    info 
+	'TIPS: Clear the area behind you and then ranged-pull Andre and start kiting backwards. Hit him once he gets close and keep kiting until the other mobs reset but he doesn't.  If you get extra mobs, use Intimidating Shout, nuke down Andre, loot him fast, die, and spirit rez.|icon Interface\\cursor\\Directions|only Warrior
+    'Druids: Root Andre and kill his guards first. Use innervate to keep your mana. Barkskin for quick heals. |icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info |only Druid,Warrior
+    'Start Kill/looting Southsea pirates.|goto Tanaris,73.3,47.1|title Kill Southsea Pirates|icon Interface\\cursor\\Attack
+    .kill 10 Southsea Pirate##7855|q 8366/1|n
+    .kill 10 Southsea Freebooter##7856|q 8366/2|n
+    .kill 10 Southsea Dock Worker##7857|q 8366/3|n
+    .kill 10 Southsea Swashbuckler##7858|q 8366/4|n
+	.collect Southsea Pirate Hat##20519|q 8365/1|n|icon Interface\\icons\\inv_helmet_66
+	info 
+    'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
+	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
+	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+    ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
+
+step //23
+    'Finish kill/looting Southsea pirates around Lost Rigger Cove.|goto Tanaris,74.2,46.3|icon Interface\\cursor\\Attack
+    .kill 10 Southsea Pirate##7855|q 8366/1
+    .kill 10 Southsea Freebooter##7856|q 8366/2
+    .kill 10 Southsea Dock Worker##7857|q 8366/3
+    .kill 10 Southsea Swashbuckler##7858|q 8366/4
+	.collect Southsea Pirate Hat##20519|q 8365/1|icon Interface\\icons\\inv_helmet_66
+    info 
+    'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
+	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
+	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+    ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
+
+step //24
+    'If you haven't found the Ship Schedule, you can grind to level 45 to see if you can obtain it. This has a very low drop rate and is optional to get as there is no follow-up quest.|goto Tanaris,74.2,46.3
+    'Grind on Pirates|icon Interface\\cursor\\Attack
+	.collect Ship Schedule##9250|n|icon Interface\\icons\\inv_scroll_03
+	..accept Ship Schedules##2876
+    .kill Southsea Pirate##7855|n
+    .kill Southsea Freebooter##7856|n
+    .kill Southsea Dock Worker##7857|n
+    .kill Southsea Swashbuckler##7858|n
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //25
+	info |goto Silithus,0,400
+	'If you need to, use Teleport to Moonglade to get new spells/abilities, then:|cast Teleport: Moonglade##18960|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info |only Druid
+    'Hearth to Gadgetzan.
+    .use Hearthstone##6948
+	info 
+    'NOTE: Do not sell the Wastewander Water Pouches to a vendor!|icon Interface\\cursor\\Directions
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	info 
+    'Next to the Inn at the windmill:|goto Tanaris,52.4,28.4|title Spigot Operator Luglunket
+    .talk Spigot Operator Luglunket##7408
+    ..turnin Water Pouch Bounty##1707
+	info 
+    'Next to you:|goto Tanaris,52.4,28.5|title Chief Engineer Bilgewhizzle
+    .talk Chief Engineer Bilgewhizzle##7407
+    ..turnin Wastewander Justice##1690
+    ..accept More Wastewander Justice##1691
+    ..turnin WANTED: Caliph Scorpidsting##2781|n
+	info         If you killed him
+	info 
+	.talk Krinkle Goodsteel##5411
+    'Get Repaired/Resupplied.|goto Tanaris,51.4,28.8|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //26
+    'Go west to Sandsorrow Watch and use the Untapped Dowsing Widget in the pond. Watch out, as soon as you fill the widget, a few high level bugs will spawn. Either run away or try to kill them.|goto Tanaris,39.2,29.1
+    .use Untapped Dowsing Widget##8584
+	.collect Tapped Dowsing Widget##8585|q 992/1|icon Interface\\icons\\inv_potion_73
+
+step //27
+    'Hearth (or go back) to Gadgetzan and on top of the hill:|use Hearthstone##6948|goto Tanaris,50.2,27.4
+    info 
+    .talk Senior Surveyor Fizzledowser##7724
+    ..turnin Gadgetzan Water Survey##992
+	info 
+    'SKIP "Noxious Lair Investigation" (for now)|icon Interface\\cursor\\Directions
+
+step //28
+    'Go east to Steamwheedle Port and under the red tent:|goto Tanaris,66.5,22.2
+    .talk Haughty Modiste##15165
+    ..turnin Pirate Hats Ahoy!##8365
+	info 
+    'In the hut:|goto Tanaris,67.0,21.9|title Jabbey
+    .talk Jabbey##8139
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //29
+    'At the other side of the Port, in the hut:|goto Tanaris,67.1,23.9
+    .talk Stoley##7881
+    ..turnin Stoley's Shipment##2873
+    ..accept Deliver to MacKinley##2874
+	info 
+    'Next to you:|goto Tanaris,67.0,23.8|title Security Chief Bilgewhizzle
+    .talk Security Chief Bilgewhizzle##7882
+    ..turnin WANTED: Andre Firebeard##2875
+    ..turnin Southsea Shakedown##8366
+    ..turnin Ship Schedules##2876|n
+	info        If you looted it
+
+step //30
+    'Kill the required amount of Wastewander humans.|goto Tanaris,60.3,37.4|icon Interface\\cursor\\Attack
+    .kill 8 Wastewander Rogue##5615|q 1691/1
+    .kill 6 Wastewander Assassin##5623|q 1691/2
+    .kill 10 Wastewander Shadow Mage##5617|q 1691/3
+	info 
+    'Kill/loot Caliph Scorpidsting if you didn't kill him before, he patrols around the area and has 2 rogues following him.|goto Tanaris,58.9,39.5|title Caliph Scorpidsting (spawns here)|icon Interface\\cursor\\Attack
+   .kill Caliph Scorpidsting##7847|n
+	.collect Caliph Scorpidsting's Head##8723|q 2781/1|icon Interface\\icons\\inv_misc_head_human_01
+	info |only Druid
+    'Druids: Caliph Scorpidsting can be a bit hard. Root him and switch to bear to take out his two stealthed rogue bodyguards first.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+
+step //31
+    'Hearth (or run back) to Gadgetzan.
+    .use Hearthstone##6948
+	'Shaman: Use Astral Recall.|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'At the windmill next to the Inn:|goto Tanaris,52.4,28.5
+    .talk Chief Engineer Bilgewhizzle##7407
+    ..turnin More Wastewander Justice##1691
+    ..turnin WANTED: Caliph Scorpidsting##2781
+
+step //32
+    'Deposit into bank|goto Tanaris,52.3,28.9|title Bank
+	..'Kravel's Scheme|icon Interface\\icons\\inv_misc_note_06
+	..'Stoley's Bottle|icon Interface\\icons\\inv_drink_11
+	..'Wastewander Water Pouch|icon Interface\\icons\\inv_drink_milk_02
+	..'OOX-17/TN Distress Beacon|icon Interface\\icons\\inv_egg_05
+	info 
+    'Abandon "Find OOX-17/TN!" (we are not doing this yet and need quest log space). It's an item (OOX-17/TN Distress Beacon) in your bag which start a quest.|icon Interface\\cursor\\Directions
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //33
+    'North of Gadgetzan:|goto Tanaris,51.6,25.4
+    .talk Bulkrek Ragefist##7824
+    'From the Wind Rider Master, take a flight to Freewind Post, Thousand Needles|goto Thousand Needles,45.14,49.11|title Go to Freewind Post|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //34	
+	......'44-45 Tanaris is complete!|icon Interface\\cursor\\Directions
+	.........'Go to 45-46 Feralas|confirm|next "Joana's Guide\\Horde\\45-46 Feralas"|icon Interface\\icons\\achievement_zone_feralas
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\45-46 Feralas",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 45
+next Joana's Guide\\Horde\\46-47 Azshara
+
+step //1
+	info |goto Silithus,0,400
+    .'Hunters, you will not be able to buy any meat in Feralas coming up. So if your pet needs meat you can get that from Freewind Post first.|goto Thousand Needles,45.44,51.17|title Buy meat from: Turhaw|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	.talk Turhaw##4875|only Hunter
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|only Hunter
+	info |only Hunter
+    .'Head west to enter Feralas...|goto Feralas,87.61,41.44|title Enter: Feralas
+	info |goto Thousand Needles,47.13,48.18|title Take Lift down
+    .'Run into Camp Mojache, make a right:|goto Feralas,75.94,42.74|title Krueg Skullsplitter
+	route Thousand Needles,47.13,48.18;4.7,10.6|title Enter: Feralas
+    .talk Krueg Skullsplitter##4544
+    ..accept A New Cloak's Sheen##2973
+
+step //2
+    .'She patrols back and forth in the town|goto Feralas,76.05,43.49
+    .talk Rok Orhan##7777
+    ..accept The Ogres of Feralas##2975
+	info 
+	.'IMPORTANT: For the next steps, there will be one route for the Vanilla (classic) version and another for the WOTLK version. |icon Interface\\cursor\\Directions
+	.'For TBC, you can choose either route, but I recommend the WOTLK one, even if there is a step where you need to go to Orgrimmar and back again to Feralas to continue, but the route is faster in my opinion and you can skip the 46-47 Azshara guide with this route. Also The only other difference is in WotLK the Hearthstone lasts 30 minutes instead of 1 hour.|icon Interface\\cursor\\Directions
+	
+step //3
+	...........'WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    .'In the hut:|goto Feralas,76.18,43.83
+    .talk Talo Thornhoof##7776
+    ..accept Dark Heart##3062
+    ..accept Vengeance on the Northspring##3063
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+// only WOTLK
+
+step //4
+    .'On the small mound:|goto Feralas,75.70,44.31
+    .talk Orwin Gizzmick##8021
+    ..accept Gordunni Cobalt##2987
+
+step //5
+    'Talk to Shyn and get the flight path|goto Feralas,75.45,44.36
+    .talk Shyn##8020
+    ..fpath Camp Mojache|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //6
+    .'Between the tents:|goto Feralas,74.91,42.47
+    .talk Hadoken Swiftstrider##7875
+    ..accept War on the Woodpaw##2862
+
+step //7
+    .'In the big tent:|goto Feralas,74.43,42.91
+    .talk Jangdor Swiftstrider##7854
+    ..accept The Mark of Quality##2822
+
+step //8
+    .'Just outside of the big tent on your right:|goto Feralas,74.42,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..accept A Strange Request##3121
+
+step //9
+	...........'WOTLK route|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+	.'In big tent:|goto Feralas,74.42,43.36
+    .talk Witch Doctor Uzer'i##8115
+	..accept The Sunken Temple##3380
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    ..accept The Sunken Temple##3380|only WotLK
+
+step //10
+    .'Go in the Inn and from Innkeeper Greul:|goto Feralas,74.81,45.18
+    .talk Innkeeper Greul##7737
+    .home Camp Mojache|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    .'NOTE: Upcoming at lvl 45 you can start using upgraded food/drink!|icon Interface\\minimap\\Tracking\\Food
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //11
+    .'Kill/loot Woodpaw gnolls just north of Camp Mojache.|goto Feralas,72.73,39.26|icon Interface\\cursor\\Attack
+	.collect 10 Woodpaw Gnoll Mane|q 2862/1|icon Interface\\icons\\inv_misc_monstertail_01
+    .kill Woodpaw Mongrel##5249|n
+	.kill Woodpaw Trapper##5251|n
+	.kill Woodpaw Brute##5253|n
+
+step //12
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Go just across the river over to Grimtotem Compound:|goto Feralas,76.84,37.60|title Xerash Fireblade
+    .talk Xerash Fireblade##36208
+    ..turnin A Strange Request##3121
+    ..accept Return to Witch Doctor Uzer'i##3122
+	info 
+	.'NOTE: For TBC if you are following the WOTLK route you need to go to Orgrimmar to turn in/accept  these quests to Neeru Fireblade instead. Check if Xerash Fireblade NPC exist on your server before, otherwise go to Orgrimmar.|goto Orgrimmar,49.6,51.6|title Neeru Fireblade (For TBC)|icon Interface\\cursor\\Directions
+	.talk Shyn##8020|goto Feralas,75.45,44.36|title Flight Master Shyn (For TBC)
+	.talk Neeru Fireblade##3216
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+    
+//only WOTLK
+
+step //13
+	info |goto Silithus,0,400
+    .'Use Orwin's Shovel quest item on the bluish haze from the ground, then click on the Gordunni Dirt Mounds for the Gordunni Cobalt.|goto Feralas,75.14,34.83|title Enter: Gordunni Outpost
+    .use Orwin's Shovel##9466|goto Feralas,76.46,33.06|title Gordunni Dirt Mounds #4
+	.collect 12 Gordunni Cobalt##9463|q 2987/1|icon Interface\\icons\\inv_stone_02|goto Feralas,74.58,30.22|title Gordunni Dirt Mounds #1
+	info |goto Feralas,76.36,32.01|title Follow waypoint through: Gordunni Outpost
+    .'Kill the required amount of ogres around Gordunni Outpost.|goto Feralas,74.28,28.94|title Gordunni Dirt Mounds #2|icon Interface\\cursor\\Attack
+    .kill 10 Gordunni Ogre##5229|q 2975/1
+	.kill 10 Gordunni Ogre Mage##5237|q 2975/2
+	.kill 5 Gordunni Brute##5232|q 2975/3
+	info |goto Feralas,75.13,29.73|title See if the Gordunni Scrolls is by the log, and loot it
+    .'Loot one of the Gordunni Scrolls laying on the ground around the Outpost. There could be one next to the tree log, or next to a cauldron.|goto Feralas,74.52,27.89|title See if the Gordunni Scrolls is by the cauldron, and loot it
+    .collect Gordunni Scroll##9370|icon Interface\\icons\\inv_scroll_07
+    ..accept The Gordunni Scroll##2978
+	info |goto Feralas,75.32,28.23|title Gordunni Dirt Mounds #3
+	.....'Continue to WOTLK route|confirm|next +1|icon Interface\\cursor\\Point
+	.........'Go to Vanilla route|confirm|next +3|icon Interface\\cursor\\Point
+
+step //14
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Hearth (or go back) to Camp Mojache.|goto Feralas,74.94,43.64
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman 
+    info 
+    .'Next to the big tent:|goto Feralas,74.41,43.36|title Witch Doctor Uzer'i
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Return to Witch Doctor Uzer'i##3122
+    ..accept Testing the Vessel##3123
+    ..accept Natural Materials##3128
+	info 
+    .'NOTE: We will turn the rest of the quests in a few steps later.|icon Interface\\cursor\\Directions
+
+step //15
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Just north around Camp Mojache, use the Wildkin Muisek Vessel quest item on the corpses of Ironfur Bears or Longtooth Runners (wolves).|goto Feralas,71.90,43.45|title Around the area
+	.kill Ironfur Bear##5268|n
+	.kill Longtooth Runner##5286|n
+    .use Wildkin Muisek Vessel##9618
+	.collect 10 Wildkin Muisek##9594|q 3123/1|icon Interface\\icons\\spell_magic_featherfall
+	..........'Click to continue|confirm|next +2|icon Interface\\cursor\\Point
+	
+step //16
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Kill/loot Sprite Darters.|goto Feralas,69.39,47.58|title Around the area|icon Interface\\cursor\\Attack
+    .kill Sprite Darter##5278|n
+	.collect 10 Iridescent Sprite Darter Wing##9369|q 2973/1|icon Interface\\icons\\inv_misc_monsterscales_01
+
+step //17
+    .'Hearth (or go back) to Camp Mojache.
+//	|goto Feralas,74.94,43.64|title Hearth or go back to Camp Mojache
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+	.'Between the two tents:|goto Feralas,74.91,42.46|title Hadoken Swiftstrider
+    .talk Hadoken Swiftstrider##7875
+    ..turnin War on the Woodpaw##2862
+    ..accept Alpha Strike##2863
+	.....'Continue to WOTLK route|confirm|next +1|icon Interface\\cursor\\Point
+	.........'Go to Vanilla route|confirm|next +2|icon Interface\\cursor\\Point
+
+step //18
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Next to the big tent:|goto Feralas,74.41,43.36|title Witch Doctor Uzer'i
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Testing the Vessel##3123
+    ..accept Hippogryph Muisek##3124
+
+step //19
+    .'On the small mound:|goto Feralas,75.70,44.31
+    .talk Orwin Gizzmick##8021
+    ..turnin Gordunni Cobalt##2987
+
+step //20
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'On the eastern side of Camp Mojache:|goto Feralas,75.94,42.74
+    .talk Krueg Skullsplitter##4544
+    ..turnin A New Cloak's Sheen##2973
+    ..accept A Grim Discovery##2974
+	.......'Only Vanilla route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //21
+    .'NOTE: You can check the Alchemy Supplies vendor for potions and sell junk.|goto Feralas,76.06,43.29|icon Interface\\cursor\\Directions
+    .talk Bronk##8158
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	
+step //22
+    .'She patrols back and forth in the town|goto Feralas,75.39,43.71
+    .talk Rok Orhan##7777
+    ..turnin The Ogres of Feralas##2975
+    ..accept The Ogres of Feralas##2980
+    ..turnin The Gordunni Scroll##2978
+    ..accept Dark Ceremony##2979
+
+step //23
+	info |goto Silithus,0,400
+    .'kill 5 Woodpaw Alphas around Woodpaw Hills within the 1 hour time limit.|goto Feralas,75.48,56.49|title Kill: Woodpaw Alpha|icon Interface\\cursor\\Attack
+	info |goto Feralas,73.27,56.17|title Kill: Woodpaw Alpha
+	.'There is generally one Alpha at each of the bigger camps in the area.|goto Feralas,72.40,56.55|title Kill: Woodpaw Alpha
+    .kill Woodpaw Alpha##5258|q 2863/1|goto Feralas,71.42,55.91|title Kill: Woodpaw Alpha
+	info |goto Feralas,69.07,55.63|title Kill: Woodpaw Alpha
+    .'TIP: Use Track Humanoids to find them easier.|icon Interface\\icons\\ability_tracking|only Druid
+	info |goto Feralas,68.66,54.32|title Kill: Woodpaw Alpha
+	info |goto Feralas,77.40,56.57|title Kill: Woodpaw Alpha
+
+step //24
+    .'Hearth (or go back) to Camp Mojache.
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'Between the two tents:|goto Feralas,74.91,42.46
+    .talk Hadoken Swiftstrider##7875
+    ..turnin Alpha Strike##2863
+    ..accept Woodpaw Investigation##2902
+
+step //25
+    .'Go back to Woodpaw Hills and from the scroll on the crate:|goto Feralas,71.63,55.92
+    Interact with Woodpaw Battle Map
+    ..turnin Woodpaw Investigation##2902
+    ..accept The Battle Plans##2903
+
+step //26
+	info |goto Silithus,0,400
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Kill/loot Grimtotem taurens around the area. |goto Feralas,67.48,46.38|title Around the area|icon Interface\\cursor\\Attack
+	'There's another camp of mobs just north around the area.|goto Feralas,69.05,39.63|title Around the area
+	.collect 20 Grimtotem Horn##9460|q 2974/1|icon Interface\\icons\\inv_misc_bone_04
+    .kill Grimtotem Shaman##7727|n
+	.kill Grimtotem Raider##7725|n
+	.kill Grimtotem Naturalist##7726|n
+	.......'Only Vanilla route Skip?|confirm|next +2|n|icon Interface\\cursor\\Point
+
+step //27
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	.'Hearth (or go back) to Camp Mojache.
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'On the eastern side of Camp Mojache:|goto Feralas,75.95,42.74
+    .talk Krueg Skullsplitter##4544
+    ..turnin A Grim Discovery##2974
+    ..accept A Grim Discovery##2976
+	.......'Only Vanilla route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //28
+    .'Go back to Camp Mojache.
+	info 
+    .'Between the two tents:|goto Feralas,74.91,42.46
+    .talk Hadoken Swiftstrider##7875
+    ..turnin The Battle Plans##2903
+    ..accept Zukk'ash Infestation##7730
+    ..accept Stinglasher##7731
+    info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+ 
+step //29
+	info |goto Silithus,0,400
+    .'At The Writhing Deep, kill/loot Stinglasher. |goto Feralas,76.82,61.48|title Kill/loot: Stinglasher (cave entrance #1)|icon Interface\\cursor\\Attack
+	.'This bug is at the cave entrance of either location.|goto Feralas,73.59,63.76|title Kill/loot: Stinglasher (cave entrance #2)
+    .kill Stinglasher##14661|n
+	.collect Stinglasher's Glands##18962|q 7731/1|icon Interface\\icons\\inv_misc_organ_06
+	info 
+    .'Kill/loot Zukk'ash bugs around The Writhing Deep.|icon Interface\\cursor\\Attack
+    .collect 20 Zukk'ash Carapace##18961|q 7730/1|icon Interface\\icons\\inv_shield_21
+
+step //30
+	info |goto Silithus,0,400
+    .'Go north to the entrance of Dire Maul only to get it Discovered. Simply go there quickly to get it Discovered (run back away from the Elites for Vanilla). 
+	info 
+	.'NOTES: Simply discovering Dire Maul in this area will allow you to accept a future quest (A Reliquary of Purity). |icon Interface\\cursor\\Directions
+	info 
+	.'You need to actually discover the zone, not the area.  You will know this is achieved when your general chat switches over to Dire Maul.|goto Feralas,59.13,44.53|title Discover: Dire Maul
+	info 
+    .'Kill the Screecher serpents along the way, then use the Yeh'kinya's Bramble quest item on the corpse, then talk to the Screecher Spirit that spawns.|goto Feralas,60.8,51.0|title Screecher serpents|icon Interface\\cursor\\Attack
+	info 
+	'NOTES: The Screechers have a spell silence attack (Sonic Burst) which silence you 6 sec. |icon Interface\\cursor\\Directions
+	.'Druids, Don't expect to heal or shift form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	.kill Rogue Vale Screecher##5308|n
+	.kill Vale Screecher##5307|n
+    .use Yeh'kinya's Bramble##10699
+	.talk Screecher Spirit##8612|q 3520/1|n
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //31
+	info |goto Silithus,0,400
+    .'Kill the Screecher serpents, then use the Yeh'kinya's Bramble quest item on the corpse, then talk to the Screecher Spirit that spawns.|goto Feralas,60.8,51.0|title Screecher serpents|icon Interface\\cursor\\Attack
+	info |goto Feralas,57.8,50.8|title Screecher serpents
+	'NOTES: The Screechers have a spell silence attack (Sonic Burst) which silence you 6 sec. |icon Interface\\cursor\\Directions|goto Feralas,55.0,47.2|title Screecher serpents
+	.'Druids, Don't expect to heal or shift form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	.kill Rogue Vale Screecher##5308|n
+	.kill Vale Screecher##5307|n
+    .use Yeh'kinya's Bramble##10699
+	.talk Screecher Spirit##8612|q 3520/1
+	info |goto Feralas,58.6,56.6|title Screecher serpents
+
+step //32
+	info |goto Silithus,0,400
+    .'At Ruins of Isildien, kill the required amount of Gordunni ogres.  The Maulers are north.  The Shamans are south.|goto Feralas,61.14,56.04|title North in: Ruins of Isildien|icon Interface\\cursor\\Attack
+    .kill 5 Gordunni Mauler##5234|q 2980/3
+    .kill 10 Gordunni Shaman##5236|q 2980/1
+    .kill 10 Gordunni Warlock##5240|q 2980/2
+	info 
+    .'Kill/loot the Gordunni Mage-Lords until you get the Gordunni Orb. These mobs are south in the Ruins of Isildien.|goto Feralas,59.62,66.79|title South in: Ruins of Isildien|icon Interface\\cursor\\Attack
+    .kill Gordunni Mage-Lord##5239|n
+    .collect Gordunni Orb##9371|q 2979/1|n|icon Interface\\icons\\inv_misc_gem_pearl_01
+
+step //33
+	info |goto Silithus,0,400
+    .'Kill/loot the Gordunni Mage-Lords until you get the Gordunni Orb. These mobs are south in the Ruins of Isildien.|goto Feralas,59.62,66.79|title South in: Ruins of Isildien|icon Interface\\cursor\\Attack
+    .kill Gordunni Mage-Lord##5239|n
+    .collect Gordunni Orb##9371|q 2979/1|icon Interface\\icons\\inv_misc_gem_pearl_01
+
+step //34
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+    .'South of the Hippogryphs along the cliffs, loot a Hippogryph Egg in one of the nests.|goto Feralas,58.49,76.12|title Loot: Hippogryph Egg (Around the cliffs)
+	info 
+	.'NOTE: This will be turned in at Tanaris for a later (The Super Egg-O-Matic). And remember to not sell this!|icon Interface\\cursor\\Directions
+    .collect Hippogryph Egg##8564|c
+	info 
+    .'Around the High Wilderness, start using the Hippogryph Muisek Vessel quest item on any Frayfeather hippogryph corpses.
+    .use Hippogryph Muisek Vessel##9619
+	.collect 10 Hippogryph Muisek##9595|q 3124|n|icon Interface\\icons\\spell_frost_wizardmark
+	info 
+    .'Start Kill/looting the Frayfeather (hippogryphs) along the way for the 20 Resilient Sinew and 40 Metallic Fragments Metallic Fragments.|icon Interface\\cursor\\Attack
+    .collect 20 Resilient Sinew##9591|q 3128/3|n|icon Interface\\icons\\inv_misc_leatherscrap_08
+	.collect 40 Metallic Fragments##9592|q 3128/4|n|icon Interface\\icons\\inv_stone_15
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +2|n|icon Interface\\cursor\\Point
+	
+step //35
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+    .'Around the High Wilderness, use the Hippogryph Muisek Vessel quest item on any Frayfeather hippogryph corpses.|goto Feralas,55.05,65.52|title Around the area
+    .use Hippogryph Muisek Vessel##9619
+	.collect 10 Hippogryph Muisek##9595|q 3124|icon Interface\\icons\\spell_frost_wizardmark
+	info 
+    .'Kill/loot the Frayfeather (hippogryphs) for the 20 Resilient Sinew and 40 Metallic Fragments Metallic Fragments.|icon Interface\\cursor\\Attack
+    .collect 20 Resilient Sinew##9591|q 3128/3|icon Interface\\icons\\inv_misc_leatherscrap_08
+	.collect 40 Metallic Fragments##9592|q 3128/4|icon Interface\\icons\\inv_stone_15
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //36
+    .'kill/loot Feral Scar yetis at Feral Scar Vale.|goto Feralas,55.23,56.38|icon Interface\\cursor\\Attack
+	info 
+	.'NOTE: The yetis can be quite dangerous inside the cave so try to avoid that if you can.|icon Interface\\cursor\\Directions
+	.collect 10 Thick Yeti Hide##8973|q 2822/1|icon Interface\\icons\\inv_misc_pelt_boar_01
+    .kill Feral Scar Yeti##5292|n
+	info 
+    .'If you find the item called OOX-22/FE Distress Beacon in your bag, accept the quest:|goto Feralas,53.35,55.70|title Homing Robot OOX-22/FE
+	.collect OOX-22/FE Distress Beacon##8705|n
+    ..accept Find OOX-22/FE!##2766|n|icon Interface\\cursor\\Quest
+	.talk Homing Robot OOX-22/FE##7807
+    ..turnin Find OOX-22/FE!##2766|n|icon Interface\\cursor\\QuestTurnIn
+	info 
+    .'For Vanilla: Do NOT do the follow-up escort quest yet!|icon Interface\\cursor\\Directions
+	.'For TBC/WOTLK: SKIP the escort - All chicken Escorts will be skipped due to the faster leveling rate.|icon Interface\\cursor\\Directions
+    
+step //37
+    .'Just through the small cave at Feral Scar Vale: Do NOT do the follow-up escort quest.|goto Feralas,53.35,55.70
+    .talk Homing Robot OOX-22/FE##7807
+    ..turnin Find OOX-22/FE!##2766
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //38
+    .'Go back to Camp Mojache (keep your Hearthstone for the next step).
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'In the big tent:|goto Feralas,74.43,42.91|title Jangdor Swiftstrider
+    .talk Jangdor Swiftstrider##7854
+    ..turnin The Mark of Quality##2822
+	info 
+    'Get Repaired/Resupplied|goto Feralas,74.71,42.58|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+  
+step //39
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	'Next to the big tent:|goto Feralas,74.42,43.36
+	.talk Witch Doctor Uzer'i##8115
+	.turnin Hippogryph Muisek##3124
+	.accept Faerie Dragon Muisek##3125
+	info 
+	.......'Only WOTLK route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //40
+    .'Between the two tents:|goto Feralas,74.91,42.46
+    .talk Hadoken Swiftstrider##7875
+    ..turnin Zukk'ash Infestation##7730
+    ..turnin Stinglasher##7731
+    ..accept Zukk'ash Report##7732
+
+step //41
+    .'She patrols back and forth in the town|goto Feralas,75.39,43.71
+    .talk Rok Orhan##7777
+    ..turnin Dark Ceremony##2979
+    ..turnin The Ogres of Feralas##2980
+    ..accept The Gordunni Orb##3002
+	.....'Continue to WOTLK route|confirm|next +1|icon Interface\\cursor\\Point
+	.........'Go to Vanilla route|confirm|next +19|icon Interface\\cursor\\Point
+
+step //42
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Use the Faerie Dragon Muisek Vessel quest item on Sprite Darter corpses.|goto Feralas,69.39,47.58
+    .use Faerie Dragon Muisek Vessel##9620
+	info 
+	.collect 8 Faerie Dragon Muisek##9596|q 3125/1|icon Interface\\icons\\spell_nature_astralrecalgroup
+	info 
+    .'Kill/loot Sprite Darters.|icon Interface\\cursor\\Attack
+    .kill Sprite Darter##5278|n
+	.collect 10 Iridescent Sprite Darter Wing##9369|q 2973/1|icon Interface\\icons\\inv_misc_monsterscales_01
+	info 
+    .'Kill/loot Sprite Darters for the 6 Encrusted Minerals.|icon Interface\\cursor\\Attack
+    .collect 6 Encrusted Minerals##9589|q 3128/2|icon Interface\\icons\\inv_misc_gem_variety_02
+
+step //43
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Go back to Camp Mojache.|goto Feralas,74.41,43.36
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Faerie Dragon Muisek##3125
+    ..accept Treant Muisek##3126
+
+step //44
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'On the eastern side of Camp Mojache:|goto Feralas,75.94,42.74
+    .talk Krueg Skullsplitter##4544
+    ..turnin A New Cloak's Sheen##2973
+    ..accept A Grim Discovery##2974
+
+step //45
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'If you are level 46, Get new spells/abilities from the Druid Trainer next to you in the tent.  New abilities to get: Bash, Dash, Frenzied Regeneration, Moonfire, Rejuvenation, Shred.|goto Feralas,76.09,42.51|title Druid Trainer
+	info 
+	.'SKIP Pounce, Wrath.|icon Interface\\cursor\\Directions
+    .talk Jannos Lighthoof##8142
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+step //46
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Destroy any remaining Iridescent Sprite Darter Wing as it has no use anymore.|icon Interface\\cursor\\Directions
+	info 
+    .'Use the Treant Muisek Vessel quest item on Wandering Forest Walker corpses.|goto Feralas,71.73,42.92
+    .use Treant Muisek Vessel##9606
+	.collect 3 Treant Muisek##9593|q 3126/1|icon Interface\\icons\\spell_nature_protectionformnature
+	info 
+    .'Kill/loot Wandering Forest Walkers for the 2 Splintered Logs.|icon Interface\\cursor\\Attack
+	info |only Warrior
+	.'NOTE: You'll need to Hamstring kite them.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    .kill Wandering Forest Walker##7584|n
+	.collect 2 Splintered Log##9590|q 3128/1|icon Interface\\icons\\inv_tradeskillitem_03
+
+step //47
+	info |goto Silithus,0,400
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Kill/loot Grimtotem taurens for the horns around the area. |goto Feralas,67.48,46.38|title Around the area|icon Interface\\cursor\\Attack
+	.'There's another camp of mobs just north around the area.|goto Feralas,69.05,39.63|title Around the area
+    .collect 20 Grimtotem Horn##9460|q 2974/1|icon Interface\\icons\\inv_misc_bone_04
+    .kill Grimtotem Shaman##7727|n
+	.kill Grimtotem Raider##7725|n
+	.kill Grimtotem Naturalist##7726|n
+
+step //48
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Hearth (or go back) to Camp Mojache.|goto Feralas,74.94,43.64
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Treant Muisek##3126
+    ..accept Mountain Giant Muisek##3127
+    ..turnin Natural Materials##3128
+
+step //49
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'On the eastern side of Camp Mojache:|goto Feralas,75.95,42.74
+    .talk Krueg Skullsplitter##4544
+    ..turnin A Grim Discovery##2974
+    ..accept A Grim Discovery##2976
+	info 
+    .'You can check for potions again:|goto Feralas,76.06,43.29|title Bronk
+    .talk Bronk##8158
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //50
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'If you you need to, Get new spells/abilities from the Druid Trainer next to you in the tent.  New abilities to get: Bash, Dash, Frenzied Regeneration, Moonfire, Rejuvenation, Shred.|goto Feralas,76.09,42.51|title Druid Trainer
+	info 
+	.'SKIP Pounce, Wrath.|icon Interface\\cursor\\Directions
+    .talk Jannos Lighthoof##8142
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+step //51
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Head west on the main path all the way to the shoreline:|goto Feralas,44.81,43.42
+    .talk Zorbin Fandazzle##14637
+    ..accept Zapped Giants##7003
+
+step //52
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+    .'Take mountain ramp upward...|goto Feralas,46.55,37.61|title Take ramp exit
+    .'Head north to The Ruins of Ravenwind...|goto Feralas,47.79,36.78|title Go up ramp
+	info 
+    .'Kill the required amount of Northspring harpies around The Ruins of Ravenwind.|goto Feralas,39.92,13.26|title Around: The Ruins of Ravenwind|icon Interface\\cursor\\Attack
+    .kill 4 Northspring Harpy##5362|q 3063/1
+    .kill 4 Northspring Roguefeather##5363|q 3063/2
+    .kill 4 Northspring Slayer##5364|q 3063/3
+    .kill 4 Northspring Windcaller##5366|q 3063/4
+	info 
+    .'Keep grinding on harpies until you get the following item drop:
+    .collect Horn of Hatetalon##9530|q 3062/1|icon Interface\\icons\\inv_misc_horn_02
+
+step //53
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+    .'Up north in The Ruins of Ravenwind, use the Horn of Hatetalon quest item at the two big stones to summon Edana Hatetalon (lvl 50), then kill/loot her.|goto Feralas,40.53,8.63|title Use quest item here|icon Interface\\cursor\\Attack
+    .use Horn of Hatetalon##9530
+    .kill Edana Hatetalon##8075|n
+	.collect Edana's Dark Heart##9525|q 3062/1|icon Interface\\icons\\inv_misc_gem_sapphire_01
+	info 
+	.'TIP: Hide yourself when she casts a spell to avoid a lot of damage.|icon Interface\\cursor\\Directions
+
+step //54
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Use Zorbin's Ultra-Shrinker quest item on any giant (this also removes the elite status) and Kill/loot them.|goto Feralas,38.98,24.21|icon Interface\\cursor\\Attack
+    .use Zorbin's Ultra-Shrinker##18904
+	.collect 15 Miniaturization Residue##18956|q 7003/1|icon Interface\\icons\\inv_enchant_dustsoul
+	info 
+    .'Use the Mountain Giant Muisek Vessel quest item on the giant corpses.
+    .use Mountain Giant Muisek Vessel##9621
+	.collect 7 Mountain Giant Muisek##9597|q 3127/1|icon Interface\\icons\\spell_nature_cyclone
+
+step //55
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Go south, next to the dock:|goto Feralas,44.81,43.42
+    .talk Zorbin Fandazzle##14637
+    ..turnin Zapped Giants##7003
+
+step //56
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Hearth (or go back) to Camp Mojache.|goto Feralas,74.94,43.64
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Mountain Giant Muisek##3127
+    ..accept Weapons of Spirit##3129
+    .'Then instead of waiting for the doc, just do the next step...|icon Interface\\cursor\\Directions
+	..........'Click to continue|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //57
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'At the other side of Camp Mojache under the hut:|goto Feralas,76.18,43.84
+    .talk Talo Thornhoof##7776
+    ..turnin Dark Heart##3062
+    ..turnin Vengeance on the Northspring##3063
+
+step //58
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Go back:|goto Feralas,74.41,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Weapons of Spirit##3129
+
+step //59
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'NOTE: There is a Jannos Lighthoof Druid Trainer at Camp Mojache in the NE most tent. You can get any new spells/abilities that you have not gotten yet previously.|goto Feralas,76.09,42.51|title Druid Trainer|icon Interface\\cursor\\Directions
+    .talk Jannos Lighthoof##8142
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+// /!\ end of WOTLK path
+step //60
+    'At Camp Mojache:|goto Feralas,75.45,44.36
+    .talk Shyn##8020
+    'From the Wind Rider Master, take a flight to Orgrimmar|goto Orgrimmar,45.13,63.89|c|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //61
+    'Use your Teleport: Orgrimmar spell to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\icons\\spell_arcane_teleportorgrimmar
+	.cast Teleport: Orgrimmar##3567
+	only Mage
+
+step //62
+    'Deposit into bank:|goto Orgrimmar,49.58,69.15|title Bank
+    ..'Deposit Hippogryph Egg (WOTLK route only)|icon Interface\\icons\\inv_egg_02
+	..'Yeh'kinya's Bramble|icon Interface\\icons\\inv_wand_12
+	..'OOX-22/FE Distress Beacon|icon Interface\\icons\\inv_egg_05
+	info
+    'Withdraw from the bank:
+	..'Jeweled Pendant|icon Interface\\icons\\inv_jewelry_amulet_03
+	..'Wool Cloth|icon Interface\\icons\\inv_fabric_linen_01
+    ..'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	..'Mageweave Cloth|icon Interface\\icons\\inv_fabric_mageweave_01
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //63
+    .'For cloth donations here in Orgrimmar:|goto Orgrimmar,54.06,64.34|title AH
+    .collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //64
+    .'Go to The Drag and up in the hut:|goto Orgrimmar,56.26,46.67|title Zilzibin Drumlore
+    .talk Zilzibin Drumlore##7010
+    ..turnin Zukk'ash Report##7732
+	info |goto Orgrimmar,56.67,56.4|title Go up ramp
+
+step //65
+    .'NOTE: You can turn in cloth donations for the Orc faction. You would need 60 of the following for all possible cloth turn-ins:|goto Orgrimmar,63.60,51.25|icon Interface\\cursor\\Directions
+    .talk Rashona Straglash##14726
+    ..turnin A Donation of Wool##7826
+    ..turnin A Donation of Silk##7827
+    ..turnin A Donation of Mageweave##7831
+	info 
+	'NOTE: Save the Silk Cloth to build up First Aid first before the silk donations.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //66
+    .'In Droffers And Sons Salvage:|goto Orgrimmar,59.49,36.57
+    .talk Dran Droffers##6986
+    ..accept Ripple Recovery##649
+
+step //67
+    .'Next to you:|goto Orgrimmar,59.65,36.95
+    .talk Malton Droffers##6987
+    ..turnin Ripple Recovery##649
+    ..accept Ripple Recovery##650
+
+step //68
+    .'At the Valley of Honor:|goto Orgrimmar,75.21,34.24
+    .talk Belgrom Rockmaul##4485
+    ..turnin Parts of the Swarm##1184
+    ..turnin A Grim Discovery##2976
+    ..accept Betrayed##3504
+
+step //69
+    .'If you need to, get new spells/abilities.|goto Orgrimmar,66.05,18.52|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .talk Ormak Grimshot##3352|only Hunter
+	.'But if you are all caught up on getting new skills, the only good PvE skill available for lvl 46 is Immolation Trap R4, so if you are in a hurry I recommend just skipping that for now.|only Hunter
+    .'Get new spells/abilities at Hall of the Brave.|goto Orgrimmar,80.39,32.39|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	.'Get new spells/abilities at Grommash Hold.|goto Orgrimmar,38.80,36.37|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	.'Get new spells/abilities at Grommash Hold.|goto Orgrimmar,32.26,35.72|title Paladin Trainer|icon Interface\\icons\\INV_Hammer_01|only Paladin
+	.talk Master Pyreanor##23128|only Paladin
+	.'Get new spells/abilities at Cleft of Shadow.|goto Orgrimmar,47.99,45.96|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	.'Get new spells/abilities at Cleft of Shadow.|goto Orgrimmar,43.92,54.6|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+    info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Hunter,Warrior,Shaman,Paladin,Warlock,Rogue
+	
+step //70
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Down in the Cleft of Shadow:|goto Orgrimmar,49.48,50.60
+    .talk Neeru Fireblade##3216
+    ..turnin A Strange Request##3121
+    ..accept Return to Witch Doctor Uzer'i##3122
+	.......'Only Vanilla route Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //71
+    .'Go to Grommash Hold in the Valley of Wisdom:|goto Orgrimmar,38.92,38.39
+    .talk Zor Lonetree##4047
+    ..turnin Report to Zor##1262
+    ..turnin Service to the Horde##7541
+
+step //72
+    .'Go to Darkbriar Lodge in the Valley of Spirits:|goto Orgrimmar,39.14,86.27
+    .talk Uthel'nay##7311
+    ..turnin The Gordunni Orb##3002
+
+step //73
+    .'Get new spells/abilities. Priest Trainers are at Valley of Spirits.|goto Orgrimmar,35.60,87.83|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+	.'Get new spells/abilities. Mage Trainers are at Valley of Spirits.|goto Orgrimmar,38.52,85.86|title Mage Trainer|icon Interface\\icons\\inv_staff_13|only Mage
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Mage,Priest
+	
+step //74
+    .'You can turn in cloth donations for the Troll faction. You would need 60 of the following for all possible cloth turn-ins:|goto Orgrimmar,37.69,87.89
+    .talk Vehena##14727
+    ..turnin A Donation of Wool##7833
+    ..turnin A Donation of Silk##7834
+    ..turnin A Donation of Mageweave##7835
+    info 
+	'NOTE: Save the Silk Cloth to build up First Aid first before the silk donations.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //75
+	...........'Only for Vanilla|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'At this point in the game, I tend to have just enough gold to finally get my mount. So if you have 90 gold, go get your mount. When done, or otherwise, Hearth to Camp Mojache.
+    .use Hearthstone##6948
+	.....'Continue to WOTLK route|confirm|next +1|icon Interface\\cursor\\Point
+	.........'Go to Vanilla route|confirm|next +3|icon Interface\\cursor\\Point
+
+step //76
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar). Make sure you get on the Undercity Zeppelin (south landing) and not the STV zeppelin (north landing)!|goto Durotar,50.61,12.63|title Take Zeppelin to: Undercity (south landing)
+	info 
+    .'Enter Undercity...|goto Tirisfal Glades,62.2,66.89|title Enter: Undercity|c|next +14
+	..........'Click to continue|confirm|next +14|n|icon Interface\\cursor\\Point
+	only !Mage
+
+step //77
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Use your Teleport: Undercity spell to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to Undercity|c|next +13|icon Interface\\icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+	..........'Click to continue|confirm|next +13|n|icon Interface\\cursor\\Point
+    only Mage
+
+step //78
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Hearth (or go back) to Camp Mojache.
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'Next to the big tent:|goto Feralas,74.41,43.36|title Witch Doctor Uzer'i
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Return to Witch Doctor Uzer'i##3122
+	.'Wait a few seconds then:
+    ..accept Testing the Vessel##3123
+    ..accept Natural Materials##3128
+
+step //79
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Kill/loot Sprite Darters for the 6 Encrusted Minerals.|goto Feralas,69.85,46.92|icon Interface\\cursor\\Attack
+    .collect 6 Encrusted Minerals##9589|q 3128/2|icon Interface\\icons\\inv_misc_gem_variety_02
+	.kill Sprite Darter##5278|n
+
+step //80
+	info |goto Silithus,0,400
+    .'South of the Hippogryphs along the cliffs, loot a Hippogryph Egg in one of the nests.|goto Feralas,58.49,76.12|title Loot: Hippogryph Egg (Around the cliffs)
+	info 
+	.'NOTE: This will be turned in at Tanaris for a later (The Super Egg-O-Matic). And remember to not sell this!|icon Interface\\cursor\\Directions
+    .collect Hippogryph Egg##8564|c
+	info 
+    .'SW in High Wilderness, kill/loot the Frayfeather (hippogryphs) for the 20 Resilient Sinew and 40 Metallic Fragments Metallic Fragments.|icon Interface\\cursor\\Attack
+    .collect 20 Resilient Sinew##9591|q 3128/3|n|icon Interface\\icons\\inv_misc_leatherscrap_08
+	.collect 40 Metallic Fragments##9592|q 3128/4|n|icon Interface\\icons\\inv_stone_15
+	info 
+	.'Also start kill/looting Wandering Forest Walkers for the Splintered Log Splintered Logs (there is one wandering around south of the hippogryphs spawn).|icon Interface\\cursor\\Attack
+	.collect 2 Splintered Log##9590|q 3128/1|n|icon Interface\\icons\\inv_tradeskillitem_03
+	.kill Wandering Forest Walker##7584|n
+	info 
+	.'Only for Vanilla|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	.'Start collecting Long Elegant Feather Long Elegant Feathers. These drop from the Frayfeather Hippogryphs in the northern part of the hippogryph area. 10 of these are used for a quest (later Another Message to the Wildhammer), and do not sell them to a vendor. You will be able to farm more of these later, but try to focus on killing these hippos more.
+	.kill Long Elegant Feather##4589|n
+	.collect 10 Long Elegant Feather##4589|n|icon Interface\\icons\\spell_magic_featherfall
+
+step //81
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'SW in High Wilderness, kill/loot the Frayfeather (hippogryphs) for the 20 Resilient Sinew and 40 Metallic Fragments Metallic Fragments.|icon Interface\\cursor\\Attack
+    .collect 20 Resilient Sinew##9591|q 3128/3|icon Interface\\icons\\inv_misc_leatherscrap_08
+	.collect 40 Metallic Fragments##9592|q 3128/4|icon Interface\\icons\\inv_stone_15
+	info 
+	.'Also kill/loot Wandering Forest Walkers for the Splintered Log Splintered Logs (there is one wandering around south of the hippogryphs spawn).|icon Interface\\cursor\\Attack
+	.collect 2 Splintered Log##9590|q 3128/1|icon Interface\\icons\\inv_tradeskillitem_03
+	.kill Wandering Forest Walker##7584|n
+	info 
+	.'Only for Vanilla|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	.'Start collecting Long Elegant Feather Long Elegant Feathers. These drop from the Frayfeather Hippogryphs in the northern part of the hippogryph area. 10 of these are used for a quest (later Another Message to the Wildhammer), and do not sell them to a vendor. You will be able to farm more of these later, but try to focus on killing these hippos more.
+	.kill Long Elegant Feather##4589|n
+	.collect 10 Long Elegant Feather##4589|n|icon Interface\\icons\\spell_magic_featherfall
+
+step //82
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Grind on hippogryphs or yetis until you achieve this.|goto Feralas,53.35,55.70|title Grind on Hippogryphs or Yetis
+    ding 46
+
+step //83
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'If you find the item called OOX-22/FE Distress Beacon, accept the quest:
+    .collect OOX-22/FE Distress Beacon##8705|n
+    ..accept Find OOX-22/FE!##2766|n|icon Interface\\cursor\\Quest
+	info 
+    .'Just through the small cave at Feral Scar Vale:|goto Feralas,53.35,55.70|title Homing Robot OOX-22/FE
+    .talk Homing Robot OOX-22/FE##7807
+    ..turnin Find OOX-22/FE!##2766|icon Interface\\cursor\\QuestTurnIn
+	info 
+    ...........'For Vanilla, NOTE: Do the escort quest only if you are level 46 first!|icon Interface\\cursor\\Directions
+    .'For TBC/WOTLK: SKIP the escort - All chicken Escorts will be skipped due to the faster leveling rate.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //84
+	...........'Only for Vanilla|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+    ......'Accept and do the escort?|important
+	'TIP: Before doing the escort, clear the path of yetis/bears to the main path, otherwise this escort can be really tough. Try to keep aggro off of the Robot Chicken (Homing Robot OOX-22/FE), as it can die easily. This is also a fairly long escort (12.5 minutes). If you fail, you can try again later on in the guide at lvl 49. |icon Interface\\cursor\\Directions
+	WARNING: Hardcore players may want to skip this quest as it can be risky. Only attempt this if you are confident about it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	info |goto Feralas,45.62,43.29|title Escort Ends Here
+    .talk Homing Robot OOX-22/FE##7807|goto Feralas,53.35,55.70|title Homing Robot OOX-22/FE
+    ..accept Rescue OOX-22/FE!##2767
+    .'Escort the robot chicken all the way to the shoreline.
+	.goal Escort OOX-22/FE to the dock along the Forgotten Coast|q 2767/1
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //85
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Hearth (or go back) to Camp Mojache.
+	.use Hearthstone##6948
+	.'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    .'Next to the big tent:|goto Feralas,74.42,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Natural Materials##3128
+    ..accept The Sunken Temple##3380
+	info 
+	
+    .'REMINDER: Do not sell your Hippogryph Egg.|icon Interface\\cursor\\Directions
+	.'REMINDER for Vanilla only: Do not sell your Long Elegant Feathers.|icon Interface\\cursor\\Directions
+    info 
+	'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //86
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	info |goto Silithus,0,400
+	.'Go to the Wind Rider Master and if you need to, first fly to Thunder Bluff, Mulgore to get new spells/abilities, then or otherwise fly to Splintertree Post, Ashenvale|goto Ashenvale,73.18,61.60|title Go to Splintertree Post|only Warrior,Hunter,Shaman,Druid,Priest
+	.'Go to the Wind Rider Master and if you need to, first fly to Orgrimmar to get new spells/abilities, then or otherwise fly to Splintertree Post, Ashenvale|goto Ashenvale,73.18,61.60|title Go to Splintertree Post|only Paladin,Rogue,Warlock
+    .talk Shyn##8020
+	info |goto Feralas,75.45,44.36|title Talk to Shyn
+	'At Thunder Bluff, go to The Hunter Rise:|goto Thunder Bluff,59.11,86.86|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'At Thunder Bluff, Go NE to the Elder Rise to get new spells/abilities:|goto Thunder Bluff,76.50,27.23|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	'At Thunder Bluff, The Warrior Trainers are on The Hunter Rise:|goto Thunder Bluff,57.59,85.51|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	'At Thunder Bluff, get new spells/abilities in Pools of Vision (cave):|goto Thunder Bluff,24.56,22.58|title Priest Trainer (down in cave)|icon Interface\\icons\\inv_staff_30|only Priest
+	'At Thunder Bluff, In the big tent up at The Spirit Rise get new spells/abilities from a Shaman Trainer:|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	.'At Orgrimmar, get new spells/abilities at Grommash Hold.|goto Orgrimmar,32.26,35.72|title Paladin Trainer|icon Interface\\icons\\INV_Hammer_01|only Paladin
+	.talk Master Pyreanor##23128|only Paladin
+	.'At Orgrimmar, get new spells/abilities at Cleft of Shadow.|goto Orgrimmar,47.99,45.96|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	.'At Orgrimmar, get new spells/abilities at Cleft of Shadow.|goto Orgrimmar,43.92,54.6|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only !Mage
+
+step //87
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Use your Teleport: Orgrimmar spell to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\icons\\spell_arcane_teleportorgrimmar
+	.cast Teleport: Orgrimmar##3567
+	only Mage
+
+step //88
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .'Go to Valley of Spirits and get new spells/abilities:|goto Orgrimmar,38.37,85.55|title Mage trainers
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Mage
+
+step //89
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	'Take a flight to Splintertree Post|goto Ashenvale,73.18,61.60|c|title Go to Splintertree Post|icon Interface\\minimap\\Tracking\\FlightMaster
+	
+step //90
+	......'45-46 Feralas is complete!|icon Interface\\cursor\\Directions
+	info 
+	...........'Vanilla route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	.........'Go to 46-47 Azshara|confirm|next "Joana's Guide\\Horde\\46-47 Azshara (Vanilla only)"|icon Interface\\icons\\achievement_zone_azshara_01
+	info 
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+	........'Go to 47-47 Undercity|confirm|next "Joana's Guide\\Horde\\47-47 Undercity"|icon Interface\\icons\\achievement_zone_tirisfalglades_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\46-47 Azshara (Vanilla only)",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\47-47 Undercity
+startlevel 46
+
+step //1
+	.'IMPORTANT: The next steps are the Vanilla route. For TBC, if you followed the Vanilla route before then continue on this guide. Otherwise skip this part if you followed the WOTLK route before.|icon Interface\\cursor\\Directions
+	info |goto Silithus,0,400
+    'Follow the main path east into Azshara...|goto Azshara,11.24,75.95|title Enter: Azshara
+	info 
+    'At Azshara, go south a bit to Talrendis Point:
+    .talk Loh'atu##11548|goto Azshara,11.37,78.16|title Loh'atu
+    ..accept Spiritual Unrest##5535
+    ..accept A Land Filled with Hatred##5536
+    info 
+	'NOTE: Don't worry, the Alliance NPCs at Talrendis Point will not aggro you.|icon Interface\\cursor\\Directions
+
+step //2
+    'Kill the required amount of Highborne undead apparitions around Shadowsong Shrine.|goto Azshara,13.99,72.24|icon Interface\\cursor\\Attack
+    .kill 6 Highborne Apparition##6116|q 5535/1
+    .kill 6 Highborne Lichling##6117|q 5535/2
+    info 
+	'NOTE: Priests - If you find a Ichor of Undeath, keep it for a later Priest class quest (The Ichor of Undeath - Phase 4) at level 53. Hold on to this and do not sell it to a vendor!|icon Interface\\cursor\\Directions|only Priest
+	info         Only For Vanilla|only Priest
+
+step //3
+    'Kill the required amount of Haldarr satyr demons around Haldarr Encampment.|goto Azshara,19.39,62.19|icon Interface\\cursor\\Attack
+    .kill 6 Haldarr Satyr##6125|q 5536/1
+    .kill 2 Haldarr Trickster##6126|q 5536/2
+    .kill 2 Haldarr Felsworn##6127|q 5536/3
+
+step //4
+    'Go back SW to Talrendis Point:|goto Azshara,11.37,78.17
+    .talk Loh'atu##11548
+    ..turnin Spiritual Unrest##5535
+    ..turnin A Land Filled with Hatred##5536
+
+step //5
+    'North at Valormok:|goto Azshara,22.26,51.48
+    .talk Ag'tor Bloodfist##8576
+    ..turnin Betrayed##3504
+    info 
+	'SKIP the next "Betrayed" (for now).|icon Interface\\cursor\\Directions
+
+step //6
+    'In Valormok, take the flight path to Orgrimmar.|goto Azshara,21.96,49.62
+    .talk Kroum##8610
+    .fpath Valormok|icon Interface\\minimap\\Tracking\\FlightMaster
+	'From the Wind Rider Master, take a flight to Orgrimmar|goto Orgrimmar,45.13,63.89|c|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //7
+    'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.83,13.88|title Take the Zeppelin (south landing)
+    info 
+	'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Grom'gol Base Camp zeppelin (north landing)!|icon Interface\\cursor\\Directions
+    'TIP: You can save some time by jumping off of the zeppelin at a certain timing! (Not for Hardcore players)|icon Interface\\cursor\\Directions
+	info 
+	'Enter Undercity...|goto Tirisfal Glades,62.2,66.89|title Enter: Undercity|c
+    only !Mage
+
+step //8
+    'Use your Teleport: Undercity spell to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to Undercity|c|icon Interface\\icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+    only Mage
+
+step //9
+    'Drop down and from Hannah Akeley, purchase up to 20 Runes of Teleportation.|goto Undercity,82.77,15.85
+	.talk Hannah Akeley##4575
+	.buy 20 Rune of Teleportation##17031|icon Interface\\Icons\\inv_misc_rune_06
+    info 
+	'NOTE: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|icon Interface\\cursor\\Directions
+    only Mage
+
+step //10
+	......'46-47 Azshara is complete!|icon Interface\\cursor\\Directions
+	.........'Go to 47-47 Undercity|confirm|next "Joana's Guide\\Horde\\47-47 Undercity"|icon Interface\\icons\\achievement_zone_tirisfalglades_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\47-47 Undercity",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\47-47 Hinterlands
+startlevel 47
+
+step //1
+//    'Go down the lift and follow waypoints to the bank.|goto Undercity,70.8,44.2
+	info |goto Undercity,66.1,28.2|title Follow the waypoint through the Ruins of Lordaeron
+    'Deposit into bank:|goto Undercity,65.9,44.0|title Bank
+    'Deposit: Sealed Letter to Ag'tor (only TBC/WOTLK)|icon Interface\\Icons\\inv_letter_13
+    'Deposit: Hippogryph Egg (only Vanilla route)|icon Interface\\Icons\\inv_egg_02
+	info 
+    'Withdraw from the bank:
+    '60 Wool Cloth|n|icon Interface\\icons\\inv_fabric_linen_01
+    '60 Silk Cloth|n|icon Interface\\icons\\inv_fabric_silk_01
+    '60 Mageweave Cloth|n|icon Interface\\icons\\inv_fabric_mageweave_01
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //2
+	info |goto Isle of Quel'Danas,600,0.0
+    'For cloth donations here in Undercity, you need:|goto Undercity,68.2,38.3|title Mailbox
+    .collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+    'Check the Auction House at the various locations around the Ring of Valor if you don't have enough.|icon Interface\\cursor\\Directions|goto Undercity,67.67,35.88|title Auction Hall
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //3
+	'Only For Vanilla|optional
+    'Go NE to the Magic Quarter and find Oran Snakewrithe.|goto Undercity,73.1,32.8
+    .talk Oran Snakewrithe##7825
+    ..accept Lines of Communication##2995
+
+step //4
+    'NOTE: You can turn in cloth donations for the Undead faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+	.collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+    .talk Ralston Farnsley##14729|goto Undercity,71.67,29.21
+    ..turnin A Donation of Wool##7813
+    ..turnin A Donation of Silk##7814
+    ..turnin A Donation of Mageweave##7817
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //5
+    'Go west to the War Quarter to the Weapon Master and if you have extra silver to spare, feel free to learn weapons skills from him:
+    'Costs roughly 10 silver each.
+	.talk Archibald##11870|goto Undercity,57.3,32.8
+	info 
+    'Hunters, For Vanilla/TBC, you can upgrade your quiver to a Heavy Quiver (if your using one) at Benijah Fenner next to the Weapon Master at the middle of the weapon table. WOTLK just ignore this.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	.talk Benijah Fenner##4602|only Hunter
+    info 
+    'Get new Tradeskills|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //6
+    'SW at the Apothecarium, follow the waypoints down, and find Chemist Cuely.|goto Undercity,51.4,80.2
+    'Follow waypoint through the area.|goto Undercity,48.3,75.1|title Follow waypoint
+    .talk Chemist Cuely##8390
+    ..accept Seeping Corruption##3568
+
+step //7
+    'Next to you in the same room:|goto Undercity,50.1,68.0
+    .talk Apothecary Zinge##5204
+    ..accept Errand for Apothecary Zinge##232
+
+step //8
+    'Out in the other room:|goto Undercity,48.4,76.8|title Follow waypoint
+    'Follow waypoint through the area.|goto Undercity,52.4,79.6|title Follow waypoint
+    .talk Alessandro Luca##7683|goto Undercity,58.6,54.7|title Alessandro Luca
+    ..turnin Errand for Apothecary Zinge##232
+    ..accept Errand for Apothecary Zinge##238
+
+step //9
+    'Go back down in the Apothecarium:|goto Undercity,51.4,80.2|title Follow waypoint
+    'Follow waypoint through the area.|goto Undercity,48.3,75.1|title Follow waypoint
+    .talk Apothecary Zinge##5204|goto Undercity,50.1,68.0|title Apothecary Zinge
+    ..turnin Errand for Apothecary Zinge##238
+    ..accept Into the Field##243
+
+step //10
+	info |goto Isle of Quel'Danas,600,0.0
+    'Check the AH to see if you can obtain a Mithril Casing. |goto Undercity,67.67,35.88|title Auction Hall
+	info 
+	'NOTE: This can be used for a later quest (Chasing A-Me 01) at Un'Goro Crater.|icon Interface\\cursor\\Directions
+    'Mailbox is at the waypoint.|goto Undercity,68.2,38.3|title Mailbox
+    .collect Mithril Casing##10561|icon Interface\\icons\\inv_gizmo_mithrilcasing_01
+	info 
+    'Also get Swim Speed Potion if you don't have it in bank:|only Paladin,Warrior,Hunter,Rogue,Priest,Warlock,Mage
+//	|only !SHAMAN and !DRUID
+    .collect Swim Speed Potion##6372|icon Interface\\icons\\inv_potion_13|only Paladin,Warrior,Hunter,Rogue,Priest,Warlock,Mage
+	info 
+    'NOTE: You will be reminded once more if you cannot get it now.|icon Interface\\cursor\\Directions|only Paladin,Warrior,Hunter,Rogue,Priest,Warlock,Mage
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //11
+    'Deposit into bank:|goto Undercity,66.0,44.0
+    'Kravel's Scheme (TBC/WOTLK Only)|icon Interface\\Icons\\inv_misc_note_06
+    'Stoley's Bottle|icon Interface\\Icons\\inv_drink_11
+    'Field Testing Kit|icon Interface\\Icons\\inv_misc_bag_07_red
+    'Box of Empty Vials|icon Interface\\Icons\\inv_box_01
+    'Mithril Casing |icon Interface\\Icons\\inv_gizmo_mithrilcasing_01
+	info 
+    'Withdraw from the bank:
+    'Bundle of Atal'ai Artifacts (Vanilla Only)|icon Interface\\Icons\\inv_misc_bag_11
+    'Nimboya's Pike (Vanilla Only)|icon Interface\\Icons\\inv_spear_05
+    'Swim Speed Potion|icon Interface\\Icons\\inv_potion_13|only Paladin,Warrior,Hunter,Rogue,Priest,Warlock,Mage
+	.....'Continue to TBC/WOTLK route|confirm|next +4|icon Interface\\cursor\\Point
+	.........'Go to Vanilla route|confirm|next +1|icon Interface\\cursor\\Point
+
+step //12
+	'Only for Vanilla|optional
+    'In Undercity, take the flight to Tarren Mill.|goto Undercity,63.2,48.6
+    .talk Michael Garrett##4551
+    'From the Bat Handler, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+//    only ERA or SOM1
+
+step //13
+	'Only for Vanilla|optional
+    'Hunters, note that you cannot buy bullets in The Hinterlands (only Razor Arrows). You can get bullets and higher tier arrows from the General Goods vendor just outside of the Inn at Tarren Mill, and (if you need them) make sure you are stocked up as you will need a lot for the Hinterlands grind coming up!|goto Hillsbrad Foothills,62.6,19.9|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Kayren Soothallow##2401
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	Only Hunter
+	
+step //13
+	'Only for Vanilla|optional
+    'Go in the Inn at Tarren Mill and from the Innkeeper:|goto Hillsbrad Foothills,62.5,19.6
+    .talk Innkeeper Shay##2388
+    .home Tarren Mill|next +2|icon Interface\\minimap\\Tracking\\Innkeeper
+	..........'Click to continue|confirm|next +2|n|icon Interface\\cursor\\Point
+//    only (ERA or SOM1) and HUNTER
+
+step //16
+	info |goto Isle of Quel'Danas,600,0.0
+	'Only for TBC/WOTLK|optional
+    'Leave the UC and get on the eastern zeppelin to go to Grom'gol Base Camp...|goto Tirisfal Glades,61.9,59.1|title Take eastern zeppelin to: Grom'gol Base Camp
+    info |goto Tirisfal Glades,60.99,58.84|title Enter Zeppelin tower
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+//    only SOM2 or TBC or WOTLK
+
+step //17
+	.....'47-47 Undercity is complete!|icon Interface\\cursor\\Directions
+	info 
+	..........'Only for Vanilla|optional
+	.......'Go to 47-47 Hinterlands|confirm|next "Joana's Guide\\Horde\\47-47 Hinterlands (Vanilla only)"|icon Interface\\icons\\achievement_zone_hinterlands_01
+	info 
+	.........'Only for TBC/WOTLK|optional
+	.....'Go to 47-47 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\47-47 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\47-47 Hinterlands (Vanilla only)",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 47
+next Joana's Guide\\Horde\\47-47 Stranglethorn Vale
+
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    'Enter The Hinterlands...|goto The Hinterlands,7.95,58.24|title Enter The Hinterlands
+    info |goto The Hinterlands,21.75,47.75|title Enter pathway
+    'Go up to Shindigger's Camp:|goto The Hinterlands,26.71,48.59|title Gilveradin Sunchaser
+    .talk Gilveradin Sunchaser##7801
+    ..turnin Ripple Recovery##650
+    ..accept A Sticky Situation##77
+    info 
+    'NOTE: Grind on any Trained Razorbeaks or Wild Gryphons you see along the way as they drop Long Elegant Feathers. You need 10 of these for a later quest, and remember to not sell these to a vendor.|icon Interface\\cursor\\Directions
+	.collect 10 Long Elegant Feathers##4589|n|icon Interface\\icons\\spell_magic_featherfall
+
+step //2
+    'Head all the way to Revantusk Village:|goto The Hinterlands,77.53,80.36
+    .talk Smith Slagtree##14737
+    ..accept Vilebranch Hooligans##7839
+
+step //3
+    'Up in the hut (next to the wagon):|goto The Hinterlands,78.80,78.24
+    .talk Mystic Yayo'jin##14739
+    ..accept Cannibalistic Cousins##7844
+
+step //4
+    'At the other hut next to you:|goto The Hinterlands,79.39,79.09
+    .talk Otho Moji'ko##14738
+    ..accept Message to the Wildhammer##7841
+
+step //5
+    'Next to you:|goto The Hinterlands,79.16,79.53
+    .talk Huntsman Markhor##14741
+    ..accept Stalking the Stalkers##7828
+    ..accept Hunt the Savages##7829
+    ..accept Avenging the Fallen##7830
+
+step //6
+    'Before you go out and start questing make sure you stock up heavily on food/drink because you won't be back to town for a while.
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+    info 
+	'NOTE: Do not make this your new home!|icon Interface\\cursor\\Directions
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //7
+    info |goto Isle of Quel'Danas,600,0.0
+    'Loot Slagtree's Lost Tools. There are 5 possible spawn locations:|goto The Hinterlands,72.6,53.0|title Slagtree's Lost Tools (could be here)
+    'Location 2|goto The Hinterlands,71.0,48.6|title Slagtree's Lost Tools (could be here)
+    'Location 3|goto The Hinterlands,66.4,44.8|title Slagtree's Lost Tools (could be here)
+    'Location 4|goto The Hinterlands,57.4,42.5|title Slagtree's Lost Tools (could be here)
+    'Location 5|goto The Hinterlands,53.3,38.8|title Slagtree's Lost Tools (could be here)
+    .collect  Slagtree's Lost Tools##19033|q 7839/1|icon Interface\\Icons\\inv_misc_wrench_02
+	info 
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill the trolls at these camps:|icon Interface\\cursor\\Attack
+    'Camp 1 - Shaol'watha:|goto The Hinterlands,70.67,48.45|title Kill trolls around: Shaol'watha
+    'Camp 2:|goto The Hinterlands,65.77,44.63|title Kill trolls around the area
+    'Camp 3:|goto The Hinterlands,52.85,38.91|title Kill trolls around the area
+    'Camp 4 - The Altar of Zul:|goto The Hinterlands,47.79,66.82|title Kill trolls around: The Altar of Zul
+    .kill 15 Vilebranch Scalper##4466|q 7844/1|icon Interface\\icons\\inv_misc_head_troll_01
+    .kill 10 Vilebranch Soothsayer##4467|q 7844/2|icon Interface\\icons\\inv_misc_head_troll_01
+
+step //8
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill Silvermane Stalkers (eastern side of Hinterlands) and Silvermane Howlers (middle of Hinterlands).|goto The Hinterlands,63.8,49.6|title Silvermane Stalker around the area|icon Interface\\cursor\\Attack
+    .kill 10 Silvermane Stalker##2926|q 7828/1|icon Interface\\icons\\inv_misc_pelt_wolf_02
+    .kill 10 Silvermane Howler##2925|q 7828/2|icon Interface\\icons\\inv_misc_pelt_wolf_01
+	info |goto The Hinterlands,44.8,53.0|Title Silvermane Howler around the area
+	
+step //9
+	info |goto Isle of Quel'Danas,600,0.0
+    'Use the Wildkin Muisek Vessel quest item on the corpse of any Owlbeast scattered around The Hinterlands, but focus on the Savage Owlbeasts the most.|goto The Hinterlands,54.8,44.8|title Savage Owlbeast (around here)
+    info |goto The Hinterlands,63.8,49.6|title Savage Owlbeast (around here)
+	'NOTE: You can use Track Humanoids in cat form to find these Owlbeasts faster.|icon Interface\\icons\\ability_tracking|only Druid
+    .use Wildkin Muisek Vessel##9618
+    .collect 10 Wildkin Muisek##9594|q 3123/1|icon Interface\\icons\\spell_magic_featherfall
+	info |goto The Hinterlands,59.6,54.4|title Savage Owlbeast (around here)
+    'There are only 11 Savage Owlbeast##2929 spawns around the middle-eastern part of Hinterlands.|goto The Hinterlands,55.2,51.8|title Savage Owlbeast (around here)
+    .kill 20 Savage Owlbeast##2929|q 7829/1
+
+step //10
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot the Razorbeak Skylord for the Skylord's Feather. One patrols around here:|goto The Hinterlands,54.06,49.68|title Kill/loot: Razorbeak Skylord (#1 around here)|icon Interface\\cursor\\Attack
+    'Another one patrols around here:|goto The Hinterlands,68.06,53.45|title Kill/loot: Razorbeak Skylord (#2 around here)
+    .kill Razorbeak Skylord##2659|n
+	.collect Skylord Plume##19025|q 7830/1|icon Interface\\icons\\inv_feather_13
+
+step //11
+    'If you find an item called Linn's Diary, accept the quest from it, then go turn it in.|icon Interface\\icons\\inv_egg_05
+    .use Linn's Diary##8704
+    ..accept Find OOX-09/HL!##485
+    .talk Homing Robot OOX-09/HL##7806|goto The Hinterlands,49.35,37.65
+    ..turnin Find OOX-09/HL!##485
+    info 
+	'NOTE: Do NOT do the escort yet!|icon Interface\\cursor\\Directions
+
+step //12
+	info |goto Isle of Quel'Danas,600,0.0
+    'Loot the Horde Supply Crates in the cave at Skull Rock.|goto The Hinterlands,57.59,39.59|title Cave entrance
+    .collect 10 Hinterlands Honey Ripple##8684|q 77/1|icon Interface\\Icons\\inv_drink_10
+
+step //13
+	info |goto Isle of Quel'Danas,600,0.0
+    'At Quel'Danil Lodge, click on the following scrolls on the ground:
+    'Highvale Records (in the building):|goto The Hinterlands,32.00,46.81|title Click: Highvale Records
+    .goal Burn the Highvale Records|q 2995/1
+	info 
+    'Highvale Notes (outside by the well, barrel and lamppost):|goto The Hinterlands,29.63,48.66|title Click: Highvale Notes
+    .goal Burn the Highvale Notes|q 2995/2
+	info 
+    'Highvale Report (under gazebo):|goto The Hinterlands,28.56,46.04|title Click: Highvale Report
+    .goal Burn the Highvale Report|q 2995/3
+	info 
+    'Start killing the required amount of Highvale elves around Quel'Danil Lodge.|icon Interface\\cursor\\Attack
+	//|goto The Hinterlands,32.30,50.45
+    .kill 15 Highvale Scout##2692|q 7841/1|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Outrunner##2691|q 7841/2|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Ranger##2694|q 7841/3|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Marksman##2693|q 7841/4|n|icon Interface\\icons\\inv_misc_head_elf_01
+
+step //14
+    'Accept and do the escort in the building from Rin'Ji in the cage. The escort leads him out of Quel'Danil Lodge.|goto The Hinterlands,30.72,46.88|title Rin'ji
+    info 
+	'TIP: Clear out the path in front of the lodge first to make this easier. This quest is not easy so be prepared!
+    info NOTE: If you're alone as a Warrior, you might need to use Retaliation on the 3-pack before his cage.|only Warrior
+    .talk Rin'ji##7780
+    ..accept Rin'ji is Trapped!##2742
+	info 
+    'Escort Rin'Ji out of Quel'Danil Lodge. There will be two waves of spawned mobs to fight.
+    info The escort leads out of the building to here:|goto The Hinterlands,34.66,56.34|title Escort leads out of building to here
+    .goal Escort Rin'ji to safety|q 2742/1
+	info 
+    'Start killing the required amount of Highvale elves around Quel'Danil Lodge.|icon Interface\\cursor\\Attack
+	//|goto The Hinterlands,32.30,50.45
+    .kill 15 Highvale Scout##2692|q 7841/1|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Outrunner##2691|q 7841/2|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Ranger##2694|q 7841/3|n|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Marksman##2693|q 7841/4|n|icon Interface\\icons\\inv_misc_head_elf_01
+
+step //15
+	'Kill the required amount of Highvale elves around Quel'Danil Lodge.|goto The Hinterlands,32.30,50.45|icon Interface\\cursor\\Attack
+    .kill 15 Highvale Scout##2692|q 7841/1|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Outrunner##2691|q 7841/2|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Ranger##2694|q 7841/3|icon Interface\\icons\\inv_misc_head_elf_01
+    .kill 15 Highvale Marksman##2693|q 7841/4|icon Interface\\icons\\inv_misc_head_elf_01
+	
+step //16
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot the Witherbark trolls to obtain 20 Witherbark Skulls. There is one village at Zun'watha:|goto The Hinterlands,23.11,57.93|title Around: Zun'watha|icon Interface\\cursor\\Attack
+    'And another one at Hiri'watha:|goto The Hinterlands,32.15,57.61|title Around: Hiri'watha (also next destination)
+    .collect 20 Witherbark Skull##9320|n|icon Interface\\icons\\inv_misc_bone_orcskull_01
+	info 
+    'From one of those little Venom Bottles on the table (at either village):|goto The Hinterlands,31.54,57.7|title Venom Bottles
+    ..accept Venom Bottles##2933
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //17
+	'Use the quest item (Nimboya's Pike) twice: first to combine the skulls, then to plant the pike in the ground at Hiri'watha.|goto The Hinterlands,32.15,57.61|title Hiri'watha
+	.use Nimboya's Pike##15002|n
+	info 
+	'Now use Nimboya's Laden Pike quest item at the Hiri'watha village to plant the pike in the ground.
+	.use Nimboya's Laden Pike##9319|n
+    .goal Place the grim message|q 2932/1
+
+step //18
+    'Destroy any remaining Witherbark Skulls.
+	info info |goto Isle of Quel'Danas,600,0.0
+    'Go up the path to Shindigger's Camp:|goto The Hinterlands,22.32,47.82|title Take path upward
+    .talk Gilveradin Sunchaser##7801|goto The Hinterlands,26.71,48.60|title Gilveradin Sunchaser
+    ..turnin A Sticky Situation##77
+    ..accept Ripple Delivery##81
+
+step //19
+    'If you find an item called Linn's Diary, accept the quest from it, then go turn it in.|icon Interface\\icons\\inv_egg_05
+    .use Linn's Diary##8704
+    ..accept Find OOX-09/HL!##485
+    .talk Homing Robot OOX-09/HL##7806|goto The Hinterlands,49.35,37.65
+    ..turnin Find OOX-09/HL!##485
+    info 
+	'NOTE: Do NOT do the escort yet!|icon Interface\\cursor\\Directions
+
+step //20
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go east to the little island at the sea:|goto The Hinterlands,86.30,59.01|title Rin'ji's Secret
+    info |goto The Hinterlands,61.90,54.97|title Follow waypoint
+	'TIP: You can just use Water Walking to cross the lake.|cast Water Walking##546|only Shaman
+    'TIP: You can just use Aquatic Form to cross the lake.|cast Aquatic Form##1066|only Druid
+    'TIP: Use a Swiftness Potion to cross the water if you have one.|use Swim Speed Potion##6372|only Warrior,Paladin,Hunter,Rogue,Priest,Warlock,Mage
+	'Interact with Rin'ji's Secret|goto The Hinterlands,72.84,65.92|title Follow waypoint
+	..turnin Rin'ji is Trapped!##2742
+	..accept Rin'ji's Secret##2782
+			
+step //21
+	'TIP: You can just use Water Walking to cross the lake.|cast Water Walking##546|only Shaman
+    'TIP: You can just use Aquatic Form to cross the lake.|cast Aquatic Form##1066|only Druid
+    'TIP: Use a Swiftness Potion to cross the water if you have one.|use Swim Speed Potion##6372|only Warrior,Paladin,Hunter,Rogue,Priest,Warlock,Mage
+	info 
+    'At Revantusk Village:|goto The Hinterlands,77.52,80.35
+    .talk Smith Slagtree##14737
+    ..turnin Vilebranch Hooligans##7839
+    info 
+    'NOTE: Save your Long Elegant Feathers, as it is used for a later quest (Another Message to the Wildhammer), and do not sell them to a vendor.|icon Interface\\cursor\\Directions
+
+step //22
+    'Up in the hut (next to the wagon):|goto The Hinterlands,78.80,78.25
+    .talk Mystic Yayo'jin##14739
+    ..turnin Cannibalistic Cousins##7844
+
+step //23
+    'At the other hut next to you:|goto The Hinterlands,79.38,79.08
+    .talk Otho Moji'ko##14738
+    ..turnin Message to the Wildhammer##7841
+    info 
+    'With your 10 Long Elegant Feathers:|icon Interface\\icons\\spell_magic_featherfall
+    ..accept Another Message to the Wildhammer##7842
+    ..turnin Another Message to the Wildhammer##7842
+    info 
+    'SKIP (for now) "The Final Message to the Wildhammer"|icon Interface\\cursor\\Directions
+
+step //24
+    'Next to you:|goto The Hinterlands,79.16,79.53
+    .talk Huntsman Markhor##14741
+    ..turnin Stalking the Stalkers##7828
+    ..turnin Hunt the Savages##7829
+    ..turnin Avenging the Fallen##7830
+
+step //25
+    'At the end of the docks:|goto The Hinterlands,81.70,81.76
+    .talk Gorkas##4314
+	.fpath Revantusk Village|icon Interface\\minimap\\Tracking\\FlightMaster
+    'From the Wind Rider Master, take a flight to Hammerfall, Arathi|goto Arathi Highlands,73.07,32.61|title Go to Hammerfall|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //26
+    'At Hammerfall, get all your Heavy Mageweave Bandage out and build up First Aid. Then go to Doctor Gregory Victor (in the building) and upgrade what you can:|goto Arathi Highlands,73.41,36.90
+    'Heavy Mageweave Bandage (240 skill)|icon Interface\\icons\\inv_misc_bandage_20
+	.talk Doctor Gregory Victor##12920
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //27
+	'Up on the platform:|goto Arathi Highlands,73.06,32.67
+    .talk Urda##2851
+    'From the Wind Rider Master, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //28
+    'At Tarren Mill, go in the small house:|goto Hillsbrad Foothills,61.44,19.07
+    .talk Apothecary Lydon##2216
+    ..turnin Venom Bottles##2933
+    ..accept Undamaged Venom Sac##2934
+
+step //29
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go back into The Hinterlands (don't fly)...|goto The Hinterlands,7.95,58.24|title Enter: Hinterlands
+    'Enter Shadra'Alor...|goto The Hinterlands,35.71,65.12|title Enter: Shadra'Alor
+    'At Shadra'Alor (up on a temple ledge):|goto The Hinterlands,33.75,75.21|title Atal'ai Exile
+    .talk Atal'ai Exile##5598
+    ..turnin The Atal'ai Exile##1429
+    ..accept Return to Fel'Zerul##1444
+
+step //30
+    'In the immediate area, kill/loot Witherbark Broodguards (spiders) for the Venom Web Toxin (low drop rate).|goto The Hinterlands,33.55,73.26|icon Interface\\cursor\\Attack
+	.kill Witherbark Broodguards##2686|n
+    .collect Venom Web Toxin##9322|q 2934/1|icon Interface\\Icons\\inv_misc_organ_02
+	
+step //31
+    'If you find an item called Linn's Diary, accept the quest from it, then go turn it in.|icon Interface\\icons\\inv_egg_05
+    .use Linn's Diary##8704
+    ..accept Find OOX-09/HL!##485
+    .talk Homing Robot OOX-09/HL##7806|goto The Hinterlands,49.35,37.65
+    ..turnin Find OOX-09/HL!##485
+    info 
+	'NOTE: Do NOT do the escort yet!|icon Interface\\cursor\\Directions
+
+step //32
+    'Hearth to Tarren Mill.
+    .use Hearthstone##6948
+    info 
+    'In the small house next to the Inn:|goto Hillsbrad Foothills,61.44,19.07
+    .talk Apothecary Lydon##2216
+    ..turnin Undamaged Venom Sac##2934
+    info 
+    'Only accept "Consult Master Gadrin" quest if you still need to get a mount as a troll, as you turn it in in the same spot, otherwise skip it.|icon Interface\\cursor\\Directions|only Troll
+	'SKIP "Consult Master Gadrin"|icon Interface\\cursor\\Directions|only !Troll
+
+step //33
+    'At Tarren Mill:|goto Hillsbrad Foothills,60.15,18.63|title Zarise
+	.talk Zarise##2389
+	'Take a flight to Undercity:|goto Undercity,63.25,48.59|title Go to Undercity|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //34
+    'Use your Teleport: Undercity spell to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to Undercity|c|icon Interface\\icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+    only Mage
+
+step //35
+    'Drop down and from Hannah Akeley, purchase up to 20 Runes of Teleportation.|goto Undercity,82.77,15.85
+	.talk Hannah Akeley##4575
+	.buy 20 Rune of Teleportation##17031|icon Interface\\Icons\\inv_misc_rune_06
+    info 
+	'NOTE: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|icon Interface\\cursor\\Directions
+    only Mage
+
+step //36
+    'Withdraw from bank:|goto Undercity,65.96,44.11|title Bank
+    'Kravel's Scheme|icon Interface\\Icons\\inv_misc_note_06
+    'Stoley's Bottle|icon Interface\\Icons\\inv_drink_11
+    info 
+    'Deposit into bank:
+    'Dran's Ripple Delivery|icon Interface\\Icons\\inv_cask_03
+    'Wildkin Muisek|icon Interface\\icons\\spell_magic_featherfall
+    'Wildkin Muisek Vessel|icon Interface\\icons\\inv_misc_drum_01
+//    'Long Elegant Feather (if quest not completed)|icon Interface\\icons\\spell_magic_featherfall
+	'Ichor of Undeath (if Phase 4)|icon Interface\\icons\\inv_misc_slime_01|only Priest
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //37
+    'NOTE: You can turn in cloth donations for the Undead faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+	.collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+    .talk Ralston Farnsley##14729|goto Undercity,71.67,29.21
+    ..turnin A Donation of Wool##7813
+    ..turnin A Donation of Silk##7814
+    ..turnin A Donation of Mageweave##7817
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //38
+    'At the Magic Quarter:|goto Undercity,73.08,32.85
+    .talk Oran Snakewrithe##7825
+    ..turnin Rin'ji's Secret##2782
+    ..turnin Lines of Communication##2995
+    ..turnin Oran's Gratitude##8273
+
+step //39
+    info |goto Isle of Quel'Danas,600,0.0
+    'Check the AH to see if you can obtain a Mithril Casing. |goto Undercity,67.67,35.88|title Auction Hall
+	info 
+	'NOTE: This can be used for a later quest (Chasing A-Me 01) at Un'Goro Crater.|icon Interface\\cursor\\Directions
+    'Mailbox is at the waypoint.|goto Undercity,68.2,38.3|title Mailbox
+    .collect Mithril Casing##10561|icon Interface\\icons\\inv_gizmo_mithrilcasing_01
+	info 
+	'NOTE: You will be reminded once more if you cannot get it now.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //40
+    'Deposit into bank:|goto Undercity,65.98,44.26
+    'Mithril Casing |icon Interface\\Icons\\inv_gizmo_mithrilcasing_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //41
+	info |goto Isle of Quel'Danas,600,0.0
+    'Exit the Undercity and get on the eastern zeppelin to Grom'gol Base Camp (in Stranglethorn Vale).|goto Tirisfal Glades,61.89,59.12|title Take eastern zeppelin to: Grom'gol Base Camp
+    info |goto Tirisfal Glades,60.99,58.84|title Enter Zeppelin tower
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //42
+	....'47-47 Hinterlands is complete!|icon Interface\\cursor\\Directions
+	....'Go to 47-47 Stranglethorn Vale|confirm|next "Joana's Guide\\Horde\\47-47 Stranglethorn Vale"|icon Interface\\icons\\achievement_zone_stranglethorn_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\47-47 Stranglethorn Vale",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\47-48 Searing Gorge
+startlevel 47
+
+step //1
+    'At Grom'gol Base Camp, get new spells/abilities at the Hunter Trainer.|goto Stranglethorn Vale,31.23,28.68
+    .talk Kragg##1404
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //2
+    'You can upgrade pet abilities at the Pet Trainer there as well.|goto Stranglethorn Vale,31.11,28.94
+    .talk Zudd##3624
+    info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //3
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.16,27.72
+    .talk Nimboya##2497
+    ..turnin Grim Message##2932
+
+step //4
+    'Go to Nesingwary's Expedition:|goto Stranglethorn Vale,35.66,10.81
+    .talk Hemet Nesingwary Jr.##715
+    ..accept Big Game Hunter##208
+	info only if you turned in Raptor Mastery and Panther Mastery
+	..'I need Raptor/Panther Mastery quest|confirm|next +1|icon Interface\\cursor\\Point
+	.....'Go to Big Game Hunter quest|confirm|next +4|icon Interface\\cursor\\Point
+	.........'Skip all Hunter quest|confirm|next +6|icon Interface\\cursor\\Point
+
+step //5
+    'If you didn't kill Bhag'thera, Go east and kill/loot her.|goto Stranglethorn Vale,49.61,24.03|title Bhag'thera (Middle spawn)|icon Interface\\cursor\\Attack
+	'This lvl 40 (elite for Vanilla) black panther has 3 different spawn points. He is mostly at the Middle spawn.|goto Stranglethorn Vale,47.6,28.8|title Bhag'thera (South spawn)
+    .kill Bhag'thera##728|n
+	.collect Fang of Bhag'thera##3876|q 193/1|icon Interface\\icons\\inv_misc_monsterfang_01
+	info |goto Stranglethorn Vale,49,20.6|title Bhag'thera (North spawn)
+    ............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //6
+	info |goto Isle of Quel'Danas,600,0.0
+    'If you didn't Kill/loot Tethis lvl 43 (elite for Vanilla), he has 4 possible spawns, see map.|goto Stranglethorn Vale,29.6,44.8|title Kill/loot: Tethis (spawn #1)|icon Interface\\cursor\\Attack
+    .kill Tethis##730|n|goto Stranglethorn Vale,33.4,39.4|title Kill/loot: Tethis (could be wandering over here)
+	.collect Talon of Tethis##3877|q 197/1|icon Interface\\icons\\spell_nature_natureswrath|goto Stranglethorn Vale,28.6,42.4|title Kill/loot: Tethis (spawn #2)
+    info |goto Stranglethorn Vale,31.6,43.6|title Kill/loot: Tethis (spawn #3)
+	info |goto Stranglethorn Vale,31.6,41.4|title Kill/loot: Tethis (spawn #4)
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //7
+    'Now you get the last quest, Go to Nesingwary's Expedition:|goto Stranglethorn Vale,35.66,10.81
+    .talk Hemet Nesingwary Jr.##715
+    ..accept Big Game Hunter##208
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //8
+	info |goto Isle of Quel'Danas,600,0.0
+    'Just SE of Nesingwary's Expedition, kill/loot King Bangalash (lvl 43 Elite white tiger).|goto Stranglethorn Vale,38.19,35.56|title Kill/loot: King Bangalash (white tiger)|icon Interface\\cursor\\Attack
+    .kill King Bangalash##731|q 208/1
+    info 
+    'TIP: Druids, clear all tigers, Mana up and attack King Bangalash with starfire and entangle. When the adds come at around 50% keep King Bangalash rooted while you kill the adds with moonfire, Heal and then kill King Bangalash in Bear Form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+
+step //9
+    'Go to Nesingwary's Expedition:|goto Stranglethorn Vale,35.66,10.81
+    .talk Hemet Nesingwary Jr.##715
+    ..turnin Big Game Hunter##208
+
+step //10
+    'At Grom'gol Base Camp:|goto Stranglethorn Vale,32.54,29.36
+    .talk Thysta##1387
+    'From the Wind Rider Master, take a flight to Booty Bay, Stranglethorn.|goto Stranglethorn Vale,26.9,77.1|title Go to Booty Bay|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //11
+    'When you land, next to you:|goto Stranglethorn Vale,27.18,77.00
+    .talk Fleet Master Seahorn##2487
+    ..accept The Bloodsail Buccaneers##608
+
+step //12
+    'Drop down in the Inn and from Innkeeper Skindle:|goto Stranglethorn Vale,27.04,77.31
+    .talk Innkeeper Skindle##6807
+    .home Booty Bay|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //13
+    'Next to you in the Inn:|goto Stranglethorn Vale,27.12,77.21
+    .talk Crank Fizzlebub##2498
+    ..turnin Back to Booty Bay##1118
+
+step //14
+    'Go in the cabin (next to the hanging shark):|goto Stranglethorn Vale,27.78,77.07
+    .talk "Sea Wolf" MacKinley##2501
+    ..turnin Deliver to MacKinley##2874
+
+step //15
+	'Only For Vanilla|optional
+    'Go up in the docks:|goto Stranglethorn Vale,28.36,76.35
+    .talk Oglethorpe Obnoticus##7406
+    ..turnin Rescue OOX-22/FE!##2767
+    info only If you escorted the robot chicken all the way to the shoreline in Feralas
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //16
+    'Go near the end of the docks:|goto Stranglethorn Vale,26.69,73.61
+    .talk Captain Hecklebury Smotts##2500
+    ..accept The Captain's Chest##8551
+//    only !Warrior
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go east to the shore and attempt to kill/loot Gorlash. |goto Stranglethorn Vale,36.95,69.73|title Around the area|icon Interface\\cursor\\Attack
+	'This lvl 42-47 elite giant patrols up and down the shore around the area.
+    'You may need to group up with someone, if you cannot do it, it can be skipped.|only !Warlock
+    'Warlocks, this can be soloed by fearing / dotting.|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+    'Druids, this is possible to solo with the following tactic: Constantly keep using Entangling Roots to keep Gorlash away from you while also using Starfire and Nature's Swiftness. But make sure you preserve enough mana to keep casting Entangling Roots!|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info 
+    'WARNING: Hardcore players, if you do not know what you are doing here I would just skip this!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+    .kill Gorlash##1492|n
+	.collect Smotts' Chest##3932|q 8551/1|icon Interface\\icons\\inv_box_01
+	info 
+    'Search the shores for Half-Buried Bottles until a Carefully Folded Note item shows up, from it:|goto Stranglethorn Vale,33.9,75.9|title Next Destination
+    ..accept Message in a Bottle##594
+    ............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //18
+    'Search the shores for Half-Buried Bottles until a Carefully Folded Note item shows up, from it:|goto Stranglethorn Vale,33.9,75.9
+    ..accept Message in a Bottle##594
+
+step //19
+    'Go to the island out east (use Water Walking if you can)|cast Water Walking##546|only Shaman
+    'Go to the island out east (use Aquatic Form)|cast Aquatic Form##1066|only Druid
+    'Go to the island out east (use a Swiftness Potion if you can)|use Swim Speed Potion##6372|only Warrior,Paladin,Hunter,Rogue,Priest,Warlock,Mage
+	info 
+    'Then watch out for the lvl 41-50 stealthed panthers there, then:|goto Stranglethorn Vale,38.53,80.58
+    .talk Princess Poobah##2634
+    ..turnin Message in a Bottle##594
+	..accept Message in a Bottle##630
+	info 
+	'Vanilla Only|optional
+    'Only accept the next part if you are able to get help from at least one other player (don't attempt to solo it) as it involves killing a level 50-51 Elite big ape that is really tough.|icon Interface\\cursor\\Directions
+    ............'Skip This?|confirm|next +3|n|icon Interface\\cursor\\Point
+
+step //20
+    'Destroy the Message in a Bottle item as it no longer has any use.
+	info 
+	'Vanilla Only|optional
+    'GROUP 3+ Players: East on the island kill/loot King Mukla (lvl 50-51 big Elite gorilla).|icon Interface\\cursor\\Attack
+	info 
+	'TBC/WOTLK Only|optional
+    'East on the island, kill/loot King Mukla (lvl 42-51 big gorilla).|icon Interface\\cursor\\Attack
+    .kill King Mukla##1559|n|goto Stranglethorn Vale,40.94,83.92|title Kill/loot: King Mukla (big ape)
+	.collect Shackle Key##4103|q 630/1|icon Interface\\icons\\inv_misc_key_03
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //21
+    'Back NW on the island:|goto Stranglethorn Vale,38.53,80.58
+    .talk Princess Poobah##2634
+    ..turnin Message in a Bottle##630
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //22
+    'Kill the 3 pirates in each of the 3 ships. The first pirate to kill is Captain Stillwater down the first flight of stairs in the ship.|goto Stranglethorn Vale,32.87,88.20|icon Interface\\cursor\\Attack
+    .kill Captain Stillwater##2550|q 608/1
+	info 
+    'Find a scroll called Cortello's Riddle, it can either be in the basement or middle level of any of the 3 boats. Thoroughly search these areas before moving on. From it, accept:
+    ..accept Cortello's Riddle##624|n|icon Interface\\cursor\\Quest
+    'TIP: Use Eye of Kilrogg to help you find the scroll!|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+    'TIPS: If you find the scroll in the bottom of the boat, you may want to Hearth, then go back to the boats, otherwise you might have to deal with respawns when working your way back up!|icon Interface\\cursor\\Directions|only !Warlock
+    'WARNING: These pirate boats can be dangerous to solo, only attempt this if you are confident in doing it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+
+step //23
+    'Kill Fleet Master Firallon down the first flight of stairs in the middle ship. Watch out for Ironpatch in the room before Firallon, take him on alone first.|goto Stranglethorn Vale,30.58,90.63|icon Interface\\cursor\\Attack
+	.kill Ironpatch##2547|n
+    .kill Fleet Master Firallon##2546|q 608/3
+    info 
+    'Find a scroll called Cortello's Riddle, it can either be in the basement or middle level of any of the 3 boats. Thoroughly search these areas before moving on. From it, accept:
+    ..accept Cortello's Riddle##624|n|icon Interface\\cursor\\Quest
+    'TIP: Use Eye of Kilrogg to help you find the scroll!|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+    'TIPS: If you find the scroll in the bottom of the boat, you may want to Hearth, then go back to the boats, otherwise you might have to deal with respawns when working your way back up!|icon Interface\\cursor\\Directions|only !Warlock
+    'WARNING: These pirate boats can be dangerous to solo, only attempt this if you are confident in doing it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+
+step //24
+    'Kill Captain Keelhaul down the first flight of stairs in the last ship.|goto Stranglethorn Vale,29.31,88.30|icon Interface\\cursor\\Attack
+    .kill Captain Keelhaul##2548|q 608/2
+    info 
+    'Find a scroll called Cortello's Riddle, it can either be in the basement or middle level of any of the 3 boats. Thoroughly search these areas before moving on. From it, accept:
+    ..accept Cortello's Riddle##624|n|icon Interface\\cursor\\Quest
+    'TIP: Use Eye of Kilrogg to help you find the scroll!|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+    'TIPS: If you find the scroll in the bottom of the boat, you may want to Hearth, then go back to the boats, otherwise you might have to deal with respawns when working your way back up!|icon Interface\\cursor\\Directions|only !Warlock
+    'WARNING: These pirate boats can be dangerous to solo, only attempt this if you are confident in doing it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+
+step //25
+    'Hearth (or go back) to Booty Bay. If Hearthstone is still on a cooldown, die on purpose and res at spirit (not for Hardcore Players).
+	.use Hearthstone##6948
+	'Use Astral Recall if Shaman|cast Astral Recall##556|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'At the end of the docks:|goto Stranglethorn Vale,26.70,73.61
+    .talk Captain Hecklebury Smotts##2500
+    ..turnin The Captain's Chest##8551
+    info         only if you killed Gorlash
+
+step //26
+    'Get repaired/resupplied|goto Stranglethorn Vale,27.47,77.55|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+	info 
+    'Withdraw from bank:|goto Stranglethorn Vale,26.56,76.50|title Bank
+	..'Mire Lord Fungus (Vanilla only)|icon Interface\\icons\\inv_misc_herb_06
+	..'Shadow Panther Heart (Vanilla only)|icon Interface\\icons\\inv_misc_organ_01
+	..'Green Whelp Blood (Vanilla only if you have)|icon Interface\\icons\\spell_shadow_bloodboil
+	info 
+    'Deposit into bank:
+    ..'15 Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //27
+	info |goto Isle of Quel'Danas,600,0.0
+    'Get out 15 of:
+	'Silk Cloth|icon Interface\\icons\\inv_fabric_silk_01
+	info 
+	'If not you will need to farm this at Searing Gorge coming up. Or obtain it from the mailbox / AH. This is used for a later quest (Caught!) in Searing Gorge.|goto Stranglethorn Vale,26.56,76.51|title Bank / Mailbox / AH
+    .collect 15 Silk Cloth##4306|n
+	........'Can't Get All Silk?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //28
+    'Up in the Inn:|goto Stranglethorn Vale,27.18,77.01
+    .talk Fleet Master Seahorn##2487
+    ..turnin The Bloodsail Buccaneers##608
+
+step //29
+	info |goto Isle of Quel'Danas,600,0.0
+	'This is the last time my guide will tell you to turn in the pages for Green Hills of Stranglethorn quest.|icon Interface\\cursor\\Directions
+	info 
+    'You can also find these pages in the AH or from other players.|icon Interface\\minimap\\Tracking\\Auctioneer
+	info 
+	'If you have all of them, get them out now (we will turn it in a few steps later).  this will have to be skipped.
+	info 
+	'You need the following pages (although they could be in your mailbox):
+    '1, 4, 6, 8, 10, 11, 14, 16, 18, 20, 21, 24, 25, 26, 27.|icon Interface\\icons\\inv_misc_note_06
+	info 
+	'If you have all the pages, go to the Wind Rider Master up on the roof of the Inn:|goto Stranglethorn Vale,26.9,77.1|title Gringer
+    .talk Gringer##2858|goto Stranglethorn Vale,35.66,10.53|title Next Destination
+    'Take a flight to Grom'gol|icon Interface\\minimap\\Tracking\\FlightMaster|goto Stranglethorn Vale,32.5,29.4|title Go to Grom'gol|c
+	.........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //30
+	info For informations|goto Stranglethorn Vale,35.66,10.53|title Nesingwary's Expedition
+	.collect Page 1##2725|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 4##2728|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 6##2730|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 8##2732|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 10##2734|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 11##2735|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 14##2738|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 16##2740|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 18##2742|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 20##2744|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 21##2745|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 24##2748|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 25##2749|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 26##2750|icon Interface\\icons\\inv_misc_note_06
+	.collect Page 27##2751|icon Interface\\icons\\inv_misc_note_06
+	..........'Click for Next Step|confirm|next +1|icon Interface\\cursor\\Point
+
+step //31
+    'Turn in what you can of The Green Hills of Stranglethorn pages:|goto Stranglethorn Vale,35.66,10.53
+    .talk Barnil Stonepot##716
+    ..turnin The Green Hills of Stranglethorn##338
+    ............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //32
+    'Go to Grom'gol Base Camp...|goto Stranglethorn Vale,32.54,29.36
+	info 
+    'At Grom'gol Base Camp:
+    .talk Thysta##1387
+    'From the Wind Rider Master, take a flight to Kargath, Badlands.|goto Badlands,4.0,44.8|title Go to Kargath|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //33
+	..'47-47 Stranglethorn Vale is complete!|icon Interface\\cursor\\Directions
+	......'Go to 47-48 Searing Gorge|confirm|next "Joana's Guide\\Horde\\47-48 Searing Gorge"|icon Interface\\icons\\achievement_zone_searinggorge_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\47-48 Searing Gorge",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\48-49 Swamp of Sorrows
+startlevel 47
+
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go SW to enter Searing Gorge.|goto Badlands,2.73,62.22|title Enter: Searing Gorge
+	info |goto Searing Gorge,61.88,60.22|title Follow waypoint
+    'Go SE in Searing Gorge:|goto Searing Gorge,65.6,62.2|title Wooden Outhouse
+    'Interact with Wooden Outhouse
+    info        (up on a mountain ledge)
+    ..accept Caught!##4449
+
+step //2
+	info |goto Isle of Quel'Danas,600,0.0
+    'At the Grimesilt Dig Site next to you, kill Dark Iron Geologists. |goto Searing Gorge,62.5,61.5|title Around: Grimesilt Dig Site
+	'The Geologists are limited, so you will most likely need to grind on mobs until they respawn, or go north for more around the other waypoint.|goto Searing Gorge,69.08,33.42|title More Geologists around here
+    .kill 8 Dark Iron Geologist##5839 |q 4449/1
+    'Also make sure you have 15 Silk Cloth (it can drop from the dwarves at the Dig Site).
+    .collect 15 Silk Cloth##4306|q 4449/2|icon Interface\\icons\\inv_fabric_silk_01
+
+step //3
+    'Interact with Wooden Outhouse.|goto Searing Gorge,65.6,62.2
+	info         (up on a mountain ledge)
+    ..turnin Caught!##4449
+    ..accept Ledger from Tanaris##4450
+
+step //4
+    'Next to the Wooden Outhouse, pick up the Goodsteel Ledger.|goto Searing Gorge,65.5,62.2
+    .collect Goodsteel Ledger##11727|q 4450/1|icon Interface\\icons\\inv_misc_book_09
+
+step //5
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot Glassweb Spiders for the Leg Shafts. |goto Searing Gorge,61.5,70.2|title Kill/loot: Glassweb Spiders (around here)
+	info |goto Searing Gorge,62.33,53.06|title Kill/loot: Glassweb Spiders (around here)
+	'These are scattered around the eastern side of Searing Gorge.|goto Searing Gorge,68.71,47.05|title Kill/loot: Glassweb Spiders (around here)
+    .kill Glassweb Spider##5856|n|goto Searing Gorge,72.62,17.36|title Kill/loot: Glassweb Spiders (around here)
+	.collect 20 Solid Crystal Leg Shaft##11725|q 4450/2|icon Interface\\icons\\inv_misc_monsterspidercarapace_01
+
+step //6
+    'Go NW:|goto Searing Gorge,39.1,39.0
+    .talk Kalaran Windblade##8479
+    ..accept Divine Retribution##3441
+
+step //7
+    'Simply talk to the quest giver.|goto Searing Gorge,39.1,39.0
+    .talk Kalaran Windblade##8479
+	.goal Velarok Story|q 3441/1
+
+step //8
+    .talk Kalaran Windblade##8479 |goto Searing Gorge,39.1,39.0
+    ..turnin Divine Retribution##3441
+    ..accept The Flawless Flame##3442
+
+step //9
+	info |goto Isle of Quel'Danas,600,0.0
+    'At Thorium Point:|goto Searing Gorge,33.78,29.41|title Enter: Thorium Point
+	info |goto Searing Gorge,35.55,25.93|title Follow waypoint
+    'Interact with Wanted/Missing/Lost & Found|goto Searing Gorge,37.7,26.5|title Wanted/Missing/Lost & Found
+    ..accept WANTED: Overseer Maltorius##7701
+    ..accept STOLEN: Smithing Tuyere and Lookout's Spyglass##7728
+    ..accept JOB OPPORTUNITY: Culling the Competition##7729
+
+step //10
+	'Only for WOTLK|optional
+    'Next to you:|goto Searing Gorge,38.4,27.7
+    .talk Evonice Sootsmoker##14628
+    ..accept Kill 'Em With Sleep Deprivation##7702
+//    only WOTLK
+
+step //11
+    'Next to you:|goto Searing Gorge,38.6,27.8
+    .talk Hansel Heavyhands##14627
+    ..accept Curse These Fat Fingers##7723
+    ..accept Fiery Menace!##7724
+    ..accept Incendosaurs? Whateverosaur is More Like It##7727
+
+step //12
+    'Next to you by the Forge:|goto Searing Gorge,38.8,28.5
+    .talk Master Smith Burninate##14624
+    ..accept What the Flux?##7722
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //13
+    'At Thorium Point:|goto Searing Gorge,34.8,30.9
+    .talk Grisha##3305
+    ..fpath Thorium Point|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot Inferno, Magma, and Blazing Elementals for the Heart of Flame, and fire elementals for the Golem Oil, these include: Heavy War Golems, Magma Elementals and Tempered War Golems.|icon Interface\\cursor\\Attack
+	.collect 4 Heart of Flame##10509|q 3442/1|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+//    .kill Inferno Elemental##5852|n
+//    .kill Magma Elemental##5855|n
+//    .kill Blazing Elemental##5850|n
+	.collect 4 Golem Oil##10511|q 3442/2|icon Interface\\icons\\inv_misc_gem_pearl_01
+//    .kill Heavy War Golem##5854|n
+//    .kill Magma Elemental##5855|n
+//    .kill Tempered War Golem##5853|n
+	info |goto Searing Gorge,30.2,68.0|title Greater Lava Spider
+	'Around the western side of Searing Gorge for Greater Lava Spiders:|goto Searing Gorge,29.0,75.2|title Greater Lava Spider
+    .kill 20 Greater Lava Spider##5858|q 7724/1|goto Searing Gorge,30.8,59.8|title Greater Lava Spider
+	info |goto Searing Gorge,28.4,53.4|title Greater Lava Spider
+	'Kill Heavy War Golems:|goto Searing Gorge,46.2,39.6|title Heavy War Golem|icon Interface\\cursor\\Attack
+    .kill 20 Heavy War Golem##5854|q 7723/1|goto Searing Gorge,35.6,45.6|title Heavy War Golem
+	info |goto Searing Gorge,36.0,61.0|title Heavy War Golem
+    'Dark Iron Steamsmiths drop Smithing Tuyere around here|goto Searing Gorge,39.9,49.6|title Kill/loot: Dark Iron Steamsmith (Around here)
+	.collect Smithing Tuyere##18959|q 7728/1|icon Interface\\icons\\inv_musket_04
+	.kill Dark Iron Lookout##8566|n
+	info 
+    'Dark Iron Lookouts (around the watchtowers) drop Overseer's Key, large amount around here.|goto Searing Gorge,52.7,58.7|title Kill/loot: Dark Iron Lookout (Around here)
+	.collect Lookout's Spyglass##18960|q 7728/2|icon Interface\\icons\\inv_misc_spyglass_01
+	.kill Dark Iron Steamsmith##5840|n
+	info |goto Searing Gorge,29.0,42.6|title Greater Lava Spider
+	info |goto Searing Gorge,33.2,53.6|title Kill/loot: Dark Iron Lookout (Around here)
+	info |goto Searing Gorge,37.0,61.0|title Kill/loot: Dark Iron Lookout (Around here)
+	info |goto Searing Gorge,44.6,62.6|title Kill/loot: Dark Iron Lookout (Around here)
+
+step //15
+    .talk Kalaran Windblade##8479 |goto Searing Gorge,39.1,39.0
+    ..turnin The Flawless Flame##3442
+    ..accept Forging the Shaft##3443
+
+step //16
+    'Enter the eastern most cave to enter The Slag Pit...info |goto Isle of Quel'Danas,600,0.0
+    info |goto Searing Gorge,49.8,45.8|title Drop down here to enter cave
+	'GROUP 3+ Players: Kill/loot Overseer Maltorius (lvl 50).|goto Searing Gorge,40.78,35.88|title Kill/loot: Overseer Maltorius (inside cave)|icon Interface\\cursor\\Directions
+	'For Vanilla: but be warned he is Elite and very tough. Even a level 60 will have a hard time soloing this mob, so you will most likely need a group to kill him. If not, then it can be skipped.|optional
+    .kill Overseer Maltorius##14621|n
+	.collect Head of Overseer Maltorius##18946|q 7701/1|icon Interface\\icons\\inv_misc_head_dwarf_01
+	'RISKY QUEST: In the cave, loot Secret Plans: Fiery Flux behind Overseer Maltorius.|goto Searing Gorge,40.48,35.73|title Loot: Plans: Fiery Flux|icon Interface\\icons\\inv_scroll_07
+    'TIP: Use your pet to distract Overseer Maltorius by aggroing him, then have your pet run away to another mob elsewhere.|icon Interface\\cursor\\Directions|only Hunter,Warlock
+    'You may have abilities to distract the elite to get the item with your class.|only Warrior,Paladin,Shaman,Druid,Rogue,Mage,Priest
+    'WARNING: Hardcore players, skip this if you are not confident about it!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	.collect Secret Plans: Fiery Flux##18922|q 7722/1|icon Interface\\icons\\inv_scroll_07
+	info 
+    'Start Kill/looting Dark Iron dwarves.|icon Interface\\cursor\\Attack
+	.collect 8 Thorium Plated Dagger##10551|q 3443/1|n|icon Interface\\icons\\inv_weapon_shortblade_14
+    .kill Slave Worker##5843 |n
+    .kill Dark Iron Steamsmith##5840 |n
+    .kill 15 Dark Iron Slaver##5844|q 7729/2|n
+    .kill 15 Dark Iron Taskmaster##5846|q 7729/1|n
+//    .kill Dark Iron Lookout##8566 |n
+//    .kill Dark Iron Geologist##5839 |n
+//    .kill Dark Iron Sentry##8504 |n
+//    .kill Dark Iron Watchman##8637 |n
+//    .kill Dark Iron Steelshifter##8337 |n
+//    .kill Dark Iron Kidnapper##15692 |n
+
+step //17
+	'Only for WOTLK|optional
+    'In the hallways across the room, loot the Dark Iron Pillows along side the walls where the beds are at.
+//	|goto Searing Gorge,49.84,45.80|title Drop down here to enter cave
+	info |goto Isle of Quel'Danas,600,0.0
+    'NOTES: Watch out groups of sleepy dwarves patrol this hall and an elite (Chambermaid Pillaclencher) mob can spawn in the middle of that hall, so be careful! You can skip this if you don't want to wait for the pillows to respawn or deal with the mobs that are in the way.|goto Searing Gorge,44.8,31.2|title Around the hallway|icon Interface\\cursor\\Directions
+    .collect 20 Dark Iron Pillow##18943|q 7702/1|icon Interface\\icons\\inv_misc_armorkit_17
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //18
+    'Finish Kill/looting Dark Iron dwarves in the cave.|goto Searing Gorge,43.4,34.3|icon Interface\\cursor\\Attack
+	.collect 8 Thorium Plated Dagger##10551|q 3443/1|icon Interface\\icons\\inv_weapon_shortblade_14
+    .kill Slave Worker##5843 |n
+    .kill Dark Iron Steamsmith##5840 |n
+	info 
+    'Kill the required amount of Dark Iron dwarves in the cave.|icon Interface\\cursor\\Attack
+    .kill 15 Dark Iron Slaver##5844|q 7729/2
+    .kill 15 Dark Iron Taskmaster##5846|q 7729/1
+
+step //19
+    'At the cave down below, kill Incendosaurs.|goto Searing Gorge,49.8,39.1|icon Interface\\cursor\\Attack
+    .kill 20 Incendosaur##9318|q 7727/1
+
+step //20
+	info |goto Isle of Quel'Danas,600,0.0
+    'Back outside:|goto Searing Gorge,48.74,40.47|title Exit cave
+	info |goto Searing Gorge,47.54,46.71|title Exit cave
+    .talk Kalaran Windblade##8479|goto Searing Gorge,39.1,39.0
+    ..turnin Forging the Shaft##3443
+    ..accept The Flame's Casing##3452
+
+step //21
+	info |goto Isle of Quel'Danas,600,0.0
+    'Enter Thorium Point:|goto Searing Gorge,33.78,29.41|title Enter: Thorium Point
+	info |goto Searing Gorge,35.55,25.93|title Follow waypoint
+    .talk Lookout Captain Lolo Longstriker##14634|goto Searing Gorge,37.7,26.6|title Lookout Captain Lolo Longstriker
+    ..turnin WANTED: Overseer Maltorius##7701
+    info 
+	'NOTE: Save any Dark Iron Scraps you find, you will need 30 of them for a later quest (Binding the Dreadnaught), and you will also have another good chance to find a lot more later on in the lvl 53-54 Burning Steppes section as well.|icon Interface\\cursor\\Directions
+
+step //22
+	'Only for WOTLK|optional
+    'At Thorium Point:|goto Searing Gorge,38.4,27.7
+    .talk Evonice Sootsmoker##14628
+    ..turnin Kill 'Em With Sleep Deprivation##7702
+
+step //23
+    'At Thorium Point:|goto Searing Gorge,38.6,27.8
+	info 
+    .talk Hansel Heavyhands##14627
+    ..turnin Curse These Fat Fingers##7723
+    ..turnin Fiery Menace!##7724
+    ..turnin Incendosaurs? Whateverosaur is More Like It##7727
+
+step //24
+    'Next to you:|goto Searing Gorge,39.0,27.5
+    .talk Taskmaster Scrange##14626
+    ..turnin STOLEN: Smithing Tuyere and Lookout's Spyglass##7728
+    ..turnin JOB OPPORTUNITY: Culling the Competition##7729
+
+step //25
+    'At the Forge next to you:|goto Searing Gorge,38.8,28.5
+    .talk Master Smith Burninate##14624
+    ..turnin What the Flux?##7722
+    info 
+	'REMINDER: Hold on to the Dark Iron Scraps you find, you will need 30 of them for a later quest (Binding the Dreadnaught).|icon Interface\\cursor\\Directions
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //26
+    'Go west around Firewatch Ridge and kill/loot the Twilight mobs (Tough Elite Quest for Vanilla) until the Symbol of Ragnaros drops (low drop rate).|goto Searing Gorge,24.5,35.1|icon Interface\\cursor\\Attack
+	info 
+    'NOTE: If you are unable to do this, then a number of steps coming up will have to be skipped.|icon Interface\\cursor\\Directions
+    'TIP: Pick off the Twilight Fire Guards at the edge of the pack and fight them using Entangling Roots and Starfire.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+    .collect Symbol of Ragnaros##10552|q 3452/1|icon Interface\\icons\\inv_jewelry_talisman_04
+	............'Skip This?|confirm|next +16|n|icon Interface\\cursor\\Point
+
+step //27
+    .talk Kalaran Windblade##8479 |goto Searing Gorge,39.1,39.0
+    ..turnin The Flame's Casing##3452
+    ..accept The Torch of Retribution##3453
+    info        only if you get the Symbol of Ragnaros
+
+step //28
+    'Wait a few seconds, then:|goto Searing Gorge,39.1,39.0
+    .talk Kalaran Windblade##8479
+    ..turnin The Torch of Retribution##3453
+    ..accept The Torch of Retribution##3454
+
+step //29
+    'Interact with Torch of Retribution |goto Searing Gorge,39.1,39.0
+	info    (floating in the air next to you)
+    ..turnin The Torch of Retribution##3454
+
+step //30
+    .talk Kalaran Windblade##8479 |goto Searing Gorge,39.1,39.0
+    ..accept Squire Maltrake##3462
+
+step //31
+    .talk Squire Maltrake##8509 |goto Searing Gorge,39.2,39.0
+    ..turnin Squire Maltrake##3462
+    ..accept Set Them Ablaze!##3463
+
+step //32
+	info |goto Isle of Quel'Danas,600,0.0
+    'First equip the Torch of Retribution quest item. This will allow you to click on the upcoming Sentry Brazier.
+	info 
+    'Go up in the Northern Tower and click on the Sentry Brazier. |goto Searing Gorge,33.66,53.73|title Enter: Northern Tower
+	'For Vanilla, Watch out for the elites!|optional
+    'TIP: Use Cat Form with stealth to avoid the elites.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+    .goal Northern Tower Ablaze|q 3463/4 |goto Searing Gorge,33.3,54.5|title Click: Sentry Brazier
+
+step //33
+	info |goto Isle of Quel'Danas,600,0.0
+    'Equip the Torch of Retribution quest item. This will allow you to click on the upcoming Sentry Brazier.
+	info 
+    'Go up in the Western Tower and click on the Sentry Brazier. |goto Searing Gorge,36.04,59.90|title Enter: Western Tower
+	'For Vanilla, Watch out for the elites!|optional
+    .goal Western Tower Ablaze|q 3463/1|goto Searing Gorge,35.7,60.7|title Click: Sentry Brazier
+
+step //34
+	info |goto Isle of Quel'Danas,600,0.0
+    'Equip the Torch of Retribution quest item. This will allow you to click on the upcoming Sentry Brazier.
+	info 
+    'Go up in the Southern Tower and click on the Sentry Brazier.|goto Searing Gorge,43.99,61.87|title Enter: Southern Tower
+	'For Vanilla, Watch out for the elites!|optional
+    .goal Southern Tower Ablaze|q 3463/2|goto Searing Gorge,44.0,60.9|title Click: Sentry Brazier
+
+step //35
+	info |goto Isle of Quel'Danas,600,0.0
+    'Equip the Torch of Retribution quest item. This will allow you to click on the upcoming Sentry Brazier.
+	info |goto Searing Gorge,52.27,57.52|title Go across bridge
+    'Go across the bridge. Watch out, there are 2 elites patrolling on it!|goto Searing Gorge,52.3,57.5|title Go across bridge
+	'For Vanilla, Watch out, there are 2 elites patrolling on it!|optional
+	info 
+    'Go up in the Eastern Tower and click on the Sentry Brazier.|goto Searing Gorge,50.07,55.64|title Click: Sentry Brazier|title Enter: Eastern Tower
+    .goal Eastern Tower Ablaze|q 3463/3|goto Searing Gorge,50.07,54.74|title Click: Sentry Brazier
+ 
+step //36
+    'Remember to un-equip the Torch of Retribution quest item and put your weapon back on!
+	info 
+    'With the item you should have found called Grimesilt Outhouse Key:|goto Searing Gorge,65.6,62.2
+	..accept The Key to Freedom##4451
+	info 
+    'Interact with Wooden Outhouse:
+	info    (up on a mountain ledge)
+    ..turnin The Key to Freedom##4451
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //37
+	info |goto Isle of Quel'Danas,600,0.0
+	'Only For Vanilla and Not For Hardcore Player|optional
+    'Just next to you at the dig site, die on purpose then res at spirit to get to Thorium Point.|goto Searing Gorge,63.0,61.3|title Die on Purpose Here
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+//    only !Hardcore !WOTLK
+
+step //38
+    'Remember to un-equip the Torch of Retribution quest item and put your weapon back on!
+	info 
+    'Go south or NW a bit to Kalaran Windblade:|goto Searing Gorge,39.2,39.0
+    .talk Kalaran Windblade##8479
+    ..turnin Set Them Ablaze!##3463
+//    only questcomplete(3452)
+
+step //39
+    'Wait a minute (build up First Aid while waiting), then click on the chest on the ground next to Kalaran Windblade:|goto Searing Gorge,38.9,39.0
+    'Interact with Hoard of the Black Dragonflight
+    ..accept Trinkets...##3481
+//    only questcomplete(3452)
+
+step //40
+    'Click on the chest again to turn this in.|goto Searing Gorge,38.9,39.0
+    'Interact with Hoard of the Black Dragonflight
+    ..turnin Trinkets...##3481
+//    only questcomplete(3452)
+
+step //41
+    'Loot the item you received called Hoard of the Black Dragonflight.|goto Searing Gorge,38.9,39.0|title Hoard of the Black Dragonflight
+    .collect Black Dragonflight Molt##10575
+//    only questcomplete(3452)
+
+step //42
+    'Head south to enter Burning Steppes.
+	info 
+    'NOTE: You have to go through Blackrock Mountain first.|icon Interface\\cursor\\Directions|goto Searing Gorge,34.96,87.34|title Enter: Blackrock Mountain
+	info 
+    'Once at Burning Steppes, first head to Draco'dar just to discover the area for XP.|goto Burning Steppes,24.7,53.5|title Discover: Draco'dar (for XP)
+    info 
+	'NOTE: Make sure you keep the Black Dragonflight Molt (if you did the following quest) as you will need it for a later quest (A Taste of Flame).|icon Interface\\cursor\\Directions
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+//    only questcomplete(3452)
+
+step //43
+	info |goto Isle of Quel'Danas,600,0.0
+	'Only For Vanilla/TBC and Not For Hardcore Player|optional
+    'Just north of the main path, die on purpose to the (elite for vanilla) dragons around the area, then res at spirit to get to Flame Crest.|goto Burning Steppes,23.5,47.8|title Die on purpose around here
+	info 
+	'Only For WOTLK and Hardcore Player|optional
+	'Head east to Flame Crest.|goto Burning Steppes,36.71,51.35|title Flame Crest
+	info 
+    'NOTE: Watch out for the higher level mobs along the way!|icon Interface\\cursor\\Directions
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+//    only !Hardcore !WOTLK
+
+step //44
+    'Go up the ramp into Flame Crest. In the small cave from the female goblin:|goto Burning Steppes,66.1,22.0
+    .talk Yuka Screwspigot##9544
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+//    only !Hardcore
+
+step //45
+    'At Flame Crest:|goto Burning Steppes,65.7,24.2
+    .talk Vahgruk##13177
+    ..fpath Flame Crest|icon Interface\\minimap\\Tracking\\FlightMaster
+	'From the Wind Rider Master, take a flight to Stonard, Swamp of Sorrows.|goto Swamp of Sorrows,46.07,54.83|c|title Ride to Stonard|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //46
+	...'47-48 Searing Gorge is complete!|icon Interface\\cursor\\Directions
+	....'Go to 48-49 Swamp of Sorrows|confirm|next "Joana's Guide\\Horde\\48-49 Swamp of Sorrows"|icon Interface\\icons\\achievement_zone_swampsorrows_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\48-49 Swamp of Sorrows",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\49-49 Dustwallow Marsh
+startlevel 48
+
+step //1
+    'In the Inn at Stonard, from the Innkeeper:|goto Swamp of Sorrows,45.16,56.64
+    .talk Innkeeper Karakul##6930
+    .home Stonard|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //2
+    'Go SW on the main path:|goto Swamp of Sorrows,34.29,66.14
+    .talk Fallen Hero of the Horde##7572
+    ..accept Fall From Grace##2784
+
+step //3
+    'Simply talk to the quest giver.|goto Swamp of Sorrows,34.29,66.14
+    .talk Fallen Hero of the Horde##7572
+    .goal The Tale of Sorrow|q 2784/1
+
+step //4
+    .talk Fallen Hero of the Horde##7572|goto Swamp of Sorrows,34.29,66.14
+    ..turnin Fall From Grace##2784
+    ..accept The Disgraced One##2621
+
+step //5
+    'Go NW and under the bridge:|goto Swamp of Sorrows,22.88,48.19
+    'Interact with A Soggy Scroll
+    ..turnin Cortello's Riddle##624
+    ..accept Cortello's Riddle##625
+	info 
+	'NOTE: Only if you found the scroll called Cortello's Riddle and accepted the quest in one of the 3 boats in Stranglethorn.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //6
+	info |goto Isle of Quel'Danas,600,0.0
+	'Only For Vanilla|optional
+    'Go west on the main path (to Beggar's Haunt, in Duskwood):|goto Deadwind Pass,55.54,42.61|title Enter: Deadwind Pass
+    .talk Apothecary Faustin##5414|goto Duskwood,87.45,35.24|title Apothecary Faustin
+    info        (no exclamation mark)|goto Deadwind Pass,50.41,40.53|title Follow waypoint
+    ..turnin Nothing But The Truth##1383
+    'Wait a few seconds:|goto Deadwind Pass,45.10,34.36|title Follow waypoint
+    ..accept Nothing But The Truth##1388
+	info |goto Swamp of Sorrows,7.66,53.49|title Follow waypoint
+    .talk Deathstalker Zraedus##5418|goto Duskwood,87.81,35.63|title Deathstalker Zraedus
+    ..turnin Nothing But The Truth##1388
+    ..accept Nothing But The Truth##1391
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    only if QUEST[1383]>=COMPLETED
+
+step //7
+    'GET YOUR LVL 48 ABILITIES|icon Interface\\Icons\\Spell_Nature_Swiftness
+    'Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Druid Trainer next to the Moonwell to get your lvl 48 spells/abilities. New abilities to get: Entangling Roots, Claw, Ferocious Bite, Regrowth. You can SKIP Tiger's Fury.|goto Moonglade,52.53,40.57|title Druid Trainer|icon Interface\\icons\\spell_arcane_teleportmoonglade
+	.cast Teleport: Moonglade##19027
+    .talk Loganaar##12042
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //8
+    'Hearth (or go back) to Stonard.|goto Swamp of Sorrows,44.29,52.42
+    .use Hearthstone##6948
+	info 
+	'Only For Vanilla|optional
+    'Outside at Stonard:
+    .talk Infiltrator Marksen##5416
+    ..turnin Nothing But The Truth##1391
+//    only if QUEST[1391]>=ACCEPTED
+
+step //9
+    'In the building, get new spells/abilities from the Warlock Trainer just up the steps:|goto Swamp of Sorrows,48.65,55.63|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy
+    .talk Kartosh##988
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Warlock
+
+step //10
+    'At Stonard, Up in the building:|goto Swamp of Sorrows,47.79,54.94
+    .talk Dispatch Commander Ruag##7623
+    ..turnin The Disgraced One##2621
+    ..accept The Missing Orders##2622
+	info 
+	'Only For Vanilla|optional
+    'Next to you:
+    .talk Fel'zerul##1443
+    ..turnin Return to Fel'Zerul##1444
+	info 
+    'SKIP "The Sunken Temple" (Dungeon)|icon Interface\\cursor\\Directions
+// only if QUEST[1444]>=ACCEPTED
+
+step //11
+    'In the Inn:|goto Swamp of Sorrows,44.97,57.36
+    .talk Bengor##7643
+    ..turnin The Missing Orders##2622
+    ..accept The Swamp Talker##2623
+
+step //12
+    'Hunters, get new spells/abilities at the Hunter Trainer at Stonard.|goto Swamp of Sorrows,47.26,53.41|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+    .talk Ogromm##987|only Hunter
+	'Shamans, get new abilities at the Shaman Trainer at Stonard.|goto Swamp of Sorrows,48.19,57.93|title Shaman Trainer|only Shaman
+    .talk Haromm##986|only Shaman
+	'Warriors, get new abilities at the Warrior Trainer at Stonard.|goto Swamp of Sorrows,44.90,57.62|title Warrior Trainer|only Warrior
+    .talk Malosh##985|only Warrior
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Shaman,Hunter,Warrior    
+
+step //13
+	'Only For Vanilla|optional
+    'Go east to Misty Reed Strand:|goto Swamp of Sorrows,83.77,80.44
+    .talk Katar##5593
+    ..accept Continued Threat##1428
+	info 
+	'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    only ERA or SOM1
+
+step //14
+	info |goto Isle of Quel'Danas,600,0.0
+    'Enter Stagalbog Cave...|goto Swamp of Sorrows,66.09,78.12|title Enter: Stagalbog Cave
+	info |goto Swamp of Sorrows,62.60,88.07|title Kill/loot: Swamp Talker (spawn #1)
+    'Back in Stagalbog Cave, kill/loot Swamp Talker for the Warchief's Orders.|icon Interface\\cursor\\Attack|goto Swamp of Sorrows,63.8,80.2|title Kill/loot: Swamp Talker (spawn #2)
+	info 
+	'TIP: To get to the Swamp Talker take the middle path in the cave and keep left.|goto Swamp of Sorrows,63.68,83.86|title Take middle tunnel in cave|icon Interface\\cursor\\Directions
+    .kill Swamp Talker##950|n
+	.collect Warchief's Orders##8463|q 2623/1|icon Interface\\icons\\inv_letter_17
+	info 
+	'Only For Vanilla|optional
+    'Start Killing the required amount of Marsh murlocs.|icon Interface\\cursor\\Attack
+    .kill 10 Marsh Inkspewer##750 |q 1428/1|n
+    .kill 10 Marsh Flesheater##751 |q 1428/2|n
+    .kill 10 Marsh Oracle##752 |q 1428/3|n
+	......'Continue to Vanilla quests|confirm|next +1|icon Interface\\cursor\\Point
+	.........'Skip Vanilla quests|confirm|next +3|icon Interface\\cursor\\Point
+//    only ERA or SOM1
+
+step //15
+	'Only For Vanilla|optional
+    'Kill the required amount of Marsh murlocs. You can find more murlocs east along the beach.|goto Swamp of Sorrows,67.96,75.79|title Cave Exit|icon Interface\\cursor\\Attack
+    .kill 10 Marsh Inkspewer##750 |q 1428/1
+    .kill 10 Marsh Flesheater##751 |q 1428/2
+    .kill 10 Marsh Oracle##752 |q 1428/3
+	info |goto Swamp of Sorrows,85.20,84.90|title Beach
+	'Try to find and Kill/loot Jarquia (gray colored murloc), if you see him, he drops the Goodsteel's Balanced Flameberge.|icon Interface\\cursor\\Attack
+    .collect Goodsteel's Balanced Flameberge##11723|q 4450/4|n|icon Interface\\icons\\inv_sword_02
+    info 
+	'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+//    only ERA or SOM1
+
+step //16
+	'Only For Vanilla|optional
+    'At Misty Reed Strand:|goto Swamp of Sorrows,83.77,80.44
+    .talk Katar##5593
+    ..turnin Continued Threat##1428
+	info 
+	'WARNING: Watch out for Somnus (lvl 62 Elite dragon) patrolling around here!|icon Interface\\cursor\\Directions
+	.talk Somnus##12900|n
+//    only ERA or SOM1
+
+step //17
+	info |goto Isle of Quel'Danas,600,0.0
+    'At the middle of the beach, kill/loot Jarquia (gray colored murloc), he drops the Goodsteel's Balanced Flameberge.|goto Swamp of Sorrows,94.6,51.8|title Kill/loot: Jarquia (spawn #3)|icon Interface\\cursor\\Attack
+	info |goto Swamp of Sorrows,92.0,66.4|title Kill/loot: Jarquia (spawn #1)
+	'NOTE: He could also be at other spawn locations along the beach.|goto Swamp of Sorrows,93.2,61.2|title Kill/loot: Jarquia (spawn #2)|icon Interface\\cursor\\Directions
+    .kill 1 Jarquia##9916|n
+    .collect Goodsteel's Balanced Flameberge##11723|q 4450/4|icon Interface\\icons\\inv_sword_02
+
+step //18
+    'Die on purpose and res at spirit to get back to Stonard.
+	'Hardcore Player: Just go back to Stonard.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+    .use Hearthstone##6948
+	info 
+	'At Stonard:
+    'Get Repaired/Resupplied|goto Swamp of Sorrows,45.46,51.41|title Repaired / Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //19
+    'SW on the main path:|goto Swamp of Sorrows,34.28,66.14
+    .talk Fallen Hero of the Horde##7572
+    ..turnin The Swamp Talker##2623
+    ..accept A Tale of Sorrow##2801
+
+step //20
+    'Simply talk to the quest giver.|goto Swamp of Sorrows,34.28,66.14
+    .talk Fallen Hero of the Horde##7572
+    .goal A Tale of Sorrow|q 2801/1
+
+step //21
+    .talk Fallen Hero of the Horde##7572|goto Swamp of Sorrows,34.28,66.14
+    ..turnin A Tale of Sorrow##2801
+	info
+    'SKIP (for now) "The Stones That Bind Us"|icon Interface\\cursor\\Directions
+
+step //27
+    'Go back to Stonard...
+	info 
+    'At Stonard.|goto Swamp of Sorrows,46.07,54.81
+    .talk Breyk##6026
+    'From the Wind Rider Master, take a flight to Booty Bay, Stranglethorn.|goto Stranglethorn Vale,26.9,77.1|title Go to Booty Bay|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //29
+    'Drop down in the Inn at Booty Bay:|goto Stranglethorn Vale,27.13,77.45
+    .talk Whiskey Slim##2491
+    ..accept Whiskey Slim's Lost Grog##580
+
+step //31
+    'Get on the boat at the end of docks to go to Ratchet...|goto Stranglethorn Vale,25.85,73.10|title Take boat to: Ratchet
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //30
+    'At Ratchet:|goto The Barrens,62.66,37.42|title Bank
+	info 
+    'Deposit into bank: 
+	.'Goodsteel Ledger (Only Vanilla)|icon Interface\\icons\\inv_misc_book_09
+	.'Solid Crystal Leg Shaft (Only Vanilla)|icon Interface\\icons\\inv_misc_monsterspidercarapace_01
+	.'Goodsteel's Balanced Flameberge (Only Vanilla)|icon Interface\\icons\\inv_sword_02
+	.'Torch of Retribution|icon Interface\\icons\\inv_wand_04
+	.'Black Dragonflight Molt|icon Interface\\icons\\inv_misc_shadowegg
+	.'Dark Iron Scraps|icon Interface\\icons\\inv_misc_armorkit_20
+	.'Core of Elements|icon Interface\\icons\\inv_misc_gem_variety_02
+	info 
+    'Withdraw from the bank:
+	.'Wildkin Muisek (Only Vanilla)|icon Interface\\icons\\spell_magic_featherfall
+	.'Wildkin Muisek Vessel (Only Vanilla)|icon Interface\\icons\\inv_misc_drum_01
+	.'Yeh'kinya's Bramble (Only TBC/WOTLK)|icon Interface\\icons\\inv_wand_12
+	.'Wastewander Water Pouch (Only TBC/WOTLK)|icon Interface\\icons\\inv_drink_milk_02
+	.'Hippogryph Egg (Only TBC/WOTLK)|icon Interface\\icons\\inv_egg_02
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //32
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Flight Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //33
+	..'48-49 Swamp of Sorrows is complete!|icon Interface\\cursor\\Directions
+	.....'Go to 49-49 Dustwallow Marsh|confirm|next "Joana's Guide\\Horde\\49-49 Dustwallow Marsh"|icon Interface\\icons\\achievement_zone_dustwallowmarsh
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\49-49 Dustwallow Marsh",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\49-49 Feralas
+startlevel 49
+	
+step //1
+    'Once at Brackenwall Village, go in the small cave:|goto Dustwallow Marsh,37.15,33.09
+    .talk Draz'Zilb##4501
+    ..accept The Brood of Onyxia##1172
+
+step //2
+    'SE at the crashed zeppelin, loot the Damage Crate for the Overdue Package item.|goto Dustwallow Marsh,54.08,55.90
+    .collect Overdue Package##11724|q 4450/3|icon Interface\\icons\\inv_crate_06
+
+step //3
+	info |goto Silithus,0,400
+    'Go south and look for the red steam nests holding the Eggs of Onyxia, click on them to destroy them. There is one at first waypoint:|goto Dustwallow Marsh,53.57,72.52|title Eggs of Onyxia #1
+    'And another one at second waypoint:|goto Dustwallow Marsh,48.48,73.62|title Eggs of Onyxia #2
+    .goal 5 Egg of Onyxia destroyed|q 1172/1
+
+step //4
+	info |goto Silithus,0,400
+    'Go west into Bloodfen Burrow (small cave):|goto Dustwallow Marsh,31.10,66.15|title Musty Scroll
+	info      only if "Cortello's Riddle" quest is accepted
+    'Interact with Musty Scroll
+    ..turnin Cortello's Riddle##625
+    ..accept Cortello's Riddle##626
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //5
+	'Only For TBC/WOTLK|optional
+    'At Mudsprocket:|goto Dustwallow Marsh,42.82,72.43
+//    only if TBC or WOTLK
+    .talk Dyslix Silvergrub##23612
+    'From the Flight Master, take a flight to Brackenwall Village, Dustwallow Marsh|goto Dustwallow Marsh,35.57,31.88|c|title Go to Brackenwall Village|icon Interface\\minimap\\Tracking\\Flightmaster
+	info 
+	'Only For Vanilla|optional
+	'Go back to Brackenwall Village...
+
+step //6
+    'At Brackenwall Village, in the small cave:|goto Dustwallow Marsh,37.16,33.08
+    .talk Draz'Zilb##4501
+    ..turnin The Brood of Onyxia##1172
+
+step //7
+    'GROUP 2+ Players:|icon Interface\\cursor\\Directions
+//	|only if !Hunter and !Warlock and GROUPS
+    'Tough Quest: From Overlord Mok'Morokk by the Bonfire, accept and do this by beating him to a duel. You only need to get his health down to 1/3 left. Be prepared, this is not easy! He can stun you for several seconds! (5 sec)|goto Dustwallow Marsh,36.29,31.42|icon Interface\\cursor\\Attack
+//    only if Hunter or Warlock or (!Hunter and !Warlock and GROUPS)
+    .talk Overlord Mok'Morokk##4500
+    ..accept Challenge Overlord Mok'Morokk##1173
+    .goal Drive Overlord Mok'Morokk from Brackenwall Village|q 1173/1
+	............'Skip This?|confirm|next +2|icon Interface\\cursor\\Point
+
+step //8
+    'In the small cave:|goto Dustwallow Marsh,37.16,33.08
+//    only if quest(1173) >= COMPLETED
+    .talk Draz'Zilb##4501
+    ..turnin Challenge Overlord Mok'Morokk##1173
+	.........'Go to Vanilla route|confirm|next +1|icon Interface\\cursor\\Point|only Mage
+	.....'Continue to TBC/WOTLK route|confirm|next +4|icon Interface\\cursor\\Point|only Mage
+
+step //9
+	'Only For Vanilla|optional
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+//    only if (ERA or SOM1) and Mage and SPELL[3566]
+    .cast Teleport: Thunder Bluff##3566
+	only Mage
+
+step //10
+	'Only For Vanilla|optional
+    'If you need to, visit the Mage Trainer (down in cave):|goto Thunder Bluff,22.74,14.52|title Mage Trainer
+//    only if (ERA or SOM1) and Mage and SPELL[3566]
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Mage
+
+step //11
+	'Only For Vanilla|optional
+    'At the top of the tower in the middle of Thunder Bluff:|goto Thunder Bluff,47.00,49.84
+//    only if (ERA or SOM1) and Mage and SPELL[3566]
+    .talk Tal##2995
+    'From the Wind Rider Master, take a flight to Camp Mojache, Feralas|goto Feralas,75.45,44.36|c|title Go to Camp Mojache|icon Interface\\minimap\\Tracking\\Flightmaster
+	only Mage
+
+step //12
+    'At Brackenwall Village flight master:|goto Dustwallow Marsh,35.57,31.88
+//    only if (ERA or SOM1) and (!Mage or !SPELL[3566])
+    .talk Shardi##11899
+	info 
+	'Only For Vanilla|optional
+	'From the Wind Rider Master, take a flight to Camp Mojache, Feralas|goto Feralas,75.45,44.36|c|title Go to Camp Mojache (For Vanilla)|icon Interface\\minimap\\Tracking\\Flightmaster
+	info 
+	'Only For TBC/WOTLK|optional
+	'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan (For TBC/WOTLK)|c|icon Interface\\minimap\\Tracking\\Flightmaster
+	only !Mage
+
+step //13
+	..'49-49 Dustwallow Marsh is complete!|icon Interface\\cursor\\Directions
+	info 
+	...........'Only for Vanilla|optional
+	.........'Go to 49-49 Feralas|confirm|next "Joana's Guide\\Horde\\49-49 Feralas (Vanilla only)"|icon Interface\\icons\\achievement_zone_feralas
+	info 
+	........'Only for TBC/WOTLK|optional
+	.........'Go to 49-50 Tanaris|confirm|next "Joana's Guide\\Horde\\49-50 Tanaris"|icon Interface\\icons\\achievement_zone_tanaris_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\49-49 Feralas (Vanilla only)",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\49-50 Tanaris
+startlevel 49
+
+step //1
+    'Next to the big tent:|goto Feralas,74.41,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Testing the Vessel##3123
+    ..accept Hippogryph Muisek##3124
+    ..accept The Sunken Temple##3380
+
+step //2
+	info |goto Silithus,0,400
+    'Enter the big tent:|goto Feralas,74.67,42.98|title Enter big tent
+	info 
+    'In the big tent next to you:|goto Feralas,74.43,42.91|title Jangdor Swiftstrider
+    .talk Jangdor Swiftstrider##7854
+    ..accept Improved Quality##7734
+
+step //3
+    'In the hut across the river:|goto Feralas,76.18,43.83
+    .talk Talo Thornhoof##7776
+    ..accept Dark Heart##3062
+    ..accept Vengeance on the Northspring##3063
+    ..accept The Strength of Corruption##4120
+
+step //4
+    'Go in the Inn:|goto Feralas,74.66,44.75
+    .talk Innkeeper Greul##7737
+    .home Camp Mojache|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //5
+	info |goto Silithus,0,400
+    .'Go north to the entrance of Dire Maul only to get it Discovered. Simply go there quickly to get it Discovered (run back away from the Elites). 
+	info 
+	.'NOTES: Simply discovering Dire Maul in this area will allow you to accept a future quest (A Reliquary of Purity). |icon Interface\\cursor\\Directions
+	info 
+	.'You need to actually discover the zone, not the area.  You will know this is achieved when your general chat switches over to Dire Maul.  Also watch out for the elite ogres! Just run in and run back out quick!|goto Feralas,59.13,44.53|title Discover: Dire Maul
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //6
+    'Head to High Wilderness...|goto Feralas,56.0,64.0
+	info 
+    'Use the Hippogryph Muisek Vessel quest item on any Frayfeather hippogryph corpses around High Wilderness.|icon Interface\\Icons\\inv_potion_32
+    .use Hippogryph Muisek Vessel##9619
+    .collect 10 Hippogryph Muisek##9595|q 3124|icon Interface\\icons\\spell_frost_wizardmark
+//    info 
+//	'NOTE: Save 10 Long Elegant Feathers for a quest (Another Message to the Wildhammer) in The Hinterlands.|icon Interface\\cursor\\Directions
+//    .collect 10 Long Elegant Feather##4589|n|icon Interface\\icons\\spell_magic_featherfall
+
+step //7
+	'Hearth (or go back) to Camp Mojache.|only !Shaman
+	'Hearth (or Use Astral Recall) to Camp Mojache.|cast Astral Recall##556|only Shaman
+	.use Hearthstone##6948|goto Feralas,74.41,43.36
+	info 
+    'Next to the big tent:
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Hippogryph Muisek##3124
+    ..accept Faerie Dragon Muisek##3125
+
+step //8
+    'Use the Faerie Dragon Muisek Vessel quest item on Sprite Darter corpses.|goto Feralas,69.39,47.58
+    .use Faerie Dragon Muisek Vessel##9620
+	.collect 8 Faerie Dragon Muisek##9596|q 3125/1|icon Interface\\icons\\spell_nature_astralrecalgroup
+    .kill Sprite Darter##5278|q 3125/1|n
+
+step //9
+    'Back at Camp Mojache:|goto Feralas,74.41,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Faerie Dragon Muisek##3125
+    ..accept Treant Muisek##3126
+
+step //10
+	info |goto Silithus,0,400
+	'Use the Treant Muisek Vessel quest item on Wandering Forest Walker corpses.|goto Feralas,73.03,55.24|title Wandering Forest Walker (Patrols around the area)
+	'There is one that patrols around a hill and another one patrols around the area. You can just use these two spawn locations to get the 3 you need, wait for the first one to respawn again (grind on mobs while waiting).|goto Feralas,74.05,39.00|title Wandering Forest Walker (Patrols around the area)
+    .use Treant Muisek Vessel##9606
+	.collect 3 Treant Muisek##9593|q 3126/1|icon Interface\\icons\\spell_nature_protectionformnature
+	.kill Wandering Forest Walker##7584|n
+	info |only Warrior
+	'NOTE: You'll need to Hamstring kite them.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    
+step //11
+    'Back at Camp Mojache:|goto Feralas,74.41,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Treant Muisek##3126
+    ..accept Mountain Giant Muisek##3127
+
+step //12
+    'Hunters, right next to the Witch Doctor, stable your pet at the Stable Master.|goto Feralas,74.49,43.27|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Shyrka Wolfrunning##9986
+    'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+    only Hunter
+
+step //13
+    'NOTE: You will not be back to town for awhile so make sure you are well stocked and repaired.|goto Feralas,74.71,42.58|icon Interface\\cursor\\Directions
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	
+step //14
+    'Hunters, go west around the area and tame an Ironfur Patriarch (for Claw R7). Try to get a level 49. Then use this pet to do the following quests.|goto Feralas,48.76,36.97|icon Interface\\Icons\\ability_hunter_beasttaming
+    .talk Ironfur Patriarch##5274|n
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //15
+    .'If you find the item called OOX-22/FE Distress Beacon, accept the quest:
+    .collect OOX-22/FE Distress Beacon##8705|n
+    ..accept Find OOX-22/FE!##2766|n|icon Interface\\cursor\\Quest
+	info 
+    .'Just through the small cave at Feral Scar Vale:|goto Feralas,53.35,55.70|title Homing Robot OOX-22/FE
+    .talk Homing Robot OOX-22/FE##7807
+    ..turnin Find OOX-22/FE!##2766|icon Interface\\cursor\\QuestTurnIn
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //16
+	info |goto Silithus,0,400
+    ......'Accept and do the escort?|important
+	'TIP: Before doing the escort, clear the path of yetis/bears to the main path, otherwise this escort can be really tough. Try to keep aggro off of the Robot Chicken (Homing Robot OOX-22/FE), as it can die easily. This is also a fairly long escort (12.5 minutes). If you fail, you can try again later on in the guide at lvl 49. |icon Interface\\cursor\\Directions
+	WARNING: Hardcore players may want to skip this quest as it can be risky. Only attempt this if you are confident about it.|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	info |goto Feralas,45.62,43.29|title Escort Ends Here
+    .talk Homing Robot OOX-22/FE##7807|goto Feralas,53.35,55.70|title Homing Robot OOX-22/FE
+    ..accept Rescue OOX-22/FE!##2767
+    .'Escort the robot chicken all the way to the shoreline.
+	.goal Escort OOX-22/FE to the dock along the Forgotten Coast|q 2767/1
+    ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //17
+    'Go west next to the dock:|goto Feralas,44.81,43.42
+    .talk Zorbin Fandazzle##14637
+    ..accept Zapped Giants##7003
+    ..accept Fuel for the Zapping##7721
+
+step //18
+    'NOTE: "Zapped Giants" and its quest item Zorbin's Ultra-Shrinker is on a 2 hour timer, so work somewhat quickly, but you should have plenty of time.|goto Feralas,44.29,38.91|icon Interface\\cursor\\Directions
+	info 
+    'Kill/loot water elementals, which include Sea Elementals and Sea Sprays (low drop rate).|icon Interface\\cursor\\Attack
+	.collect Water Elemental Core##18958|q 7721/1|icon Interface\\icons\\inv_stone_02
+	.kill Sea Spray##5462|n
+    .kill Sea Elemental##5461|n
+    info 
+    'Watch out for the elite giants Shore Strider, use the Zorbin's Ultra-Shrinker quest item on them to make them non-elite, then loot them.  Don't try to finish it yet.|icon Interface\\Icons\\inv_gizmo_09
+    .use Zorbin's Ultra-Shrinker##18904
+	.collect Miniaturization Residue##18956|q 7003/1|n|icon Interface\\Icons\\inv_enchant_dustsoul
+    .kill Shore Strider##5359|n
+    .kill Deep Strider##5360|n
+    .kill Wave Strider##5361|n
+
+step //19
+    'Back next to the dock:|goto Feralas,44.81,43.42
+    .talk Zorbin Fandazzle##14637
+    ..turnin Fuel for the Zapping##7721
+//    ..turnin Zapped Giants##7003
+	info 
+    'SKIP "Refuel for the Zapping" (does not yield much XP)|icon Interface\\cursor\\Directions
+	info 
+    'NOTE: You can then get resupplied from him.|icon Interface\\cursor\\Directions
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //20
+	info |goto Silithus,0,400
+    'Take mountain ramp upward...|goto Feralas,46.55,37.59|title Take mountain ramp up
+    'Enter Rage Scar Hold:|goto Feralas,53.24,31.84|title Rage Scar Hold (Cave Entrance)
+	info 
+    'Kill/loot yeti for the Rage Scar Yeti Hide around Rage Scar Hold.|icon Interface\\cursor\\Attack
+	.collect Rage Scar Yeti Hide##18947|q 7734/1|icon Interface\\icons\\inv_misc_pelt_bear_ruin_04
+    .kill Ferocious Rage Scar##5299|n
+    .kill Rage Scar Yeti##5296|n
+    .kill Elder Rage Scar##5297|n
+	info 
+    'Keep grinding on the yetis until you get the Perfect Yeti Hide (low drop rate), from it:
+    .collect Perfect Yeti Hide##18972|n|icon Interface\\icons\\inv_misc_pelt_boar_02
+    ..accept Perfect Yeti Hide##7738
+
+step //21
+	'Head north to The Ruins of Ravenwind...|goto Feralas,39.92,13.26
+	info 
+    'Kill the required amount of Northspring harpies around The Ruins of Ravenwind.|icon Interface\\cursor\\Attack
+    .kill 4 Northspring Harpy##5362|q 3063/1
+    .kill 4 Northspring Roguefeather##5363|q 3063/2
+    .kill 4 Northspring Slayer##5364|q 3063/3
+    .kill 4 Northspring Windcaller##5366|q 3063/4
+	info 
+    .'Keep grinding on harpies until you get the following item drop:
+    .collect Horn of Hatetalon##9530|q 3062/1|icon Interface\\icons\\inv_misc_horn_02
+
+step //22
+	info |goto Silithus,0,400
+    'Up north in The Ruins of Ravenwind, use the Horn of Hatetalon quest item at the two big stones to summon Edana Hatetalon (lvl 50), then kill/loot her.|goto Feralas,40.53,8.63|title Use quest item here|icon Interface\\cursor\\Attack
+    .use Horn of Hatetalon##9530
+    .kill Edana Hatetalon##8075|n
+	.collect Edana's Dark Heart##9525|q 3062/1|icon Interface\\icons\\inv_misc_gem_sapphire_01
+	info 
+	'WARNING: Hardcore Player, Like all elite quests, only do this if you are confident about it!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+	'TIP: She is not terribly hard to solo, but be prepared!  Hide yourself when she casts a spell to avoid a lot of damage.|icon Interface\\cursor\\Directions
+
+step //23
+	'Use Zorbin's Ultra-Shrinker quest item on any giant (this also removes the elite status) and Kill/loot them.|goto Feralas,38.98,24.21|icon Interface\\cursor\\Attack
+    .use Zorbin's Ultra-Shrinker##18904
+	.collect 15 Miniaturization Residue##18956|q 7003/1|icon Interface\\icons\\inv_enchant_dustsoul
+	info 
+    'Use the Mountain Giant Muisek Vessel quest item on the giant corpses.
+    .use Mountain Giant Muisek Vessel##9621
+	.collect 7 Mountain Giant Muisek##9597|q 3127/1|icon Interface\\icons\\spell_nature_cyclone
+
+step //24
+    'Go south, next to the dock:|goto Feralas,44.81,43.42
+    .talk Zorbin Fandazzle##14637
+    ..turnin Zapped Giants##7003
+	info 
+    'You can now get resupplied from him.
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //25
+    'Hearth (or go back) to Camp Mojache.|only !Shaman
+	'Hearth (or Use Astral Recall) to Camp Mojache.|cast Astral Recall##556|only Shaman
+	.use Hearthstone##6948|goto Feralas,74.41,43.36
+	info 
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Mountain Giant Muisek##3127
+    ..accept Weapons of Spirit##3129
+    info 
+	'Then instead of waiting for the doc, just do the next step...
+
+step //26
+    'Hunters, abandon your bear and get your cat back out from the Stable Master (next to the Witch Doctor) and teach him Claw R7.|goto Feralas,74.49,43.27|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Shyrka Wolfrunning##9986
+	info 
+    'Get Pet from Stable|icon Interface\\minimap\\Tracking\\StableMaster
+    only Hunter
+
+step //27
+//    'Enter the big tent:|goto Feralas,74.67,42.98
+    'In the big tent next to you:|goto Feralas,74.43,42.91
+    .talk Jangdor Swiftstrider##7854
+    ..turnin Improved Quality##7734
+    ..turnin Perfect Yeti Hide##7738
+	info 
+    'Get Repaired/Resupplied|goto Feralas,74.71,42.58|title Get Repaired / Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //30
+    'Go back:|goto Feralas,74.41,43.36
+    .talk Witch Doctor Uzer'i##8115
+    ..turnin Weapons of Spirit##3129
+    info |only Warrior
+	'NOTE: None of these weapon rewards are better than the Whirlwind Axe. The staff has higher DPS, yes, but you're missing out on 5% crit if you switch due to Axe Specialization. The green, 2h axe also has higher DPS, but is still not better because the swing speed is too quick, which means lower average weapon damage, which turns into smaller ticks from Deep Wounds, and smaller crits that are anti-synergistic with Impale.|only Warrior
+
+step //31
+    'At the other side of Camp Mojache under the hut:|goto Feralas,76.18,43.83
+    .talk Talo Thornhoof##7776
+    ..turnin Dark Heart##3062
+    ..turnin Vengeance on the Northspring##3063
+
+step //32
+    'Take the flight path to Tanaris.|goto Feralas,75.45,44.36
+    .talk Shyn##8020
+    'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //33
+	.......'49-49 Feralas is complete!|icon Interface\\cursor\\Directions
+	..........'Go to 49-50 Tanaris|confirm|next "Joana's Guide\\Horde\\49-50 Tanaris"|icon Interface\\icons\\achievement_zone_tanaris_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\49-50 Tanaris",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\50-50 Azshara
+startlevel 49
+
+step //1
+    'As you enter Gadgetzan (next to the crane):|goto Tanaris,51.84,26.63
+    .talk Tran'rek##7876
+    ..accept Thistleshrub Valley##3362
+
+step //2
+    'Behind the Inn, next to the Bonfire:|goto Tanaris,52.82,27.40
+    .talk Andi Lynn##11758
+    ..accept The Dunemaul Compound##5863
+
+step //3
+    'Go in the Inn:|goto Tanaris,52.38,27.91
+    .talk Innkeeper Fizzgrimble##7733
+    .home Gadgetzan|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //4
+	'Only For Vanilla|optional
+    'Withdraw from the bank:|goto Tanaris,52.21,28.58|title Bank
+	..'Yeh'kinya's Bramble|icon Interface\\icons\\inv_wand_12
+	..'Wastewander Water Pouch|icon Interface\\icons\\inv_drink_milk_02
+	..'Hippogryph Egg|icon Interface\\icons\\inv_egg_02
+	..'Goodsteel Ledger|icon Interface\\icons\\inv_misc_book_09
+	..'Solid Crystal Leg Shaft|icon Interface\\icons\\inv_misc_monsterspidercarapace_01
+	..'Goodsteel's Balanced Flameberge|icon Interface\\icons\\inv_sword_02
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //5
+    'At the windmill:|goto Tanaris,52.46,28.52
+    .talk Chief Engineer Bilgewhizzle##7407
+    ..turnin Into the Field##243
+    ..accept Slake That Thirst##379
+    ..turnin Slake That Thirst##379
+    info 
+	'NOTE: Do not accept the quest "Tanaris Field Sampling" from the item (Model 4711-FTZ Power Source) received yet, this will be done later.|icon Interface\\cursor\\Directions
+
+step //6
+    'Turn in your Hippogryph Egg (additional eggs do not yield XP).|goto Tanaris,52.39,26.97
+    info 
+	'NOTE: You can turn in different types of eggs at the NPC next to the machine for a non-XP reward.|icon Interface\\cursor\\Directions
+    .turnin The Super Egg-O-Matic##2741
+//    info For Vanilla, If you don't have the egg in your inventory, take it from the bank or skip
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //7
+    'Next to the AH:|goto Tanaris,51.81,28.66
+    .talk Marin Noggenfogger##7564
+    ..accept The Thirsty Goblin##2605
+
+step //8
+    'Next to the Forge:|goto Tanaris,51.47,28.82
+    .talk Krinkle Goodsteel##5411
+    ..turnin Ledger from Tanaris##4450
+
+step //9
+    'On the western side of Gadgetzan, up on the hill:|goto Tanaris,50.21,27.48
+    .talk Senior Surveyor Fizzledowser##7724
+    ..accept Noxious Lair Investigation##82
+
+step //10
+    'Go south to the Broken Pillar:|goto Tanaris,52.71,45.92
+    .talk Marvon Rivetseeker##7771
+    ..turnin The Sunken Temple##3380
+    ..accept The Stone Circle##3444
+    ..accept Gahz'ridian##3161
+
+step //11
+    'Kill Gor'marok the Ravager (in the small cave) at The Dunemaul Compound.|goto Tanaris,41.48,57.79|icon Interface\\cursor\\Attack
+    .kill Gor'marok the Ravager##12046|q 5863/3
+	info 
+    'Loot Gahz'ridian from the ground.
+	.collect 30 Gahz'ridian Ornament##8443|q 3161/1|n|icon Interface\\Icons\\inv_jewelry_talisman_06
+	'TIP: You can equip the Gahz'ridian Detector helm to help you see the Gahz'ridian on the minimap.|icon Interface\\cursor\\Directions
+    
+step //12
+	info |goto Silithus,0,400
+    'Finish this around Southmoon Ruins.|goto Tanaris,39.67,71.82|title Around: Southmoon Ruins
+    info 
+	'NOTE: There is another area of mobs around Eastmoon Ruins.|goto Tanaris,46.79,65.00|title Around: Eastmoon Ruins|icon Interface\\cursor\\Directions
+    .kill 10 Dunemaul Brute##5474|q 5863/1
+    .kill 10 Dunemaul Enforcer##5472|q 5863/2
+    info 
+    info 
+    'Loot Gahz'ridian from the ground.
+	.collect 30 Gahz'ridian Ornament##8443|q 3161/1|icon Interface\\Icons\\inv_jewelry_talisman_06
+	'TIP: You can equip the Gahz'ridian Detector helm to help you see the Gahz'ridian on the minimap.|icon Interface\\cursor\\Directions
+
+step //13
+    'Remember to re-equip your main helmet after being done with the Gahz'ridian Ornament quest!|icon Interface\\cursor\\Directions
+	info 
+    'Kill/loot Centipaar bugs around The Noxious Lair. Any of them can drop the insect parts.|goto Tanaris,34.63,48.31|title Around: The Noxious Lair|icon Interface\\cursor\\Attack
+    .collect 5 Centipaar Insect Parts##8587|q 82/1|icon Interface\\Icons\\inv_misc_pelt_boar_ruin_03
+
+step //14
+    'Done around Thistleshrub Valley.|goto Tanaris,30.32,64.81
+    .kill 8 Gnarled Thistleshrub##5490|q 3362/1
+    .kill 8 Thistleshrub Rootshaper##5485|q 3362/2
+	info 
+    'Kill/loot Thistleshrub Dew Collectors for the Laden Dew Gland (low drop rate).|icon Interface\\cursor\\Attack
+    .collect Laden Dew Gland##8428|q 2605/1|icon Interface\\Icons\\inv_misc_pipe_01
+
+step //15
+	info |goto Silithus,0,400
+    'At Thistleshrub Valley, accept and do the escort quest started from Tooga (turtle). He could be at 8 different spots (check map for locations).|goto Tanaris,31.79,74.14|title Tooga (could be here #1)
+    info |goto Tanaris,29.8,73.8|title Tooga (could be here #2)
+	'NOTE: This turtle could also currently be in an escort by another player, in which case this can be skipped.|icon Interface\\cursor\\Directions|goto Tanaris,30.2,70.6|title Tooga (could be here #3)
+	info |goto Tanaris,28.6,67.6|title Tooga (could be here #4)
+    .talk Tooga##5955|goto Tanaris,30.8,66.0|title Tooga (could be here #5)
+    ..accept Tooga's Quest##1560|goto Tanaris,28.6,63.6|title Tooga (could be here #6)
+	info |goto Tanaris,29.6,60.6|title Tooga (could be here #7)
+	'Lead Tooga all the way NE in Tanaris to Torta.|goto Tanaris,66.58,25.66|title Torta (End of the escort)
+    .goal Lead Tooga to Torta|q 1560/1
+	info |goto Tanaris,30.2,58.2|title Tooga (could be here #8)
+    .talk Torta##6015
+    ..turnin Tooga's Quest##1560
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //16
+    'Go NE all the way to Steamwheedle Port, and in the hut:|goto Tanaris,67.03,24.01
+    .talk Yorba Screwspigot##9706
+    ..accept Yuka Screwspigot##4324
+
+step //17
+    'North at Steamwheedle Port:|goto Tanaris,66.99,22.35
+    .talk Yeh'kinya##8579
+    ..turnin Screecher Spirits##3520
+    info 
+	'SKIP "The Prophecy of Mosh'aru" (Zul'Farrak Dungeon)|icon Interface\\cursor\\Directions
+	info |only Hunter
+    'Hunters, stock up on arrows (if you're using them), because you cannot buy them at Gadgetzan. You can get them from the vendor in the hut.|goto Tanaris,67.01,21.99|title Jabbey (Arrow Vendor)|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	.talk to Jabbey##8139|only Hunter
+	info |only Hunter
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|only Hunter
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point|only Hunter
+
+step //18
+    'Hearth to Gadgetzan.
+    .use Hearthstone##6948
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker|only Hunter
+	info 
+    'Next to the AH:|goto Tanaris,51.81,28.66
+    .talk Marin Noggenfogger##7564
+    ..turnin The Thirsty Goblin##2605
+    ..accept In Good Taste##2606
+
+step //19
+    'NW hut:|goto Tanaris,51.06,26.87
+    .talk Sprinkle##7583
+    ..turnin In Good Taste##2606
+    ..accept Sprinkle's Secret Ingredient##2641
+
+step //20
+    'In the hut next to you:|goto Tanaris,50.88,26.96
+    .talk Alchemist Pestlezugg##5594
+    ..turnin Noxious Lair Investigation##82
+
+step //21
+    'Next to the crane:|goto Tanaris,51.57,26.76
+    .talk Tran'rek##7876
+    ..turnin Thistleshrub Valley##3362
+
+step //22
+    'Behind the Inn, next to the Bonfire:|goto Tanaris,52.82,27.40
+    .talk Andi Lynn##11758
+    ..turnin The Dunemaul Compound##5863
+
+step //23
+	'Withdraw from the bank:|goto Tanaris,52.21,28.58|title Bank
+	..'Field Testing Kit|icon Interface\\Icons\\inv_misc_bag_07_red
+	..'OOX-17/TN Distress Beacon|icon Interface\\icons\\inv_egg_05
+	..'Model 4711-FTZ Power Source (If in Bank)|icon Interface\\icons\\inv_misc_stonetablet_05
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //24
+    'On the western side of Gadgetzan, up on the hill:|goto Tanaris,50.21,27.48
+    .talk Senior Surveyor Fizzledowser##7724
+    ..accept The Scrimshank Redemption##10
+
+step //25
+	info |goto Silithus,0,400
+    'From the item Model 4711-FTZ Power Source in your bags, accept and start kill/looting beasts just south of Gadgetzan. You need to kill/loot any: Basilisks, Hyenas, Scorpids.|goto Tanaris,52.71,45.92|title Next Destination|icon Interface\\cursor\\Attack
+    info 
+	'You will find these beasts all around the open fields of Tanaris. As you get the untested samples, click them to get the acceptable ones (Only for Vanilla/TBC). You only have 2 hours to do this and the next few steps, so work quickly.
+    ..accept Tanaris Field Sampling##654
+
+step //26
+    'Grind your way south to the Broken Pillar:|goto Tanaris,52.71,45.92
+    .talk Marvon Rivetseeker##7771
+    ..turnin Gahz'ridian##3161
+	info 
+    'Start kill/looting beasts just south of Gadgetzan. You need to kill/loot any: Basilisks, Hyenas, Scorpids.|icon Interface\\cursor\\Attack
+    info 
+	'You will find these beasts all around the open fields of Tanaris. As you get the untested samples, click them to get the acceptable ones (Only for Vanilla/TBC). You only have 2 hours to do this and the next few steps, so work quickly.
+	.collect 8 Acceptable Basilisk Sample##9440|q 654/1|n|icon Interface\\icons\\inv_misc_monsterscales_03
+	.collect 8 Acceptable Hyena Sample##9441|q 654/2|n|icon Interface\\icons\\inv_misc_pelt_wolf_ruin_03
+	.collect 8 Acceptable Hyena Sample##9438|q 654/3|n|icon Interface\\icons\\spell_shadow_carrionswarm
+
+step //27
+    'If you have found the item OOX-17/TN Distress Beacon, accept the quest from it.
+    ..accept Find OOX-17/TN!##351
+	info 
+    'Between some mountains:|goto Tanaris,60.23,64.71
+    .talk Homing Robot OOX-17/TN##7784
+    ..turnin Find OOX-17/TN!##351
+    info 
+	'NOTE: If the robot chicken is not there, means someone else is currently in an escort with it. If so we can check back here one more time later on.|icon Interface\\cursor\\Directions
+	'NOTE For TBC/WOTLK: Also note that all chicken escorts are skipped due to the faster leveling rate.|icon Interface\\cursor\\Directions
+	info 
+    'Continue kill/looting any: Basilisks, Hyenas, Scorpids.|icon Interface\\cursor\\Attack
+	.collect 8 Acceptable Basilisk Sample##9440|q 654/1|n|icon Interface\\icons\\inv_misc_monsterscales_03
+	.collect 8 Acceptable Hyena Sample##9441|q 654/2|n|icon Interface\\icons\\inv_misc_pelt_wolf_ruin_03
+	.collect 8 Acceptable Hyena Sample##9438|q 654/3|n|icon Interface\\icons\\spell_shadow_carrionswarm
+    info 
+	'As you get the untested samples, click them to get the acceptable ones . You only have 2 hours to do this and the next few steps, so work quickly.
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //28
+	info |goto Silithus,0,400
+	'Only For Vanilla|optional
+    'Accept and do the escort. It's important to try and keep aggro off of the Robot Chicken as it can die easily. This escort leads all the way to Steamwheedle Port and takes roughly 20 minutes. If you have troubles with this quest, then it can be skipped.|goto Tanaris,66.90,23.14|title Escort Ends Here
+    .talk Homing Robot OOX-17/TN##7784|goto Tanaris,60.23,64.71|title Homing Robot OOX-17/TN
+    ..accept Rescue OOX-17/TN!##648
+    info 
+	'NOTE: Hardcore players should only do this if you are confident about it as this can be risky!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+
+step //29
+    'NOTE For TBC/WOTLK: All chicken escorts are skipped due to the faster leveling rate.|icon Interface\\cursor\\Directions
+	info |goto Silithus,0,400
+    'Finish kill/looting any: Basilisks, Hyenas, Scorpids.|goto Tanaris,55.30,55.77|title Around the area|icon Interface\\cursor\\Attack
+    info 
+	'You will find these beasts all around the open fields of Tanaris. As you get the untested samples, click them to get the acceptable ones (Only for Vanilla/TBC). You only have 2 hours to do this and the next few steps, so work quickly.
+	.collect 8 Acceptable Basilisk Sample##9440|q 654/1|icon Interface\\icons\\inv_misc_monsterscales_03
+	.collect 8 Acceptable Hyena Sample##9441|q 654/2|icon Interface\\icons\\inv_misc_pelt_wolf_ruin_03
+	.collect 8 Acceptable Hyena Sample##9438|q 654/3|icon Interface\\icons\\spell_shadow_carrionswarm
+
+step //30
+	info |goto Silithus,0,400
+    'At The Gaping Chasm, enter the specific cave (at waypoint).|goto Tanaris,55.78,68.86|title Enter This Cave
+	info |goto Tanaris,56.28|68.41|title Make right turn
+	'Keep making right turns in the cave, which will lead you to the item you need to loot.|goto Tanaris,57.27,70.29|title Follow waypoint
+    .collect Scrimshank's Surveying Gear##8593|q 10/1|icon Interface\\Icons\\inv_gizmo_01|goto Tanaris,55.95,71.15|title Loot: Scrimshank's Surveying Gear
+	info |goto Tanaris,57.58,70.92|title Follow waypoint
+
+step //31
+    'Hearth (if you can), or die on purpose and res at spirit (Not for Hardcore Player), then head north to get back to Gadgetzan.|only !Shaman
+	'Hearth (or Use Astral Recall), or die on purpose and res at spirit, then head north to get back to Gadgetzan.|cast Astral Recall##556|only Shaman
+    .use Hearthstone##6948
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //32
+    'Next to the Inn at the windmill:|goto Tanaris,52.46,28.51
+    .talk Chief Engineer Bilgewhizzle##7407
+    ..turnin Tanaris Field Sampling##654
+    ..accept Return to Apothecary Zinge##864
+
+step //33
+    'Destroy the Model 4711-FTZ Power Source item as it no longer has any use.|icon Interface\\icons\\inv_misc_stonetablet_05
+	info 
+    'On the western side of Gadgetzan, up on the hill:|goto Tanaris,50.21,27.48
+    .talk Senior Surveyor Fizzledowser##7724
+    ..turnin The Scrimshank Redemption##10
+    ..accept Insect Part Analysis##110
+
+step //34
+    'In the NW hut:|goto Tanaris,50.98,26.99
+    .talk Alchemist Pestlezugg##5594
+    ..turnin Insect Part Analysis##110
+    ..accept Insect Part Analysis##113
+
+step //35
+    'Back at the western side of Gadgetzan, up on the hill:|goto Tanaris,50.21,27.48
+    .talk Senior Surveyor Fizzledowser##7724
+    ..turnin Insect Part Analysis##113
+    ..accept Rise of the Silithid##32
+
+step //36
+    'Make sure you are level 50, grind on any mob until you are.|goto Tanaris,51.60,25.44
+    ding 50
+
+step //37
+    'Take flight to Orgrimmar.|goto Tanaris,51.60,25.44
+    .talk Bulkrek Ragefist##7824
+    'From the Wind Rider Master, take a flight to Orgrimmar|goto Orgrimmar,45.13,63.89|c|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+	only !Mage
+//    only !Mage or (MAGE and (ITEM[17031] == 0 or not SPELL[3567]))
+
+step //38
+	'Use your Teleport: Orgrimmar spell to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\icons\\spell_arcane_teleportorgrimmar
+	.cast Teleport: Orgrimmar##3567
+    only Mage
+
+step //39
+    'Get your level 50 spells/abilities. Mage Trainers are down below in the hut at Valley of Spirits. Also accept your level 50 class quest.|goto Orgrimmar,39.16,86.27|title Mage Trainers|icon Interface\\icons\\inv_staff_13
+	info 
+	.talk Uthel'nay##7311
+	..accept Magecraft##8250
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Mage
+
+step //40
+    'From Innkeeper Gryshka in Orgrimmar's Inn:|goto Orgrimmar,54.09,68.40
+    .talk Innkeeper Gryshka##6929
+    ..accept Assisting Arch Druid Runetotem##936
+    .home Orgrimmar|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+	'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //41
+    'See if you can obtain the following items from the AH for your lvl 50 class quest (Elemental Mastery):|goto Orgrimmar,54.13,64.29|title AH
+    .collect 1 Elemental Air##7069|icon Interface\\Icons\\spell_nature_tranquility
+    .collect 1 Elemental Fire##7068|icon Interface\\Icons\\spell_fire_fire
+    .collect 1 Elemental Earth##7067|icon Interface\\Icons\\inv_ore_iron_01
+    .collect 1 Elemental Water##7070|icon Interface\\Icons\\inv_potion_03
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Shaman
+
+step //42
+    'Withdraw from the bank:|goto Orgrimmar,49.57,69.13|title Bank
+	..'Sealed Letter to Ag'tor (TBC/WOTLK only)|icon Interface\\Icons\\inv_letter_13
+	..'Box of Empty Vials|icon Interface\\Icons\\inv_box_01
+	info |only Shaman
+    'Deposit into bank:|only Shaman
+	..'Elemental Air|icon Interface\\Icons\\spell_nature_tranquility|only Shaman
+    ..'Elemental Fire|icon Interface\\Icons\\spell_fire_fire|only Shaman
+    ..'Elemental Earth|icon Interface\\Icons\\inv_ore_iron_01|only Shaman
+    ..'Elemental Water|icon Interface\\Icons\\inv_potion_03|only Shaman
+
+step //43
+    'Get your level 50 spells/abilities at Hall of the Brave.|goto Orgrimmar,80.40,32.38|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+    info |only Warrior
+	'NOTE: Train Rend R6 and Recklessness at least. Also accept your lvl 50 class quest.|icon Interface\\cursor\\Directions|only Warrior
+	.talk Sorek##3354|only Warrior
+	..accept A Troubled Spirit##8417|only Warrior
+	'Get your level 50 spells/abilities at Grommash Hold, from the Paladin Trainer.|goto Orgrimmar,32.26,35.72|title Paladin Trainer|icon Interface\\icons\\INV_Hammer_01|only Paladin
+	.talk Master Pyreanor##23128|only Paladin
+	'Get your level 50 spells/abilities at Grommash Hold. Also accept your lvl 50 class quest.|goto Orgrimmar,38.80,36.37|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	.talk Sagorne Creststrider##13417|only Shaman
+	..accept Elemental Mastery##8410|only Shaman
+	'Get your level 50 spells/abilities at Cleft of Shadow.|goto Orgrimmar,47.99,45.96|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	'Get your level 50 spells/abilities at Cleft of Shadow.|goto Orgrimmar,43.05,53.73|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+    info |only Rogue
+	'NOTE: We will have to skip your level 50 class quest "A Simple Request" due to it being out of the route and quest log issues will happen.|icon Interface\\cursor\\Directions|only Rogue
+	'Get your level 50 spells/abilities. Priest Trainers are at Valley of Spirits.|goto Orgrimmar,35.60,87.83|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+    info |only Priest
+	'Only For Vanilla|optional|only Priest
+	'NOTE: Do NOT accept "Cenarion Aid" yet. But try to obtain an Ichor of Undeath from the AH for this quest done later on at level 54 and save it in the Bank for now.  My guide will remind you once more when we get close to it.|icon Interface\\cursor\\Directions|only Priest
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	only Warrior,Paladin,Shaman,Rogue,Priest,Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //52
+    'Up on the platform, Go to Azshara:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Valormok, Azshara|goto Azshara,21.96,49.62|title Go to Valormok|icon Interface\\minimap\\Tracking\\FlightMaster
+    info |only Hunter
+	'NOTE: Hunters, don't get your level 50 spells/abilities yet, you will do this later!|icon Interface\\cursor\\Directions|only Hunter
+	info 
+	'If you don't have the Azshara flight path, just go to Splintertree Post, in Ashenvale and then run to Azshara.|goto Ashenvale,73.18,61.60|title Go to Splintertree Post (if you don't have the Azshara Flight Path)|icon Interface\\minimap\\Tracking\\FlightMaster
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //54
+    .......'49-50 Tanaris is complete!|icon Interface\\cursor\\Directions
+	..........'Go to 50-50 Azshara|confirm|next "Joana's Guide\\Horde\\50-50 Azshara"|icon Interface\\icons\\achievement_zone_azshara_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\50-50 Azshara",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 50
+next Joana's Guide\\Horde\\50-51 Hinterlands
+
+step //1
+    'Once at Valormok, Azshara.|goto Azshara,22.56,51.42|title Jediga
+	info 
+//	'Only For Vanilla/TBC|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .talk Jediga##8587
+    ..accept Stealing Knowledge##3517
+	info 
+    ...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    .talk Ag'tor Bloodfist##8576|goto Azshara,22.26,51.48|title Ag'tor Bloodfist (WOTLK Route)
+    ..turnin Betrayed##3504
+	info 
+    'SKIP next "Betrayed" quest - Too high level right now and we will not be returning back to Azshara due to the faster leveling rate.|icon Interface\\cursor\\Directions
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //2
+    'Go east to the Ruins of Eldarath and loot the 4 tablets, they are randomly scattered around the ruins.|goto Azshara,36.88,53.21
+    info 
+	They each have a different color:
+    'Tablet of Beth'Amara = Purple|icon Interface\\icons\\inv_misc_stonetablet_03
+    'Tablet of Jin'yael = Blue|icon Interface\\icons\\inv_misc_stonetablet_04
+    'Tablet of Markri = Green|icon Interface\\icons\\inv_misc_stonetablet_01
+    'Tablet of Sael'hai = Yellow|icon Interface\\icons\\inv_misc_stonetablet_02
+    .collect Tablet of Beth'Amara##10538|q 3517/1|icon Interface\\icons\\inv_misc_stonetablet_03
+    .collect Tablet of Jin'yael##10539|q 3517/2|icon Interface\\icons\\inv_misc_stonetablet_04
+    .collect Tablet of Markri##10540|q 3517/3|icon Interface\\icons\\inv_misc_stonetablet_01
+    .collect Tablet of Sael'hai##10541|q 3517/4|icon Interface\\icons\\inv_misc_stonetablet_02
+    info |only Priest
+	'Only For Vanilla|optional|only Priest
+	'NOTE: If You find an Ichor of Undeath, then this can be used for a later Priest class quest at level 53 (only Phase 4). Hold on to this and do not sell it to a vendor!|icon Interface\\cursor\\Directions|only Priest
+
+step //3
+    'Open your Box of Empty Vials to get your 4 Vials out.|icon Interface\\icons\\inv_box_01
+	info 
+    'At Southbridge, use your Empty Vial Labeled #1 at Tide Pool #1.|goto Azshara,47.89,60.93
+	.use Empty Vial Labeled #1 #1##10687
+    .collect Filled Vial Labeled #1##10691|q 3568/1|icon Interface\\icons\\inv_potion_35
+
+step //4
+    'Use your Empty Vial Labeled #2 at Tide Pool #2.|goto Azshara,47.85,51.40
+	.use Empty Vial Labeled #2##10688
+    .collect Filled Vial Labeled #2##10692|q 3568/2|icon Interface\\icons\\inv_potion_42
+
+step //5
+    'Use your Empty Vial Labeled #3 at Tide Pool #3.|goto Azshara,48.69,48.43
+	.use Empty Vial Labeled #3##10689
+    .collect Filled Vial Labeled #3|q 3568/3|icon Interface\\icons\\inv_potion_56
+
+step //6
+    'Use your Empty Vial Labeled #4 at Tide Pool #4.|goto Azshara,47.37,46.19
+	.use Empty Vial Labeled #4##10690
+    .collect Filled Vial Labeled #4|q 3568/4|icon Interface\\icons\\inv_potion_77
+
+step //7
+    'Go back to Valormok.|goto Azshara,22.56,51.42
+    'Shamans, you could use Astral Recall, then fly back to Valormok.|cast Astral Recall##556|only Shaman
+	info 
+    .talk Jediga##8587|goto Azshara,22.56,51.42
+    ..turnin Stealing Knowledge##3517
+	info 
+    'Accept ALL 4 Delivery quests:
+    ..accept Delivery to Andron Gant##3542
+    ..accept Delivery to Archmage Xylem##3561
+    ..accept Delivery to Jes'rimon##3541
+    ..accept Delivery to Magatha##3518
+
+step //8
+	info |goto Silithus,0,400
+    'You can get repaired from Gruul Darkblade.|goto Azshara,22.22,51.10|title Get repaired from: Gruul Darkblade|icon Interface\\minimap\\Tracking\\Repair
+	.talk Gruul Darkblade##10361
+	info 
+    'Or resupplied from the Kurll.|goto Azshara,21.82,52.10|title Get resupplied from: Kurll
+	.talk Kurll##3621
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //9
+	info |goto Silithus,0,400
+    'Go east a bit and from Sanath Lim-yo, complete his quest to teleport you up on the cliff.|goto Azshara,28.11,50.09|title Sanath Lim-yo
+	.talk Sanath Lim-yo##8395
+	..turnin Meeting with the Master##3503|n
+	info |goto Azshara,29.79,40.39|title Up in tower
+    .talk Archmage Xylem##8379
+    info (patrols around in tower)|goto Azshara,29.25,40.69|title Tower entrance
+    ..turnin Delivery to Archmage Xylem##3561
+    ..accept Xylem's Payment to Jediga##3565
+	info 
+    ..turnin Magecraft##8250|only Mage
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'SKIP "Magic Dust" - For now to save quest log space.|icon Interface\\cursor\\Directions|only Mage
+	...........'WOTLK route|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    ..accept Magic Dust##8251
+
+step //10
+	info |goto Silithus,0,400
+    'Drop down in the tower to exit it...|goto Azshara,29.15,40.82|title Exit tower
+    'Go back down the path to Nyrill and have him teleport you back down.|goto Azshara,26.47,46.27|title Go down to: Nyrill
+    .talk Nyrill##8399
+    ..accept Return Trip##3421
+    ..turnin Return Trip##3421
+	info 
+    'Go west to Valormok:|goto Azshara,22.56,51.42|title Jediga
+    .talk Jediga##8587
+    ..turnin Xylem's Payment to Jediga##3565
+
+step //11
+    .talk Kroum##8610|goto Azshara,21.95,49.62
+    'From the Wind Rider Master, take a flight to Thunder Bluff.|goto Thunder Bluff,47.02,49.84|title Go to Thunder Bluff|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	only !Mage
+
+step //12
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+	only Mage
+
+step //13
+    'At the Elder Rise:|goto Thunder Bluff,69.84,30.90
+    .talk Magatha Grimtotem##4046
+    ..turnin Delivery to Magatha##3518
+    ..accept Magatha's Payment to Jediga##3562
+
+step //14
+    'In the big tent:|goto Thunder Bluff,78.62,28.54
+    .talk Arch Druid Hamuul Runetotem##5769
+    ..turnin Assisting Arch Druid Runetotem##936
+	info 
+    'SKIP "Un'Goro Soil" (for now)|icon Interface\\cursor\\Directions
+
+step //15
+    'Next to you at a Druid Trainer get your level 50 spells/abilities.|goto Thunder Bluff,76.48,27.24
+    info 
+	'NEW ABILITIES TO GET:
+    'Healing Touch, Hurricane, Mark of the Wild, Maul, Ravage, Starfire.  You can SKIP Rebirth and Tranquility.
+    info 
+	'Also accept your level 50 class quest.
+    .talk Turak Runetotem##3033
+    ..accept Torwa Pathfinder##9063
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	only Druid
+
+step //16
+    'Hearth to Orgrimmar.|goto Orgrimmar,54.09,68.40|title Hearth to Orgrimmar|c
+    .use Hearthstone##6948
+
+step //17
+    info |goto Silithus,0,400
+    'Check the AH to see if you can obtain a Mithril Casing.|goto Orgrimmar,54.17,64.03|title Auction Hall
+	info 
+	'NOTE: This can be used for a later quest (Chasing A-Me 01) at Un'Goro Crater.|icon Interface\\cursor\\Directions
+	.collect Mithril Casing##10561|icon Interface\\icons\\inv_gizmo_mithrilcasing_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //18
+    'Withdraw from the Bank.|goto Orgrimmar,49.59,69.14
+	.'Dran's Ripple Delivery (Vanilla only)|icon Interface\\Icons\\inv_cask_03
+    .'Bundle of Atal'ai Artifacts (TBC/WOTLK Only)|icon Interface\\Icons\\inv_misc_bag_11
+    info If you want to do the cloth Orc/troll faction donations:
+    .'Wool Cloth x60|icon Interface\\icons\\inv_fabric_linen_01
+    .'Silk Cloth x60|icon Interface\\icons\\inv_fabric_silk_01
+    .'Mageweave Cloth x60|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+	'Deposit into bank:
+    .'Mithril Casing |icon Interface\\Icons\\inv_gizmo_mithrilcasing_01
+	.'Ichor of Undeath (Only Vanilla if you have it)|icon Interface\\Icons\\inv_misc_slime_01|only Priest
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //19
+    'See if you can get this cloth for Orc Faction donations here in Orgrimmar:|goto Orgrimmar,50.69,70.38
+    .collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //20
+    'Go up in The Drag and in the hut:|goto Orgrimmar,56.26,46.69|title Zilzibin Drumlore
+    .talk Zilzibin Drumlore##7010
+    ..turnin Rise of the Silithid##32
+    ..accept March of the Silithid##4494
+	info |goto Orgrimmar,57.39,55.4|title Go up ramp
+
+step //21
+    'Enter Magar's Cloth Goods:|goto Orgrimmar,61.59,50.35
+    info 
+	'NOTE: You can turn in cloth donations for the Orc faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+    .collect 60 Wool Cloth##2592|n|icon Interface\\icons\\inv_fabric_linen_01
+    .collect 60 Silk Cloth##4306|n|icon Interface\\icons\\inv_fabric_silk_01
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	info 
+    .talk Rashona Straglash##14726|goto Orgrimmar,63.61,51.24|title Rashona Straglash
+    ..turnin A Donation of Wool##7826
+    ..turnin A Donation of Silk##7827
+    ..turnin A Donation of Mageweave##7831
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //22
+    'North in The Drag (up in Yelmak's Alchemy and Potions):|goto Orgrimmar,55.52,34.09
+    .talk Jes'rimon##8659
+    ..turnin Delivery to Jes'rimon##3541
+    ..accept Jes'rimon's Payment to Jediga##3563
+    ..accept Bone-Bladed Weapons##4300
+
+step //23
+	'Only if you have this quest (Vanilla route)|important
+    'In Droffers And Sons Salvage:|goto Orgrimmar,59.48,36.58
+    .talk Dran Droffers##6986
+    ..turnin Ripple Delivery##81
+	info 
+    'SKIP "Necklace Recovery" - Out of route|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //24
+	'Only Vanilla/TBC|optional
+    'Make sure you learn Growl R6 from the Pet Trainer.|goto Orgrimmar,66.32,14.79|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Xao'tsu##10088
+    'Only for Vanilla: Learning Fire Resistance for your pet comes useful for the Blood Elf grind coming later.|icon Interface\\cursor\\Directions
+//	|only HUNTER and !WOTLK and ERA
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	only Hunter
+//	only HUNTER and !WOTLK
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //25
+    'Get new spells/abilities.|goto Orgrimmar,66.05,18.52|only HUNTER
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only HUNTER
+	info 
+    'SKIP "The Hunter's Charm" (For now)|icon Interface\\cursor\\Directions
+	only Hunter
+//	|only HUNTER and PHASE >= 4 and !ERA
+
+step //26
+	'First leave Orgrimmar at the south entrance, then get on the Undercity Zeppelin (in Durotar).|goto Durotar,50.83,13.88|title Take the Zeppelin (south landing)
+    info 
+	'NOTE: Make sure you get on the Undercity Zeppelin (south landing) and not the Grom'gol Base Camp zeppelin (north landing)!|icon Interface\\cursor\\Directions
+    'TIP: You can save some time by jumping off of the zeppelin at a certain timing! (Not for Hardcore players)|icon Interface\\cursor\\Directions
+	info 
+	'Enter Undercity...|goto Tirisfal Glades,62.2,66.89|title Enter: Undercity|c
+	only !Mage
+
+step //27
+    'Use your Teleport: Undercity spell to get to Undercity.|goto Undercity,84.6,16.8|title Teleport to Undercity|c|icon Interface\\icons\\spell_arcane_teleportundercity
+    .cast Teleport: Undercity##3563
+    only Mage
+
+step //28
+    'Drop down and from Hannah Akeley purchase some Runes of Teleportation.|goto Undercity,82.77,15.85
+    .talk Hannah Akeley##4575
+    info 
+	'NOTE: These are used to make your teleport spells work and will help speed up travel time. Always keep a stack in your bags. Costs roughly 10 silver each.|icon Interface\\cursor\\Directions
+    .collect 20 Rune of Teleportation##17031
+	only Mage
+
+step //29
+    'At the Undercity, head to The Apothecarium:|goto Undercity,54.82,76.32
+    .talk Andron Gant##6522
+    ..turnin Delivery to Andron Gant##3542
+    ..accept Andron's Payment to Jediga##3564
+
+step //30
+    'Down in The Apothecarium:|goto Undercity,48.71,71.40|title Chemist Cuely
+    .talk Chemist Cuely##8390
+    ..turnin Seeping Corruption##3568
+	info |goto Undercity,51.77,80.49|title Enter: The Apothecarium
+    'Wait a few seconds:|goto Undercity,48.14,75.19|title Enter: The Apothecarium
+    ..accept Seeping Corruption##3569
+
+step //31
+    'Next to you:|goto Undercity,49.03,70.78
+    .talk Thersa Windsong##8393
+    ..turnin Seeping Corruption##3569
+	..accept Seeping Corruption##3570
+
+step //32
+    'Next to you:|goto Undercity,48.71,71.40
+    .talk Chemist Cuely##8390
+    ..turnin Seeping Corruption##3570
+
+step //33
+    'Destroy the Field Testing Kit as it no longer has any use if you turned in the previous quest.|goto Undercity,50.13,67.99|icon Interface\\icons\\inv_misc_bag_07_red
+    info 
+	'In the same room:
+//	|only QUEST[3570] >= TURNEDIN
+    .talk Apothecary Zinge##5204
+    ..turnin Return to Apothecary Zinge##864
+    ..accept Vivian Lagrave##4133
+
+step //34
+    'Across the same room:|goto Undercity,47.46,73.35
+    .talk Chemist Fuely##10136
+    ..accept A Sample of Slime...##4293
+    ..accept ... and a Batch of Ooze##4294
+
+step //35
+	info |goto Undercity,67.67,35.88|title AH
+    'Make sure you got all your Mageweave Cloth out (for building up First Aid), from the Bank|goto Undercity,65.98,44.25|title Bank
+    info |goto Undercity,68.2,38.3|title Mailbox
+	'Also Shamans, get out from bank or from AH, the 4 elemental items needed for your lvl 50 class quest (Elemental Mastery) coming up, which includes:|only Shaman
+    .collect 1 Elemental Air##7069|icon Interface\\Icons\\spell_nature_tranquility|only Shaman
+    .collect 1 Elemental Fire##7068|icon Interface\\Icons\\spell_fire_fire|only Shaman
+    .collect 1 Elemental Earth##7067|icon Interface\\Icons\\inv_ore_iron_01|only Shaman
+    .collect 1 Elemental Water##7070|icon Interface\\Icons\\inv_potion_03|only Shaman
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //36
+    .talk Michael Garrett##4551|goto Undercity,63.28,48.54
+//|only ((ERA or SOM1) and !SHAMAN) or (QUEST[8410] ~= COMPLETED and SHAMAN and (ERA or SOM1))
+	'Only For Vanilla|optional
+    'From the Bat Handler, take a flight to Revantusk Village, The Hinterlands|goto The Hinterlands,81.70,81.76|title Go to Revantusk Village (Vanilla Only)|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	info 
+	'Only For TBC/WOTLK|optional
+//	|only (SOM2 or TBC or WOTLK) and QUEST[8410] ~= COMPLETED
+    'From the Bat Handler, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill (TBC/WOTLK Only)|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	only !Shaman
+	
+//    info Since you were not able to complete the Shaman quest, abandon it (to free quest log space). Otherwise there will be quest log issues later on at EPL.|only QUEST[8410] <= ACCEPTED and SHAMAN and (ERA or SOM1 or SOM2)
+
+step //37
+	.talk Michael Garrett##4551|goto Undercity,63.28,48.54
+	'From the Bat Handler, take a flight to Tarren Mill, Hillsbrad|goto Hillsbrad Foothills,60.15,18.63|title Go to Tarren Mill|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	only Shaman
+
+step //38
+    'Head north a bit:|goto Alterac Mountains,80.50,66.93
+    .talk Bath'rah the Windwatcher##6176
+    ..turnin Elemental Mastery##8410
+	info 
+	'Only For TBC/WOTLK|optional
+    ..accept Spirit Totem##8412
+	info 
+	'Only For Vanilla|optional
+    'SKIP "Spirit Totem" - This will have to be skipped due to quest log issues that would happen later on at Plague Lands sections. You can continue this questline later on after EPL if you like, but my guide won't cover it.|icon Interface\\cursor\\Directions
+	........'Click for Vanilla Step|confirm|next +1|icon Interface\\cursor\\Point
+	......'Click for TBC/WOTLK Step|confirm|next +2|icon Interface\\cursor\\Point
+	only Shaman
+
+step //39
+	'Only For Vanilla|optional
+    'Back at Tarren Mill:|goto Hillsbrad Foothills,60.14,18.62
+    .talk Zarise##2389
+    'From the Bat Handler, take a flight to Revantusk Village, The Hinterlands|goto The Hinterlands,81.70,81.76|title Go to Revantusk Village (Vanilla Only)|c|icon Interface\\minimap\\Tracking\\FlightMaster
+	..........'Click to continue|confirm|next +2|icon Interface\\cursor\\Point
+	only Shaman
+// |only (PHASE >= 4) and SHAMAN and (ERA or SOM1)
+
+step //40
+	info |goto Isle of Quel'Danas,600,0.0
+	'Only For TBC/WOTLK|optional
+    'Enter The Hinterlands...|goto The Hinterlands,7.95,58.24|title Enter The Hinterlands
+	info |goto The Hinterlands,21.75,47.75|title Enter pathway
+    'Go up to Shindigger's Camp:|goto The Hinterlands,26.71,48.59|title Go Shindigger's Camp
+	route Hillsbrad Foothills,69.33,20.2;86.89,29.28;92.1,19.8|title Enter The Hinterlands
+//			goto Hillsbrad Foothills,69.33,20.2|title Follow waypoint
+//			goto Hillsbrad Foothills,86.89,29.28|title Follow waypoint
+    .talk Gilveradin Sunchaser##7801
+    ..turnin Ripple Recovery##650
+	info 
+    'SKIP "A Sticky Situation"|icon Interface\\cursor\\Directions
+	......'Only For TBC/WOTLK Skip?|confirm|next +1|n|icon Interface\\cursor\\Point
+//|only SOM2 or TBC or WOTLK
+	
+step //41
+	......'50-50 Azshara is complete!|icon Interface\\cursor\\Directions
+	........'Go to 50-51 Hinterlands|confirm|next "Joana's Guide\\Horde\\50-51 Hinterlands"|icon Interface\\icons\\achievement_zone_hinterlands_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\50-51 Hinterlands",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 50
+next Joana's Guide\\Horde\\51-51 Blasted Lands
+
+step //1
+	.'IMPORTANT: For the next steps, there will be one route for the Vanilla (classic) version and another for the TBC/WOTLK version.|icon Interface\\cursor\\Directions
+	........'Click for Vanilla Step|confirm|next +1|icon Interface\\cursor\\Point
+	......'Click for TBC/WOTLK Step|confirm|next +10|icon Interface\\cursor\\Point
+
+step //2
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Once at Revantusk Village, on the docks:|goto The Hinterlands,80.33,81.54|title Katoom the Angler
+    .talk Katoom the Angler##14740
+    ..accept Snapjaws, Mon!##7815
+    ..accept Gammerita, Mon!##7816
+
+step //3
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'With your 10 Long Elegant Feathers:|goto The Hinterlands,79.39,79.08
+    .talk Otho Moji'ko##14738
+    ..turnin Another Message to the Wildhammer##7842
+    ..accept The Final Message to the Wildhammer##7843
+
+step //4
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go in the Inn:|goto The Hinterlands,78.13,81.40
+    .'NOTE: Maintain hearthstone with Orgrimmar!|icon Interface\\cursor\\Directions
+    .talk Lard##14731
+    ..accept Lard Lost His Lunch##7840
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //5
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Hunters, stable your pet at the Stable Master.|icon Interface\\icons\\inv_weapon_bow_07|goto The Hinterlands,79.16,79.54
+    .talk Huntsman Markhor##14741
+	info 
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //6
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go tame a Saltwater Snapjaw turtle along the shore north of The Revantusk Village for Bite Rank 7.|goto The Hinterlands,75.60,70.77|title Tame a Saltwater Snapjaw|icon Interface\\Icons\\ability_hunter_beasttaming
+	'Tame Saltwater Snapjaw|icon Interface\\icons\\Ability_Hunter_Pet_Turtle
+    info 
+    'Loot Pupellyverbos Port (blue bottles on the ground) along the way.
+    .collect 12 Pupellyverbos Port##3900 |q 580/1|n|icon Interface\\Icons\\inv_drink_09
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //7
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Once you get Bite Rank 7, abandon turtle and get your cat back out from the Stable Master and teach him Bite Rank 7.|goto The Hinterlands,79.16,79.54
+    .talk Huntsman Markhor##14741
+    info 
+	'Get your main pet back|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //8
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Loot Pupellyverbos Port (blue bottles on the ground) along the way.|goto The Hinterlands,77.79,64.82
+    .collect 12 Pupellyverbos Port##3900 |q 580/1|icon Interface\\Icons\\inv_drink_09
+	info 
+    'Kill/loot Gammerita. This lvl 48 Elite turtle patrols up and down the shore line. He spawns just south of the waterfall/shore. It's the only hostile turtle in the area, so watch out!|icon Interface\\cursor\\Attack
+	.kill Gammerita##7977|n
+	.collect Katoom's Best Lure##19023|q 7816/1|icon Interface\\Icons\\inv_misc_monstertail_03
+	info 
+    'NOTE: Warriors, this quest is soloable, but its very tough. The graveyard is close by so it doesn't hurt to try.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'NOTE: This is generally soloable, but you may want to skip/avoid this if you are not confident about it.|icon Interface\\cursor\\Directions|only Paladin,Shaman,Rogue,Druid,Priest,Mage
+// only !Warrior,!Warlock,!Hunter
+	info 
+    'Kill turtles along the coast.|icon Interface\\cursor\\Attack
+    .kill 15 Saltwater Snapjaw##2505|q 7815/1
+
+step //9
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go north and right underneath the waterfall:|goto The Hinterlands,80.80,46.82
+    'Interact with Cortello's Treasure
+    ..turnin Cortello's Riddle##626
+	info    Only if you have the quest from the 49-49 Dustwallow Marsh guide.
+	info 
+    .'NOTE: This will reward you with a 14 slot bag!|icon Interface\\cursor\\Directions
+
+step //10
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'At the little island NE loot Lard's Picnic Basket and then kill/loot the three lvl 49 trolls that spawn, you should get Lard's Lunch from the first one you loot.|goto The Hinterlands,84.47,41.21|icon Interface\\cursor\\Attack
+    .collect Lard's Lunch##19034|q 7840/1|next +12|icon Interface\\Icons\\inv_misc_food_60
+	info 
+    .'TIPS: They hit hard so fight them in Bear Form and prepare to use all of your heals and Innervate. Entangling Roots works so precast Nature's Grasp so that you can use it again 30 seconds into the fight. Also precast Regrowth and Rejuvenation to keep your health up longer at the beginning. Reuse Nature's Grasp and Entangling Roots as needed. If you are overwhelmed, you can try to flee using Aquatic Form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	..........'Continue on...|confirm|next +12|n|icon Interface\\cursor\\Point
+
+step //11
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Go up to Shindigger's Camp:|goto The Hinterlands,26.71,48.59
+    .talk Gilveradin Sunchaser##7801
+    ..turnin Ripple Recovery##650
+	info 
+    'SKIP "A sticky Situation"|icon Interface\\cursor\\Directions
+
+step //12
+	info |goto Isle of Quel'Danas,600,0.0
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+	'Enter Shadra'Alor|goto The Hinterlands,35.71,65.12|title Enter Shadra'Alor
+	info 
+    'At Shadra'Alor:|goto The Hinterlands,33.75,75.21|title Atal'ai Exile
+    .talk Atal'ai Exile##5598
+    info    (up on a temple ledge)
+    ..turnin The Atal'ai Exile##1429
+    ..accept Return to Fel'Zerul##1444
+
+step //13
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Loot a Violet Tragan (Mushroom) under water at Valorwind Lake.|goto The Hinterlands,39.50,60.02
+    .collect 1 Violet Tragan##8526 |q 2641/1|icon Interface\\icons\\inv_mushroom_06
+
+step //14
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Go east to Revantusk Village and on the docks:|goto The Hinterlands,80.33,81.54
+    .talk Katoom the Angler##14740
+    ..accept Snapjaws, Mon!##7815
+    ..accept Gammerita, Mon!##7816
+
+step //15
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'In the Inn:|goto The Hinterlands,78.13,81.40
+    .'NOTE: Maintain hearthstone with Orgrimmar!|icon Interface\\cursor\\Directions
+    .talk Lard##14731
+    ..accept Lard Lost His Lunch##7840
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //16
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+	'Hunters, stable your pet at the Stable Master.|goto The Hinterlands,79.16,79.54
+    .talk Huntsman Markhor##14741
+	info 
+	'Stable your main pet|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //17
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Go tame a Saltwater Snapjaw turtle along the shore north of The Revantusk Village for Bite Rank 7.|goto The Hinterlands,75.60,70.77|title Tame a Saltwater Snapjaw
+	'Tame Saltwater Snapjaw|icon Interface\\icons\\Ability_Hunter_Pet_Turtle
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //18
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Once you get Bite Rank 7, abandon turtle and get your cat back out from the Stable Master and teach him Bite Rank 7.|goto The Hinterlands,79.16,79.54
+    .talk Huntsman Markhor##14741
+    info 
+	'Get your main pet back|icon Interface\\minimap\\Tracking\\StableMaster
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //19
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+	'Loot Pupellyverbos Port (blue bottles on the ground) along the way.|goto The Hinterlands,77.79,64.82
+    .collect 12 Pupellyverbos Port##3900 |q 580/1|icon Interface\\Icons\\inv_drink_09
+	info 
+    'Kill/loot Gammerita. This lvl 48 turtle patrols up and down the shore line. He spawns just south of the waterfall/shore. It's the only hostile turtle in the area, so watch out!|icon Interface\\cursor\\Attack
+	.kill Gammerita##7977|n
+	.collect Katoom's Best Lure##19023|q 7816/1|icon Interface\\Icons\\inv_misc_monstertail_03
+	info 
+    'NOTE: Warriors, this quest is soloable, but its very tough. The graveyard is close by so it doesn't hurt to try.|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'NOTE: This is generally soloable, but you may want to skip/avoid this if you are not confident about it.|icon Interface\\cursor\\Directions|only Paladin,Shaman,Rogue,Druid,Priest,Mage
+// only !Warrior,!Warlock,!Hunter
+	info 
+    'Kill turtles along the coast.|icon Interface\\cursor\\Attack
+    .kill 15 Saltwater Snapjaw##2505|q 7815/1
+
+step //20
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'Go north and right underneath the waterfall:|goto The Hinterlands,80.80,46.82
+    'Interact with Cortello's Treasure
+    ..turnin Cortello's Riddle##626
+	info    Only if you have the quest from the 49-49 Dustwallow Marsh guide.
+	info 
+    .'NOTE: This will reward you with a 14 slot bag!|icon Interface\\cursor\\Directions
+
+step //21
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+	'At the little island NE loot Lard's Picnic Basket and then kill/loot the three (two for WOTLK) lvl 49 trolls that spawn, you should get Lard's Lunch from the first one you loot.|goto The Hinterlands,84.47,41.21|icon Interface\\cursor\\Attack
+    .collect Lard's Lunch##19034|q 7840/1|icon Interface\\Icons\\inv_misc_food_60
+	info 
+    .'TIPS: They hit hard so fight them in Bear Form and prepare to use all of your heals and Innervate. Entangling Roots works so precast Nature's Grasp so that you can use it again 30 seconds into the fight. Also precast Regrowth and Rejuvenation to keep your health up longer at the beginning. Reuse Nature's Grasp and Entangling Roots as needed. If you are overwhelmed, you can try to flee using Aquatic Form.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+
+step //22
+    'You will be upgrading First Aid at Hammerfall soon to:|goto The Hinterlands,47.84,66.88|title Around: The Altar of Zul
+    .'Heavy Mageweave Bandage (240 skill)|icon Interface\\icons\\inv_misc_bandage_20
+    .'Runecloth Bandage (260 skill)|icon Interface\\icons\\inv_misc_bandage_11
+    .'Heavy Runecloth Bandage (290 skill)|icon Interface\\icons\\inv_misc_bandage_12
+	info 
+    .'So at this point make sure you have enough Mageweave Cloth to hopefully get to First Aid skill of 240. If you need to, keep grinding the Vilebranch trolls around The Altar of Zul to obtain the Mageweave Cloth you need so you can achieve this.
+    ........'Click for Vanilla Step|confirm|next +1|icon Interface\\cursor\\Point
+	......'Click for TBC/WOTLK Step|confirm|next +6|icon Interface\\cursor\\Point
+
+step //23
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Loot a Violet Tragan (Mushroom) under water at Valorwind Lake.|goto The Hinterlands,39.50,60.02
+    .collect 1 Violet Tragan##8526 |q 2641/1|icon Interface\\icons\\inv_mushroom_06
+
+step //24
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go NW to Aerie Peak (Alliance town) and use the Final Message to the Wildhammer quest item at the well in the town.|goto The Hinterlands,14.37,48.01|title Well
+    .use Final Message to the Wildhammer##19036
+    .goal Message to the Wildhammer Delivered|q 7843/1
+	info 
+	.'Watch out, Alliance guards sometimes patrols past the well, so run in, plant the pike and run out when the area is clear of guards and other Alliance players.|icon Interface\\cursor\\Directions
+	.'NOTE: This can be slightly risky and this will also flag you for PvP!|icon Interface\\cursor\\Directions
+
+step //25
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'If you found an item called OOX-09/HL Distress Beacon, accept the quest from it, then go turn it in.|goto The Hinterlands,49.35,37.65
+    .use Drohn's Distress Beacon##8704
+    ..accept Find OOX-09/HL!##485
+	info 
+    .talk Homing Robot OOX-09/HL##7806
+    info    (on top of mound in lake)
+    ..turnin Find OOX-09/HL!##485
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //26
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'GROUP 2+ Players (or soloable?): Accept and do the escort by escorting the robot chicken all the way to the east shore.|goto The Hinterlands,49.35,37.65
+    .'NOTES: It's important to keep aggro off of the chicken so it survives. This quest takes roughly 16.5 minutes. If you fail, it can be skipped.|icon Interface\\cursor\\Directions
+    .talk Homing Robot OOX-09/HL##7806
+    ..accept Rescue OOX-09/HL!##836
+	info 
+    .'NOTE: Hardcore PLayer, this quest can be a bit risky, only attempt this if you are confident about it!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+    .goal Escort OOX-09/HL to the shoreline beyond Overlook Cliff|q 836/1
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //27
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go SE to Revantusk Village:|goto The Hinterlands,79.38,79.09
+    .talk Otho Moji'ko##14738
+    ..turnin The Final Message to the Wildhammer##7843
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	
+// /!\ End of vanilla part
+step //28
+    'In the Inn:|goto The Hinterlands,78.12,81.39
+    .talk Lard##14731
+    ..turnin Lard Lost His Lunch##7840
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //29
+    'On the docks:|goto The Hinterlands,80.33,81.53
+    .talk Katoom the Angler##14740
+    ..turnin Snapjaws, Mon!##7815
+    ..turnin Gammerita, Mon!##7816
+
+step //30
+	'Only For Vanilla/TBC|optional
+    'Build up First Aid, and see if you need any of the following:
+    .'Heavy Mageweave Bandage (240 skill)|icon Interface\\icons\\inv_misc_bandage_20
+    .'Runecloth Bandage (260 skill)|icon Interface\\icons\\inv_misc_bandage_11
+    .'Heavy Runecloth Bandage (290 skill)|icon Interface\\icons\\inv_misc_bandage_12
+	info 
+    'If you meet the skill level requirements, then go to the Wind Rider Master and fly to Hammerfall, Arathi and then go to Doctor Gregory Victor at Hammerfall (in the building, in Arathi Highlands) and upgrade what you are able to get.
+    .'NOTE: My guide will not remind you again to to upgrade First Aid at Hammerfall!|icon Interface\\cursor\\Directions
+	info 
+    .talk Gorkas##4314
+    'From the Wind Rider Master, take a flight to Hammerfall, Arathi|goto Arathi Highlands,73.07,32.61|title Go to Hammerfall|icon Interface\\minimap\\Tracking\\FlightMaster
+	info 
+	.talk Doctor Gregory Victor##12920
+   ............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //31
+    'When done, hearth to Orgrimmar..|goto Orgrimmar,54.10,68.39|title Hearth to Orgrimmar|c
+    .use Hearthstone##6948
+
+step //32
+	info |goto Silithus,0,400
+	'Only For Vanilla|optional
+    'Hunters, make sure you are well equipped with |icon Interface\\icons\\inv_weapon_bow_07
+	'Accurate Slugs |icon Interface\\icons\\inv_ammo_bullet_01
+	'or Jagged Arrow as you cannot get them at Blasted Lands coming up.|goto Orgrimmar,52.15,62.12|title Kaja (Tauren, female)|icon Interface\\icons\\inv_weapon_shortblade_25
+	.talk Kaja##3322
+	.talk Trak'gen##3313|goto Orgrimmar,48.13,80.51|title Trak'gen (Orc, male)
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+	........'Only For Vanilla Skip?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //33
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Valormok, Azshara|goto Azshara,21.96,49.62|title Go to Valormok|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //34
+    'Once at Valormok:|goto Azshara,22.56,51.42
+    .talk Jediga##8587
+    ..turnin Magatha's Payment to Jediga##3562
+    ..turnin Jes'rimon's Payment to Jediga##3563
+    ..turnin Andron's Payment to Jediga##3564
+
+step //35
+    'Go north in Valormok to the Wind Rider Master:|goto Azshara,21.95,49.62|only !Shaman
+	'Use Astral Recall, then from the Wind Rider Master in Orgrimmar:|cast Astral Recall##556|goto Orgrimmar,45.13,63.91|only Shaman
+    .talk Kroum##8610|only !Shaman
+	.talk Doras##3310|only Shaman
+    'Take the flight to Ratchet.|goto The Barrens,63,37.2|c|title Go to Ratchet|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //36
+    'At Ratchet, just outside of the hut, loot Marvon's Chest.|goto The Barrens,62.50,38.54
+    .collect 1 Stone Circle##10556 |q 3444/1|icon Interface\\icons\\inv_misc_shadowegg
+
+step //37
+    'In the hut:|goto The Barrens,62.45,38.73
+    .talk Liv Rizzlefix##8496
+    ..accept Volcanic Activity##4502
+
+step //38
+    'Go in the Inn and from Innkeeper Wiley:|goto The Barrens,62.05,39.41
+    .talk Innkeeper Wiley##6791
+    .home Ratchet|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //39
+    'Deposit into bank:|goto The Barrens,62.66,37.42|title Ratchet Bank
+    .'Pupellyverbos Port (TBC/WOTLK only)|icon Interface\\Icons\\inv_drink_09
+	.'Violet Tragan (Vanilla only)|icon Interface\\Icons\\inv_mushroom_06
+	.'Stone Circle (Vanilla only)|icon Interface\\Icons\\inv_misc_shadowegg
+	info |goto Stranglethorn Vale,26.56,76.50|title Booty Bay Bank
+	'NOTE: If the boat to Booty Bay is at the docks already, do this step at BB's Bank instead!|icon Interface\\cursor\\Directions
+	........'Click for Vanilla Step|confirm|next +1|icon Interface\\cursor\\Point
+	......'Click for TBC/WOTLK Step|confirm|next +5|icon Interface\\cursor\\Point
+
+step //40
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Get on the boat to go to Booty Bay (at the end of the docks).|goto The Barrens,63.67,38.66|title Boat
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //41
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'At Booty Bay, go up to the hut and turn in any Robot Chicken escort quests you have done, which include:|goto Stranglethorn Vale,28.36,76.35
+    .talk Oglethorpe Obnoticus##7406
+    ..turnin Rescue OOX-22/FE!##2767
+    ..turnin Rescue OOX-17/TN!##648
+    ..turnin Rescue OOX-09/HL!##836
+    ..turnin An OOX of Your Own##3721
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //42
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'In the Inn:|goto Stranglethorn Vale,27.13,77.45
+    .talk Whiskey Slim##2491
+    ..turnin Whiskey Slim's Lost Grog##580
+
+step //43
+	...........'Vanilla route:|icon Interface\QUESTFRAME\UI-QuestLog-BookIcon
+    'Go up in the Inn on the roof:|goto Stranglethorn Vale,26.87,77.10
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Stonard, Swamp of Sorrows|goto Swamp of Sorrows,46.07,54.83|title Go to Stonard|c|next +2|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //44
+	.........'TBC/WOTLK route:|icon Interface\\QUESTFRAME\\UI-QuestLog-BookIcon
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+	
+step //45
+	.....'50-51 Hinterlands is complete!|icon Interface\\cursor\\Directions
+	info 
+	...........'Only for Vanilla|optional
+	.......'Go to 51-51 Blasted Lands|confirm|next "Joana's Guide\\Horde\\51-51 Blasted Lands (Vanilla only)"|icon Interface\\icons\\achievement_zone_blastedlands_01	
+	info 
+	........'Only for TBC/WOTLK|optional
+	.......'Go to 51-53 Un'goro Crater|confirm|next "Joana's Guide\\Horde\\51-53 Un'goro Crater"|icon Interface\\icons\\achievement_zone_ungorocrater_01	
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\51-51 Blasted Lands (Vanilla only)",[[
+author Joana
+type leveling
+faction horde
+next Joana's Guide\\Horde\\51-53 Un'Goro Crater
+startlevel 51
+
+step //1
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go up in Booty Bay Inn:|goto Stranglethorn Vale,27.0,77.5|title Go upstairs
+    'Go upstairs, across the wood bridge, and up the steps to the roof.|goto Stranglethorn Vale,26.87,77.10|title Gringer
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Stonard, Swamp of Sorrows|goto Swamp of Sorrows,46.07,54.83|title Go to Stonard|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //2
+	info |goto Isle of Quel'Danas,600,0.0
+    'At Stonard, if you need to, get your spells/abilities from your class trainer.
+    .talk Ogromm##987|goto Swamp of Sorrows,47.3,53.4|title Hunter Trainer|only Hunter
+	.talk Malosh##985|goto Swamp of Sorrows,44.9,57.6|title Warrior Trainer|only Warrior
+	.talk Kartosh##988|goto Swamp of Sorrows,48.6,55.6|title Warlock Trainer|only Warlock
+	.talk Haromm##986|goto Swamp of Sorrows,48.18,57.94|title Shaman Trainer|only Shaman
+	info
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Hunter,Warrior,Warlock,Shaman
+
+step //3
+    'Follow the main path SW to the border of Swamp of Sorrows and Blasted Lands.|goto Swamp of Sorrows,34.3,66.1
+    .talk Fallen Hero of the Horde##7572
+    ..accept The Stones That Bind Us##2681
+	info 
+	'SKIP: The Stones That Bind Us if you don't find a group - This quest is difficult to solo and time consuming.|icon Interface\\cursor\\Directions
+	info 
+	'Up Coming in Blasted Lands:  GROUP 2+ PLAYERS (or soloable?)|important
+	'NOTE:  Read The Following & Remember It!  You will not see this quest info again until the end of the Blasted Lands guide, so keep all of this in mind!|icon Interface\\cursor\\Directions
+	'While doing the other quests in Blasted Lands, also start working on "The Stones That Bind Us" by dragging the different servants close to their Stone of Binding crystal next to each of them, then kill them along with attacking the crystal as well.  This allows you to actually kill the mob and get quest credit.  Each of these different servants are located at different parts of the Blasted Lands.  If for some reason you cannot solo this quest, it can be skipped.|icon Interface\\cursor\\Inspect
+	info |only Warrior
+    'Turn in your Warrior Quest:|icon Interface\\icons\\INV_Sword_27|only Warrior
+    ..turnin A Troubled Spirit##8417|only Warrior
+    ..accept Warrior Kinship##8423|only Warrior
+
+step //4
+    'Enter Blasted Lands...|goto Blasted Lands,51.9,7.6|title Enter Blasted Lands|c
+    info 
+	'NOTE: The Stones That Bind Us is generally skipped when going solo due to it being risky and difficult. Only attempt it if you dare.|icon Interface\\cursor\\Directions
+
+step //5
+    'As you enter Blasted Lands, go to the small camp on your right and accept all 5 quests there.
+    info 
+	'TIP: The items needed for these quests can drop without needing to accept the quests, but accept the quests anyways.|icon Interface\\cursor\\Directions
+    .talk Bloodmage Lynnore##7506|goto Blasted Lands,50.6,14.3|title Bloodmage Lynnore
+    ..accept The Basilisk's Bite##2601
+    ..accept Vulture's Vigor##2603
+	info 
+    .talk Bloodmage Drazial##7505|goto Blasted Lands,50.6,14.2|title Snickerfang Jowls
+    ..accept Snickerfang Jowls##2581
+    ..accept A Boar's Vitality##2583
+    ..accept The Decisive Striker##2585
+
+step //6
+    'Grind south (kill/loot all beasts along the way) and kill 7 Helboar for your Warrior quest.|goto Blasted Lands,51.7,55.0|icon Interface\\cursor\\Attack
+    .kill 7 Helboar##5993|q 8423/1
+    info 
+	'WARNING: A Boss patrols around!|icon Interface\\cursor\\Directions
+	.talk Teremus the Devourer##7846
+	only Warrior
+
+step //7
+    'Go north to the border of Blasted Lands and Swamp of Sorrows. (kill/loot all beasts along the way for the next quests)|goto Swamp of Sorrows,34.3,66.1
+    .talk Fallen Hero of the Horde##7572
+    ..turnin Warrior Kinship##8423
+    ..accept War on the Shadowsworn##8424
+    only Warrior
+
+step //8
+    'Kill the beasts in Blasted Lands for the quest items|icon Interface\\cursor\\Attack
+//	A Boar's Vitality
+	.collect 3 Blasted Boar Lung##8392|q 2583/1|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage
+	.collect 2 Scorpok Pincer##8393|q 2583/2|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage
+	.collect Basilisk Brain##8394|q 2583/3|icon Interface\\icons\\inv_misc_organ_03|only Warlock,Priest,Mage
+	
+	.collect 3 Scorpok Pincer##8393|q 2585/1|icon Interface\\icons\\inv_misc_birdbeck_02|only Hunter,Rogue
+	.collect 2 Vulture Gizzard##8396|q 2585/2|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue
+	.collect Blasted Boar Lung##8392|q 2585/3|icon Interface\\icons\\inv_misc_organ_06|only Hunter,Rogue
+	
+	.collect 3 Snickerfang Jowl##8391|q 2581/1|icon Interface\\icons\\inv_misc_food_16|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Blasted Boar Lung##8392|q 2581/2|icon Interface\\icons\\inv_misc_organ_06|only Warrior,Paladin,Shaman,Druid
+	.collect Scorpok Pincer##8393|q 2581/3|icon Interface\\icons\\inv_misc_birdbeck_02|only Warrior,Paladin,Shaman,Druid
+    info |goto Blasted Lands,51.21,54.54|title Around the area 
+	'A lot of the beasts share spawns with each other, so kill other mobs if not enough of the ones you need.  You will need these total number of items to complete all the beast quests (but focus on the quest above first)|icon Interface\\cursor\\Attack
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03
+	.collect 14 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05
+	.collect 5 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16
+	.collect 6 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 6 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02
+//	'The Basilisk's Bite
+//	.collect 10 Basilisk Brain##8394|q 2601/1|n|icon Interface\\icons\\inv_misc_organ_03
+//	.collect 2 Vulture Gizzard##8396|q 2601/2|n|icon Interface\\icons\\inv_misc_organ_05
+//	'Snickerfang Jowls
+//	.collect 3 Snickerfang Jowl##8391|q 2581/1|n|icon Interface\\icons\\inv_misc_food_16
+//	.collect 2 Blasted Boar Lung##8392|q 2581/2|n|icon Interface\\icons\\inv_misc_organ_06
+//	.collect Scorpok Pincer##8393|q 2581/3|n|icon Interface\\icons\\inv_misc_birdbeck_02
+//	'The Decisive Striker
+//	.collect 3 Scorpok Pincer##8393|q 2585/1|n|icon Interface\\icons\\inv_misc_birdbeck_02
+//	.collect 2 Vulture Gizzard##8396|q 2585/2|n|icon Interface\\icons\\inv_misc_organ_05
+//	.collect Blasted Boar Lung##8392|q 2585/3|n|icon Interface\\icons\\inv_misc_organ_06
+//	Vulture's Vigor
+//	.collect 10 Vulture Gizzard##8396|q 2603/1|n|icon Interface\\icons\\inv_misc_organ_05
+//	.collect 2 Snickerfang Jowl##8391|q 2603/1|n|icon Interface\\icons\\inv_misc_food_16
+	info |goto Blasted Lands,60.28,36.98|title Around the area 
+	'Shamans, If your spec is Elemental, then turnin "The Basilisk's Bite" first.|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	'Druids, If your spec is Balance, then turnin "The Basilisk's Bite" first.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
+	info |goto Blasted Lands,61,45|title Around the area
+	'WARNING: A Boss patrols around!|icon Interface\\cursor\\Directions
+	.talk Teremus the Devourer##7846
+	info |goto Blasted Lands,48.2,19.8|title Around the area
+	info |goto Blasted Lands,49.5,38.6|title Around the area
+
+step //9
+    'At the small camp:|goto Blasted Lands,50.6,14.2
+    .talk Bloodmage Drazial##7505
+    ..turnin A Boar's Vitality##2583|only Warlock,Priest,Mage
+	..turnin The Decisive Striker##2585|only Hunter,Rogue
+	..turnin Snickerfang Jowls##2581|only Warrior,Paladin,Shaman,Druid
+    info 
+	'NOTE: You will get a Lung Juice Cocktail (+25 Stamina) 60 min stat reward that will help you grind faster in Blasted Lands, or even for the next section in Un'Goro Crater (although they don't stack).|icon Interface\\cursor\\Directions|only Warlock,Priest,Mage
+	'NOTE: You will get a Ground Scorpok Assay (+25 Agility) 60 min stat reward that will help you grind faster in Blasted Lands, or even for the next section in Un'Goro Crater (although they don't stack).|icon Interface\\cursor\\Directions|only Hunter,Rogue
+	'NOTE: You will get a R.O.I.D.S (+25 Strenght) 60 min stat reward that will help you grind faster in Blasted Lands, or even for the next section in Un'Goro Crater (although they don't stack).|icon Interface\\cursor\\Directions|only Warrior,Paladin,Shaman,Druid
+	info 
+	'You will need these total number of items to complete all the quests:
+	.collect 10 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Warlock,Priest,Mage
+	.collect 14 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage
+	.collect 5 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warlock,Priest,Mage
+	.collect 3 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage
+	.collect 4 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Hunter,Rogue
+	.collect 12 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue
+	.collect 5 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Hunter,Rogue
+	.collect 5 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Hunter,Rogue
+	.collect 3 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Hunter,Rogue
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Warrior,Paladin,Shaman,Druid
+	.collect 14 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warrior,Paladin,Shaman,Druid
+	.collect 4 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warrior,Paladin,Shaman,Druid
+	.collect 5 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warrior,Paladin,Shaman,Druid
+
+step //10
+	info |goto Isle of Quel'Danas,600,0.0
+	'At the eastern side of Blasted Lands kill the required amount of Shadowsworn mobs.|goto Blasted Lands,64.4,33.0|title Around the area|icon Interface\\cursor\\Attack
+	.kill 20 Shadowsworn Adept##6006|q 8424/1
+	.kill 10 Shadowsworn Cultist##6004|q 8424/2
+	.kill 20 Shadowsworn Thug##6005|q 8424/3
+	info |goto Blasted Lands,63.4,44.0|title Around the area
+	'NOTE : Continue to kill other beast mobs along the way.|icon Interface\\cursor\\Directions
+	only Warrior
+
+step //11
+    'Kill Vultures and Basilisks in the area.|goto Blasted Lands,61.3,28.4|title Around the area |icon Interface\\cursor\\Attack|only Warlock,Priest,Mage
+	'Kill Vultures and Hyena in the area.|goto Blasted Lands,61.3,28.4|title Around the area |icon Interface\\cursor\\Attack|only Hunter,Rogue
+	'Kill Vultures, Boar and Scorpok in the area.|goto Blasted Lands,61.3,28.4|title Around the area |icon Interface\\cursor\\Attack|only Warrior,Paladin,Shaman,Druid
+    .collect 10 Basilisk Brain##8394|q 2601/1|icon Interface\\icons\\inv_misc_organ_03|only Warlock,Priest,Mage
+	.collect 2 Vulture Gizzard##8396|q 2601/2|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage
+	
+	.collect 10 Vulture Gizzard##8396|q 2603/1|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue
+	.collect 2 Snickerfang Jowl##8391|q 2603/1|icon Interface\\icons\\inv_misc_food_16|only Hunter,Rogue
+	
+	.collect 3 Scorpok Pincer##8393|q 2585/1|icon Interface\\icons\\inv_misc_birdbeck_02|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Vulture Gizzard##8396|q 2585/2|icon Interface\\icons\\inv_misc_organ_05|only Warrior,Paladin,Shaman,Druid
+	.collect Blasted Boar Lung##8392|q 2585/3|icon Interface\\icons\\inv_misc_organ_06|only Warrior,Paladin,Shaman,Druid
+	info |goto Blasted Lands,51.21,54.54|title Around the area 
+	'You will need these total number of items to complete all beast quests (but focus on the quest above first):
+	.collect 10 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Warlock,Priest,Mage
+	.collect 14 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage
+	.collect 5 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warlock,Priest,Mage
+	.collect 3 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage
+	.collect 4 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Hunter,Rogue
+	.collect 12 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue
+	.collect 3 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Hunter,Rogue
+	.collect 5 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Hunter,Rogue
+	.collect 3 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Hunter,Rogue
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Warrior,Paladin,Shaman,Druid
+	.collect 14 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warrior,Paladin,Shaman,Druid
+	.collect 3 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warrior,Paladin,Shaman,Druid
+    info |goto Blasted Lands,48.2,19.8|title Around the area 
+	'WARNING: A Boss patrols around!|icon Interface\\cursor\\Directions
+	.talk Teremus the Devourer##7846
+	info |goto Blasted Lands,61,45|title Around the area
+	info |goto Blasted Lands,49.5,38.6|title Around the area
+
+step //12
+    'At the small camp:|goto Blasted Lands,50.6,14.3
+    .talk Bloodmage Lynnore##7506
+    ..turnin The Basilisk's Bite##2601|only Warlock,Priest,Mage
+	..turnin Vulture's Vigor##2603|only Hunter,Rogue
+	..turnin The Decisive Striker##2585|only Warrior,Paladin,Shaman,Druid
+    info 
+	'NOTE: You will get a Cerebral Cortex Compound (+25 intel) 60 min stat reward that will help you grind faster.|icon Interface\\cursor\\Directions|only Warlock,Priest,Mage
+	'NOTE: You will get a Gizzard Gum (+25 Spirit) 60 min stat reward that will help you grind faster.|icon Interface\\cursor\\Directions|only Hunter,Rogue
+	'NOTE: You will get a Ground Scorpok Assay (+25 Agility) 60 min stat reward that will help you grind faster.|icon Interface\\cursor\\Directions|only Warrior,Paladin,Shaman,Druid
+
+step //13
+    'Finish the remaining beast quests.|icon Interface\\cursor\\Attack
+    'Snickerfang Jowls|important|only Warlock,Priest,Mage,Hunter,Rogue
+	.collect 3 Snickerfang Jowl##8391|q 2581/1|icon Interface\\icons\\inv_misc_food_16|only Warlock,Priest,Mage,Hunter,Rogue
+	.collect 2 Blasted Boar Lung##8392|q 2581/2|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage,Hunter,Rogue
+	.collect Scorpok Pincer##8393|q 2581/3|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage,Hunter,Rogue
+	info |only Warlock,Priest,Mage
+	'The Decisive Striker|important|only Warlock,Priest,Mage
+	.collect 3 Scorpok Pincer##8393|q 2585/1|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage
+	.collect 2 Vulture Gizzard##8396|q 2585/2|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage
+	.collect Blasted Boar Lung##8392|q 2585/3|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage
+	info |only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	'The Basilisk's Bite|important|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	.collect 10 Basilisk Brain##8394|q 2601/1|icon Interface\\icons\\inv_misc_organ_03|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	.collect 2 Vulture Gizzard##8396|q 2601/2|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	info |only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	'A Boar's Vitality|important|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	.collect 3 Blasted Boar Lung##8392|q 2583/1|icon Interface\\icons\\inv_misc_organ_06|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	.collect 2 Scorpok Pincer##8393|q 2583/2|icon Interface\\icons\\inv_misc_birdbeck_02|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	.collect Basilisk Brain##8394|q 2583/3|icon Interface\\icons\\inv_misc_organ_03|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	info |only Warlock,Priest,Mage,Warrior,Paladin,Shaman,Druid
+	'Vulture's Vigor|important|only Warlock,Priest,Mage,Warrior,Paladin,Shaman,Druid
+	.collect 10 Vulture Gizzard##8396|q 2603/1|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage,Warrior,Paladin,Shaman,Druid
+	.collect 2 Snickerfang Jowl##8391|q 2603/1|icon Interface\\icons\\inv_misc_food_16|only Warlock,Priest,Mage,Warrior,Paladin,Shaman,Druid
+	info You will need these total number of items:
+	.collect 12 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warlock,Priest,Mage
+	.collect 5 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warlock,Priest,Mage
+	.collect 3 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warlock,Priest,Mage
+	.collect 4 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warlock,Priest,Mage
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Hunter,Rogue
+	.collect 2 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Hunter,Rogue
+	.collect 3 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Hunter,Rogue
+	.collect 5 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Hunter,Rogue
+	.collect 3 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Hunter,Rogue
+	
+	.collect 11 Basilisk Brain##8394|n|icon Interface\\icons\\inv_misc_organ_03|only Warrior,Paladin,Shaman,Druid
+	.collect 12 Vulture Gizzard##8396|n|icon Interface\\icons\\inv_misc_organ_05|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Snickerfang Jowl##8391|n|icon Interface\\icons\\inv_misc_food_16|only Warrior,Paladin,Shaman,Druid
+	.collect 3 Blasted Boar Lung##8392|n|icon Interface\\icons\\inv_misc_organ_06|only Warrior,Paladin,Shaman,Druid
+	.collect 2 Scorpok Pincer##8393|n|icon Interface\\icons\\inv_misc_birdbeck_02|only Warrior,Paladin,Shaman,Druid
+    info 
+	'WARNING: A Boss patrols around!|icon Interface\\cursor\\Directions
+	.talk Teremus the Devourer##7846
+	info |goto Blasted Lands,51.21,54.54|title Around the area
+	info |goto Blasted Lands,60.28,36.98|title Around the area
+	info |goto Blasted Lands,61,45|title Around the area
+	info |goto Blasted Lands,48.2,19.8|title Around the area
+	info |goto Blasted Lands,49.5,38.6|title Around the area
+	
+step //14
+    'Turn in the remaining quests at the small camp:
+    info 
+    .talk Bloodmage Drazial##7505|goto Blasted Lands,50.55,14.2|title Bloodmage Drazial
+    ..turnin Snickerfang Jowls##2581|only Warlock,Priest,Mage,Hunter,Rogue
+    ..turnin The Decisive Striker##2585|only Warlock,Priest,Mage
+	..turnin A Boar's Vitality##2583|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+	info 
+    .talk Bloodmage Lynnore##7506|goto Blasted Lands,50.64,14.3|title Bloodmage Lynnore
+    ..turnin Vulture's Vigor##2603|only Warlock,Priest,Mage,Warrior,Paladin,Shaman,Druid
+	..turnin The Basilisk's Bite##2601|only Hunter,Rogue,Warrior,Paladin,Shaman,Druid
+    info 
+	'NOTE: These follow up quests do NOT yield XP, so SKIP them for now.|icon Interface\\cursor\\Directions
+	'Skip "Rage of Ages"|icon Interface\\cursor\\Directions
+	'Skip "Spirit of the Boar"|icon Interface\\cursor\\Directions
+	'Skip "Salt of the Scorpok"|icon Interface\\cursor\\Directions
+	'Skip "Infallible Mind"|icon Interface\\cursor\\Directions
+	'Skip "Spiritual Domination"|icon Interface\\cursor\\Directions
+
+step //15
+    'If you found a Imperfect Draenethyst Fragment or Flawless Draenethyst Sphere while grinding, they can be turned in for XP!|goto Blasted Lands,52.0,35.6
+    .talk Kum'isha the Collector##7363
+    ..accept Everything Counts In Large Amounts##3501
+    ..turnin Everything Counts In Large Amounts##3501
+    ..accept To Serve Kum'isha##2521
+    ..turnin To Serve Kum'isha##2521
+	info 
+	'NOTE: You turn in it several times!|icon Interface\\cursor\\Directions
+	..accept One Draenei's Junk...##3502
+	..turnin One Draenei's Junk...##3502
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //16
+	info |goto Isle of Quel'Danas,600,0.0
+    'If doing The Stones That Bind Us quest with a group, drag servants to their Stone of Binding crystals and kill them.|icon Interface\\cursor\\Attack
+    info 
+	'GROUP 2+ PLAYERS: Drag the different servants close to their Stone of Binding crystal, then kill them along with attacking the crystal. This allows you to actually kill the mob and get quest credit.|icon Interface\\cursor\\Directions
+    .kill Servant of Razelikh##7668|n|goto Blasted Lands,55.64,48.20|title Servant of Razelikh
+	.goal 9 Servants of Razelikh Freed|q 2681/1
+    .kill Servant of Grol##7669|n|goto Blasted Lands,41.6,14.2|title Servant of Grol
+	.goal 3 Servants of Grol Freed|q 2681/2
+    .kill Servant of Allistarj##7670|n|goto Blasted Lands,64.95,34.50|title Servant of Allistarj
+	.goal 3 Servants of Allistarj Freed|q 2681/3
+    .kill Servant of Sevine##7671|n|goto Blasted Lands,38.12,33.44|title Servant of Sevine
+	.goal 3 Servants of Sevine Freed|q 2681/4
+    info 
+	'WARNING: A Boss patrols around!|icon Interface\\cursor\\Directions
+	.talk Teremus the Devourer##7846
+	............'Skip This?|confirm|next +4|n|icon Interface\\cursor\\Point
+
+step //17
+    'Go to the border of Blasted Lands and Swamp of Sorrows to turn in The Stones That Bind Us.|goto Swamp of Sorrows,34.3,66.1
+    .talk Fallen Hero of the Horde##7572
+    ..turnin The Stones That Bind Us##2681
+    info 
+	'SKIP "Kirith" - too hard to solo.|icon Interface\\cursor\\Directions
+    ..accept Heroes of Old##2702
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+	
+step //18
+    'Next to you on the other side of the path:|goto Swamp of Sorrows,33.3,66.1
+    .talk Corporal Thund Splithoof##7750
+    ..turnin Heroes of Old##2702
+    ..accept Heroes of Old##2701
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+step //19
+    'On the ground next to you, turn in the quest.|goto Swamp of Sorrows,33.3,66.2
+	'Interact with Spectral Lockbox
+    ..turnin Heroes of Old##2701
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //20
+    'Hearth to Ratchet.|goto The Barrens,62.05,39.41|title Hearth to Ratchet
+    .use Hearthstone##6948
+    info 
+	'Abandon any leftover Blasted Lands beast quests to free quest-log space. 
+	'The Stones That Bind Us|icon Interface\\cursor\\UnableQuest
+	'Kum'isha's Endeavors|icon Interface\\cursor\\UnableQuest
+	'One Draenei's Junk...|icon Interface\\cursor\\UnableQuest
+	'Everything Counts In Large Amounts|icon Interface\\cursor\\UnableQuest
+	'To Serve Kum'isha|icon Interface\\cursor\\UnableQuest
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //21
+    'At Ratchet, you can destroy or bank (and sell them later) any remaining unsellable Blasted Lands beast items.
+    info 
+	'You can bank: Vulture Gizzard, Basilisk Brain, Scorpid Stinger, Boar Lung, Snickerfang Jowl
+	info 
+	Withdraw from the bank:|goto The Barrens,62.66,37.42|title Bank
+	.'Violet Tragan|icon Interface\\Icons\\inv_mushroom_06
+	.'Stone Circle|icon Interface\\Icons\\inv_misc_shadowegg
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //22
+    'Get repaired/restocked at Ironzar's Imported Weaponry next to the bank.|goto The Barrens,62.2,37.5
+    .talk Ironzar##3491
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //23
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+	
+step //24
+	....'51-51 Blasted Lands is complete!|icon Interface\\cursor\\Directions
+	.......'Go to 51-53 Un'Goro Crater|confirm|next "Joana's Guide\\Horde\\51-53 Un'Goro Crater"|icon Interface\\icons\\achievement_zone_ungorocrater_01	
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\51-53 Un'Goro Crater",[[
+author Joana/Macumba
+type leveling
+faction horde
+startlevel 51
+next Joana's Guide\\Horde\\53-53 Burning Steppes
+
+step //1
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Wind Rider Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //2
+    'As you enter Gadgetzan (next to the crane):|goto Tanaris,51.84,26.63
+    .talk Tran'rek##7876
+    ..accept Super Sticky##4504
+
+step //3
+    'At the NW hut:|goto Tanaris,51.06,26.87
+    .talk Sprinkle##7583
+    ..turnin Sprinkle's Secret Ingredient##2641
+
+step //4
+    'In the hut next to you:|goto Tanaris,50.89,26.96
+    .talk Alchemist Pestlezugg##5594
+    ..turnin March of the Silithid##4494
+    ..accept Bungle in the Jungle##4496
+
+step //5
+    'Back next to you:|goto Tanaris,51.06,26.87
+    .talk Sprinkle##7583
+    'You might need to wait a second:
+    ..accept Delivery for Marin##2661
+
+step //6
+    'Next to the AH:|goto Tanaris,51.81,28.66
+    .talk Marin Noggenfogger##7564
+    ..turnin Delivery for Marin##2661
+    ..accept Noggenfogger Elixir##2662
+    ..turnin Noggenfogger Elixir##2662
+    info 
+	'NOTE: The Noggenfogger Elixir item is used for fun and can be stored in the bank when you want to use it.|icon Interface\\cursor\\Directions
+
+step //7
+    'Withdraw from the Bank:|goto Tanaris,52.21,28.57
+    .'Mithril Casing|icon Interface\\Icons\\inv_gizmo_mithrilcasing_01
+	info 
+    'Deposit into bank:
+	.'Noggenfogger Elixir|icon Interface\\Icons\\inv_potion_83
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //8
+    'Do have the Mithril Casing? Check at the waypoint. You can also try the Neutral Auction Hall for it.|goto Tanaris,51.96,29.05
+    info 
+	'NOTE: The Mithril Casing is used for a quest (Chasing A-Me 01) in Un'Goro Crater, and remember to not sell this to a vendor.|icon Interface\\cursor\\Directions
+    .collect 1 Mithril Casing##10561|c
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //9
+    'Head south to the Broken Pillar:|goto Tanaris,52.71,45.92
+    .talk Marvon Rivetseeker##7771
+    ..turnin The Stone Circle##3444
+
+step //10
+	info |goto Silithus,0,400
+    'Head SW to enter Un'Goro Crater...|goto Tanaris,26.95,53.54|title Enter: Un'Goro Crater
+//	info 
+    'At the bottom of the path into Un'Goro Crater, go up the hill next to the waterfall:|goto Un'Goro Crater,71.64,75.95|title Torwa Pathfinder
+    .talk Torwa Pathfinder##9619
+    ..accept The Apes of Un'Goro##4289
+    ..accept The Fare of Lar'korwi##4290
+	'Also:|only Druid
+    ..turnin Torwa Pathfinder##9063 |only Druid
+    ..accept Bloodpetal Poison##9052 |only Druid
+
+step //11
+	'Only For WOTLK|optional
+    'Down the hill a bit:|goto Un'Goro Crater,71.31,73.88
+    .talk Mor'vek##11701
+    ..accept Toxic Tolerance##13850
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    only WOTLK
+
+step //12
+    'Go north a bit and loot the big Fresh Threshadon Carcass lying on the ground.|goto Un'Goro Crater,68.73,56.70
+	.collect Piece of Threshadon Carcass##11504|q 4290/1|icon Interface\\icons\\inv_misc_food_16
+    info 
+	'NOTE: You must click it where the neck meets the body.|icon Interface\\cursor\\Directions
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+
+step //13
+    'Grind north to the entrance of Marshal's Refuge:|goto Un'Goro Crater,46.38,13.44
+    .talk Karna Remtravel##9618
+    ..accept Chasing A-Me 01##4243
+    info 
+	'NOTE: Kill/loot Bloodpetal plants to start collecting (up to 30) Savage Fronds for a later quest (Savage Flora) at lvl 59.  TBC/WOTLK players can skip this...|icon Interface\\cursor\\Directions
+	.collect 30 Savage Frond##22529|n|icon Interface\\icons\\spell_nature_protectionformnature
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //14
+    'Go up into Marshal's Refuge and on top of the hill:|goto Un'Goro Crater,44.23,11.59
+    .talk Shizzle##9998
+    ..accept Shizzle's Flyer##4503
+	info 
+	'If you find an item called "A Mangled Journal", accept the quest it starts:|icon Interface\\icons\\inv_misc_book_11
+	..accept Williden's Journal##3884|n|important
+
+step //15
+    'Move into Marshal's Refuge:|goto Un'Goro Crater,43.62,8.50
+    .talk Spraggle Frock##9997
+    ..accept Lost!##4492
+	info 
+    'Interact with Beware of Pterrordax:|goto Un'Goro Crater,43.53,8.44
+    ..accept Beware of Pterrordax##4501
+
+step //16
+    'Get repaired/resupplied.|goto Un'Goro Crater,43.28,7.74|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.talk Nerga##12959
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //17
+    'Next to you:|goto Un'Goro Crater,43.50,7.42
+    .talk Spark Nilminer##9272
+    ..accept Roll the Bones##3882
+
+step //18
+	'If you find an item called "A Mangled Journal", accept the quest it starts:|icon Interface\\icons\\inv_misc_book_11
+	..accept Williden's Journal##3884|n|important
+	info 
+    'Next to you:|goto Un'Goro Crater,43.89,7.24|title Hol'anyee Marshal
+    .talk Hol'anyee Marshal##9271
+    ..accept Alien Ecology##3883
+	info 
+    'Next to you:|goto Un'Goro Crater,43.95,7.13|title Williden Marshal
+    .talk Williden Marshal##9270
+    ..accept Expedition Salvation##3881
+	..turnin Williden's Journal##3884|n
+	info    If you found the "A Mangled Journal"
+
+step //19
+    'Behind the hill:|goto Un'Goro Crater,45.54,8.72
+    .talk Larion##9118
+    ..accept Larion and Muigin##4145
+
+step //20
+    'Time to do the Un'Goro Grind!|icon Interface\\cursor\\Attack
+	'NOTES For the Grind:|icon Interface\\cursor\\Directions
+    info - Don't worry about looting the Un'Goro Dirt Piles, you will find enough Un'Goro Soil from mob drops. Also do not sell the Un'Goro Soil to vendors, you will need these for quest turn-ins!
+    info - Don't worry about looting the Bloodpetal Sprouts, as they are not turned in for any XP. |only !Druid
+    info - Druids, you will need to loot the Bloodpetal Sprouts scattered all around Un'Goro Crater, they drop the Bloodcaps for "Bloodpetal Poison" quest. But keep in mind the sprouts are not turned in for XP at Marshal's Refuge (only cheap bonus items). |only Druid
+    info - The Dinosaur Bones you need for the quest "Roll the Bones" will drop from many different mobs as you do the other quests.
+    info - As your questing, kill/loot Oozes (slimes) you see, and collect at least 35 (15 For WOTLK) Un'Goro Slime Sample for "... and a Batch of Ooze". These Oozes are scattered all around Un'Goro Crater.
+    info - Also while questing, loot 7 crystals of each color (red, blue, green, and yellow) for a later quest (Crystals of Power). These crystals are scattered all around Un'Goro Crater.
+    info - The Bloodpetal plants drop Savage Fronds for a later quest (Savage Flora) at lvl 59.  As you are doing the Un'Goro quests associated with these mobs you should get about half, so grind on these that you see along the way and make sure you have all 30 before leaving Un'Goro Crater or you could always check the AH for more of these.  TBC/WOTLK players can skip this...
+	info - Watch out for the Elite Devilsaurs patrolling around this zone.
+	........'Let The Grind Begin!|confirm|next +1|icon Interface\\cursor\\Point
+
+step //21
+    'Kill/loot Tar mobs around Lakkari Tar Pits.|goto Un'Goro Crater,45.76,15.79|icon Interface\\cursor\\Attack
+	.collect 12 Super Sticky Tar##11834|q 4504/1||icon Interface\\icons\\inv_ammo_firetar
+    info 
+	'TIP: The Tar Lurkers have a nasty disease debuff (-50% attack speed, -50% mouvement speed) for warriors. But this debuff can be avoided by moving away from them once they start casting it.|icon Interface\\cursor\\Directions|only Warrior
+	info 
+    'Start Killing Bloodpetal mobs:|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Lasher##6509 |q 4145/1|n
+	.kill 5 Bloodpetal Trapper##6512 |q 4145/2|n
+	.kill 5 Bloodpetal Flayer##6510 |q 4145/3|n
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //22
+	'Only For Vanilla/TBC|optional
+    'Go up into the mountain ledge area and start kill/looting Pterrordax. There are only 6 mob spawns here, so clear the area once and move on to the next step..|goto Un'Goro Crater,55.46,12.34|icon Interface\\cursor\\Attack
+	.kill 10 Pterrordax##9166|q 4501/1|n
+	.collect 8 Webbed Pterrordax Scale##11831|q 4503/2|n|icon Interface\\icons\\inv_misc_monsterscales_12
+    'Start Killing Bloodpetal mobs:|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Lasher##6509 |q 4145/1|n
+	.kill 5 Bloodpetal Trapper##6512 |q 4145/2|n
+	.kill 5 Bloodpetal Flayer##6510 |q 4145/3|n
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+	......'Click When Area is Clear|confirm|next +1|icon Interface\\cursor\\Point
+
+step //23
+	info |goto Silithus,0,400
+    'Go in the cave at Fungal Rock, then make a right:|goto Un'Goro Crater,64.27,16.33|title Enter cave
+    info |goto Un'Goro Crater,66.18,17.24|title Make a right in the cave
+    .talk A-Me 01##9623 |goto Un'Goro Crater,67.66,16.76|title A-Me 01
+    ..turnin Chasing A-Me 01##4243
+	info 
+    'Start Kill/looting apes.|icon Interface\\cursor\\Attack
+	.collect 2 Un'Goro Gorilla Pelt##11478|q 4289/1|n|icon Interface\\icons\\inv_misc_pelt_bear_ruin_01
+	.collect 2 Un'Goro Stomper Pelt##11479|q 4289/2|n|icon Interface\\icons\\inv_misc_pelt_boar_ruin_03
+	.collect 2 Un'Goro Thunderer Pelt##11480|q 4289/3|n|icon Interface\\icons\\inv_misc_pelt_wolf_02
+    .kill Un'Goro Gorilla##6514|n
+    .kill Un'Goro Stomper##6513|n
+    .kill Un'Goro Thunderer##6516 |n
+
+step //24
+    'With your Mithril Casing with you:|goto Un'Goro Crater,67.66,16.76
+    .talk A-Me 01##9623
+    ..accept Chasing A-Me 01##4244
+    ..turnin Chasing A-Me 01##4244
+
+step //25
+	info |goto Silithus,0,400
+    'Accept and do the escort by escorting A-Me 01 to Marshal's Refuge.|goto Un'Goro Crater,46.38,13.44|title Escort Ends Here
+    .talk A-Me 01##9623|goto Un'Goro Crater,67.66,16.76|title A-Me 01
+    ..accept Chasing A-Me 01##4245
+    .goal Protect A-Me 01 until you reach Karna Remtravel|q 4245/1
+    info 
+    'Start Kill/looting apes.|icon Interface\\cursor\\Attack
+	.collect 2 Un'Goro Gorilla Pelt##11478|q 4289/1|n|icon Interface\\icons\\inv_misc_pelt_bear_ruin_01
+	.collect 2 Un'Goro Stomper Pelt##11479|q 4289/2|n|icon Interface\\icons\\inv_misc_pelt_boar_ruin_03
+	.collect 2 Un'Goro Thunderer Pelt##11480|q 4289/3|n|icon Interface\\icons\\inv_misc_pelt_wolf_02
+    .kill Un'Goro Gorilla##6514|n
+    .kill Un'Goro Stomper##6513|n
+    .kill Un'Goro Thunderer##6516|n
+
+step //26
+    'At the entrance of Marshal's Refuge:|goto Un'Goro Crater,46.38,13.44
+    .talk Karna Remtravel##9618
+    ..turnin Chasing A-Me 01##4245
+
+step //27
+	'Go up into the mountain ledge area and start kill/looting Pterrordax. There are only 6 mob spawns here, so clear the area once and move on to the next step..|goto Un'Goro Crater,55.46,12.34|icon Interface\\cursor\\Attack
+	.kill 10 Pterrordax##9166|q 4501/1|n
+	.collect 8 Webbed Pterrordax Scale##11831|q 4503/2|n|icon Interface\\icons\\inv_misc_monsterscales_12
+    'Start Killing Bloodpetal mobs:|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Lasher##6509 |q 4145/1|n
+	.kill 5 Bloodpetal Trapper##6512 |q 4145/2|n
+	.kill 5 Bloodpetal Flayer##6510 |q 4145/3|n
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+	.......'Click When Area is Clear|confirm|next +1|icon Interface\\cursor\\Point
+
+step //28
+    'Finish Kill/looting apes around Fungal Rock.|goto Un'Goro Crater,63.65,16.58|icon Interface\\cursor\\Attack
+    info 
+	'NOTE: It can be a bit more dangerous deeper in the cave, so avoid that if possible.|icon Interface\\cursor\\Directions
+    .collect 2 Un'Goro Gorilla Pelt##11478|q 4289/1|icon Interface\\icons\\inv_misc_pelt_bear_ruin_01
+	.collect 2 Un'Goro Stomper Pelt##11479|q 4289/2|icon Interface\\icons\\inv_misc_pelt_boar_ruin_03
+	.collect 2 Un'Goro Thunderer Pelt##11480|q 4289/3|icon Interface\\icons\\inv_misc_pelt_wolf_02
+    .kill Un'Goro Gorilla##6514|n
+    .kill Un'Goro Stomper##6513|n
+    .kill Un'Goro Thunderer##6516|n
+	info 
+    'Start Killing Bloodpetal mobs:|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Lasher##6509 |q 4145/1|n
+	.kill 5 Bloodpetal Trapper##6512 |q 4145/2|n
+	.kill 5 Bloodpetal Flayer##6510 |q 4145/3|n
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4|n
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //29
+    'Loot Crate of Foodstuffs (under a tent) and Kill/loot Dinosaurs along the way.|goto Un'Goro Crater,68.54,36.54|icon Interface\\cursor\\Attack
+    .collect Crate of Foodstuffs##11113|q 3881/1|icon Interface\\icons\\inv_crate_04
+    info 
+    'Start Killing Bloodpetal mobs:|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Lasher##6509 |q 4145/1|n
+	.kill 5 Bloodpetal Trapper##6512 |q 4145/2|n
+	.kill 5 Bloodpetal Flayer##6510 |q 4145/3|n
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //30
+	'Finish part of this by killing Bloodpetal Lashers and Threshers around the NE side of Un'Goro Crater.|goto Un'Goro Crater,64.57,36.07|title Around the area|icon Interface\\cursor\\Attack
+	.kill 5 Bloodpetal Lasher##6509 |q 4145/1
+    .kill 5 Bloodpetal Thresher##6511 |q 4145/4
+	info 
+	'Kill/loot Dinosaurs.|icon Interface\\cursor\\Attack
+	.collect 8 Webbed Diemetradon Scale##11830|q 4503/1|n|icon Interface\\icons\\inv_misc_monsterscales_16
+	.collect 8 Webbed Pterrordax Scale##11831|q 4503/2|n|icon Interface\\icons\\inv_misc_monsterscales_12
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+	
+step //31
+	info |goto Silithus,0,400
+    'Finish up killing Bloodpetal Flayers by starting below the river and work your way south.|goto Un'Goro Crater,60.51,67.81|title Around the area|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Flayer##6510 |q 4145/3
+    info |goto Un'Goro Crater,60.89,47.73|title Around the area
+	'TIP: Try to avoid the Raptors as you will be grinding them soon with more quests associated with them.|icon Interface\\cursor\\Directions
+	info 
+    'Kill/loot Dinosaurs (Diemetradon).|icon Interface\\cursor\\Attack
+	.collect 8 Webbed Diemetradon Scale##11830|q 4503/1|n|icon Interface\\icons\\inv_misc_monsterscales_16
+    .kill Young Diemetradon##9162|n
+    .kill Diemetradon##9163|n
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+    info 
+	'WARNING: Watch out for the Devilsaurs!|icon Interface\\cursor\\Directions
+	.talk Ironhide Devilsaur##6499
+
+step //32
+    'On top of the hill by the waterfall:|goto Un'Goro Crater,71.64,75.96
+    .talk Torwa Pathfinder##9619
+    ..turnin The Apes of Un'Goro##4289
+    ..accept The Mighty U'cha##4301
+    ..turnin The Fare of Lar'korwi##4290
+    ..accept The Scent of Lar'korwi##4291
+    info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info 
+	'WARNING: Watch out for the Devilsaurs!|icon Interface\\cursor\\Directions
+	.talk Ironhide Devilsaur##6499
+
+step //33
+	info |goto Silithus,0,400
+    'To get the Ravasaur Pheromone Glands, run across the egg nests, there is 5 total:|goto Un'Goro Crater,67.33,73.05|title Egg nest #1
+    info |goto Un'Goro Crater,66.60,66.74|title Egg nest #2
+    'Then kill/loot the Lar'korwi Mates that spawn in.|goto Un'Goro Crater,62.29,65.98|title Egg nest #3|icon Interface\\cursor\\Attack
+	.collect 2 Ravasaur Pheromone Glands##11509|q 4291/1|icon Interface\\icons\\inv_misc_organ_06
+	info |goto Un'Goro Crater,60.92,72.25|title Egg nest #4
+    'Kill/loot raptors.|goto Un'Goro Crater,63.23,77.34|title Egg nest #5|icon Interface\\cursor\\Attack
+	.collect 8 White Ravasaur Claw##11477|q 4300/1|icon Interface\\icons\\inv_misc_bone_06
+    .kill Ravasaur Hunter##6507|n
+    .kill Ravasaur##6505|n
+    .kill Ravasaur Runner##6506|n
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+	info 
+	'WARNING: Watch out for the Devilsaurs!|icon Interface\\cursor\\Directions
+	.talk Ironhide Devilsaur##6499
+
+step //34
+	'Only For WOTLK|optional
+    'Around the north side of the raptor area, let the Venomhide Ravasaurs (darker colored ones) spit poison on you 20 times.|goto Un'Goro Crater,68.99,52.62|title Around the area
+	.talk Venomhide Ravasaurs##6508|n
+    .goal 20 Splashed with Venomhide blood|q 13850/1
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+	........'Skip WOTLK steps?|confirm|next +4|icon Interface\\cursor\\Point
+	..........'Continue on...|confirm|next +1|icon Interface\\cursor\\Point
+
+step //35
+	'Only For WOTLK|optional
+    'Down the hill a bit:|goto Un'Goro Crater,71.31,73.88
+    .talk Mor'vek##11701
+    ..turnin Toxic Tolerance##13850
+    ..accept Venomhide Eggs##13887
+    info 
+	'NOTE: To free up bag space, do NOT loot A Pocked Black Parchment yet!|icon Interface\\cursor\\Directions
+
+step //36
+	'Only For WOTLK|optional
+    'Around the raptor area, loot Venomhide Eggs, see Questie (if using it) for locations on map.|goto Un'Goro Crater,67.34,73.05
+	.collect 4 Venomhide Ravasaur Egg##46364|q 13887/1|icon Interface\\icons\\inv_egg_07
+
+step //37
+	'Only For WOTLK|optional
+    'Down the hill a bit:|goto Un'Goro Crater,71.31,73.88
+    .talk Mor'vek##11701
+    ..turnin Venomhide Eggs##13887
+    info 
+	'SKIP "They Grow Up So Fast" (Although this can be done if you like, but requires items you would need to search around for, also costs 80 gold. But this can reward you with a new epic Whistle of the Venomhide Ravasaur mount.)|icon Interface\\cursor\\Directions
+
+step //38
+    'At The Marshlands, at the western most pond, on it's shore:|goto Un'Goro Crater,63.01,68.56
+    'Interact with A Wrecked Raft
+    ..accept It's a Secret to Everybody##3844
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //39
+    'Next to the wrecked raft, under the water:|goto Un'Goro Crater,63.10,69.05
+	'Interact with A Small Pack
+    ..turnin It's a Secret to Everybody##3844
+    ..accept It's a Secret to Everybody##3845
+    info 
+	'NOTE: To free up bag space, do NOT loot A Pocked Black Parchment yet!|icon Interface\\cursor\\Directions
+
+step //40
+    'On top of the hill by the waterfall:|goto Un'Goro Crater,71.64,75.96
+    .talk Torwa Pathfinder##9619
+    ..turnin The Scent of Lar'korwi##4291
+    ..accept The Bait for Lar'korwi##4292
+
+step //41
+	info |goto Silithus,0,400
+    'Enter the cave at The Slithering Scar...|goto Un'Goro Crater,49.95,81.68|title Enter cave
+	'Then make a left in the cave and use your Unused Scraping Vial quest item on the mound in the center of the room.|goto Un'Goro Crater,48.64,85.31|title Mound in the center of the room
+	.use Unused Scraping Vial##11132
+	.collect Hive Wall Sample##11131|q 3883/1|icon Interface\\icons\\inv_potion_42
+	info 
+    'Start Kill/looting Gorishi bugs.|icon Interface\\cursor\\Attack
+    .collect Gorishi Scent Gland##11837|q 4496/1|n|icon Interface\\icons\\inv_misc_organ_06
+	.collect 8 Gorishi Sting##22435|q 9052/1|n|icon Interface\\icons\\spell_nature_nullifypoison|only Druid
+    .kill Gorishi Wasp##6551|n|only Druid
+	.kill Gorishi Stinger##6554|n|only Druid
+	info 
+	'Kill/loot Diemetradon along the way.|icon Interface\\cursor\\Attack
+	.collect 8 Webbed Diemetradon Scale##11830|q 4503/1|n|icon Interface\\icons\\inv_misc_monsterscales_16
+    .kill Diemetradon##9163|n
+
+step //42
+    'Finish Kill/looting Gorishi bugs until you get the Gorishi Scent Gland (can drop from any of them, but has a low drop rate). These bugs can be found in and outside of the cave.|goto Un'Goro Crater,50.16,80.18|icon Interface\\cursor\\Attack
+	.collect Gorishi Scent Gland##11837|q 4496/1|icon Interface\\icons\\inv_misc_organ_06
+	info 
+	'Kill/loot Gorishi Wasp & Stinger bugs to obtain the 8 Gorishi Stings|icon Interface\\cursor\\Attack|only Druid
+	.collect 8 Gorishi Sting##22435|q 9052/1|icon Interface\\icons\\spell_nature_nullifypoison|only Druid
+    .kill Gorishi Wasp##6551|n|only Druid
+	.kill Gorishi Stinger##6554|n|only Druid
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+
+step //43
+	info |goto Silithus,0,400
+	'Only For Vanilla/TBC|optional
+    'Go south up at the ledges around the area and finish killing the 10 Pterrordax.|goto Un'Goro Crater,56.36,90.05|title Around the area|icon Interface\\cursor\\Attack
+	'There is another spot of these mobs up around the other location.|goto Un'Goro Crater,44.84,89.60|title Around the area
+    .kill 10 Pterrordax##9166 |q 4501/1
+    .kill 15 Frenzied Pterrordax##9167 |q 4501/2|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info |only Druid
+	'Loot Bloodpetal Sprouts|only Druid
+	.collect 8 Bloodcap##22434|q 9052/2|n|icon Interface\\icons\\inv_mushroom_07|only Druid
+    ............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //44
+    'Make sure this is finished by looting the Bloodpetal Sprouts scattered all around Un'Goro Crater for the Bloodcaps.|goto Un'Goro Crater,41.8,69.5|title Around the area
+    .collect 8 Bloodcap##22434|q 9052/2|icon Interface\\icons\\inv_mushroom_07
+	info |goto Un'Goro Crater,69.6,68.0|title Around the area
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info 
+	'WARNING: Watch out for the Devilsaurs!|icon Interface\\cursor\\Directions
+	.talk Ironhide Devilsaur##6499
+	only Druid
+
+step //45
+    'On top of the hill by the waterfall:|goto Un'Goro Crater,71.64,75.96
+    .talk Torwa Pathfinder##9619
+    ..turnin Bloodpetal Poison##9052
+    ..accept Toxic Test##9051
+    only Druid
+
+step //46
+    'At the old camp site, loot the Research Equipment (looks like a stack of brown boxes next to a tent).|goto Un'Goro Crater,38.46,66.06
+    .collect Research Equipment##11112|q 3881/2|icon Interface\\icons\\inv_gizmo_06
+	info |only Druid
+    'As you continue on questing in Un'Goro Crater, start working on this by using the Devilsaur Barb quest item on an elite Devilsaur (the big dinosaurs patrolling around).|icon Interface\\icons\\inv_spear_02|only Druid
+	.talk Ironhide Devilsaur##6499|only Druid
+	.use Devilsaur Barb##22432|only Druid
+    .goal Devilsaur stabbed with barb|q 9051/1|n |only Druid
+	info 
+	'Kill/loot Diemetradon along the way.|icon Interface\\cursor\\Attack
+	.collect 8 Webbed Diemetradon Scale##11830|q 4503/1|n|icon Interface\\icons\\inv_misc_monsterscales_16
+    .kill Diemetradon##9163|n
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+
+step //47
+    'At Golakka Hot Springs:|goto Un'Goro Crater,30.93,50.44
+    .talk Krakle##10302
+    ..accept Finding the Source##974
+	info 
+	'Note For Vanilla: You might need to abandon "Williden's Journal" quest, so you can accept this quest!|icon Interface\\cursor\\Directions
+	info 
+	'Kill/loot Diemetradons, Frenzied Pterrordax, Bloodpetal Trappers along the way...|icon Interface\\cursor\\Attack
+
+step //48
+	info |goto Silithus,0,400
+    'Finish the following all around the western side of Un'Goro Crater:|goto Un'Goro Crater,33.43,63.19|title Around the area|icon Interface\\cursor\\Attack
+    .kill 5 Bloodpetal Trapper##6512 |q 4145/2
+	info |goto Un'Goro Crater,32.23,34.38|title More Frenzied Pterrordax and Bloodpetal Trapper around here
+	'Kill/loot Diemetradon and Frenzied Pterrordax (Need 15 for Vanilla/TBC and 10 for WOTLK)|icon Interface\\cursor\\Attack
+    .kill 10 Frenzied Pterrordax##9167 |q 4501/2
+	.collect 8 Webbed Pterrordax Scale##11831|q 4503/2|icon Interface\\icons\\inv_misc_monsterscales_12
+	.collect 8 Webbed Diemetradon Scale##11830|q 4503/1|icon Interface\\icons\\inv_misc_monsterscales_16
+    .kill Diemetradon##9163|n
+	info 
+    'The Dinosaur Bones can also drop from Elder Diemetradon and regular Diemetradon mobs (found south-middle).
+    .collect 8 Dinosaur Bone##11114 |q 3882/1|icon Interface\\icons\\inv_misc_bone_01
+	info |only Druid
+    'Use Devilsaur Barb quest item on an elite Devilsaur.|icon Interface\\icons\\inv_spear_02|only Druid
+	.talk Ironhide Devilsaur##6499|only Druid
+	.use Devilsaur Barb##22432|only Druid
+    .goal Devilsaur stabbed with barb|q 9051/1|n |only Druid
+
+step //49
+    'Take the spiky bridge entrance at Fire Plume Ridge, then follow the path upwards to the top.|goto Silithus,0,400
+	info |goto Un'Goro Crater,53.00,43.27|title Spiky bridge entrance
+    'At the top of Fire Plume Ridge, Use Krakle's Thermometer quest item at the Fire Plume Ridge Hot Spot.|goto Un'Goro Crater,49.68,45.63|title Use Quest Item Here!
+	.use Krakle's Thermometer##12472
+    .goal Find the hottest area of Fire Plume Ridge|q 974/1
+    info |goto Un'Goro Crater,51.95,45.51|title Follow waypoint upward
+	'NOTE: Watch out for Blazerunner lvl 56 Elite fire elem in the cave at the top of the Ridge.|icon Interface\\cursor\\Directions
+	info |goto Un'Goro Crater,51.41,47.37|title Follow waypoint upward
+    'Start kill/looting fire elementals.|icon Interface\\cursor\\Attack
+	.collect 9 Un'Goro Ash##11829|q 4502/1|n|icon Interface\\icons\\inv_misc_dust_02
+    .kill Scorching Elemental##6520|n
+    .kill Living Blaze##6521|n
+	info 
+    'Start collecting Core of Elements for a future quest (The Elemental Equation), I recommend at least getting about 10 for now.
+	.collect 10 Core of Elements##22527|n|icon Interface\\icons\\inv_misc_gem_variety_02
+
+step //50
+    'Finish Kill/looting fire elementals.|goto Un'Goro Crater,50.91,49.49|icon Interface\\cursor\\Attack
+	.collect 9 Un'Goro Ash##11829|q 4502/1|icon Interface\\icons\\inv_misc_dust_02
+    .kill Scorching Elemental##6520|n
+    .kill Living Blaze##6521|n
+	info 
+    'Start collecting Core of Elements for a future quest (The Elemental Equation), I recommend at least getting about 10 for now.
+	.collect 10 Core of Elements##22527|n|icon Interface\\icons\\inv_misc_gem_variety_02
+	info 
+	'Start collecting crystals (red, blue, green and yellow) scattered everywhere.
+	.collect 7 Red Power Crystal##11186|n|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|n|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|n|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|n|icon Interface\\icons\\inv_misc_gem_topaz_02
+
+step //51
+    'Finish collecting 7 of each colored crystal. These are found all around Un'Goro Crater.|goto Un'Goro Crater,61.31,50.55
+    .collect 7 Red Power Crystal##11186|icon Interface\\icons\\inv_misc_gem_ruby_03
+	.collect 7 Blue Power Crystal##11184|icon Interface\\icons\\inv_misc_gem_sapphire_03
+	.collect 7 Green Power Crystal##11185|icon Interface\\icons\\inv_misc_gem_emerald_02
+	.collect 7 Yellow Power Crystal##11188|icon Interface\\icons\\inv_misc_gem_topaz_02
+	info 
+    'Kill/loot oozes (get up to 35 samples for Vanilla/TBC and 15 for WOTLK).|icon Interface\\cursor\\Attack
+	info    Vanilla/TBC
+    .collect 35 Un'Goro Slime Sample##12235 |q 4294/1|n|icon Interface\\icons\\inv_potion_79
+	info    WOTLK
+    .collect 15 Un'Goro Slime Sample##12235 |q 4294/1|n|icon Interface\\icons\\inv_potion_79
+	.kill Muculent Ooze##6556|n
+	.kill Glutinous Ooze##6559|n
+	.kill Primal Ooze##6557|n
+    info |only Druid
+    'Use Devilsaur Barb quest item on an elite Devilsaur.|icon Interface\\icons\\inv_spear_02|only Druid
+	.talk Ironhide Devilsaur##6499|only Druid
+	.use Devilsaur Barb##22432|only Druid
+    .goal Devilsaur stabbed with barb|q 9051/1|n |only Druid
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //52
+    'In the small cave at the eastern side of Fire Plume Ridge:|goto Un'Goro Crater,51.91,49.87
+    .talk Ringo##9999
+    ..turnin Lost!##4492
+
+step //53
+	info |goto Silithus,0,400
+    'Accept and do the escort by leading Ringo back to Marshal's Refuge.|goto Un'Goro Crater,51.91,49.87|title Ringo
+    info |goto Un'Goro Crater,44.96,11.71|title Follow waypoint
+	'NOTE: You will need to use Spraggle's Canteen quest item on Ringo to wake him up if he faints (so keep an eye out on him).|goto Un'Goro Crater,43.61,8.50|title Spraggle Frock (end of the escort)|icon Interface\\cursor\\Directions
+    .talk Ringo##9999
+    ..accept A Little Help From My Friends##4491
+	info 
+	.use Spraggle's Canteen##11804
+    .goal Escort Ringo to Spraggle Frock at Marshal's Refuge|q 4491/1
+
+step //54
+    .talk Spraggle Frock##9997 |goto Un'Goro Crater,43.61,8.50
+    ..turnin A Little Help From My Friends##4491
+    ..turnin Beware of Pterrordax##4501
+
+step //55
+    'On top of the hill at Marshal's Refuge:|goto Un'Goro Crater,44.23,11.59
+    .talk Shizzle##9998
+    ..turnin Shizzle's Flyer##4503
+
+step //56
+    'Get repaired/resupplied.|goto Un'Goro Crater,43.27,7.73|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.talk Nerga##12959
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //57
+    'Next to you:|goto Un'Goro Crater,43.50,7.42
+    .talk Spark Nilminer##9272
+    ..turnin Roll the Bones##3882
+
+step //58
+    'Next to you:|goto Un'Goro Crater,43.89,7.24|title Hol'anyee Marshal
+    .talk Hol'anyee Marshal##9271
+    ..turnin Alien Ecology##3883
+	info 
+	'While grinding in Un'Goro Crater, you have found an item called "A Mangled Journal" which starts:|icon Interface\\cursor\\Directions
+	..accept Williden's Journal##3884|n|important
+	info 
+    'Next to you:|goto Un'Goro Crater,43.95,7.14|title Williden Marshal
+    .talk Williden Marshal##9270
+    ..turnin Expedition Salvation##3881
+	info If you get "A Mangled Journal":
+    ..turnin Williden's Journal##3884|n
+
+step //59
+	info |goto Silithus,0,400
+    'Go to the end of the linear cave at Marshal's Refuge and at the very end of the cave:|goto Un'Goro Crater,43.14,5.81|title Enter cave
+    .talk J.D. Collie##9117|goto Un'Goro Crater,41.92,2.70|title J.D. Collie
+    ..accept Crystals of Power##4284
+    ..turnin Crystals of Power##4284
+	info 
+    'Then accept the 3 Pylon quests:
+    ..accept The Northern Pylon##4285
+    ..accept The Eastern Pylon##4287
+    ..accept The Western Pylon##4288
+
+step //60
+    'Exit the cave...|goto Un'Goro Crater,43.39,5.14
+    info 
+	'NOTE: You can destroy any remaining crystals in your inventory (to free bag space).|icon Interface\\cursor\\Directions
+    'Open and loot A Small Pack in your inventory.|icon Interface\\icons\\inv_misc_bag_20
+    .collect Large Compass##11104 |q 3845/1
+    .collect Curled Map Parchment##11105 |q 3845/2
+    .collect Lion-headed Key##11106 |q 3845/3
+	info 
+    'Then behind some trees:|goto Un'Goro Crater,44.65,8.10
+    .talk Linken##8737
+    ..turnin It's a Secret to Everybody##3845
+    ..accept It's a Secret to Everybody##3908
+
+step //61
+    'NOTE: Faded Photograph is not needed and will remain in your inventory forever unless you destroy or bank it.|icon Interface\\cursor\\Directions
+	info 
+    'Behind the hill:|goto Un'Goro Crater,45.53,8.72
+    .talk Larion##9118
+    ..turnin Larion and Muigin##4145
+    ..accept Marvon's Workshop##4147
+
+step //62
+    'Go east up on the ledges and click on the Northern Crystal Pylon.|goto Un'Goro Crater,56.52,12.53
+    .goal Discover and examine the Northern Crystal Pylon|q 4285/1
+
+step //63
+    'Go through the cave at Fungal Rock, keep left in the cave until you get to U'cha (lvl 55 red colored ape) and kill/loot him.|goto Un'Goro Crater,64.52,16.44|title Enter cave at: Fungal Rock|icon Interface\\cursor\\Attack
+    'Follow waypoint:|goto Un'Goro Crater,67.87,15.66|title Follow waypoint
+    .kill U'cha##9622|n|goto Un'Goro Crater,68.39,12.85|title Stay up and kill/loot: U'cha
+	.collect U'cha's Pelt##11476|q 4301/1|icon Interface\\icons\\inv_misc_pelt_bear_02
+    info |goto Un'Goro Crater,69.31,17.54|title Follow waypoint
+	'NOTE: Hardcore player, This can be slightly dangerous so be extra careful here! Consider skipping this if you are not confident about it!|icon Interface\\icons\\Spell_Holy_HarmUndeadAura
+
+step //64
+    'On the eastern side of Un'Goro Crater, go up on the ledges and click on the Eastern Crystal Pylon.|goto Un'Goro Crater,77.17,49.97
+    .goal Discover and examine the Eastern Crystal Pylon|q 4287/1
+    info |only Druid
+    'Use Devilsaur Barb quest item on an elite Devilsaur.|icon Interface\\icons\\inv_spear_02|only Druid
+	.talk Ironhide Devilsaur##6499|only Druid
+	.use Devilsaur Barb##22432|only Druid
+    .goal Devilsaur stabbed with barb|q 9051/1|n |only Druid
+
+step //65
+    'First open your Torwa's Pouch quest item (in bag) to obtain the following:|icon Interface\\icons\\inv_misc_bag_09_black
+	.'Preserved Threshadon Meat|icon Interface\\icons\\inv_misc_food_14
+    .'Preserved Pheromone Mixture|icon Interface\\icons\\inv_potion_12
+	info 
+    'Then at the gray flat rock on the ground, first use the Preserved Threshadon Meat, then use the Preserved Pheromone Mixture at this spot, then kill/loot Lar'korwi (raptor) when he spawns in.|goto Un'Goro Crater,79.94,49.90|icon Interface\\cursor\\Attack
+	.use Preserved Threshadon Meat##11569
+	.use Preserved Pheromone Mixture##11570
+	.kill Lar'korwi##9684|n
+	.collect Lar'korwi's Head##11510|q 4292/1|icon Interface\\icons\\ability_hunter_pet_raptor
+
+step //66
+	info |goto Silithus,0,400
+    'Make sure this is finished by using the Devilsaur Barb quest item on an elite Devilsaur.|goto Un'Goro Crater,75.75,50.59|title Find a Devilsaur!|icon Interface\\icons\\ability_hunter_pet_devilsaur
+	.talk Ironhide Devilsaur##6499
+	.use Devilsaur Barb##22432
+    .goal Devilsaur stabbed with barb|q 9051/1
+    only Druid
+
+step //67
+    'On top of the hill by the waterfall:|goto Un'Goro Crater,71.64,75.95
+    .talk Torwa Pathfinder##9619
+    ..turnin The Bait for Lar'korwi##4292
+    ..turnin The Mighty U'cha##4301
+    ..turnin Toxic Test##9051|only Druid
+    info |only Druid
+	'SKIP "A Better Ingredient" (Sunken Temple Dungeon)|icon Interface\\cursor\\Directions |only Druid
+
+step //68
+    'Go west and up on the mountain ledges click on the Western Crystal Pylon.|goto Un'Goro Crater,23.86,59.18
+    .goal Discover and examine the Western Crystal Pylon|q 4288/1
+    info 
+	'WARNING: Watch out for the Devilsaurs!|icon Interface\\cursor\\Directions
+	.talk Ironhide Devilsaur##6499
+
+step //69
+    'Go NE to Golakka Hot Springs (below the hotspring mountain):|goto Un'Goro Crater,30.93,50.44
+    .talk Krakle##10302
+    ..turnin Finding the Source##974
+    ..accept The New Springs##980
+    info 
+    'At this time see if you can obtain 30 Savage Fronds from the Bloodpetal mobs (plants all around Un'Goro Crater). 30 of these can be used for a later quest (Savage Flora) at lvl 59. If you are still far behind on that then don't worry about it (or just skip it).  TBC/WOTLK players can skip this.|icon Interface\\cursor\\Directions
+    .collect 30 Savage Frond##22529|n|icon Interface\\icons\\spell_nature_protectionformnature
+
+step //70
+	'Finish Kill/looting oozes (get up to 35 samples for Vanilla/TBC and 15 for WOTLK). They are all around Un'Goro Crater.|icon Interface\\cursor\\Attack
+	info    Vanilla/TBC
+    .collect 35 Un'Goro Slime Sample##12235 |q 4294/1|icon Interface\\icons\\inv_potion_79
+	info    WOTLK
+    .collect 15 Un'Goro Slime Sample##12235 |q 4294/1|icon Interface\\icons\\inv_potion_79
+	.kill Muculent Ooze##6556|n
+	.kill Glutinous Ooze##6559|n
+	.kill Primal Ooze##6557|n
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //71
+	info |goto Silithus,0,400
+    'Grind your way back north to Marshal's Refuge...|goto Un'Goro Crater,45.25,11.73|title Enter: Marshal's Refuge
+	info 
+    'Go to the end of the cave at Marshal's Refuge:|goto Un'Goro Crater,43.14,5.81|title Enter cave
+    .talk J.D. Collie##9117|goto Un'Goro Crater,41.92,2.70|title J.D. Collie
+    ..turnin The Northern Pylon##4285
+    ..turnin The Eastern Pylon##4287
+    ..turnin The Western Pylon##4288
+    ..accept Making Sense of It##4321
+    ..turnin Making Sense of It##4321
+
+step //72
+	info |goto Silithus,0,400
+    'Leave the cave...|goto Un'Goro Crater,43.14,5.81|title Exit cave
+    info 
+	'NOTE: The Crystal Pylon User's Manual can be destroyed or saved in your bank for later reference and you can always get a new one from the NPC in the cave.|icon Interface\\cursor\\Directions
+	info 
+    'Get repaired/resupplied.|goto Un'Goro Crater,43.27,7.73|title Get repaired / resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.talk Nerga##12959
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //73
+    'Go up on the eastern side of Marshal's Refuge:|goto Un'Goro Crater,45.23,5.84
+    .talk Gryfe##10583
+    'From the Flight Master, take a flight to Gadgetzan, Tanaris|goto Tanaris,51.60,25.44|title Go to Gadgetzan|c|icon Interface\\minimap\\Tracking\\Flightmaster
+
+step //74
+    'As you enter Gadgetzan (next to the crane):|goto Tanaris,51.57,26.76
+    .talk Tran'rek##7876
+    ..turnin Super Sticky##4504
+
+step //75
+    'In the NW hut:|goto Tanaris,50.88,26.96
+    .talk Alchemist Pestlezugg##5594
+    ..turnin Bungle in the Jungle##4496
+
+step //76
+    'At Gadgetzan:|goto Tanaris,51.60,25.44
+    .talk Bulkrek Ragefist##7824
+    'From the Wind Rider Master, take a flight to Thunder Bluff.|goto Thunder Bluff,47.02,49.84|title Go to Thunder Bluff|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //77
+    'Use your Teleport: Thunder Bluff to get to Thunder Bluff.|goto Thunder Bluff,28.7,28.9|title Go to Thunder Bluff|c|icon Interface\\icons\\spell_arcane_teleportthunderbluff
+    .cast Teleport: Thunder Bluff##3566
+	only Mage
+
+step //78
+    'Mages, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,22.74,14.52|title Mage Trainer|icon Interface\\icons\\inv_staff_13
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only MAGE
+
+step //79
+	'Above The Spirit Rise, upgrade First Aid from the First Aid Trainer if you need to.|goto Thunder Bluff,29.69,21.15|icon Interface\\icons\\spell_holy_sealofsacrifice
+    .talk Pand Stonebinder##2798
+	'You can still learn the following:
+	.'Heavy Mageweave Bandage (240 skill)|icon Interface\\icons\\inv_misc_bandage_20
+    .'Runecloth Bandage (260 skill)|icon Interface\\icons\\inv_misc_bandage_11
+    .'Heavy Runecloth Bandage (290 skill)|icon Interface\\icons\\inv_misc_bandage_12
+	info 
+	'Get new Tradeskills|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	only Mage
+
+step //80
+    'At the Elder Rise:|goto Thunder Bluff,78.62,28.57
+    .talk Arch Druid Hamuul Runetotem##5769
+    ..accept Un'Goro Soil##3761
+
+step //81
+    'At the Druid Trainers:|goto Thunder Bluff,76.85,27.12|title Druid Trainer
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Druid
+
+step //82
+    'Outside of the tent:|goto Thunder Bluff,77.45,21.95
+    .talk Ghede##9076
+    ..turnin Un'Goro Soil##3761
+
+step //83
+    'Back in the tent:|goto Thunder Bluff,78.64,28.55
+    .talk Arch Druid Hamuul Runetotem##5769
+    ..accept Morrowgrain Research##3782
+
+step //84
+    'In the small tent:|goto Thunder Bluff,71.08,34.20
+    .talk Bashana Runetotem##9087
+    ..turnin Morrowgrain Research##3782
+    info 
+	'SKIP "Morrowgrain Research" (Part 2)|icon Interface\\cursor\\Directions
+	For Vanilla: The main issue with this quest is that we do not come back to TB until lvl 58 and accepting this quest will give quest log issues of not being able to accept more important quests later on at EPL.|optional
+    For TBC/WOTLK: This is skipped due to the faster leveling rate and we wont be back to TB until level 58 anyways.|optional
+
+step //85
+	info |goto Silithus,0,400
+    'Get new spells/abilities. Hunters, go south to The Hunter Rise.|goto Thunder Bluff,59.14,86.88|title Hunter Trainer|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Get new spells/abilities. Warriors, go south to The Hunter Rise.|goto Thunder Bluff,57.59,85.51|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+    'Only For Vanilla|optional|only Hunter
+	'Also accept your level 50 class quest from your Hunter Trainer.|only Hunter
+    .talk Kary Thunderhorn##3038 |only Hunter
+    ..accept The Hunter's Charm##8151 |only Hunter
+	'Priests, get new spells/abilities in The Pools of Vision (cave).|goto Thunder Bluff,24.56,22.58|title Priest Trainer (down in cave)|icon Interface\\icons\\inv_staff_30|only Priest
+	'In the big tent up at The Spirit Rise get new spells/abilities from a Shaman Trainer.|goto Thunder Bluff,22.81,21.12|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter,Priest,Shaman,Warrior
+
+step //86
+    'Above The Spirit Rise, upgrade First Aid from the First Aid Trainer if you need to.|goto Thunder Bluff,29.69,21.15|icon Interface\\icons\\spell_holy_sealofsacrifice
+    .talk Pand Stonebinder##2798
+	'You can still learn the following:
+	.'Heavy Mageweave Bandage (240 skill)|icon Interface\\icons\\inv_misc_bandage_20
+    .'Runecloth Bandage (260 skill)|icon Interface\\icons\\inv_misc_bandage_11
+    .'Heavy Runecloth Bandage (290 skill)|icon Interface\\icons\\inv_misc_bandage_12
+	info 
+	'Get new Tradeskills|icon Interface\\minimap\\Tracking\\Class
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+	only !Mage
+
+step //87
+	'Hearth to Ratchet.|goto The Barrens,61.89,37.79|title Hearth to Ratchet|c
+    .use Hearthstone##6948
+
+step //88
+    'In hut:|goto The Barrens,62.45,38.74|title Liv Rizzlefix
+    .talk Liv Rizzlefix##8496
+	..turnin Volcanic Activity##4502
+    ..turnin Marvon's Workshop##4147
+    info 
+	'SKIP "Zapper Fuel" (The Temple of Atal'Hakkar Dungeon quest)|icon Interface\\cursor\\Directions
+
+step //89
+    'Withdraw from the Bank.|goto The Barrens,62.66,37.42|title Ratchet Bank
+    .'Pupellyverbos Port (TBC/WOTLK only)|icon Interface\\Icons\\inv_drink_09
+    .'Black Dragonflight Molt|icon Interface\\icons\\inv_misc_shadowegg
+	.'Dark Iron Scraps|icon Interface\\icons\\inv_misc_armorkit_20
+	info 
+	'Deposit into bank:
+    .'Un'Goro Soil|icon Interface\\icons\\inv_misc_dust_02
+    .'Un'Goro Slime Sample|icon Interface\\icons\\inv_potion_79
+    .'Savage Frond|icon Interface\\icons\\spell_nature_protectionformnature
+    .'Linken's Training Sword|icon Interface\\icons\\inv_sword_47
+    .'White Ravasaur Claw|icon Interface\\icons\\inv_misc_bone_06
+    .'Core of Elements|icon Interface\\icons\\inv_misc_gem_variety_02
+    .'Faded Photograph (if you kept it)|icon Interface\\icons\\inv_scroll_08
+    .'Crystal Pylon User's Manual (if you kept it)|icon Interface\\icons\\inv_misc_book_08
+	info |goto Stranglethorn Vale,26.56,76.50|title Booty Bay Bank
+	'NOTE: If the boat to Booty Bay is at the docks already, do this step at BB's Bank instead!|icon Interface\\cursor\\Directions
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //90
+    'Go to the end of the docks at Ratchet to get on the boat to go to Booty Bay.|goto The Barrens,63.68,38.64|title Go to Booty Bay
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //91
+	'Only For TBC/WOTLK|optional
+    'In the Inn at Booty Bay:|goto Stranglethorn Vale,27.07,77.6
+    .talk Whiskey Slim##2491
+    ..turnin Whiskey Slim's Lost Grog##580
+//    only SOM2 or TBC or WOTLK
+
+step //92
+    'Go up in the Inn to the roof:|goto Stranglethorn Vale,26.87,77.09
+    .talk Gringer##2858
+    'From the Wind Rider Master, take a flight to Kargath, Badlands.|goto Badlands,4.0,44.8|title Go to Kargath|c|icon Interface\\minimap\\Tracking\\FlightMaster|only !Warlock
+    'From the Wind Rider Master, take a flight to Stonard, Swamp of Sorrows.|goto Swamp of Sorrows,46.07,54.83|c|title Ride to Stonard|icon Interface\\minimap\\Tracking\\FlightMaster|only Warlock
+
+step //93
+    'At Stonard, go up in the building and get new spells/abilities from the Warlock Trainer.|goto Swamp of Sorrows,48.65,55.63|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy
+    info 
+	'Also accept your level 50 class quest.
+    info 
+	'NOTE: This quest requires a Felcloth, which can be found in the AH or farmed from satyrs in Felwood later on.|icon Interface\\cursor\\Directions
+    .talk Demisette Cloyce##461
+    ..accept An Imp's Request##8419
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    only Warlock
+
+step //94
+    'At Stonard:|goto Swamp of Sorrows,46.08,54.83
+    .talk Breyk##6026
+    'From the Wind Rider Master, take a flight to Kargath, Badlands.|goto Badlands,4.0,44.8|title Go to Kargath|c|icon Interface\\minimap\\Tracking\\FlightMaster
+    only Warlock
+
+step //95
+    'At Kargath, just outside of the Inn by the Bonfire:|goto Badlands,2.91,47.76|title Shadowmage Vivian Lagrave
+    .talk Shadowmage Vivian Lagrave##9078
+    ..turnin Vivian Lagrave##4133
+    info 
+	'SKIP "Lost Thunderbrew Recipe" (Blackrock Depths Dungeon)|icon Interface\\cursor\\Directions
+
+step //96
+    'Next to you:|goto Badlands,3.02,47.81
+    .talk Hierophant Theodora Mulvadania##9079
+    ..accept The Rise of the Machines##4061
+
+step //97
+    'Find Thal'trak Proudtusk, he patrols south and east of Kargath (or could be chillin by the Bonfire):|goto Badlands,3.36,48.07
+    info 
+	'NOTE: Sometimes you must wait until he stops patrolling and then stands by the Bonfire in order to accept this.|icon Interface\\cursor\\Directions
+    .talk Thal'trak Proudtusk##9082
+    ..accept Dreadmaul Rock##3821
+
+step //98
+    'Take flight path to Burning Steppes.|goto Badlands,4.00,44.78
+    .talk Gorrik##2861
+	'From the Wind Rider Master, take a flight to Flame Crest, Burning Steppes.|goto Burning Steppes,65.7,24.2|c|title Ride to Flame Crest|icon Interface\\minimap\\Tracking\\FlightMaster
+	
+step //99
+	...'51-53 Un'Goro Crater is complete!|icon Interface\\cursor\\Directions
+	......'Go to 53-53 Burning Steppes|confirm|next "Joana's Guide\\Horde\\53-53 Burning Steppes"|icon Interface\\icons\\achievement_zone_burningsteppes_01
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\53-53 Burning Steppes",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\53-54 Azshara
+startlevel 53
+
+step //1
+    'Once at Flame Crest, under the red tent:|goto Burning Steppes,65.23,23.99|title Tinkee Steamboil
+    .talk Tinkee Steamboil##10267
+    ..accept Broodling Essence##4726
+	info 
+    'Also under the red tent:
+    .talk Maxwort Uberglint##9536
+    ..accept Tablet of the Seven##4296
+
+step //2
+    'In the small cave:|goto Burning Steppes,66.06,21.95
+    .talk Yuka Screwspigot##9544
+    ..turnin Yuka Screwspigot##4324
+	info 
+    'SKIP "Ribbly Screwspigot" (Blackrock Depths Dungeon)|icon Interface\\cursor\\Directions
+
+step //3
+    'With the Black Dragonflight Molt with you, work your way east to the small cave:|goto Burning Steppes,95.05,31.56|icon Interface\\icons\\inv_misc_shadowegg
+    .talk Cyrus Therepentous##9459
+    ..accept A Taste of Flame##4022
+    'Then talk to the NPC again:
+    ..turnin A Taste of Flame##4022
+    'SKIP "A Taste of Flame" (Blackrock Depths Dungeon)|icon Interface\\cursor\\Directions
+    info 
+	'Start using the Draco-Incarcinatrix 900 quest item on Broodlings (dragon whelps), then kill them and loot the Broodling Essence crystal that drops.|icon Interface\\cursor\\Attack
+	.use Draco-Incarcinatrix 900##12284
+	.collect 8 Broodling Essence##12283|q 4726/1|n|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	info
+    'TIP for Vanilla: Also throughout questing in Burning Steppes, kill any dragon whelps you see, they are squishy mobs that die real fast.|icon Interface\\cursor\\Directions
+
+step //4
+	info |goto Isle of Quel'Danas,600,0.0
+    'Go across bridge...|goto Burning Steppes,76.35,38.07|title Go across bridge
+	info 
+	'Then go upward to the top of Dreadmaul Rock and click on Sha'ni Proudtusk's Remains (laying on the table between four pillars).  Then from the ghost of that spawns:|goto Burning Steppes,79.79,45.52|title Go upward, then click: Sha'ni Proudtusk's Remains
+    .talk Sha'ni Proudtusk##9136
+    ..turnin Dreadmaul Rock##3821
+    ..accept Krom'Grul##3822
+	info 
+    'Start using the Draco-Incarcinatrix 900 quest item on Broodlings (dragon whelps), then kill them and loot the Broodling Essence crystal that drops.|icon Interface\\cursor\\Attack
+	.use Draco-Incarcinatrix 900##12284
+	.collect 8 Broodling Essence##12283|q 4726/1|n|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	info
+    'TIP for Vanilla: Also throughout questing in Burning Steppes, kill any dragon whelps you see, they are squishy mobs that die real fast.|icon Interface\\cursor\\Directions
+
+step //5
+	info |goto Isle of Quel'Danas,600,0.0
+    'Find Krom'grul inside one of the three caves at Dreadmaul Rock and kill/loot him.
+    'First check the small cave next to you at the top of Dreadmaul Rock:|goto Burning Steppes,81.66,43.81|title Top cave
+	info 
+    'If he is not there, then check the SW cave:|goto Burning Steppes,77.32,47.32|title SW cave (entrance)
+    'For the cave on the eastern side:|goto Burning Steppes,82.44,39.06|title NE cave (entrance)
+    'Keep making right turns until you get to him.
+// |goto Burning Steppes,75.34,47.62|title Around the area
+	info 
+    'TIP: Use Track Humanoids to help you see what cave he is at.|icon Interface\\icons\\ability_tracking|only Druid
+	'TIP: Use Track Humanoids to help you see what cave he is at.|icon Interface\\icons\\spell_holy_prayerofhealing|only Hunter
+    .kill Krom'Grul##8977|n
+	.collect Sha'ni's Nose-Ring##11058|q 3822/1|icon Interface\\icons\\inv_jewelry_ring_14
+//    only QUEST[3822] >= ACCEPTED
+	info 
+    'Collect a total of 30 Dark Iron Scraps. This will be used for a later quest (Blinding the Dreadnaught). All the Ogres in Burning Steppes can drop them.
+    .collect 30 Dark Iron Scraps##22528|n|icon Interface\\icons\\inv_misc_armorkit_20
+	info 
+    'NOTE: For TBC/WotLK you can skip getting these items if you like.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+//    only PHASE >= 6
+
+step //6
+	info |goto Isle of Quel'Danas,600,0.0
+    'Use the Draco-Incarcinatrix 900 quest item on Broodlings (dragon whelps).|goto Burning Steppes,79.57,28.69|title Around the area
+	info |goto Burning Steppes,90.23,33.81|title Around the area
+	'Then kill them and loot the Broodling Essence crystal that drops.|goto Burning Steppes,85.28,57.0|title Around the area
+    'Kill them around these areas:|goto Burning Steppes,68.99,60.15|title Around the area|icon Interface\\cursor\\Attack
+	.use Draco-Incarcinatrix 900##12284
+	.collect 8 Broodling Essence##12283|q 4726/1|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+
+step //7
+    'Loot the Tablet of the Seven (next to the dwarf statue).|goto Burning Steppes,54.11,40.79
+    .collect Tablet Transcript##11470|q 4296/1|icon Interface\\icons\\inv_misc_note_05
+	info 
+    'Start Kill/looting War Reaver around Ruins of Thaurissan.|icon Interface\\cursor\\Attack
+	.collect 10 Fractured Elemental Shard##11266|q 4061/1|n|icon Interface\\icons\\inv_stone_02
+    .kill War Reaver##7039|n
+
+step //8
+	info |goto Isle of Quel'Danas,600,0.0
+    'Kill/loot War Reaver around Ruins of Thaurissan|icon Interface\\cursor\\Attack.|goto Burning Steppes,60.35,37.35|title Around the area
+	.collect 10 Fractured Elemental Shard##11266|q 4061/1|icon Interface\\icons\\inv_stone_02
+    .kill War Reaver##7039|n|goto Burning Steppes,67.42,37.97|title Around the area
+
+step //9
+	info |goto Isle of Quel'Danas,600,0.0
+    'Back at Flame Crest, enter the Ramp entrance and Under the red tent:|goto Burning Steppes,64.38,28.49|title Enter: Flame Crest (Ramp entrance)
+    .talk Tinkee Steamboil##10267|goto Burning Steppes,65.23,23.99|title Tinkee Steamboil
+    ..turnin Broodling Essence##4726
+    ..accept Felnok Steelspring##4808
+    info 
+    .talk Maxwort Uberglint##9536|goto Burning Steppes,65.16,23.90|title Maxwort Uberglint
+    ..turnin Tablet of the Seven##4296
+
+step //10
+    'Up on the platform:|goto Burning Steppes,65.69,24.22
+    .talk Vahgruk##13177
+    'From the Wind Rider Master, take a flight to Kargath, Badlands.|goto Badlands,4.0,44.8|title Go to Kargath|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //11
+	info |goto Isle of Quel'Danas,600,0.0
+    'Find Thal'trak Proudtusk, he patrols south and east of Kargath (or could be chillin by the Bonfire).|goto Badlands,3.36,48.07|title Thal'trak Proudtusk (stops patrolling here)
+    .talk Thal'trak Proudtusk##9082
+    ..turnin Krom'Grul##3822
+	info 
+    'NOTE: You may need to wait to turn this in when he stops patrolling back at the Bonfire.|icon Interface\\cursor\\Directions
+//    only QUEST[3822] >= COMPLETED
+	info 
+    'At Kargath:|goto Badlands,3.02,47.80|title Hierophant Theodora Mulvadania
+    .talk Hierophant Theodora Mulvadania##9079
+    ..turnin The Rise of the Machines##4061
+    ..accept The Rise of the Machines##4062
+	info 
+    'Get repaired/resupplied|icon Interface\\minimap\\Tracking\\Repair|goto Badlands,2.90,47.24|title Get repaired / resupplied
+
+step //12
+    'Go east to The Dustbowl:|goto Badlands,25.95,44.87
+    .talk Lotwil Veriatus##2921
+    ..turnin The Rise of the Machines##4062
+	info 
+    'SKIP "The Rise of the Machines" (Blackrock Depths Dungeon quest)|icon Interface\\cursor\\Directions
+
+step //13
+    'Hearth to Ratchet.|goto The Barrens,61.89,37.79|title Hearth to Ratchet|c
+    .use Hearthstone##6948
+
+step //14
+    'Deposit into Bank:|goto The Barrens,62.66,37.42|title Ratchet Bank
+    .'Dark Iron Scraps (if you have them)|icon Interface\\icons\\inv_misc_armorkit_20
+	.'Tinkee's Letter (Vanilla only)|icon Interface\\icons\\inv_letter_13
+	.'Core of Elements|icon Interface\\icons\\inv_misc_gem_variety_02
+	info 
+	'Only For TBC/WOTLK|optional
+    'Withdraw from the bank:
+	.'White Ravasaur Claw|icon Interface\\icons\\inv_misc_bone_06
+	.'Linken's Training Sword|icon Interface\\icons\\inv_sword_47
+    .'Tinkee's Letter|icon Interface\\icons\\inv_letter_13
+	.'Felcloth (if you have it)|icon Interface\\icons\\inv_fabric_felrag|only Warlock
+
+step //15
+    'At Ratchet:|goto The Barrens,63.08,37.16
+    .talk Bragok##16227
+    'From the Flight Master, take a flight to Orgrimmar|goto Orgrimmar,45.13,63.89|c|title Go to Orgrimmar|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Mage
+
+step //16
+    'Use your Teleport: Orgrimmar spell to get to Orgrimmar.|goto Orgrimmar,38.68,85.41|title Teleport to Orgrimmar|c|icon Interface\\icons\\spell_arcane_teleportorgrimmar
+	.cast Teleport: Orgrimmar##3567
+    only Mage
+
+step //17
+	'Only For Vanilla|optional
+    'Go to Valley of Spirits and at the Priest Trainer, accept your level 50 class quest. Also get new spells/abilities if you need to.|goto Orgrimmar,35.60,87.81|title Priest Trainer
+    .talk High Priestess Laurena##376
+    ..accept Cenarion Aid##8254
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Priest
+//    only PRIEST and ERA and (PHASE >= 4)
+
+step //18
+	info |goto Silithus,0,400
+	'Only For Vanilla|optional
+    'Try to obtain a Ichor of Undeath from the AH or if you have one stored in the bank/mailbox, get it out now.|goto Orgrimmar,54.13,64.31|title Auction Hall
+    info |goto Orgrimmar,49.88,70.52|title Bank
+    'NOTE: This is for your level 50 class quest. If you were unable to get this item then you wont be able to do an easy turn in for XP later on.|icon Interface\\cursor\\Directions
+    .collect Ichor of Undeath##7972|n|icon Interface\\icons\\inv_misc_slime_01
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Priest
+//    only PRIEST and ERA and (PHASE >= 4)
+
+step //19
+    'Go in the Inn at Orgrimmar:|goto Orgrimmar,54.10,68.40
+    .talk Innkeeper Gryshka##6929
+    .home Orgrimmar|icon Interface\\minimap\\Tracking\\Innkeeper
+
+step //20
+	..'53-53 Burning Steppes is complete!|icon Interface\\cursor\\Directions
+	info 
+	...........'Only for Vanilla|optional
+	.........'Go to 53-54 Azshara|confirm|next "Joana's Guide\\Horde\\53-54 Azshara (Vanilla only)"|icon Interface\\icons\\achievement_zone_azshara_01
+	info 
+	........'Only for TBC/WOTLK|optional
+	.........'Go to 54-54 Felwood|confirm|next "Joana's Guide\\Horde\\54-54 Felwood"|icon Interface\\icons\\achievement_zone_felwood
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\53-54 Azshara (Vanilla only)",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\54-54 Felwood
+startlevel 53
+
+step //1
+    'At Orgrimmar, Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Valormok, Azshara|goto Azshara,21.96,49.62|title Go to Valormok|c|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //2
+    'At Valormok:|goto Azshara,22.26,51.47
+    .talk Ag'tor Bloodfist##8576
+    ..accept Betrayed##3505
+
+step //3
+    'Hunters, go east and up on a hill ledge:|goto Azshara,42.40,42.61|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Ogtinc##8405
+    ..turnin The Hunter's Charm##8151
+    ..accept Courser Antlers##8153
+    only Hunter
+
+step //4
+    'Priests, go east and up on a hill ledge:|goto Azshara,42.40,42.61|icon Interface\\icons\\inv_staff_30
+    .talk Ogtinc##8405
+    ..turnin Cenarion Aid##8254
+    ..accept Of Coursers We Know##8255
+    only Priest
+
+step //5
+	info |goto Silithus,0,400
+    'Mages, go east a bit and from Sanath Lim-yo complete his quest to teleport you up on the cliff:|goto Azshara,28.11,50.09|title Sanath Lim-yo|icon Interface\\icons\\inv_staff_13
+	.talk Sanath Lim-yo##8395
+    ..turnin Meeting with the Master##3503
+	info 
+    'Once teleported, go up the path and then go up in the tower:|goto Azshara,29.70,40.52|title Archmage Xylem
+    .talk Archmage Xylem##8379
+    ..accept Magic Dust##8251
+    only Mage
+
+step //6	
+	info |goto Silithus,0,400
+    'Drop down in the tower to exit it if needed...|goto Azshara,29.15,40.82|title Exit tower|only Mage
+    'Go back down the path to Nyrill and have him teleport you back down.|goto Azshara,26.47,46.27|title Go down to: Nyrill|only Mage
+    ..accept Return Trip##3421|only Mage
+    ..turnin Return Trip##3421|only Mage
+	info |only Mage
+    'At the top of the hill:|goto Azshara,53.18,20.40|title Go up the hill entrance
+    .talk Kim'jael##8420|goto Azshara,53.45,21.82|title Kim'jael
+    ..accept Kim'jael Indeed!##3601
+
+step //7
+	info |goto Silithus,0,400
+    'At Thalassian Base Camp, kill the required amount of Blood Elves.|goto Azshara,58.62,28.07|title Around: Thalassian Base Camp|icon Interface\\cursor\\Attack
+	info |goto Azshara,59.61,30.94|title Loot: Kim'jael's Equipment boxes
+    'To Find Magus Rimtori's camp simply go to the waypoint.|goto Azshara,59.51,31.30|title Visit: Find Magus Rimtori's camp
+    .kill 10 Blood Elf Reclaimer##6199|q 3505/1
+    .kill 10 Blood Elf Surveyor##6198|q 3505/2
+    .goal Find Magus Rimtori's camp|q 3505/3
+	info |goto Azshara,58.54,29.04|title Loot: Kim'jael's Equipment boxes
+    'Loot Kim'jael's Equipment boxes on the ground around the area.|goto Azshara,58.76,28.72|title Loot: Kim'jael's Equipment boxes
+    'Possible locations at the waypoints:|goto Azshara,58.51,24.97|title Loot: Kim'jael's Equipment boxes
+    .collect Kim'Jael's Compass##10717|q 3601/1|n|icon Interface\\icons\\inv_misc_pocketwatch_01|goto Azshara,56.09,30.20|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Scope##10715|q 3601/2|n|icon Interface\\icons\\inv_misc_spyglass_03|goto Azshara,57.03,28.30|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Stuffed Chicken##10722|q 3601/3|n|icon Interface\\icons\\spell_magic_polymorphchicken|goto Azshara,56.29,28.76|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Kim'Jael's Wizzlegoober##10718|q 3601/4|n|icon Interface\\icons\\inv_gizmo_03
+	info |only Mage,Hunter,Priest
+    'Kill/loot blood elves for Glittering Dust.|icon Interface\\cursor\\Attack|only Mage
+    .collect 10 Glittering Dust##20028|q 8251/1|n|icon Interface\\icons\\inv_misc_dust_01|only Mage
+    'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Hunter
+	.kill Mosshoof Courser##8761|n|only Hunter
+    .collect 2 Perfect Courser Antler##20017|q 8153/1|n|icon Interface\\icons\\inv_misc_root_02|only Hunter
+    'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Priest
+	.kill Mosshoof Courser##8761|n|only Priest
+    .collect 4 Healthy Courser Gland##20027|q 8255/1|n|icon Interface\\icons\\inv_misc_organ_06|only Priest
+
+step //8
+    'At Thalassian Base Camp:|goto Azshara,59.52,31.40
+    'Interact with Kaldorei Tome of Summoning (book on pedestal)
+    ..turnin Betrayed##3505
+    ..accept Betrayed##3506
+
+step //9
+    'At that same spot, click on an Arcane Focusing Crystal to summon Magus Rimtori and kill/loot her.  You may need to face some guards first so be prepared.|goto Azshara,59.52,31.41|icon Interface\\cursor\\Attack
+    .kill Magus Rimtori##8578|n
+	.collect Head of Magus Rimtori##10597|q 3506/1|icon Interface\\icons\\inv_misc_head_human_02
+
+step //10
+    info |goto Silithus,0,400
+    'Finishl Looting Kim'jael's Equipment boxes on the ground around the area.|goto Azshara,58.76,28.72|title Loot: Kim'jael's Equipment boxes
+	info |goto Azshara,59.61,30.94|title Loot: Kim'jael's Equipment boxes
+    'Possible locations at the waypoints:|goto Azshara,58.51,24.97|title Loot: Kim'jael's Equipment boxes
+    .collect Kim'Jael's Compass##10717|q 3601/1|icon Interface\\icons\\inv_misc_pocketwatch_01|goto Azshara,56.09,30.20|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Scope##10715|q 3601/2|icon Interface\\icons\\inv_misc_spyglass_03|goto Azshara,57.03,28.30|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Stuffed Chicken##10722|q 3601/3|icon Interface\\icons\\spell_magic_polymorphchicken|goto Azshara,56.29,28.76|title Loot: Kim'jael's Equipment boxes
+	.collect Kim'Jael's Kim'Jael's Wizzlegoober##10718|q 3601/4|icon Interface\\icons\\inv_gizmo_03info |goto Azshara,58.54,29.04|title Loot: Kim'jael's Equipment boxes
+	info |only Mage,Hunter,Priest
+    'Finish kill/looting blood elves for Glittering Dust.|icon Interface\\cursor\\Attack|only Mage
+    .collect 10 Glittering Dust##20028|q 8251/1|icon Interface\\icons\\inv_misc_dust_01|only Mage
+    'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Hunter
+	.kill Mosshoof Courser##8761|n|only Hunter
+    .collect 2 Perfect Courser Antler##20017|q 8153/1|n|icon Interface\\icons\\inv_misc_root_02|only Hunter
+    'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Priest
+	.kill Mosshoof Courser##8761|n|only Priest
+    .collect 4 Healthy Courser Gland##20027|q 8255/1|n|icon Interface\\icons\\inv_misc_organ_06|only Priest
+
+step //11
+    'At the top of the hill:|goto Azshara,53.45,21.82
+    .talk Kim'jael##8420
+    ..turnin Kim'jael Indeed!##3601
+    ..accept Kim'jael's "Missing" Equipment##5534
+	info |only Hunter,Priest
+	'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Hunter
+	.kill Mosshoof Courser##8761|n|only Hunter
+    .collect 2 Perfect Courser Antler##20017|q 8153/1|n|icon Interface\\icons\\inv_misc_root_02|only Hunter
+    'Kill/loot Mosshoof Courser (deer) all around the open fields.|icon Interface\\cursor\\Attack|only Priest
+	.kill Mosshoof Courser##8761|n|only Priest
+    .collect 4 Healthy Courser Gland##20027|q 8255/1|n|icon Interface\\icons\\inv_misc_organ_06|only Priest
+
+step //12
+	'Finish, Kill/looting Mosshoof Courser (deer) all around the open fields north in Azshara.|goto Azshara,55.92,23.47|icon Interface\\cursor\\Attack
+	.kill Mosshoof Courser##8761|n
+    .collect 2 Perfect Courser Antler##20017|q 8153/1|icon Interface\\icons\\inv_misc_root_02|only Hunter
+    .collect 4 Healthy Courser Gland##20027|q 8255/1|icon Interface\\icons\\inv_misc_organ_06|only Priest
+	only Hunter,Priest
+
+step //13
+    'Hunters, go west up on a hill:|goto Azshara,42.40,42.61|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Ogtinc##8405
+    ..turnin Courser Antlers##8153
+    info 
+	'OPTIONAL: The follow quest can be a bit time consuming and is only worth doing if you plan to do the dungeon quest afterwards for one of these rewards: |icon Interface\\cursor\\Directions
+	info 
+	'Hunting Spear (Polearm: 111-168 damage, speed 3.10, 45 damage/sec, +17 stam, +1% crit and 5 Mana/5sec)|icon Interface\\icons\\inv_spear_02
+	'Devilsaur Eye (Trinket: +150 AP and +2% hit on use for 20 sec, 2 min CD)|icon Interface\\icons\\inv_misc_eye_01
+	'Devilsaur Tooth (Trinket: Your pet's next attack is a crit on use, 2 min CD) |icon Interface\\icons\\inv_misc_bone_07
+	info 
+    ..accept Wavethrashing##8231|optional
+	..........'Otherwise Skip It.
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only Hunter
+
+step //14
+    'Priests, go west up on a hill:|goto Azshara,42.40,42.61|icon Interface\\icons\\inv_staff_30
+    .talk Ogtinc##8405
+    ..turnin Of Coursers We Know##8255
+    info 
+	'If you have the Ichor of Undeath item:|icon Interface\\icons\\inv_misc_slime_01
+    ..accept The Ichor of Undeath##8256
+    ..turnin The Ichor of Undeath##8256
+    info 
+	'SKIP "Blood of Morphaz" (Sunken Temple of Atal'Hakkar Dungeon quest). But you may want to do this later with a group to get one of the rewards it gives.|icon Interface\\cursor\\Directions
+    only Priest
+
+step //15
+	info |goto Silithus,0,400
+    'Mages, go east a bit to Sanath Lim-yo and complete his quest to teleport you up on the cliff.|goto Azshara,28.11,50.09|title Sanath Lim-yo|icon Interface\\icons\\inv_staff_13
+    .talk Sanath Lim-yo##8395
+    ..turnin Meeting with the Master##3503
+	info |goto Azshara,29.25,40.69|title Tower entrance
+    'Once teleported, go up the path and then go up in the tower:|goto Azshara,29.70,40.52|title Archmage Xylem
+    .talk Archmage Xylem##8379
+    ..turnin Magic Dust##8251
+    ..accept The Siren's Coral##8252
+    only Mage
+
+step //16
+    info |goto Silithus,0,400
+    'Drop down in the tower to exit it if needed...|goto Azshara,29.15,40.82|title Exit tower|only Mage
+    'Go back down the path to Nyrill and have him teleport you back down.|goto Azshara,26.47,46.27|title Go down to: Nyrill|only Mage
+    ..accept Return Trip##3421|only Mage
+    ..turnin Return Trip##3421|only Mage
+	info |only Mage
+    'Drop down to The Shattered Strand (be careful, its a long drop)...  There is a super safe downward ramp here.|goto Azshara,45.51,37.71|title Super safe downward ramp here
+	info 
+    'Down at The Shattered Strand, kill/loot Spitelash naga until "Some Rune" drops (low drop rate).|goto Azshara,46.58,47.52|title Around: The Shattered Strand|icon Interface\\cursor\\Attack
+    .collect Some Rune##13815|q 5534/1|icon Interface\\icons\\inv_misc_rune_05
+    info 
+	'Kill/loot Spitelash Siren for Magic Dust.|only Mage
+    .collect 6 Enchanted Coral##20029|q 8252/1|icon Interface\\icons\\inv_stone_05|only Mage
+
+step //17
+	info |goto Silithus,0,400
+    'Hunters, grind all the way to the NE end of Azshara to the shore and kill/loot Wavethrashers (of any type).|goto Azshara,83.78,29.37|title Around the shore/sea|icon Interface\\icons\\inv_weapon_bow_07
+    'These mobs are found all along the shore line and some in the sea.
+    .collect 6 Wavethrasher Scales##20087|q 8231/1|icon Interface\\icons\\inv_misc_monsterscales_12
+	info 
+    'Since you cannot buy Arrows/Bullets at Valormok, and if you need more, hearth to Orgrimmar, restock on ammo, then fly back to Azshara.|icon Interface\\cursor\\Directions
+    info 
+	'NOTE: In Orgrimmar, Bullets can be bought at this waypoint.|goto Orgrimmar,52.13,62.12|title Buy Bullets|icon Interface\\icons\\inv_ammo_bullet_01
+	'and Arrows can be bought at this waypoint.|goto Orgrimmar,48.12,80.52|title Buy Arrows|icon Interface\\icons\\inv_weapon_shortblade_25
+    only Hunter
+
+step //18
+    'Hunters, grind your way back to the hill:|goto Azshara,42.40,42.61|icon Interface\\icons\\inv_weapon_bow_07
+    .talk Ogtinc##8405
+    ..turnin Wavethrashing##8231
+    info 
+	'SKIP (for now due to quest log space) "The Green Drake" (The Temple of Atal'Hakkar Dungeon quest). You can do this later with a group to get one of the rewards it gives.|icon Interface\\cursor\\Directions
+    only Hunter
+
+step //19
+	info |goto Silithus,0,400
+    'Go to Valormok:|goto Azshara,22.26,51.47|title Ag'tor Bloodfist
+    info |goto Azshara,45.69,38.01|title North exit
+	'NOTE: See different exit points on map if you're in the valley.|goto Azshara,41.24,48.06|title West exit|icon Interface\\cursor\\Directions
+	info |goto Azshara,46.28,66.50|title SW exit
+    .talk Ag'tor Bloodfist##8576
+    ..turnin Betrayed##3506
+    ..accept Betrayed##3507
+	info 
+    'You can get repaired from Gruul Darkblade.|goto Azshara,22.22,51.10|title get repaired from Gruul Darkblade|icon Interface\\minimap\\Tracking\\Repair
+	.talk Gruul Darkblade##10361
+    'Or resupplied from Kurll.|goto Azshara,21.82,52.10|title Get resupplied from Kurll|icon Interface\\minimap\\Tracking\\Banker
+	.talk Kurll##3621
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+
+step //20
+	info |goto Silithus,0,400
+    'Mages, go west a bit to Sanath Lim-yo and complete his quest to teleport you up on the cliff.|goto Azshara,28.11,50.09|title Sanath Lim-yo|icon Interface\\icons\\inv_staff_13
+    .talk Sanath Lim-yo##8395
+    ..turnin Meeting with the Master##3503
+	info |goto Azshara,29.25,40.69|title Tower entrance
+    'Once teleported, go up the path and then go up in the tower:|goto Azshara,29.70,40.52|title Archmage Xylem
+    ..turnin The Siren's Coral##8252
+    info 
+	'SKIP "Destroy Morphaz" (Sunken Temple of Atal'Hakkar Dungeon quest), but you may want to do this later with a group to get one of the rewards it gives.|icon Interface\\cursor\\Directions
+    only Mage
+
+step //21
+	'Drop down in the tower to exit it if needed...|goto Azshara,29.15,40.82|title Exit tower|only Mage
+    'Go back down the path to Nyrill and have him teleport you back down.|goto Azshara,26.47,46.27|title Go down to: Nyrill|only Mage
+    ..accept Return Trip##3421|only Mage
+    ..turnin Return Trip##3421|only Mage
+	info |only Mage
+    'At the top of the hill:|goto Azshara,53.18,20.40|title Go up the hill entrance
+    .talk Kim'jael##8420|goto Azshara,53.45,21.82|title Kim'jael
+    ..turnin Kim'jael's "Missing" Equipment##5534
+
+step //22
+    'Grind the rest of the way to level 54.5 on Blood Elves around Thalassian Base Camp.|goto Azshara,58.07,27.56|title Around Thalassian Base Camp
+    info 
+	'NOTES: Blood Elves are squishy mobs (mobs that have 30% fewer health/armor, than the average mob that level), so they die relatively fast and yield good XP/hour.  They also are a good farm spot for Runecloth, which you will need for cloth donations and First Aid.|icon Interface\\cursor\\Directions
+    info 
+	'OPTIONAL: Instead of the grinding, you could go do BRD Dungeon instead.|icon Interface\\cursor\\Directions
+	info 
+	'Reach level 54 and 86950 XP before continuing|optional
+	..........'Click to continue.|confirm|next +1|icon Interface\\cursor\\Point
+
+step //23
+    'Hearth to Orgrimmar.|goto Orgrimmar,54.10,68.39|title Hearth to Orgrimmar|c
+    .use Hearthstone##6948
+	only !Druid
+	
+step //24
+	......'53-54 Azshara is complete!|icon Interface\\cursor\\Directions
+	........'Go to 54-54 Felwood|confirm|next "Joana's Guide\\Horde\\54-54 Felwood"|icon Interface\\icons\\achievement_zone_felwood
+]])
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\54-54 Felwood",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\54-54 Winterspring
+startlevel 54
+
+step //1
+	'Use your Teleport: Moonglade spell to take you to Moonglade. Then head SW a bit to the Druid Trainer next to the Moonwell to get your lvl 54 spells/abilities. |goto Moonglade,52.53,40.57|title Druid Trainer|icon Interface\\icons\\spell_arcane_teleportmoonglade
+	info 
+	'NEW ABILITIES TO GET: Rake, Regrowth, Shred, Soothe Animal, Swipe, Thorns.
+	'SKIP Faerie Fire, Wrath.|icon Interface\\cursor\\Directions
+	.cast Teleport: Moonglade##19027
+    .talk Loganaar##12042
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+	only Druid
+
+step //2
+    'Hearth to Orgrimmar.|goto Orgrimmar,54.10,68.39|title Hearth to Orgrimmar|c
+    .use Hearthstone##6948
+	only Druid
+
+step //3
+    'Only for Vanilla|optional
+    'Withdraw from the bank:|goto Orgrimmar,49.58,69.13|title Bank
+	.'White Ravasaur Claw|icon Interface\\icons\\inv_misc_bone_06
+	.'Linken's Training Sword|icon Interface\\icons\\inv_sword_47
+    .'Tinkee's Letter|icon Interface\\icons\\inv_letter_13
+	.'Felcloth (if you have it)|icon Interface\\icons\\inv_fabric_felrag|only Warlock
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+
+step //4
+    'At the Auction House:|goto Orgrimmar,54.09,64.32|title AH
+    'For Orc faction cloth donations here in Orgrimmar:
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+    .collect 60 Runecloth##14047|n|icon Interface\\icons\\inv_fabric_purplefire_01
+	info |only Warlock
+    'An upcoming Warlock quest (An Imp's Request) requires a Felcloth. You could also try to farm it in the Felwood section coming up. And don't sell this to a vendor!|only Warlock
+    .collect Felcloth##14256|icon Interface\\icons\\inv_fabric_felrag|only Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //5
+    'NOTE: You can turn in cloth donations for the Orc faction. You would need 60 of the following for all possible cloth turn-ins:|icon Interface\\cursor\\Directions
+    .collect 60 Mageweave Cloth##4338|n|icon Interface\\icons\\inv_fabric_mageweave_01
+	.collect 60 Runecloth##14047|n|icon Interface\\icons\\inv_fabric_purplefire_01
+	info 
+    .talk Rashona Straglash##14726|goto Orgrimmar,63.61,51.24|title Rashona Straglash
+    ..turnin A Donation of Mageweave##7831
+	..turnin A Donation of Runecloth##7824
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+
+step //6
+    'Go north in The Drag (up in Yelmak's Alchemy and Potions):|goto Orgrimmar,55.51,34.09
+    .talk Jes'rimon##8659
+    ..turnin Bone-Bladed Weapons##4300
+
+step //7
+	'Only for Vanilla|optional
+    'At the Valley of Honor:|goto Orgrimmar,75.21,34.24
+    .talk Belgrom Rockmaul##4485
+    ..turnin Betrayed##3507
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //8
+    'Get your level 54 spells/abilities at Hall of the Brave.|goto Orgrimmar,80.40,32.38|title Warrior Trainer|icon Interface\\icons\\INV_Sword_27|only Warrior
+	'Get your level 54 spells/abilities at Grommash Hold from the Paladin Trainer.|goto Orgrimmar,32.26,35.72|icon Interface\\icons\\INV_Hammer_01|only Paladin
+    .talk Master Pyreanor##23128|only Paladin
+	'Get your level 54 spells/abilities at Grommash Hold.|goto Orgrimmar,38.80,36.37|title Shaman Trainer|icon Interface\\icons\\spell_nature_bloodlust|only Shaman
+	'Get your level 54 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,47.99,45.96|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy|only Warlock
+	'Get your level 54 spells/abilities at the Cleft of Shadow.|goto Orgrimmar,43.05,53.73|title Rogue Trainer|icon Interface\\icons\\inv_throwingknife_04|only Rogue
+	'Get your level 54 spells/abilities. Priest Trainers are at Valley of Spirits.|goto Orgrimmar,35.60,87.83|title Priest Trainer|icon Interface\\icons\\inv_staff_30|only Priest
+	'Get your level 54 spells/abilities. Mage Trainers are at Valley of Spirits.|goto Orgrimmar,38.79,85.66|title Mage Trainer|icon Interface\\icons\\inv_staff_13|only Mage
+	'Hunter Trainers are just north. Although if you are all caught up with getting your previous spells/abilities then the only one that's somewhat worth getting for lvl 54 is|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	'Multi-Shot R4, so if you are in a hurry I recommend skipping it.|goto Orgrimmar,66.05,18.52|title Hunter Trainer|icon Interface\\icons\\ability_upgrademoonglaive|only Hunter
+    .talk Ormak Grimshot##3352|only Hunter
+	info 
+    'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+    .........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //9
+    'Up on the platform:|goto Orgrimmar,45.13,63.89
+    .talk Doras##3310
+    'From the Wind Rider Master, take a flight to Splintertree Post at Ashenvale|goto Ashenvale,73.18,61.60|c|title Go to Ashenvale|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //10
+    'Head NW to enter Felwood...|goto Ashenvale,55.8,26.11|c
+	route Ashenvale,73.33,63.91;71.53,63.64;65.97,60.82;63.83,53.56;62.01,43.57;56.53,35.45;55.8,26.11|title Enter Felwood
+
+step //11
+	'Only For TBC/WOTLK|optional
+    'Head to Emerald Sanctuary and from the Flight Master:|goto Felwood,51.53,82.22
+    .talk Gorrim##22931
+    .fpath Emerald Sanctuary|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //12
+    'Head north a bit to Emerald Sanctuary...|goto Felwood,51.21,82.11
+	info 
+    'Next to you:
+    .talk Greta Mosshoof##10922
+    ..accept Forces of Jaedenar##5155
+	info 
+    'In the tent:
+    .talk Taronn Redfeather##10921
+    ..accept Verifying the Corruption##5156
+
+step //13
+    'Just off of the main path:|goto Felwood,46.75,83.13
+    .talk Maybess Riverbreeze##9529
+    ..accept Cleansing Felwood##4102
+
+step //14
+	info |goto Silithus,0,400
+    'Start working on A Sample of Slime... by clearing the Jadefire Shadowstalkers (slimes) at the two green pools. Eventually get 35 Felwood Slime Samples (once again, 15 is the max you can hold for WOTLK). You don't need to get all of them now. Just clear the area and move on...|goto Felwood,40.57,71.96|title Around green pond
+	info    Vanilla/TBC
+    .collect 35 Felwood Slime Sample##12230|q 4293|n|icon Interface\\icons\\inv_potion_37
+	info    WOTLK
+	.collect 15 Felwood Slime Sample##12230|q 4293|n|icon Interface\\icons\\inv_potion_37
+    info |goto Felwood,41.74,67.84|title Around green pond
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //15
+    'Kill the required amount of Jaedenar mobs around Shadow Hold.|goto Felwood,38.61,58.92|icon Interface\\cursor\\Attack
+    .kill 4 Jaedenar Hound##7125|q 5155/1
+	.kill 4 Jaedenar Guardian##7113|q 5155/2
+    .kill 6 Jaedenar Adept##7115|q 5155/3
+	.kill 6 Jaedenar Cultist##7112|q 5155/4
+
+step //16
+    'Just north of Bloodvenom Falls:|goto Felwood,41.38,44.85
+    .talk Niby the Almighty##14469
+    ..accept What Niby Commands##7601
+	info 
+    .talk Impsy##14470
+    ..turnin What Niby Commands##7601
+	info 
+    'SKIP "Flawless Fel Essence" (for now). This is the questline to obtain the Infernal minion. This quest does not fit into the route for speedleveling but you may want to do this later, especially after hitting 60.|icon Interface\\cursor\\Directions
+	info 
+	'With your Felcloth:|icon Interface\\icons\\inv_fabric_felrag
+    ..turnin An Imp's Request##8419
+    ..accept The Wrong Stuff##8421
+    only Warlock
+
+step //17
+    'Go north a bit around the green pond and continue working on A Sample of Slime... by kill/looting Tainted Oozes for getting at least 35 (15 For WOTLK) Felwood Slime Samples eventually. You don't need to get all of them now.|goto Felwood,40.10,55.71|only !Warlock
+	'In the immediate area around the green pond, start working on A Sample of Slime... by kill/looting Tainted Oozes for getting at least 35 (15 For WOTLK) Felwood Slime Samples eventually. You don't need to get all of them now.|goto Felwood,40.10,55.71|only Warlock
+    info    Vanilla/TBC
+    .collect 35 Felwood Slime Sample##12230|q 4293|n|icon Interface\\icons\\inv_potion_37
+	info    WOTLK
+	.collect 15 Felwood Slime Sample##12230|q 4293|n|icon Interface\\icons\\inv_potion_37
+	info |only Warlock
+	'Kill/loot Tainted Oozes for the 4 Bloodvenom Essence.|goto Felwood,42,47.13|title Around the area|icon Interface\\cursor\\Attack|only Warlock
+    .collect 4 Bloodvenom Essence##20614|q 8421/2|icon Interface\\icons\\inv_misc_slime_01|only Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //18
+    'Follow Bloodvenom River to enter Bloodvenom Post...|goto Felwood,35.47,49.98
+	info 
+    'At Bloodvenom Post:
+    .talk Winna Hazzard##9996
+    ..accept Well of Corruption##4505
+	info 
+    .talk Trull Failbane##10306
+    ..accept Wild Guardians##4521
+	info 
+    .talk Dreka'Sur##9620
+    ..accept A Husband's Last Battle##6162
+	info 
+    'Hunters, if you are using arrows, make sure you stock up on them as you will not be able to purchase any for a long time.|icon Interface\\icons\\inv_weapon_bow_07|only Hunter
+	info |only Hunter
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+    
+step //19
+    'Up at the Wind Rider Master:|goto Felwood,34.44,53.96
+    .talk Brakkar##11900
+    .fpath Bloodvenom Post|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //20
+    'Finish collecting at least 35 (15 for WOTLK) Felwood Slime Samples for A Sample of Slime... by kill/looting the Tainted Oozes, around Bloodvenom Falls.|goto Felwood,41.47,45.48|icon Interface\\cursor\\Attack
+	info    Vanilla/TBC
+    .collect 35 Felwood Slime Sample##12230|q 4293|icon Interface\\icons\\inv_potion_37
+	info    WOTLK
+	.collect 15 Felwood Slime Sample##12230|q 4293|icon Interface\\icons\\inv_potion_37
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //21
+    'At Shatter Scar Vale, walk across one of the craters in the Vale to get it explored. And kill the required amount of Entropic fire elementals.|goto Felwood,40.58,41.84|icon Interface\\cursor\\Attack
+    .kill 2 Entropic Beast##9878|q 5156/1
+    .kill 2 Entropic Horror##9879|q 5156/2
+	.goal Explore the craters in Shatter Scar Vale|q 5156/3
+	info 
+	'Only For Vanilla|optional
+    'WARNING: Watch out for the Elite Infernal Sentries!|icon Interface\\cursor\\Directions
+
+step //22
+    'Kill/loot the tree mobs for the Rotting Wood around the green lake at Irontree Woods.|goto Felwood,46.92,24.49|icon Interface\\cursor\\Attack
+    .collect 10 Rotting Wood##20613|q 8421|icon Interface\\icons\\inv_tradeskillitem_03
+    only Warlock
+
+step //23
+    'Kill/loot Warpwood elementals around Irontree Woods. There is more mobs in the Warpwood Cavern.|goto Felwood,56.17,17.38|icon Interface\\cursor\\Attack
+    .collect 15 Blood Amber##11503|q 4102|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	info 
+    'These beasts are found all around the NE fields of Felwood.
+    .kill 12 Angerclaw Grizzly##8957|q 4120/1|n
+    .kill 12 Felpaw Ravager##8961|q 4120/2|n
+
+step //24
+	info |goto Silithus,0,400
+	'These beasts are found all around the NE fields of Felwood.|goto Felwood,56.8,19.4|title Around the area
+	info |goto Felwood,54.2,26.4|title Around the area
+	'See map for locations.|goto Felwood,62.0,18.4|title Around the area
+    .kill 12 Angerclaw Grizzly##8957|q 4120/1|goto Felwood,55.8,10.4|title Around the area
+    .kill 12 Felpaw Ravager##8961|q 4120/2|goto Felwood,53.8,15.2|title Around the area
+	info |goto Felwood,50.0,13.6|title Around the area
+	info |goto Felwood,63.6,13.8|title Around the area
+
+step //25
+    'Follow the main path NE (right before the Timbermaw Hold entrance):|goto Felwood,64.77,8.13|title Nafien
+    .talk Nafien##15395
+    ..accept Deadwood of the North##8461
+	info |goto Felwood,64.65,13.27|title Follow waypoint
+
+step //26
+    'Drop down west to enter Felpaw Village...|goto Felwood,62.97,9.00
+	info 
+    'Kill the required amount of Deadwood furbolgs around Felpaw Village.|icon Interface\\cursor\\Attack
+    .kill 6 Deadwood Den Watcher##7156|q 8461/1
+    .kill 6 Deadwood Avenger##7157|q 8461/2
+    .kill 6 Deadwood Shaman##7158|q 8461/3
+	info 
+    'TIP: Remove the Deadwood curse (-50% healing effects) every time you need to heal yourself.|icon Interface\\cursor\\Directions|only Druid
+
+step //27
+    'Back up by the Timbermaw Hold entrance:|goto Felwood,64.77,8.12
+    .talk Nafien##15395
+    ..turnin Deadwood of the North##8461
+    ..accept Speak to Salfa##8465
+
+step //28
+//	'Only For Vanilla|optional
+    'Keep grinding until you are unfriendly with Timbermaw Hold (it comes after hostile).|goto Felwood,62.97,9.00|title Around: Felpaw Village
+	info 
+    'NOTES: You can make it show on your XP bar from your character pane - reputation tab.|icon Interface\\cursor\\Directions
+	info 
+    'You can turn in 5 Deadwood Headdress Feathers (repeatable quest to increase rep by +50 (75 for TBC/WOTLK).
+	info 
+    'NOTE: Becoming friendlier with Timbermaw Hold will allow you to enter their cave without them attacking you and allowing you to get additional quests and items from them.  Or you can ignore this and just go through the cave.|icon Interface\\cursor\\Directions
+	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
+    only if rep("Timbermaw Hold")<=HOSTILE
+
+step //29
+    'NOTE: You are now Unfriendly with Timbermaw Hold! You will be able to go through their cave without them attacking you.|icon Interface\\cursor\\Directions
+    'Enter Timbermaw Hold next to you...|goto Felwood,65.30,7.37
+	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
+	only if rep("Timbermaw Hold")>=Unfriendly
+
+step //30
+	info |goto Silithus,0,400
+	info |goto Felwood,64.84,3.04|title Follow waypoint
+    'Go through Timbermaw Hold...|goto Felwood,65.30,7.37|title Enter: Timbermaw Hold
+	info |goto Felwood,64.81,5.52|title Follow waypoint
+	'Then in the middle at the bridge, head north (go down) to enter Moonglade.|goto Moonglade,34.96,71.52|title Enter: Moonglade|c	
+	info |goto Felwood,65.77,0.84|title Enter: Take north path in cave
+    'NOTE For Vanilla: Try not to kill too many of the Timbermaw furbolgs in the cave as you will want to maintain good reputation with them. So either try to sneak past them or only kill the ones you absolutely have to.|icon Interface\\cursor\\Directions|goto Felwood,65.30,7.37|title Enter: Take north path in cave
+    only !Druid
+
+step //31
+	info |goto Silithus,0,400
+	info |goto Felwood,64.84,3.04|title Follow waypoint
+    'Go through Timbermaw Hold and go straight through the cave.|goto Felwood,65.30,7.37|title Enter: Timbermaw Hold
+	info |goto Felwood,64.81,5.52|title Follow waypoint
+	'Follow waypoints to get to Winterspring.|goto Winterspring,27.74,34.5|title Enter: Winterspring|c
+	info |goto Felwood,66.39,2.91|title Follow waypoint
+    'NOTE For Vanilla: Try not to kill too many of the Timbermaw furbolgs in the cave as you will want to maintain good reputation with them. So either try to sneak past them or only kill the ones you absolutely have to.|icon Interface\\cursor\\Directions
+    only Druid
+
+step //32
+    'Once in Moonglade, make a left and at the Wind Rider Master:|goto Moonglade,32.10,66.61
+    .talk Faustron##12740
+    fpath Moonglade|icon Interface\\minimap\\Tracking\\FlightMaster
+    only !Druid
+
+step //33
+	info |goto Silithus,0,400
+    'Exit Moonglade...|goto Moonglade,34.49,68.75|title Exit: Moonglade
+	info 
+    'Go back through Timbermaw Hold to make it into Winterspring...|goto Winterspring,27.74,34.5|title Enter: Winterspring|c
+	route Felwood,65.56,0.92;65.95,3.51;66.39,2.91|title Follow waypoint
+    only !Druid
+
+step //34
+	......'54-54 Felwood is complete!|icon Interface\\cursor\\Directions
+	.......'Go to 54-54 Winterspring|confirm|next "Joana's Guide\\Horde\\54-54 Winterspring"|icon Interface\\icons\\achievement_zone_winterspring
+]])
+
+ZygorGuidesViewer:RegisterGuide("Joana's Guide\\Horde\\54-55 Winterspring",[[
+author Joana/Macumba
+type leveling
+faction horde
+next Joana's Guide\\Horde\\55-56 Felwood
+startlevel 54
+
+step //1
+    'Right outside of the cave in Winterspring:|goto Winterspring,27.74,34.50
+    .talk Salfa##11556
+    ..accept Winterfall Activity##8464
+    ..turnin Speak to Salfa##8465
+
+step //2
+    'Follow the main path south:|goto Winterspring,31.27,45.16
+    .talk Donova Snowden##9298
+    ..accept Threat of the Winterfall##5082
+    ..turnin The New Springs##980
+    ..accept Strange Sources##4842
+    ..turnin It's a Secret to Everybody##3908
+    info
+    'SKIP "The Videre Elixir" Not good XP/time. You can do this if you want but my guide will not list it.|icon Interface\\cursor\\Directions
+    'NOTE: You do not have to wait for the NPC, just leave.|icon Interface\\cursor\\Directions
+
+step //3
+    'Follow the main path east and just to your left as you enter Everlook:|goto Winterspring,60.88,37.62
+    .talk Umi Rumplesnicker##10305
+    ..accept Are We There, Yeti?##3783
+
+step //4
+    'Under the blue tent:|goto Winterspring,61.63,38.61
+    .talk Felnok Steelspring##10468
+    ..turnin Felnok Steelspring##4808
+    info
+    'SKIP "Chillwind Horns" (for now) - Too high level right now and you are better off focusing on the other quests instead.|icon Interface\\cursor\\Directions
+
+step //5
+	'Only For TBC/WOTLK|optional
+    'Back in Everlook by the cage:|goto Winterspring,61.92,38.30
+    .talk Storm Shadowhoof##10303
+    ..accept Ursius of the Shardtooth##5054
+	............'Skip This?|confirm|next +1|n|icon Interface\\cursor\\Point
+
+step //6
+    'In the Inn, from the Innkeeper:|goto Winterspring,61.36,38.83
+    .talk Innkeeper Vizzie##11118
+    .home Everlook|icon Interface\\minimap\\Tracking\\Innkeeper
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //7
+    'Also in the Inn:|goto Winterspring,61.35,38.97
+    .talk Gregor Greystone##10431
+    ..accept The Everlook Report##6029
+    ..accept Duke Nicholas Zverenhoff##6030
+    info
+    'Next to you:|goto Winterspring,61.28,38.99
+    .talk Jessica Redpath##11629
+    ..accept Sister Pamela##5601
+
+step //8
+    'Deposit into Bank:|goto Winterspring,61.46,36.97|title Bank
+    .'Blood Amber|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	.'Felwood Slime Sample|icon Interface\\icons\\inv_potion_37
+	.'Everlook Report|icon Interface\\icons\\inv_scroll_06
+	.'Studies in Spirit Speaking|icon Interface\\icons\\inv_misc_book_05
+	.'Deadwood Ritual Totem|icon Interface\\icons\\spell_totem_wardofdraining
+	.'Core of Elements|icon Interface\\icons\\inv_misc_gem_variety_02
+	.'Rotting Wood|icon Interface\\icons\\inv_tradeskillitem_03|only Warlock
+	.'Bloodvenom Essence|icon Interface\\icons\\inv_misc_slime_01|only Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //9
+    'Follow the main path south to simply discover Darkwhisper Gorge.|goto Winterspring,59.82,74.15
+	.goal Discover Darkwhisper Gorge|q 4842/1
+    info
+    'WARNING: There is elites in Darkwhisper Gorge, so don't go too far into it!|icon Interface\\cursor\\Directions
+
+step //10
+    'Hearth to Everlook.|goto Winterspring,61.36,38.83|title Hearth to Everlook|c
+    .use Hearthstone##6948
+
+step //11
+	info |goto Silithus,0,400
+    'Exit Everlook to the right...|goto Winterspring,60.41,38.05|title Exit: Everlook
+    info |goto Winterspring,61.29,36.08|title Follow waypoint
+    'Kill the required amount of Winterfall furbolgs around Winterfall Camp.|goto Winterspring,66.92,35.13|title Winterfall Village|icon Interface\\cursor\\Attack
+    .kill 8 Winterfall Shaman##7439|q 8464/1
+    .kill 8 Winterfall Den Watcher##7440|q 8464/2
+    .kill 8 Winterfall Ursa##7438|q 8464/3
+    info
+    'NOTE: This place is usually busy with lvl 60+ farming Winterfall Firewater here. If that's the case then this quest can be skipped (there is no follow up).|icon Interface\\cursor\\Directions
+	info 
+	'Only for TBC/WOTLK|optional
+	'As you go questing, keep an eye out for a bear named Ursius (he looks just like all other other ones), if so, kill him, but don't intentionally try to find him now.|icon Interface\\cursor\\Attack
+	.kill Ursius##10806|q 5054/1|n
+
+step //12
+	info |goto Silithus,0,400
+    'Just north of Everlook (around the mountains), kill Raging Owlbeasts.|goto Winterspring,60.90,32.82|title Around the mountains|icon Interface\\cursor\\Attack
+    .kill 15 Raging Owlbeast##7451|q 4521/1
+	info |goto Winterspring,56.0,28.6|title Around the mountains
+	'Only for TBC/WOTLK|optional
+    'Try to find and kill a bear named Ursius. This bear looks just like all other other ones and patrols around the mountains.|goto Winterspring,56.0,28.6
+    .kill Ursius##10806|q 5054/1
+	info |goto Winterspring,57.4,34.2|title Around the mountains
+    'Kill/loot Ice Thistle Yeti around the area.|goto Winterspring,59.4,27.6|title Around the mountains|icon Interface\\cursor\\Attack
+    .collect 10 Thick Yeti Fur##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+
+step //15
+	info |goto Silithus,0,400
+    'Kill the required amount of Winterfall furbolgs. There are two camps of these mobs: One around here and one around the other location.|goto Winterspring,41.69,42.93|title Timbermaw Post
+    .kill 8 Winterfall Pathfinder##7442|q 5082/1
+    .kill 8 Winterfall Den Watcher##7440|q 5082/2
+    .kill 8 Winterfall Totemic##7441|q 5082/3
+	info 
+	'Kill Ragged Owlbeast along the way.
+	.kill 8 Ragged Owlbeast##7450|q 4521/2|n
+	info 
+    'Kill/loot Rogue Ice Thistle Yeti in the open fields.
+    .collect 10 Thick Yeti Hide##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+
+step //17
+    'Make sure you find an Empty Firewater Flask item that drops from the furbolgs, which starts:|goto Winterspring,32.26,37.12
+    .collect Empty Firewater Flask##12771|icon Interface\\Icons\\INV_Misc_Bottle_01
+    ..accept Winterfall Firewater##5083
+	info 
+    'Kill Ragged Owlbeasts around the area.
+    .kill 8 Ragged Owlbeast##7450|q 4521/2|n
+    info
+    'Kill/loot Rogue Ice Thistle Yeti in the open fields.
+    .collect 10 Thick Yeti Hide##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+
+step //19
+    .talk Donova Snowden##9298|goto Winterspring,31.27,45.16
+	..turnin Strange Sources##4842
+    ..turnin Threat of the Winterfall##5082
+    ..turnin Winterfall Firewater##5083
+    ..accept Falling to Corruption##5084
+	info 
+    'Kill Ragged Owlbeasts around the area.
+    .kill 8 Ragged Owlbeast##7450|q 4521/2|n
+    info
+    'Kill/loot Rogue Ice Thistle Yeti in the open fields.
+    .collect 10 Thick Yeti Hide##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+
+step //20
+	'These are found on the western side of Winterspring|goto Winterspring,43.78,37.65
+	 .kill 8 Ragged Owlbeast##7450|q 4521/2
+	 info
+    'Kill/loot Rogue Ice Thistle Yeti in the open fields.
+    .collect 10 Thick Yeti Hide##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+
+step //20
+    'Hearth (or go back) to Everlook...|goto Winterspring,60.42,38.43|title Hearth to Everlook|c|only !Shaman
+	'Hearth (or go back using Astral Recall) to Everlook.|cast Astral Recall##556|goto Winterspring,60.42,38.43|title Hearth to Everlook|c|only Shaman
+    .use Hearthstone##6948
+
+step //21
+    'From Innkeeper Vizzie:|goto Winterspring,61.36,38.83
+	.talk Innkeeper Vizzie##11118
+	info 
+    'Get Resupplied|icon Interface\\minimap\\Tracking\\Banker
+
+step //22
+	'Only For TBC/WOTLK|optional
+    'Back in Everlook by the cage:|goto Winterspring,61.92,38.30
+    .talk Storm Shadowhoof##10303
+    ..turnin Ursius of the Shardtooth##5054
+
+step //23
+    'Finish kill/looting Yeti around Ice Thistle Hill.|goto Winterspring,66.04,42.06|icon Interface\\cursor\\Attack
+	.collect 10 Thick Yeti Hide##12366|q 3783/1|n|icon Interface\\icons\\inv_misc_pelt_03
+    .kill Rogue Ice Thistle##7457|n
+    .kill Ice Thistle Matriarch##7459|n
+    .kill Ice Thistle Patriarch##7460|n
+
+step //24
+    'Hearth (or go back) to Everlook...|goto Winterspring,60.42,38.43|title Hearth to Everlook|only !Shaman
+	'Hearth (or go back using Astral Recall) to Everlook.|cast Astral Recall##556|goto Winterspring,60.42,38.43|title Hearth to Everlook|only Shaman
+    .use Hearthstone##6948
+	info 
+    'Next to the hut at Everlook:|goto Winterspring,60.88,37.62
+    .talk Umi Rumplesnicker##10305
+    ..turnin Are We There, Yeti?##3783
+    ..accept Are We There, Yeti?##977
+
+step //26
+	info |goto Silithus,0,400
+    'Go SE back to Ice Thistle Hill...|goto Winterspring,66.04,42.06|title Around: Ice Thistle Hill
+    info
+    'Kill/loot Ice Thistle Matriarchs and Ice Thistle Patriarchs for the 2 Horns around Ice Thistle Hill (low drop rate).|goto Winterspring,67.89,41.54
+    .collect 2 Pristine Yeti Horn##12367|q 977/1|icon Interface\\icons\\inv_weapon_shortblade_21
+    info
+    'NOTE: There is a higher concentration of these mobs in the cave.|goto Winterspring,67.89,41.54|title Cave Entrance|icon Interface\\cursor\\Directions
+
+step //27
+    'Hearth (or go back) to Everlook...|goto Winterspring,60.42,38.43|title Hearth to Everlook|only !Shaman
+	'Hearth (or go back using Astral Recall) to Everlook.|cast Astral Recall##556|goto Winterspring,60.42,38.43|title Hearth to Everlook|only Shaman
+    .use Hearthstone##6948
+    info
+    'NOTE: If you are deep in the cave you can just die on purpose and res at spirit (Not for Hardcore player) to get back to Everlook.|icon Interface\\cursor\\Directions
+	info 
+    'Next to the hut at Everlook:|goto Winterspring,60.88,37.62
+    .talk Umi Rumplesnicker##10305
+    ..turnin Are We There, Yeti?##977
+    ..accept Are We There, Yeti?##5163
+
+step //29
+    'Use Umi's Mechanical Yeti quest item to scare Legacki.|goto Winterspring,61.54,38.62
+    .use Umi's Mechanical Yeti##12928
+    .goal Scare Legacki|q 5163/1
+
+step //30
+    'In the hut entrance:|goto Winterspring,61.55,38.06|title Hut entrance (get repaired / resupplied)
+	info 
+    'Get Repaired/Resupplied|icon Interface\\minimap\\Tracking\\Repair
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //31
+    'Deposit into Bank:|goto Winterspring,61.46,36.97|title Bank
+	.'Umi's Mechanical Yeti|icon Interface\\icons\\inv_gizmo_09
+	.'Winterfall Ritual Totem|icon Interface\\icons\\spell_fire_frostresistancetotem
+	info 
+    'Withdraw from the bank
+	.'Blood Amber|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	.'Rotting Wood|icon Interface\\icons\\inv_tradeskillitem_03|only Warlock
+	.'Bloodvenom Essence|icon Interface\\icons\\inv_misc_slime_01|only Warlock
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
+
+step //32
+    'Exit Everlook to your right...|goto Winterspring,60.47,36.30
+    .talk Yugrek##11139
+	'From the Wind Rider Master, take a flight to Bloodvenom Post, Felwood|goto Felwood,34.44,53.96|c|title Go to Bloodvenom Post|icon Interface\\minimap\\Tracking\\FlightMaster
+
+step //33
+	......'54-55 Winterspring is complete!|icon Interface\\cursor\\Directions
+	.......'Go to 55-56 Felwood|confirm|next "Joana's Guide\\Horde\\55-56 Felwood"|icon Interface\\icons\\achievement_zone_felwood
+]])
+
 --TRIAL ZygorGuidesViewer:RegisterGuide("Zygor's Horde Leveling Guides\\Main Guide (13-20)",[[
 --TRIAL 	author support@zygorguides.com
 --TRIAL 	step //1
