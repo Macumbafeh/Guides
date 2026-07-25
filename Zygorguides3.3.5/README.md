@@ -3,7 +3,12 @@
 For the moment it's a Horde 1-60 level guide only. WITH Blood Elf zone.
 
 Work in progress: Done. ✅ TBC guide next? maybe... if i'm motivated.
+
 <img width="377" height="312" alt="image" src="https://github.com/user-attachments/assets/e71cfb6c-cc5a-4919-9cc8-460501e99a80" />
+
+## How to install
+Take the Joana's guide file and put it into Zygor addon in Interface > AddOns > ZygorGuidesViewerRM > Guide folder and rename it Guide01 (or Guide02 up to 40)
+
 
 ## Support
 I've spend hours into this project, if you liked it [support](<https://www.paypal.me/macumbafeh>) me on paypal.
