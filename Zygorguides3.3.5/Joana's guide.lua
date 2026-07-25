@@ -263,7 +263,7 @@ step //34
 	info |goto Durotar,47.2,65.4|title Lazy Peons
 	'Kill/loot scorpids all around (closer to the mountains).|icon Interface\\cursor\\Attack
     .kill 10 Scorpid Worker##3124|q 789/1|icon Interface\\icons\\ability_hunter_pet_scorpid
-	info |goto Durotar,47.6,69.4|title Lazy Peons
+	info    Only 8 for WOTLK|goto Durotar,47.6,69.4|title Lazy Peons
 	info |goto Durotar,46.8,60.7|title Lazy Peons
     'Loot the red bulb cacti all around starting area.
     ..collect 10 Cactus Apple|q 4402/1|icon Interface\\icons\\inv_misc_food_19
@@ -303,6 +303,7 @@ step //38
     'Just outside of The Den, at the Shaman Trainer get your level 4 spells/abilities.|goto Durotar,42.4,69.0
     .talk Shikrik##3157
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Shaman
 
 step //39
@@ -315,6 +316,7 @@ step //40
     'Get your level 4 spells/abilities, Rogue Trainer (is at half way into the cave).|goto Durotar,41.3,68.0
     .talk Rwag##3155
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Rogue
 
 step //41
@@ -322,18 +324,21 @@ step //41
     .talk Nartok##3156
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
 //    info Remember you can get minion upgrades from the Demon Trainer next to you (if you have an extra silver to spare).
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock 
 
 step //42
     'From the Priest Trainer on the brown rug:|goto Durotar,42.4,68.8
     .talk Laire Brewguzzle##3707
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Priest
 
 step //43
     'Get new spells/abilities. The Mage Trainer (is on the brown rug).|goto Durotar,42.5,69.0
     .talk Lavinia Crowe##5884
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
 
 step //44
@@ -346,17 +351,20 @@ step //45
     'From the Hunter Trainer next to you on the rug:|goto Durotar,42.8,69.3
     .talk Jen'shan##3154
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 
 step //46
     'Get new spells/abilities. The Warrior Trainer (is next to you under the canopy).|goto Durotar,42.9,69.4
     .talk Frang##3153
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 
 step //47
     'Get new spells/abilities. At The Druid Trainer.
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Druid
 
 step //48
@@ -417,6 +425,7 @@ step //54
 step //55
     'Use your Hearthstone to go back to the Valley of Trials.
 	.use Hearthstone##6948
+	info 
     'Then by the wagon:|goto Durotar,42.8,69.1
     .talk Zureetha Fargaze##3145
     ..turnin Burning Blade Medallion##794
@@ -532,6 +541,7 @@ step //6
     'Mages, learn your level 6 spells/abilities in the hut from the Mage Trainer.|goto Durotar,56.3,75.1
     .talk Arcanist Taelis##5880
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
 
 step //7
@@ -557,12 +567,14 @@ step //9
     'Down in the burrow next to you:|goto Durotar,51.9,43.5
     .talk Thotar##3171
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 
 step //10
     'At the top of the burrow:|goto Durotar,52.0,43.7
     .talk Takrin Pathseeker##3170
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Rogue
 	
 step //11
@@ -603,6 +615,7 @@ step //16
 //	'The Demon Trainer is back there too.|goto Durotar,55,42
 //	.talk Kitha##6027
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
 step //17
@@ -626,6 +639,7 @@ step //19
     'Enter the Barracks across the path, and from the Shaman Trainer:|goto Durotar,54.4,42.6
     .talk Seer Liwatha##3173
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Shaman
 
 step //20
@@ -634,6 +648,7 @@ step //20
 	'But Thunder Clap is not that important right now.|icon Interface\\Icons\\spell_nature_thunderclap
     .talk Tarshaw Jaggedscar##3169
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 
 step //21
@@ -663,6 +678,7 @@ step //23
     'Go further up in the fortress... Up in the fortress, open Benedict's Chest to obtain Aged Envelope, to accept the quest from it.|goto Durotar,59.3,57.7|title Go up in the fortress...
 	'From the item obtained: Accept The Admiral's Orders.|goto Durotar,59.26,57.65|title Go up, then loot chest
 	.collect Aged Envelope##4881|n|icon Interface\\icons\\inv_letter_15
+	..use Aged Envelope##4881
     ..accept The Admiral's Orders##830
 	info If you skipped the Lieutenant you can skip this part too since you don't have the key.
 
@@ -760,12 +776,14 @@ step //33
     'Get new spells/abilities from the Hunter Trainer in the bottom of the burrow.|goto Durotar,51.9,43.5
     .talk Thotar##3171
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 	
 step //34
     'Get new spells/abilities from the Rogue Trainer at the top of the burrow.|goto Durotar,52.0,43.7
     .talk Takrin Pathseeker##3170
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Rogue
 
 step //35
@@ -820,6 +838,7 @@ step //42
     'In the Barracks, from the Warrior Trainer, get your level 8 spells/abilities.|goto Durotar,54.2,42.5
     .talk Tarshaw Jaggedscar##3169
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 
 step //43
@@ -838,6 +857,7 @@ step //44
 //	'The Demon Trainer is back there too.|goto Durotar,55,42|title Demon Trainer
 //	.talk Kitha##6027
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
 step //45
@@ -882,6 +902,7 @@ step //52
     'Mages, learn your level 8 spells/abilities in the hut from the Mage Trainer.|goto Durotar,56.3,75.1
     .talk Arcanist Taelis##5880
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
 
 step //53
@@ -1621,24 +1642,28 @@ step //137
 //	'The Demon Trainer is back there too.|goto Durotar,55,42|title Kitha
 //	.talk Kitha##6027
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
 step //138
     'As you work your way back into Durotar, hit lower level enemies so you can level your weapon skill... Go in the Barracks and from the Warrior Trainer get your level 12 spells/abilities.|goto Durotar,54.2,42.5
     .talk Tarshaw Jaggedscar##3169
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 
 step //139
     'Get your level 12 spells/abilities from the Hunter Trainer in the bottom of the burrow.|goto Durotar,51.9,43.5
     .talk Thotar##3171
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter 
 	
 step //140
     'Get your level 12 spells/abilities from the Rogue Trainer at the top of the burrow.|goto Durotar,52.0,43.7
     .talk Takrin Pathseeker##3170
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Rogue 
 
 step //141
@@ -1678,6 +1703,7 @@ step //145
     'If you can, try to kill Gazz'uz (has multiple spawn locations in cave), he drops an item (Eye of Burning Shadow) which starts: Burning Shadows.|goto Durotar,55.1,9.8|title Skull Rock entrance
     .kill Gazz'uz##3204|n|icon Interface\\icons\\INV_Misc_Head_Orc_01
     .collect Eye of Burning Shadow##4903|q 832/1|icon Interface\\icons\\inv_misc_gem_bloodstone_02
+	..use Eye of Burning Shadow##4903
     ..accept Burning Shadows##832
 	info 
 	'TIPS: Use your Faintly Glowing Skull to help you kill him, he's tough without it. Use a Sticky Glue on his voidwalker, or pull Gazz in a water pool since his voidwalker can't swim. Orcs, don't use Blood Fury before you have used your healing items. Also try to party up with somebody if you can. Skip This if it's too hard.|icon Interface\\icons\\inv_misc_bone_dwarfskull_01
@@ -1771,6 +1797,7 @@ step //156
     'Stay up and go south to the Valley of Spirits and in the Darkbriar Lodge, go to the Mage Trainers to get your level 12 spells/abilities.|goto Orgrimmar,39.2,86.3
     .talk Arcanist Taelis##7311
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
 
 step //157
@@ -1794,12 +1821,14 @@ step //159
     'In the Barracks, get level 12 spells/abilities:|goto Durotar,54.3,42.9
     .talk Tai'jin##3706
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Priest
 
 step //160
     'In the Barracks, from the Warrior Trainer get your level 12 spells/abilities:|goto Durotar,54.2,42.5
     .talk Tarshaw Jaggedscar##3169
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warrior
 	
 step //161
@@ -1808,18 +1837,21 @@ step //161
 //	'The Demon Trainer is back there too.|goto Durotar,55,42|title Kitha
 //	.talk Kitha##6027
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 	
 step //162
     'Get level 12 spells/abilities from the Hunter Trainer in the bottom of the burrow.|goto Durotar,51.9,43.5
     .talk Thotar##3171
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 	
 step //163
     'Get level 12 spells/abilities from the Rogue Trainer at the top of the burrow.|goto Durotar,52.0,43.7
     .talk Takrin Pathseeker##3170
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Rogue
 	
 step //164
@@ -1896,7 +1928,8 @@ step //172
 	info |only Shaman
 	'Back in the Razormane camp (Thorn Hill) there is a barrel called Chen's Empty Keg, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
-    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04	
+    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n
     ..accept Chen's Empty Keg##819
 	info 
 	'Kill the required amount of Razormane quilboars.|icon Interface\\cursor\\Attack
@@ -1950,6 +1983,7 @@ step //176
 	'Also see if Chen's Empty Keg is there, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
     .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n
     ..accept Chen's Empty Keg##819
 	info Skip if you already has it.
     only Shaman
@@ -2168,6 +2202,7 @@ step //203
 	'Back in the Razormane camp (Thorn Hill) there is a barrel called Chen's Empty Keg, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
     .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n
     ..accept Chen's Empty Keg##819
 	info 
 	'Kill/loot plainstriders and raptors along the way.|icon Interface\\cursor\\Attack
@@ -2539,7 +2574,8 @@ step //10
 	.talk Narm Skychaser##3066|only Shaman
 	'Get your level 6 abilities.|goto Mulgore,47.82,55.69|only Hunter
 	.talk Yaw Sharpmane##3065|only Hunter
-	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class*
+	info 
+	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
 	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Warrior,Druid,Shaman,Hunter
 	
@@ -2996,6 +3032,7 @@ step //54
     'Go to the Pet Trainer and get new abilities for your pet.|goto Thunder Bluff,54.09,83.98
 	.talk Hesuwa Thunderhorn##10086
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Hunter
 	
 step //55
@@ -3310,7 +3347,8 @@ step //93
 	'Head to the Razormane camp (Thorn Hill) along the way|goto The Barrens,54.6,26.6|title Around the area
 	'Back in the Razormane camp there is a barrel called Chen's Empty Keg, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
-    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04	
+    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n	
     ..accept Chen's Empty Keg##819
 	info 
 	'Kill the required amount of Razormane quilboars (finish this quest before you go talk to Uzzek).|icon Interface\\cursor\\Attack
@@ -3410,7 +3448,8 @@ step //103
 	..accept Call of Fire##1524
 	info 
     'Also see if Chen's Empty Keg is there, loot it and from the item accept:
-    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04	
+    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n
     ..accept Chen's Empty Keg##819
 	info Skip if you can't find it
 	info 
@@ -3466,7 +3505,8 @@ step //107
 	info |only Shaman
 	'Back in the Razormane camp there is a barrel called Chen's Empty Keg, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
-    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04	
+    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n	
     ..accept Chen's Empty Keg##819
 	info 
 	'Kill the required amount of Razormane quilboars.|icon Interface\\cursor\\Attack
@@ -3526,6 +3566,7 @@ step //112
 	'Also see if Chen's Empty Keg is there, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
     .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n
     ..accept Chen's Empty Keg##819
 	info Skip if you already has it.
     only Shaman
@@ -3608,6 +3649,7 @@ step //4
 	.talk Dannal Stern##2119
 	..learn Battle Shout##6673|icon Interface\Icons\ability_warrior_battleshout
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Warrior
 
 step //5
@@ -3777,7 +3819,7 @@ step //22
 	info 
 	.talk Isabella##2124
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
-	'Click to continue.|confirm|next +2
+	..........'Click to continue|confirm|next +2|icon Interface\\cursor\\Point
     only Mage
 
 step //23
@@ -3786,6 +3828,7 @@ step //23
 	.talk Maximillion##2126
 	..learn Corruption##172|n|icon Interface\Icons\spell_shadow_abominationexplosion
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
 step //24
@@ -5263,16 +5306,18 @@ step //25
 	.collect 1 Felendren's Head##20799|q 8335/3|icon Interface\\icons\\inv_misc_head_centaur_01
 	info |goto Eversong Woods,31.65,26.18|title Go up: Falthrien Academy
     .'You find an item from Tainted Arcane Wraith, called |goto Eversong Woods,31.19,25.86|title Go up: Falthrien Academy
-	'Tainted Arcane Wraith Essence, which starts a quest:|icon Interface\\icons\\inv_enchant_shardradientsmall|goto Eversong Woods,29.72,24.34|title Go up: Falthrien Academy
-    .collect 1 Tainted Arcane Wraith Essence##20483|n|icon Interface\\icons\\inv_enchant_shardradientsmall
+	'Tainted Tainted Arcane Sliver, which starts a quest:|icon Interface\\icons\\inv_enchant_shardradientsmall|goto Eversong Woods,29.72,24.34|title Go up: Falthrien Academy
+    .collect Tainted Arcane Sliver##20483|n|icon Interface\\icons\\inv_enchant_shardradientsmall
+	..use Tainted Arcane Sliver##20483|n
     ..accept Tainted Arcane Sliver##8338|n|icon Interface\\cursor\\Quest
 	info |goto Eversong Woods,29.07,25.69|title Go up: Falthrien Academy
 	info |goto Eversong Woods,30.69,26.27|title Go up ramp: Falthrien Academy
 
 step //26
     .'Keep kill/looting Tainted Arcane Wraiths until you find an item called|goto Eversong Woods,30.3,26.8
-	'Tainted Arcane Wraith Essence, which starts a quest:|icon Interface\\icons\\inv_enchant_shardradientsmall
-    .collect 1 Tainted Arcane Wraith Essence##20483|icon Interface\\icons\\inv_enchant_shardradientsmall
+	'Tainted Tainted Arcane Sliver, which starts a quest:|icon Interface\\icons\\inv_enchant_shardradientsmall
+    .collect Tainted Arcane Sliver##20483|icon Interface\\icons\\inv_enchant_shardradientsmall
+	..use Tainted Arcane Sliver##20483
     ..accept Tainted Arcane Sliver##8338
 
 step //27
@@ -5570,6 +5615,7 @@ step //4
     'Kill The scouts who drop an item named|icon Interface\\cursor\\Attack
 	'Incriminating Documents which starts a quest|icon Interface\\icons\\inv_letter_08
 	.collect Incriminating Documents##20765|n|icon Interface\\icons\\inv_letter_08
+	..use Incriminating Documents##20765
     ..accept Incriminating Documents##8482
 
 step //5
@@ -5592,6 +5638,7 @@ step //7
     'Kill Grimscale Seer and Forager until you find (skip if it's too long)|icon Interface\\cursor\\Attack
 	'Captain Kelisendra's Lost Rutters which starts a quest:|icon Interface\\icons\\inv_scroll_03
 	.collect Captain Kelisendra's Lost Rutters##21776|n|icon Interface\\icons\\inv_scroll_03
+	..use Captain Kelisendra's Lost Rutters##21776
     ..accept Captain Kelisendra's Lost Rutters##8887
 
 step //8
@@ -5829,6 +5876,7 @@ step //39
 	'If you didn't get it, killing murloc can drop
     'Captain Kelisendra's Lost Rutters which starts a quest:|icon Interface\\icons\\inv_scroll_03
 	.collect Captain Kelisendra's Lost Rutters##21776|n|icon Interface\\icons\\inv_scroll_03
+	..use Captain Kelisendra's Lost Rutters##21776
     ..accept Captain Kelisendra's Lost Rutters##8887
 	info 
     'Kill/loot cats along the way.|icon Interface\\cursor\\Attack
@@ -6361,6 +6409,7 @@ step //107
     'He also drops an item:
 	'Amani Invasion Plans which starts a quest:|icon Interface\\icons\\inv_scroll_10
 	.collect 1 Amani Invasion Plans##23249|n|icon Interface\\icons\\inv_scroll_10
+	..use Amani Invasion Plans##23249
     ..accept Amani Invasion##9360
     info 
     'Kill Amani Berserker and Amani Axe Throwers.|icon Interface\\cursor\\Attack
@@ -6471,6 +6520,7 @@ step //122
 	'Old Whitebark's Pendant item which starts a quest:|goto Eversong Woods,35,85|icon Interface\\icons\\inv_jewelry_amulet_05
 	.kill Old Whitebark##15409
 	.collect 1 Old Whitebark's Pendant##23228|n|icon Interface\\icons\\inv_jewelry_amulet_05
+	..use Old Whitebark's Pendant##23228
     ..accept Old Whitebark's Pendant##8474
 	info 
     'Kill Withered Green Keepers around The Scorched Grove.|icon Interface\\cursor\\Attack
@@ -7056,11 +7106,15 @@ step //75
 	info 
     'NOTE: If you found an item named:|icon Interface\\cursor\\Directions
 	'The Lady's Necklace, it starts a quest:|goto Ghostlands,12.45,56.91|icon Interface\\icons\\inv_jewelry_necklace_16
+	.collect The Lady's Necklace##22597|n
+	..use The Lady's Necklace##22597|n
     ..accept The Lady's Necklace##9175|n|icon Interface\\cursor\\Quest
 
 step //76
     'Keep grinding on the mobs around Windrunner Spire until you get 
 	'The Lady's Necklace which starts a quest:|goto Ghostlands,12.45,56.91|icon Interface\\icons\\inv_jewelry_necklace_16
+	.collect The Lady's Necklace##22597
+	..use The Lady's Necklace##22597
     ..accept The Lady's Necklace##9175
 
 step //77
@@ -8124,6 +8178,7 @@ step //202
 	'Go south around waypoint and see if a lvl 22 gray kodo named Lakota'mani is there and kill/loot him. He might also be on the left side of the main path around waypoint. This kodo drops an|icon Interface\\cursor\\Attack
 	'Hoof of Lakota'mani which starts this quest.|icon Interface\\icons\\ability_smash|goto The Barrens,47,51|title Kill/loot: Lakota'mani
 	.collect 1 Hoof of Lakota'mani##5099|n|icon Interface\\icons\\ability_smash
+	..use Hoof of Lakota'mani##5099
     ..accept Lakota'mani##883
 	info 
     'You can skip this for now if you have trouble finding it|goto The Barrens,50,53|title Kill/loot: Lakota'mani|icon Interface\\cursor\\Directions
@@ -8748,7 +8803,9 @@ step //55
     .talk Kaplak##3170|only Rogue
 	'In the Barracks, from the Shaman Trainer get your level 12 spells/abilities:|goto Durotar,54.42,42.58|only Shaman
     .talk Seer Liwatha##3173|only Shaman
+	info 
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Shaman,Rogue,Hunter,Warlock,Warrior,Priest
 	
 step //56
@@ -8822,7 +8879,8 @@ step //67
 	'Head to Thorn Hill|goto The Barrens,54.6,26.6|title Around this area
 	'Back in the Razormane camp there is a barrel called Chen's Empty Keg, loot it and from the item received, accept: Chen's Empty Keg.|goto The Barrens,55.7,27.3|title Chen's Empty Keg
 	'NOTE: You can find another Chen's Empty Keg NE by the tower at the waypoint.|goto The Barrens,55.78,20.00|title Chen's Empty Keg|icon Interface\\cursor\\Directions
-    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04	
+    .collect Chen's Empty Keg##4926|n|icon Interface\\icons\\inv_cask_04
+	..use Chen's Empty Keg##4926|n	
     ..accept Chen's Empty Keg##819|n|icon Interface\\cursor\\Quest
 	info 
 	'Kill the required amount of Razormane quilboars.|icon Interface\\cursor\\Attack
@@ -9384,6 +9442,7 @@ step //16
     .'Priests, get new spells/abilities there in the cave.|icon Interface\\icons\\inv_staff_30|only Priest
     .'Mages, get new spells/abilities there in the cave.|icon Interface\\icons\\inv_staff_13|only Mage
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Priest,Mage
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 
 step //17
 	info |goto Silithus,0,400
@@ -9424,6 +9483,7 @@ step //20
 	.'Shield Bash.|icon Interface\\icons\\ability_defend|goto Thunder Bluff,57.59,85.50|title Warrior Trainers|only Warrior
 	info 
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter,Warrior
 
 step //21
@@ -10024,6 +10084,7 @@ step //94
     'Go south around waypoint and see if a lvl 22 gray kodo named Lakota'mani is there and kill/loot him. He might also be on the left side of the main path around waypoint. This kodo drops an|icon Interface\\cursor\\Attack
 	'Hoof of Lakota'mani which starts this quest.|icon Interface\\icons\\ability_smash|goto The Barrens,47,51|title Kill/loot: Lakota'mani
 	.collect 1 Hoof of Lakota'mani##5099|n|icon Interface\\icons\\ability_smash
+	..use Hoof of Lakota'mani##5099
     ..accept Lakota'mani##883
 	info 
     'You can skip this for now if you have trouble finding it|goto The Barrens,50,53|title Kill/loot: Lakota'mani|icon Interface\\cursor\\Directions
@@ -10161,6 +10222,7 @@ step //110
 	'Thunder Clap R2.|icon Interface\\icons\\spell_nature_thunderclap|only Warrior
 	info 
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter,Warrior
 
 step //111
@@ -10168,6 +10230,7 @@ step //111
 	'Growl R3 from the Pet Trainer.|icon Interface\\icons\\ability_physical_taunt
     .talk Hesuwa Thunderhorn##10086
 	'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Hunter
 
 step //112
@@ -11078,6 +11141,7 @@ step //10
 	'Owatanka's Tailspike which starts a quest.|icon Interface\\icons\\inv_misc_bone_06
     .kill Owatanka##3473|n
     .collect Owatanka's Tailspike##5102|n|icon Interface\\icons\\inv_misc_bone_06
+	..use Owatanka's Tailspike##5102
     ..accept Owatanka##884
 
 step //11
@@ -11100,6 +11164,7 @@ step //12
 	'This bug can also be hard to solo, so be prepared or just skip it for now if you cant solo it or find help.
     .kill Silithid Harvester##3253|n
     .collect Harvester's Head##5138|n|icon Interface\\icons\\inv_misc_monsterspidercarapace_01
+	..use Harvester's Head##5138|n
     ..accept The Harvester##897|n|icon Interface\\cursor\\Quest
 
 step //13
@@ -11129,6 +11194,7 @@ step //14
 	'Washte Pawne's Feather which starts a quest.|icon Interface\\icons\\spell_magic_featherfall
     .kill Washte Pawne##3472|n
     .collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
     info |only !BloodElf
     'Kill/loot along the way: Stormhides, Greater Thunderhawks, kodos.|only !BloodElf
@@ -11158,6 +11224,7 @@ step //15
 	'Washte Pawne's Feather which starts a quest.|icon Interface\\icons\\spell_magic_featherfall
     .kill Washte Pawne##3472|n
     .collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
     info |only !BloodElf
     'Kill/loot along the way: Stormhides, Greater Thunderhawks, kodos.|only !BloodElf
@@ -11188,6 +11255,7 @@ step //16
 	'Washte Pawne's Feather which starts a quest.|icon Interface\\icons\\spell_magic_featherfall
     .kill Washte Pawne##3472|n
     .collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
     info |only !BloodElf
     'Kill/loot along the way: Stormhides, Greater Thunderhawks, kodos.|only !BloodElf
@@ -11273,6 +11341,7 @@ step //21
 	'Washte Pawne's Feather which starts a quest.|icon Interface\\icons\\spell_magic_featherfall
     .kill Washte Pawne##3472|n
     .collect 1 Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885
 	.'Skip it if you did the Ghostlands guide|confirm|next +1|icon Interface\\cursor\\Point|only BloodElf
 //	only !BloodElf
@@ -11778,6 +11847,7 @@ step //33
     'Go NE a bit and get new spells/abilities from the Druid Trainers.
     'Tiger's Fury can be skipped.|goto Thunder Bluff,76.68,27.18|title Druid Trainers|icon Interface\\icons\\ability_mount_jungletiger
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class|only Druid
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Druid
 	
 step //34
@@ -11924,6 +11994,7 @@ step //5
     'This elite drops an item (Harvester's Head) which starts this quest. This elite has a 2 hour 45 min respawn. If the elite is not there, it can be skipped.|goto The Barrens,47.75,70.35|title Around the area
 	.kill Silithid Harvester##3253|n
     .collect Harvester's Head##5138|n|icon Interface\\icons\\inv_misc_monsterspidercarapace_01
+	..use Harvester's Head##5138
     ..accept The Harvester##897
 	info 
     'Kill/loot thunderlizards (stegosaurus dinos) along the way. They are scattered everywhere in the open fields of southern Barrens.|icon Interface\\cursor\\Attack
@@ -11981,6 +12052,8 @@ step //9
     .kill Stormhide##3238|n
 	info 
     'If you run across a reddish thunderhawk named Washte Pawne, kill/loot him, he drops an item (Washte Pawne's Feather, which starts:|icon Interface\\cursor\\Attack
+	.collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
 
 step //10
@@ -12008,6 +12081,8 @@ step //11
     .kill Stormhide##3238|n
 	info 
     'If you run across a reddish thunderhawk named Washte Pawne, kill/loot him, he drops an item (Washte Pawne's Feather, which starts:|icon Interface\\cursor\\Attack
+	.collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
 
 step //12
@@ -12018,6 +12093,8 @@ step //12
     .kill Stormhide##3238|n
 	info 
     'If you run across a reddish thunderhawk named Washte Pawne, kill/loot him, he drops an item (Washte Pawne's Feather, which starts:|icon Interface\\cursor\\Attack
+	.collect Washte Pawne's Feather##5103|n|icon Interface\\icons\\spell_magic_featherfall
+	..use Washte Pawne's Feather##5103|n
     ..accept Washte Pawne##885|n|icon Interface\\cursor\\Quest
 
 step //13
@@ -12042,14 +12119,18 @@ step //15
 	info 
     'Hunter: While going up to Freewind Post, destroy all your ammo (you will upgrade it soon).|icon Interface\\icons\\inv_weapon_bow_07|only HUNTER
 	info |only HUNTER
-	'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
+	'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 step //16
-    'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
+    'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881
+	..collect Assassination Note##12564|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564
+    ...accept Assassination Plot##4881|icon Interface\\cursor\\Quest
 	............'Skip This?|confirm|next +1|icon Interface\\cursor\\Point
 
 step //17
@@ -12069,9 +12150,11 @@ info |goto Silithus,0,400
 	info 
     'Hunter: While going up to Freewind Post, destroy all your ammo (you will upgrade it soon).|icon Interface\\icons\\inv_weapon_bow_07|only HUNTER
 	info |only HUNTER
-	'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
+	'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts this. Accept it (if you can), but, don't intentionally do this yet.|icon Interface\\cursor\\Directions
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 	..........'Click to continue|confirm|next +1|icon Interface\\cursor\\Point
 
 step //2
@@ -12303,12 +12386,14 @@ step //32
     'At Orgrimmar, go to the Cleft of Shadow and learn your lvl 26 spells/abilities.|goto Orgrimmar,48.35,45.34|title Warlock Trainer|icon Interface\\icons\\spell_nature_drowsy
 	info 
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Warlock
 
 step //33
     'At Orgrimmar, go to Grommash Hold and learn your lvl 26 spells/abilities.|goto Orgrimmar,32.27,35.73|title Paladin Trainer|icon Interface\\icons\\INV_Hammer_01
 	info |goto Orgrimmar,39.81,37|title Enter: Grommash Hold
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Paladin
 
 step //34
@@ -12518,7 +12603,8 @@ step //13
     'TIP: A trick to kill this mob is to bring his health to a 3rd left, then drag him into the guards at Splintertree Post, they will finish it.|goto Ashenvale,71.53,67.79|title Splintertree Guards|icon Interface\\cursor\\Directions
     .kill Sharptalon##12676|n
     .collect Sharptalon's Claw##16305|n|icon Interface\\icons\\spell_nature_natureswrath
-    .accept Sharptalon's Claw##2
+	..use Sharptalon's Claw##16305
+    ..accept Sharptalon's Claw##2
 	info 
     'Druids: Attack as bear. Hibernate to heal.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
 	info |only Druid
@@ -12557,6 +12643,7 @@ step //16
     'Find and kill/loot Tideress, this water elemental patrols around under the lake, he drops an item which starts a quest:|goto Ashenvale,45.62,70.12|title Closer to Next Destination|icon Interface\\cursor\\Attack
     .kill Tideress##12759|n
     .collect Befouled Water Globe##16408|n|icon Interface\\icons\\spell_shadow_teleport
+	..use Befouled Water Globe##16408
     ..accept The Befouled Element##1918
 
 step //17
@@ -12564,6 +12651,7 @@ step //17
     'Kill/loot the next mob related to the Ashenvale Hunt: Ursangous. This bear patrols clockwise around the mountain and trees. He drops an item which starts a quest:|goto Ashenvale,41.79,68.41|title Kill/loot: Ursangous (patrols around hill)|icon Interface\\cursor\\Attack
     .kill Ursangous##12678|n
     .collect Ursangous's Paw##16303|n|icon Interface\\icons\\inv_gauntlets_07
+	..use Ursangous's Paw##16303
     ..accept Ursangous's Paw##23
 
 step //18
@@ -12571,7 +12659,8 @@ step //18
     'Kill/loot the last mob related to the Ashenvale Hunt: Shadumbra (black panther patrols around). This cat drops an item which starts a quest:|goto Ashenvale,52.61,54.50|title Kill/loot: Shadumbra (patrols)|icon Interface\\cursor\\Attack
     .kill Shadumbra##12677|n
     .collect Shadumbra's Head##16304|n|icon Interface\\icons\\ability_mount_blackpanther
-    .accept Shadumbra's Head##24
+	..use Shadumbra's Head##16304
+    ..accept Shadumbra's Head##24
 	info 
     'WATCH OUT: You are close to an Alliance tower where there is Sentinel Farsong (lvl 40 Alliance guards)!|icon Interface\\cursor\\Directions
 
@@ -12856,6 +12945,8 @@ step //51
 	info 
     'You have a chance to loot an item:|icon Interface\\cursor\\Directions
 	'Diabolical Plans which starts a quests:|icon Interface\\icons\\inv_scroll_07
+	.collect Diabolical Plans##23797|n|icon Interface\\icons\\inv_scroll_07
+	..use Diabolical Plans##23797|n
     .accept Diabolical Plans##9535|n|icon Interface\\cursor\\Quest
 
 step //52
@@ -13198,7 +13289,9 @@ step //5
 	info 
     'NOTE: Keep an eye out for the Galak Messenger and kill/loot this centaur if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 	
 step //6
     'Next to you:|goto Thousand Needles,21.43,32.55
@@ -13236,7 +13329,9 @@ step //8
 	info 
     'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 step //9
 	info |goto Silithus,0,400
@@ -13249,7 +13344,9 @@ step //9
 	info 
     'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 // step //20
 //    'Kill/loot Gravelsnout Surveyors or Gravelsnout Diggers until|goto Thousand Needles,12.8,16.8|icon Interface\\cursor\\Attack
@@ -13409,7 +13506,9 @@ step //27
 	info 
     'NOTE: kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 step //28
     .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
@@ -13451,7 +13550,9 @@ step //31
 step //32
     'LAST REMINDER: Kill/loot Galak Messenger if you see him in 1k Needles. He has a very large patrol path. He drops an item (Assassination Note) which starts a quest. Accept it (if you can).|icon Interface\\cursor\\Directions.
 	.kill Galak Messenger##10617|n
-    .accept Assassination Plot##4881|icon Interface\\cursor\\Quest
+	..collect Assassination Note##12564|n|icon Interface\\icons\\inv_letter_17
+	...use Assassination Note##12564|n
+    ...accept Assassination Plot##4881|n|icon Interface\\cursor\\Quest
 
 step //33
     .talk Kanati Greycloud##10638|goto Thousand Needles,21.22,32.03
@@ -15345,6 +15446,7 @@ step //28
 	info 
     'Before leaving the Thunder Axe Fortress, make sure you have found an item named "Flayed Demon Skin" (2% drop rate), which starts a quest:|goto Desolace,56.03,29.46
 	.collect Flayed Demon Skin##20310|icon Interface\\icons\\inv_misc_leatherscrap_04
+	..use Flayed Demon Skin##20310
     ..accept The Corrupter##1480
 
 step //29
@@ -17180,6 +17282,7 @@ step //9
 	info 
     'Within the first few bugs you kill, you should receive an item|goto Thousand Needles,65.82,86.28
 	'Cracked Silithid Carapace which starts:|icon Interface\\icons\\inv_shoulder_03
+	..use Cracked Silithid Carapace##5877
     ..accept Parts of the Swarm##1148
 	info 
     'Kill/loot the Silithid bugs, and the items you need can drop from any of them.|icon Interface\\cursor\\Attack
@@ -17237,6 +17340,7 @@ step //18
     'Go NE to the Elder Rise to get your lvl 38 Spells/abilities.|goto Thunder Bluff,76.83,27.08|title Druid Trainer|icon Interface\\icons\\Ability_Druid_Maul
 	info 
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Druid
 
 step //19
@@ -17720,6 +17824,7 @@ step //36
     'Go NW to Direhorn Post Den and in the NE tent kill/loot Apothecary Cylla, she drops a Sealed Letter item which starts a quest.|goto Dustwallow Marsh,47.21,46.59|icon Interface\\cursor\\Attack
     .kill Apothecary Cylla##23881|n
 	.collect Sealed Letter##33115|n|icon Interface\\icons\\inv_letter_16
+	..use Sealed Letter##33115
     ..accept Signs of Treachery?##11186
 	info 
     .'Kill Grimtotem Destroyer or Grimtotem Earthbinder around Direhorn Post Den.|icon Interface\\cursor\\Attack
@@ -18365,6 +18470,7 @@ step //42
 	info |goto Undercity,52.49,63.87|title Enter: Royal Quarter|only Paladin
 	info |only !Paladin
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
 	only Warrior,Rogue,Priest,Warlock,Paladin
 //    only if not Shaman and not Druid and not Hunter and not Warlock and not Mage
 
@@ -18892,6 +18998,7 @@ step //4
     .'Go NE, find and kill/loot Noboru the Cudgel. He drops an item (Noboru's Cudgel) which starts a quest.|goto Swamp of Sorrows,47.08,38.84|title Kill/loot: Noboru the Cudgel (spawns here)|icon Interface\\cursor\\Attack
     .kill Noboru the Cudgel##5477|n
     .collect Noboru's Cudgel##6196|n|icon Interface\\icons\\inv_mace_10
+	..use Noboru's Cudgel##6196
     ..accept Noboru the Cudgel##1392
 	info |only Druid,Hunter
     .'TIP: You can use Track Humanoids in Cat Form to find him easier.|icon Interface\\icons\\Ability_Druid_Maul|only Druid
@@ -19989,6 +20096,7 @@ step //53
     'Also at this tent, kill/loot Apothecary Cylla, she drops an item (Sealed Letter) which starts a quest.|icon Interface\\cursor\\Attack
     .kill Apothecary Cylla##23881|n
 	.collect Sealed Letter##33114|n|icon Interface\\icons\\inv_letter_16
+	..use Sealed Letter##33114
     ..accept The Apothecary's Letter##11185
 
 step //54
@@ -20540,6 +20648,7 @@ step //21
     'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
 	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
 	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+	..use Ship Schedule##9250|n
     ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
 
 step //22
@@ -20560,6 +20669,7 @@ step //22
     'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
 	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
 	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+	..use Ship Schedule##9250|n
     ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
 
 step //23
@@ -20573,6 +20683,7 @@ step //23
     'Any of the pirates has a chance to drop a |icon Interface\\cursor\\Directions
 	'Pirate's Footlocker, which could contain a |icon Interface\\icons\\inv_box_03
 	'Ship Schedule which starts a quest.|icon Interface\\icons\\inv_scroll_03
+	..use Ship Schedule##9250|n
     ..accept Ship Schedules##2876|n|icon Interface\\cursor\\Quest
 
 step //24
@@ -23146,6 +23257,7 @@ step //10
 //    only if (ERA or SOM1) and Mage and SPELL[3566]
 	info 
     'Get new Spells/Abilities|icon Interface\\minimap\\Tracking\\Class
+	.........'Click When Done|confirm|next +1|icon Interface\\cursor\\Point
     only Mage
 
 step //11
@@ -23639,6 +23751,7 @@ step //25
     'From the item Model 4711-FTZ Power Source in your bags, accept and start kill/looting beasts just south of Gadgetzan. You need to kill/loot any: Basilisks, Hyenas, Scorpids.|goto Tanaris,52.71,45.92|title Next Destination|icon Interface\\cursor\\Attack
     info 
 	'You will find these beasts all around the open fields of Tanaris. As you get the untested samples, click them to get the acceptable ones (Only for Vanilla/TBC). You only have 2 hours to do this and the next few steps, so work quickly.
+	.use Model 4711-FTZ Power Source##8524
     ..accept Tanaris Field Sampling##654
 
 step //26
@@ -25606,6 +25719,7 @@ step //58
     ..turnin Alien Ecology##3883
 	info 
 	'While grinding in Un'Goro Crater, you have found an item called "A Mangled Journal" which starts:|icon Interface\\cursor\\Directions
+	..use A Mangled Journal##11116|n
 	..accept Williden's Journal##3884|n|important
 	info 
     'Next to you:|goto Un'Goro Crater,43.95,7.14|title Williden Marshal
@@ -26842,6 +26956,7 @@ step //14
 	info |goto Silithus,0,400
     'Make sure you find an Empty Firewater Flask item that drops from the furbolgs, which starts:|goto Winterspring,32.26,37.12|title Around the area
     .collect Empty Firewater Flask##12771|icon Interface\\Icons\\INV_Misc_Bottle_01
+	..use Empty Firewater Flask##12771
     ..accept Winterfall Firewater##5083
 	info |goto Winterspring,41.69,42.93|title Timbermaw Post
     'Start Killing Ragged Owlbeasts around the area.|icon Interface\\cursor\\Attack
@@ -29836,6 +29951,7 @@ step //28
     .kill 13 Moontouched Owlbeast##7453|q 4741/1
     info 
 	'While questing here you might find a Blue-feathered Necklace, which starts (you will get an other opportunity to get it later):
+	..use Blue-feathered Necklace##12558|n
     ..accept Guarding Secrets##4882|n|icon Interface\\cursor\\Quest
 	info 
 	'Start Kill/looting Chimera along the way.|icon Interface\\cursor\\Attack
@@ -29907,6 +30023,7 @@ step //35
     .kill Berserk Owlbeast##7454|q 4721/1
 	info 
     'While questing here you might find a Blue-feathered Necklace, which starts:
+	..use Blue-feathered Necklace##12558|n
     ..accept Guarding Secrets##4882|n|icon Interface\\cursor\\Quest
 	info 
 	'Start Kill/looting Chimera along the way.|icon Interface\\cursor\\Attack
